@@ -1,0 +1,85 @@
+{% extends 'webfrontend/base.html' %}
+{% load
+    blog_associated_tool_list
+    blog_associated_post_list
+    i18n
+    markdowntohtml
+    pask_url
+    pk_meta_tags
+    tool_list
+    share_links
+%}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container container pk-g-main-container">
+        <main class="pk-g-centred pk-g-boxed-main pk-g-no-focus-outline" tabindex="-1">
+            {% if feature_image %}
+                <figure
+                    class="feature-image-sizing-container"
+                    style="{{ feature_image_inline_style }}"
+                >
+                    <img
+                        {% if post.feature_image_caption %}
+                            alt="{{ post.feature_image_caption }}"
+                        {% else %}
+                            alt=""
+                        {% endif %}
+                        class="feature-image"
+                        src="{{ feature_image.url }}"
+                    />
+                </figure>
+            {% endif %}
+            {% if post.category and post_category_name %}
+                <div class="category">
+                    <span class="pk-g-invisible">Category: </span>
+                    <a
+                        href="{% pask_url
+                            'webfrontend:blogposts'
+                            q_category=post.category.slug
+                        %}"
+                        class="category-link pk-button"
+                    >{{ post_category_name }}</a>
+                </div>
+            {% endif %}
+            <h1 id="main-heading" class="title">{{ post.title }}</h1>
+            {% if post.summary %}
+                <p class="content summary">{{ post.summary }}</p>
+            {% endif %}
+            <footer class="top-meta">
+                <time class="date" datetime="{{ post_published_datetime_iso8601 }}">
+                    {% if app == 'zanga' %}
+                        {{ post.published_date | date:'d/M/Y' }}
+                    {% else %}
+                        {{ post_published_date_jalali }}
+                    {% endif %}
+                </time>
+                {% share_links
+                    url=url
+                    title=title
+                %}
+            </footer>
+            <div class="content pk-html-content">
+                {{ post.content|markdowntohtml }}
+            </div>
+            {% if associated_tools.count > 0 or associated_versions.count > 0 or related_posts.count > 0 %}
+                <footer class="footer">
+                    {% if associated_tools.count > 0 or associated_versions.count > 0 %}
+                        {# Translators: Heading above the list of tools and versions associated with the post. #}
+                        <h2 class="heading">{% trans 'Associated tools' context 'Blog post' %}</h2>
+                        {% blog_associated_tool_list
+                            associated_tools=associated_tools
+                            associated_versions=associated_versions
+                        %}
+                    {% endif %}
+                    {% if related_posts.count > 0 %}
+                        {# Translators: Heading above the list of related posts #}
+                        <h2 class="heading">{% trans 'Associated posts' context 'Blog post' %}</h2>
+                        {% blog_associated_post_list related_posts=related_posts %}
+                    {% endif %}
+                </footer>
+            {% endif %}
+        </main>
+    </div>
+{% endblock %}

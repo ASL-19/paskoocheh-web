@@ -1,0 +1,28 @@
+.pk-blog-associated-post-list {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.pk-blog-associated-post-list-container li {
+    display: inline-block;
+    *zoom: 1;
+}
+/* Target minimum post list item width is ~150px. The limiting factor is fitting
+longer post titles into two lines without cutting off text. */
+@media (max-width: 43.99em) {
+    .pk-blog-associated-post-list {
+        display: inline-flex;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}
+@media (max-width: 29.99em) {
+    .pk-blog-associated-post-list {
+        display: inline-flex;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+}

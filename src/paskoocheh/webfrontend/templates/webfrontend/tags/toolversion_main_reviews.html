@@ -1,0 +1,59 @@
+<section id="pk-toolversion-main-reviews" class="pk-toolversion-main-reviews reviews main-section">{% load i18n pask_url review_list %}
+    <div class="star-rating-container">
+        {# Translators: Average rating, displayed inside the rating badge. Keep the “<span class="pk-g-invisible">” and “</span>” in your translation. The translation of “stars” is necessary since search engines and blind users don’t have visual context to understand the value. #}
+        <span
+            aria-label="{% blocktrans
+                context 'Tool version'
+                with average_rating=rating
+                trimmed
+                %}{{ average_rating }} stars{% endblocktrans %}"
+            class="value {% if no_version_rating_available %}no-rating{% endif %}"
+        ><span aria-hidden="true">{{ rating }}</span></span>
+        {# Translators: Rating count, displayed beneath rating in rating stars. The translation for “ratings” should be terse if possible, since it needs to fit in a tight space. #}
+        <div class="stars-container" dir="ltr">
+            <input name="stars" type="number" class="rating" data-size="sm" data-rating-val="{{ rating_val }}">
+        </div>
+        <span class="sub-value">{{ rating_count }}</span>
+    </div>
+
+    <button
+        class="pk-overlay-trigger pk-button action overlay-trigger-button"
+        data-pk-overlay-trigger-slug="pk-toolversion-review-overlay"
+        data-pk-overlay-trigger-action="open"
+    {# Translators: Text for button that opens the review form #}
+    >{% trans 'Write review' context 'Review' %}</button>
+
+    <section class="form-container">
+        {# Translators: Heading for review form #}
+        <h3 class="section-secondary-heading">{% blocktrans with version_name=version_name_localized context 'Review' %}Review {{ version_name }}{% endblocktrans %}</h3>
+
+        {% include 'webfrontend/partials/toolversion_review_form.html' with
+            form_slug='toolversion-review-form-inline'
+            rating_options=rating_options
+            version=version
+            only
+        %}
+    </section>
+
+    <section aria-labelledby="latest-reviews-heading" class="latest-reviews">
+        {# Translators: Heading for list of up to 5 latest reviews #}
+        <h3 id="latest-reviews-heading" class="pk-g-invisible">{% trans 'Latest reviews' context 'Tool version' %}</h3>
+
+        {% review_list
+            review_invisible_heading_tag='h4'
+            reviews=latest_reviews
+            version_name_localized=version_name_localized
+        %}
+
+        {% if has_more_reviews %}
+            <div class="pk-g-button-centring-container">
+                <a
+                    class="pk-button pk-g-centred-button"
+                    href="{% pask_url 'webfrontend:toolversionreviews' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name %}"
+                {# Translators: Link to dedicated page containing all reviews of this version #}
+                >{% trans 'More reviews' context 'Review' %}</a>
+            </div>
+        {% endif %}
+    </section>
+
+</section>

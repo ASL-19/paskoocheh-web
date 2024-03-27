@@ -1,0 +1,20 @@
+.pk-review-list {
+    float: right;
+    width: 100%;
+    margin: 1em 0;
+}
+.pk-review-list .pk-review {
+    margin: 1em 0;
+}
+.pk-review-list .pk-review:first-child {
+    margin-top: 1em;
+}
+.pk-review-list-no-reviews-explanation {
+    float: right;
+    width: 100%;
+    margin: 0;
+}
+.pk-review-list .review-separator {
+    margin: unset;
+}
+

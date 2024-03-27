@@ -1,0 +1,12 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls admin_modify %}
+{% load i18n static %}
+{% block submit_buttons_bottom %}
+    {% if original.pk %}
+        <div class="pull-right submit-row">
+            <a href="{% url 'deletefileid' version='v1' version_id=original.pk %}" class="deletelink">{% trans "Delete AWS File ID" %}</a> 
+        </div>
+        <div class="spacer"></div>
+    {% endif %}
+    {% submit_row %}
+{% endblock %}

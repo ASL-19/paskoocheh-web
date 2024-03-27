@@ -1,0 +1,76 @@
+.pk-blog-associated-tool-list-item {
+    display: inline-block;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+}
+.pk-blog-associated-tool-list-item .inner {
+    overflow: hidden;
+    width: 100%;
+    min-width: 180px;
+    max-width: 300px;
+}
+.pk-blog-associated-tool-list-item .link-underlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+.pk-blog-associated-tool-list-item .logo-sizing-container {
+    position: relative;
+    width: 30%;
+    display: inline-block;
+}
+.pk-blog-associated-tool-list-item .logo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+.pk-blog-associated-tool-list-item .name-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    width: 70%;
+    margin: 0 0.5em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.pk-blog-associated-tool-list-item .name {
+    color: #555;
+}
+/* Target minimum tool list item width is ~180px. The limiting factor is fitting
+longer tool titles into two lines without cutting off text. */
+@media (max-width: 43.99em) {
+    .pk-blog-associated-tool-list-item .inner {
+        min-width: 185px;
+    }
+    .pk-blog-associated-tool-list-item .logo-sizing-container {
+        width: 40%;
+    }
+    .pk-blog-associated-tool-list-item .name-wrapper {
+        width: 60%;
+    }
+}
+@media (max-width: 29.99em) {
+    .pk-blog-associated-tool-list-item .inner {
+        min-width: 175px;
+    }
+    .pk-blog-associated-tool-list-item .logo-sizing-container {
+        width: 35%;
+    }
+    .pk-blog-associated-tool-list-item .name-wrapper {
+        width: 65%;
+    }
+}
+@media (min-width: 160em) {
+    .pk-blog-associated-tool-list-item .inner {
+        min-width: 500px;
+        max-width: 600px;
+    }
+}
+

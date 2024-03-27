@@ -1,0 +1,18 @@
+{% load
+    pask_url
+%}<li class="title">
+    <a
+        class="link"
+        href="{% pask_url
+            'webfrontend:blogpost'
+            p_post_date=post_published_date_iso8601
+            p_post_slug=post.slug
+        %}"
+    >{{ post.title }} <span class="sub">(<time datetime="{{ post_published_datetime_iso8601 }}">
+        {% if app == 'zanga' %}
+            {{ post.published_date | date:'d/M/Y' }}
+        {% else %}
+            {{ post_published_date_jalali }}
+        {% endif %}
+    </time>)</span></a>
+</li>

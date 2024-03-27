@@ -1,0 +1,14 @@
+/*!
+ * Unicode Theme styling for bootstrap-star-rating.
+ * This file must be loaded after 'star-rating.css'.
+ */
+.theme-unicode .star {
+    font-size: 1.2em;
+    line-height: 1;
+    margin: 0;
+}
+
+.theme-unicode .clear-rating {
+    font-size: 1em;
+    line-height: 1;
+}

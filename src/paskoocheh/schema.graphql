@@ -1,0 +1,1514 @@
+"""
+Can only be resolved by authenticated users.
+
+When the condition fails, the following can be returned (following this priority):
+1) `OperationInfo`/`OperationMessage` if those types are allowed at the return type
+2) `null` in case the field is not mandatory (e.g. `String` or `[String]`)
+3) An empty list in case the field is a list (e.g. `[String]!`)
+4) An empty `Connection` in case the return type is a relay connection
+2) Otherwise, an error will be raised
+"""
+directive @isAuthenticatedConnection repeatable on FIELD_DEFINITION
+
+"""
+Can only be resolved by authenticated users.
+
+When the condition fails, the following can be returned (following this priority):
+1) `OperationInfo`/`OperationMessage` if those types are allowed at the return type
+2) `null` in case the field is not mandatory (e.g. `String` or `[String]`)
+3) An empty list in case the field is a list (e.g. `[String]!`)
+4) An empty `Connection` in case the return type is a relay connection
+2) Otherwise, an error will be raised
+"""
+directive @isAuthenticatedField repeatable on FIELD_DEFINITION
+
+"""
+Can only be resolved by authenticated users.
+
+When the condition fails, the following can be returned (following this priority):
+1) `OperationInfo`/`OperationMessage` if those types are allowed at the return type
+2) `null` in case the field is not mandatory (e.g. `String` or `[String]`)
+3) An empty list in case the field is a list (e.g. `[String]!`)
+4) An empty `Connection` in case the return type is a relay connection
+2) Otherwise, an error will be raised
+"""
+directive @isAuthenticatedMutation repeatable on FIELD_DEFINITION
+
+type AnswersBlock {
+  id: UUID!
+  value: GenericScalar
+  answer: String
+  correct: Boolean
+}
+
+type BlogIndexNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  title: String!
+  slug: String!
+  numchild: Int!
+  urlPath: String!
+  seoTitle: String!
+  searchDescription: String!
+  image: CaptionedImageNode!
+  description: String!
+}
+
+type BlogIndexNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [BlogIndexNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type BlogIndexNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: BlogIndexNode!
+}
+
+type CaptionedImageBlock {
+  id: UUID!
+  value: GenericScalar
+  image: CaptionedImageNode
+}
+
+type CaptionedImageNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  focalPointX: Int
+  focalPointY: Int
+  focalPointWidth: Int
+  focalPointHeight: Int
+  width: Int!
+  height: Int!
+  fileSize: Int
+  fileHash: String!
+  title: String!
+  file: String!
+  createdAt: DateTime!
+  rendition(max: String, min: String, width: Int, height: Int, fill: String, format: String, bgcolor: String, jpegquality: Int): ImageRendition
+  renditionList(sizes: [Int] = []): ImageRenditionList
+  tags: [FlatTags]
+  pk: Int!
+  caption: String!
+  credit: String!
+}
+
+type CaptionedImageNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [CaptionedImageNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type CaptionedImageNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: CaptionedImageNode!
+}
+
+type CategoryAnalysisNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  rating: Decimal!
+  ratingCategory: RatingCategoryNode
+}
+
+input CategoryRatingInput {
+  categorySlug: String!
+  rating: Decimal!
+}
+
+type CollapsibleBlock {
+  id: UUID!
+  value: GenericScalar
+  slug: String
+  heading: String
+  text: RichTextFieldType
+}
+
+"""Date (isoformat)"""
+scalar Date
+
+"""Date with time (isoformat)"""
+scalar DateTime
+
+"""Decimal (fixed-point)"""
+scalar Decimal
+
+type DocumentBlock {
+  id: UUID!
+  value: GenericScalar
+  document: DocumentNode
+}
+
+type DocumentNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  fileSize: Int
+  url: String
+  fileType: String
+  contentType: String
+  fileHash: String!
+  title: String!
+  file: String!
+  createdAt: DateTime!
+  tags: [FlatTags]
+}
+
+type DocumentNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [DocumentNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type DocumentNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: DocumentNode!
+}
+
+enum DownloadOptions {
+  S3
+  APPLE_APP_STORE
+  CHROME_WEB_STORE
+  GOOGLE_PLAY_STORE
+  MICROSOFT_STORE
+  MOZILLA_ADDONS_DIRECTORY
+  EXTERNAL_WEBSITE
+}
+
+type EarningMethodNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  earningMethod: RewardsEarningMethodEarningMethodEnum!
+  earningPoints: Int!
+  created: DateTime
+  updated: DateTime
+}
+
+type EmailBlock {
+  id: UUID!
+  value: GenericScalar
+}
+
+input EmbedFilter {
+  providerName: StrFilterLookup
+  AND: EmbedFilter
+  OR: EmbedFilter
+  NOT: EmbedFilter
+}
+
+type EmbedNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  cacheUntil: DateTime
+  hash: String
+  height: Int
+  html: String
+  lastUpdated: DateTime
+  maxWidth: Int
+  providerName: String
+  thumbnailUrl: String
+  title: String
+  type: String
+  url: String
+  width: Int
+}
+
+type EmbedNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [EmbedNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type EmbedNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: EmbedNode!
+}
+
+"\n     Errors messages and codes mapped to\n    fields or non fields errors.\n    Example:\n    {\n        field_name: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ],\n        other_field: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ],\n        nonFieldErrors: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ]\n    }\n    "
+scalar ExpectedError
+
+type FaqNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  language: ToolsFaqLanguageEnum!
+  headline: String
+  order: Int
+  publishable: Boolean!
+  version: VersionNode
+  body: String
+  tool: ToolNode
+  clickCount: Int!
+  video: String
+}
+
+type FaqNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [FaqNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type FaqNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: FaqNode!
+}
+
+""""""
+scalar FlatTags
+
+"""
+The GenericScalar scalar type represents a generic GraphQL scalar value that could be: List or Object.
+"""
+scalar GenericScalar
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+"""
+scalar GlobalID @specifiedBy(url: "https://relay.dev/graphql/objectidentification.htm")
+
+type GuideNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  language: ToolsGuideLanguageEnum!
+  headline: String
+  order: Int
+  publishable: Boolean!
+  version: VersionNode
+  body: String
+  slug: String
+  video: String
+}
+
+type GuideNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [GuideNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type GuideNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: GuideNode!
+}
+
+type ImageNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  focalPointX: Int
+  focalPointY: Int
+  focalPointWidth: Int
+  focalPointHeight: Int
+  width: Int!
+  height: Int!
+  fileSize: Int
+  fileHash: String!
+  title: String!
+  file: String!
+  createdAt: DateTime!
+  rendition(max: String, min: String, width: Int, height: Int, fill: String, format: String, bgcolor: String, jpegquality: Int): ImageRendition
+  renditionList(sizes: [Int] = []): ImageRenditionList
+  tags: [FlatTags]
+}
+
+type ImageNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [ImageNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type ImageNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: ImageNode!
+}
+
+type ImageRendition {
+  id: UUID!
+  url: String
+  width: Int
+  height: Int
+}
+
+type ImageRenditionList {
+  renditionList: [ImageRendition!]
+  srcSet: String
+}
+
+type InfoNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  language: ToolsInfoLanguageEnum!
+  name: String!
+  company: String!
+  publishable: Boolean!
+  tool: ToolNode
+  seoDescription: String!
+  description: String
+  promoText: String
+}
+
+type InfoNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [InfoNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type InfoNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: InfoNode!
+}
+
+type LinkBlock {
+  id: UUID!
+  value: GenericScalar
+}
+
+type MarkdownBlock {
+  id: UUID!
+  value: GenericScalar
+  markdown: RichTextFieldType
+  html: RichTextFieldType
+}
+
+type MinimalUserNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  username: String!
+  email: String!
+  purchasedApps(reviewed: Boolean): [VersionNode] @isAuthenticatedField
+  pin: Int! @isAuthenticatedField
+  pointsBalance: Int! @isAuthenticatedField
+  rewardsRecords(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null): RewardsRecordTypeConnection @isAuthenticatedConnection
+  referralSlug: String @isAuthenticatedField
+  hasFinishedQuiz(quizPk: Int!): Boolean! @isAuthenticatedField
+}
+
+type Mutation {
+  reportQuizResults(quizPk: Int!, won: Boolean! = false): MutationNormalOutput! @isAuthenticatedMutation
+  installOrUpdateApp(versionPk: Int!): MutationNormalOutput! @isAuthenticatedMutation
+  incrementClickCount(faqPk: Int!): MutationNormalOutput!
+  writeReview(rating: Decimal!, languageCode: String!, versionPk: Int!, subject: String = null, text: String = null, categoriesRatings: [CategoryRatingInput] = []): MutationNormalOutput! @isAuthenticatedMutation
+  voteReview(reviewPk: Int!, vote: ReviewVoteOptions!): MutationNormalOutput! @isAuthenticatedMutation
+  saveDownload(versionId: Int!, channelVersion: String!, downloadedVia: DownloadOptions!): MutationNormalOutput!
+  sendFeedback(platform: String!, email: String!, message: String!): MutationNormalOutput!
+
+  "Register user with fields defined in the settings. If the email field of\n    the user model is part of the registration fields (default), check if there\n    is no user with that email.\n\n    If it exists, it does not register the user, even if the email field\n    is not defined as unique (default of the default django user model).\n\n    When creating the user, it also creates a `UserStatus` related to\n    that user, making it possible to track if the user is archived /\n    verified.\n\n    Send account verification email.\n\n    If allowed to not verified users login, return token.\n    "
+  register(referralSlug: String, password1: String!, password2: String!, email: String!, username: String!): MutationNormalOutput!
+
+  "Send password reset email.\n\n    For non verified users, send an activation email instead.\n\n    If there is no user with the requested email, a successful response\n    is returned.\n    "
+  sendPasswordResetEmail(email: String!): MutationNormalOutput!
+
+  "Verify user account.\n\n    Receive the token that was sent by email. If the token is valid,\n    make the user verified by making the `user.status.verified` field\n    true.\n    "
+  verifyAccount(token: String!): MutationNormalOutput!
+
+  "Sends activation email.\n\n    It is called resend because theoretically the first activation email\n    was sent when the user registered.\n\n    If there is no user with the requested email, a successful response\n    is returned.\n    "
+  resendActivationEmail(email: String!): MutationNormalOutput!
+
+  "Change user password without old password.\n\n    Receive the token that was sent by email.\n\n    If token and new passwords are valid, update user password and in\n    case of using refresh tokens, revoke all of them.\n\n    Also, if user has not been verified yet, verify it.\n    "
+  passwordReset(newPassword1: String!, token: String!, newPassword2: String!): MutationNormalOutput!
+
+  "Change account password when user knows the old password.\n\n    A new token and refresh token are sent. User must be verified.\n    "
+  passwordChange(newPassword1: String!, oldPassword: String!, newPassword2: String!): ObtainJSONWebTokenType!
+
+  "Archive account and revoke refresh tokens.\n\n    User must be verified and confirm password.\n    "
+  archiveAccount(password: String!): MutationNormalOutput!
+
+  "Delete account permanently or make `user.is_active=False`.\n\n    The behavior is defined on settings. Anyway user refresh tokens are\n    revoked.\n\n    User must be verified and confirm password.\n    "
+  deleteAccount(password: String!): MutationNormalOutput!
+
+  "Update user model fields, defined on settings.\n\n    User must be verified.\n    "
+  updateAccount(lastName: String, firstName: String): MutationNormalOutput!
+
+  "Obtain JSON web token for given user.\n\n    Allow to perform login with different fields, The fields are defined\n    on settings.\n\n    Not verified users can log in by default. This can be changes on\n    settings.\n\n    If user is archived, make it unarchived and return\n    `unarchiving=True` on OutputBase.\n    "
+  tokenAuth(password: String!, username: String!): ObtainJSONWebTokenType!
+
+  "### Checks if a token is not expired and correct.\n\n    *Note that this is not for refresh tokens.*\n    "
+  verifyToken(token: String!): VerifyTokenType!
+
+  "### refreshToken to generate a new login token:\n\n    *Use this only if `JWT_LONG_RUNNING_REFRESH_TOKEN` is True*\n\n    using the refresh-token you already got during authorization, and\n    obtain a brand-new token (and possibly a new refresh token if you\n    revoked the previous). This is an alternative to log in when your\n    token expired.\n    "
+  refreshToken(revokeRefreshToken: Boolean!, refreshToken: String!): ObtainJSONWebTokenType!
+
+  "### Suspends a refresh token.\n\n    *token must exist to be revoked.*\n    "
+  revokeToken(refreshToken: String!): RevokeRefreshTokenType!
+
+  "\n    Mutation to update user avatar\n    "
+  updateAvatar(avatar: Upload): MutationNormalOutput!
+}
+
+type MutationNormalOutput {
+  success: Boolean!
+  errors: ExpectedError
+}
+
+"""An object with a Globally Unique ID"""
+interface Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+}
+
+"\n    encapsulates token data, and refresh token data if `JWT_LONG_RUNNING_REFRESH_TOKEN` is on.\n    with an output interface.\n    "
+type ObtainJSONWebTokenType implements OutputInterface {
+  success: Boolean!
+  errors: ExpectedError
+  user: UserType
+  token: TokenType
+  refreshToken: RefreshTokenType
+}
+
+input OffsetPaginationInput {
+  offset: Int! = 0
+  limit: Int! = -1
+}
+
+input OrderByPlatformInput {
+  platformSlug: String!
+  orderBy: String!
+}
+
+interface OutputInterface {
+  success: Boolean!
+  errors: ExpectedError
+}
+
+"""Information to aid in pagination."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type PlatformNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  name: String!
+  displayName: String!
+  displayNameFa: String
+  displayNameAr: String
+  slugName: String!
+  category: PreferencesPlatformCategoryEnum!
+  icon: String
+}
+
+type PlatformNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [PlatformNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type PlatformNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: PlatformNode!
+}
+
+union PostBody = TextBlock | MarkdownBlock | CaptionedImageBlock | DocumentBlock | CollapsibleBlock
+
+type PostNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  title: String!
+  slug: String!
+  numchild: Int!
+  urlPath: String!
+  seoTitle: String!
+  searchDescription: String!
+  published: Date!
+  featuredImage: CaptionedImageNode!
+  readTime: Float
+  synopsis: String
+  summary: String
+  topics: [TopicNode!]
+  body: [PostBody!]
+}
+
+type PostNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [PostNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type PostNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: PostNode!
+}
+
+enum PreferencesPlatformCategoryEnum {
+  """Desktop"""
+  d
+
+  """Mobile"""
+  m
+
+  """Web"""
+  w
+}
+
+type Query {
+  """Returns the current user if he is not anonymous."""
+  publicUser: UserType
+  me: MinimalUserNode @isAuthenticatedField
+  blogIndices(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null): BlogIndexNodeConnection
+  topic(locale: String!, slug: String!): TopicNode
+  topics(locale: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): TopicNodeConnection
+  post(locale: String!, slug: String!): PostNode
+  posts(locale: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String], topics: [String]): PostNodeConnection
+  blogIndex(locale: String!): BlogIndexNode
+  staticPage(locale: String!, slug: String!): StaticPageNode
+  staticPages(locale: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): StaticPageNodeConnection
+  quizIndex(locale: String!): QuizIndexNode
+  quizIndices(locale: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null): QuizIndexNodeConnection
+  quiz(slug: String!, locale: String!): QuizPageNode
+  quizzes(locale: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null): QuizPageNodeConnection
+  redemptionMethods(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null): RedemptionMethodNodeConnection
+  earningMethods: [EarningMethodNode!]
+  tool(pk: Int = null, slug: String = null): ToolNode
+  homePageFeaturedTool: ToolNode
+  tools(orderByPlatform: OrderByPlatformInput, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): ToolNodeConnection
+  version(platformSlug: String!, toolPk: Int = null, toolSlug: String = null): VersionNode
+  versions(toolPk: Int, featured: Boolean = false, platformSlug: String, category: String, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionNodeConnection
+  tempS3Url(versionPk: Int!): String
+  teamAnalysis(toolPk: Int = null, toolSlug: String = null): TeamAnalysisNode
+  faqs(toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): FaqNodeConnection
+  guides(platformSlug: String!, toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): GuideNodeConnection
+  tutorials(platformSlug: String!, toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): TutorialNodeConnection
+  info(toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): InfoNodeConnection
+  ratingCategory(slug: String!): RatingCategoryNode
+  ratingCategories(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): RatingCategoryNodeConnection
+  toolAverageRating(platformSlug: String!, toolPk: Int = null, toolSlug: String = null): VersionRatingNode
+  toolsRatings(platformSlug: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionRatingNodeConnection
+  toolTotalDownloads(platformSlug: String!, toolPk: Int = null, toolSlug: String = null): VersionDownloadNode
+  toolsDownloads(platformSlug: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionDownloadNodeConnection
+  userReviews(username: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionReviewNodeConnection
+  userToolReviews(username: String!, toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionReviewNodeConnection
+  toolReviews(toolPk: Int = null, toolSlug: String = null, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionReviewNodeConnection
+  toolsReviews(platformSlug: String!, before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionReviewNodeConnection
+  toolType(slug: String!): ToolTypeNode
+  platform(slug: String!): PlatformNode
+  toolTypes(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): ToolTypeNodeConnection
+  platforms(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): PlatformNodeConnection
+  captionedImage(pk: Int!): CaptionedImageNode
+  captionedImages(
+    """Returns the items in the list that come before the specified cursor."""
+    before: String = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    after: String = null
+
+    """Returns the first n items from the list."""
+    first: Int = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    last: Int = null
+  ): CaptionedImageNodeConnection!
+  document(pk: Int!): DocumentNode
+  documents(
+    """Returns the items in the list that come before the specified cursor."""
+    before: String = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    after: String = null
+
+    """Returns the first n items from the list."""
+    first: Int = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    last: Int = null
+  ): DocumentNodeConnection!
+  image(pk: Int!): ImageNode
+  images(
+    """Returns the items in the list that come before the specified cursor."""
+    before: String = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    after: String = null
+
+    """Returns the first n items from the list."""
+    first: Int = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    last: Int = null
+  ): ImageNodeConnection!
+  embed(pk: Int!): EmbedNode
+  embeds(
+    pagination: OffsetPaginationInput
+    filters: EmbedFilter
+
+    """Returns the items in the list that come before the specified cursor."""
+    before: String = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    after: String = null
+
+    """Returns the first n items from the list."""
+    first: Int = null
+
+    """Returns the items in the list that come after the specified cursor."""
+    last: Int = null
+  ): EmbedNodeConnection!
+}
+
+type QuestionBlock {
+  id: UUID!
+  value: String
+  question: String
+  answers: [AnswersBlock!]
+}
+
+type QuizIndexNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  title: String!
+  slug: String!
+  numchild: Int!
+  urlPath: String!
+  seoTitle: String!
+  searchDescription: String!
+  description: String!
+}
+
+type QuizIndexNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [QuizIndexNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type QuizIndexNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: QuizIndexNode!
+}
+
+type QuizPageNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  title: String!
+  slug: String!
+  numchild: Int!
+  urlPath: String!
+  seoTitle: String!
+  searchDescription: String!
+  questions: [QuestionBlock]
+}
+
+type QuizPageNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [QuizPageNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type QuizPageNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: QuizPageNode!
+}
+
+type RatingCategoryNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  name: String!
+  nameFa: String
+  nameAr: String
+  slug: String!
+}
+
+type RatingCategoryNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [RatingCategoryNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type RatingCategoryNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: RatingCategoryNode!
+}
+
+enum RecordTypeEnum {
+  EARNED
+  REDEEMED
+}
+
+type RedemptionMethodNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  redemptionMethodEn: String!
+  redemptionMethodFa: String!
+  redemptionPoints: Int!
+  created: DateTime
+  updated: DateTime
+}
+
+type RedemptionMethodNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [RedemptionMethodNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type RedemptionMethodNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: RedemptionMethodNode!
+}
+
+"\nRefresh token can be used to obtain a new token instead of log in again\nwhen the token expires.\n\n*This is only used if `JWT_LONG_RUNNING_REFRESH_TOKEN` is set to True.*\n"
+type RefreshTokenType {
+  """randomly generated token that is attached to a FK user."""
+  token: String!
+  created: DateTime!
+  revoked: DateTime
+  expiresAt: DateTime!
+  isExpired: Boolean!
+}
+
+enum ReviewVoteOptions {
+  UPVOTE
+  DOWNVOTE
+}
+
+type RevokeRefreshTokenType {
+  success: Boolean!
+  refreshToken: RefreshTokenType
+  errors: ExpectedError
+}
+
+enum RewardsEarningMethodEarningMethodEnum {
+  """App Review"""
+  review
+
+  """Weekly Challenge Completed"""
+  quiz_completed
+
+  """Weekly Challenge Won"""
+  quiz_won
+
+  """Apps Update"""
+  update
+
+  """Friend's Referral"""
+  referral
+}
+
+type RewardsRecordType {
+  id: GlobalID!
+  recordType: RecordTypeEnum!
+  points: Int!
+  description: String!
+  date: Date!
+}
+
+type RewardsRecordTypeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [RewardsRecordTypeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type RewardsRecordTypeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: RewardsRecordType!
+}
+
+"""Serialises RichText content into fully baked HTML"""
+scalar RichTextFieldType
+
+union StaticPageBody = TextBlock | CaptionedImageBlock | DocumentBlock | LinkBlock | EmailBlock | CollapsibleBlock
+
+type StaticPageNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  title: String!
+  slug: String!
+  numchild: Int!
+  urlPath: String!
+  seoTitle: String!
+  searchDescription: String!
+  published: Date!
+  image: CaptionedImageNode
+  body: [StaticPageBody!]
+}
+
+type StaticPageNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [StaticPageNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type StaticPageNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: StaticPageNode!
+}
+
+enum StatsVersionReviewLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+input StrFilterLookup {
+  exact: String
+  iExact: String
+  contains: String
+  iContains: String
+  inList: [String!]
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  startsWith: String
+  iStartsWith: String
+  endsWith: String
+  iEndsWith: String
+  range: [String!]
+  isNull: Boolean
+  regex: String
+  iRegex: String
+  nExact: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIExact: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nContains: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIContains: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nInList: [String!] @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nGt: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nGte: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nLt: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nLte: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nStartsWith: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIStartsWith: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nEndsWith: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIEndsWith: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nRange: [String!] @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIsNull: Boolean @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nRegex: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+  nIRegex: String @deprecated(reason: "The \"n\" prefix is deprecated and will be removed in the future, use `NOT` instead.\n")
+}
+
+type TeamAnalysisNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  review: String
+  pros: String
+  cons: String
+  tool: ToolNode
+  categoryAnalysis: [CategoryAnalysisNode]
+}
+
+type TextBlock {
+  id: UUID!
+  value: GenericScalar
+  text: RichTextFieldType
+}
+
+"\nthe data that was used to create the token.\n"
+type TokenPayloadType {
+  """when the token was created"""
+  origIat: DateTime!
+
+  """when the token will be expired"""
+  exp: DateTime!
+  username: String!
+}
+
+"\nencapsulates the token with the payload that was used to create the token.\n"
+type TokenType {
+  payload: TokenPayloadType!
+
+  """The encoded payload, namely a token."""
+  token: String!
+}
+
+type ToolImageNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  imageType: String
+  width: Int
+  height: Int
+  shouldDisplayFullBleed: Boolean!
+  order: Int!
+  publish: Boolean!
+  language: ToolsImageLanguageEnum
+  image: String!
+}
+
+type ToolNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime
+  created: DateTime
+  name: String!
+  lastUpdate: DateTime
+  trusted: Boolean!
+  featured: Boolean!
+  opensource: Boolean!
+  source: String
+  website: String
+  facebook: String
+  twitter: String
+  rss: String
+  blog: String
+  contactEmail: String
+  contactUrl: String
+  publishable: Boolean!
+  primaryTooltype: ToolTypeNode!
+  slug: String!
+  availablePlatforms: [String]
+  toolTypes: [ToolTypeNode]
+  images: [ToolImageNode]
+  versions(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionNodeConnection
+  teamAnalysis: TeamAnalysisNode
+  faqs(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): FaqNodeConnection
+  info(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): InfoNodeConnection
+}
+
+type ToolNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [ToolNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type ToolNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: ToolNode!
+}
+
+type ToolTypeNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  name: String!
+  nameFa: String
+  nameAr: String
+  slug: String!
+  icon: String
+}
+
+type ToolTypeNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [ToolTypeNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type ToolTypeNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: ToolTypeNode!
+}
+
+enum ToolsFaqLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+enum ToolsGuideLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+enum ToolsImageLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+enum ToolsInfoLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+enum ToolsTutorialLanguageEnum {
+  """English"""
+  en
+
+  """Persian"""
+  fa
+
+  """Arabic"""
+  ar
+}
+
+type TopicNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  name: String!
+  slug: String!
+}
+
+type TopicNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [TopicNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type TopicNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: TopicNode!
+}
+
+type TutorialNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  language: ToolsTutorialLanguageEnum!
+  video: String
+  videoLink: String
+  title: String!
+  order: Int!
+  publishable: Boolean!
+  version: VersionNode
+}
+
+type TutorialNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [TutorialNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type TutorialNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: TutorialNode!
+}
+
+scalar UUID
+
+scalar Upload
+
+type UserStatusType {
+  verified: Boolean!
+  archived: Boolean!
+}
+
+type UserType {
+  logentrySet: [Node!]!
+  isSuperuser: Boolean!
+  lastLogin: DateTime
+  isStaff: Boolean!
+  isActive: Boolean!
+  dateJoined: DateTime!
+  status: UserStatusType!
+  email: String!
+  id: GlobalID!
+  firstName: String
+  username: String!
+  lastName: String
+  archived: Boolean!
+  verified: Boolean!
+}
+
+type UserVote {
+  hasVoted: Boolean!
+  voteType: ReviewVoteOptions
+}
+
+type VerifyTokenType implements OutputInterface {
+  success: Boolean!
+  errors: ExpectedError
+  token: TokenType
+  user: UserType
+}
+
+type VersionCategoryRatingNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  starRating: Decimal!
+  ratingCategory: RatingCategoryNode
+}
+
+type VersionDownloadNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  lastModified: DateTime!
+  toolName: String
+  platformName: String
+  tool: ToolNode
+  downloadCount: Int!
+}
+
+type VersionDownloadNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [VersionDownloadNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type VersionDownloadNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: VersionDownloadNode!
+}
+
+type VersionNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  pk: Int!
+  lastModified: DateTime!
+  created: DateTime
+  versionNumber: String!
+  releaseDate: DateTime!
+  releaseJdate: String!
+  downloadUrl: String
+  releaseUrl: String
+  packageName: String
+  autoUpdate: Boolean!
+  permissions: String
+  guideUrl: String
+  faqUrl: String!
+  publishable: Boolean!
+  video: String
+  videoLink: String
+  isBundledApp: Boolean!
+  tool: ToolNode
+  platform: PlatformNode
+  deliveryEmail: String!
+  canGenerateTempS3Url: Boolean!
+  guides(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): GuideNodeConnection
+  tutorials(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): TutorialNodeConnection
+  downloadCount: Int
+  averageRating: VersionRatingNode
+  reviews(before: String = null, after: String = null, first: Int = null, last: Int = null, offset: Int = null, orderBy: [String]): VersionReviewNodeConnection
+}
+
+type VersionNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [VersionNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type VersionNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: VersionNode!
+}
+
+type VersionRatingNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  lastModified: DateTime!
+  toolName: String
+  platformName: String
+  tool: ToolNode
+  starRating: Decimal!
+  ratingCount: Int!
+}
+
+type VersionRatingNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [VersionRatingNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type VersionRatingNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: VersionRatingNode!
+}
+
+type VersionReviewNode implements Node {
+  """The Globally Unique ID of this object"""
+  id: GlobalID!
+  lastModified: DateTime!
+  toolName: String
+  platformName: String
+  tool: ToolNode
+  pk: Int!
+  subject: String
+  userId: String
+  text: String
+  username: String
+  rating: Decimal!
+  checked: Boolean!
+  toolVersion: String
+  timestamp: DateTime!
+  language: StatsVersionReviewLanguageEnum!
+  categoryRatings: [VersionCategoryRatingNode!]!
+  upvotes: Int!
+  downvotes: Int!
+  hasUserVoted(username: String!): UserVote!
+}
+
+type VersionReviewNodeConnection {
+  """Pagination data for this connection"""
+  pageInfo: PageInfo!
+
+  """Contains the nodes in this connection"""
+  edges: [VersionReviewNodeEdge!]!
+
+  """Total quantity of existing nodes."""
+  totalCount: Int
+  edgeCount: Int
+}
+
+"""An edge in a connection."""
+type VersionReviewNodeEdge {
+  """A cursor for use in pagination"""
+  cursor: String!
+
+  """The item at the end of the edge"""
+  node: VersionReviewNode!
+}

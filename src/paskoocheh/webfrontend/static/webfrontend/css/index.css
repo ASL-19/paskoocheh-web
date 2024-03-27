@@ -1,0 +1,16 @@
+.pk-homepage-centred {
+    display: block;
+    width: 100%;
+    max-width: 72em;
+    margin: 0 auto 1em auto;
+    padding: 2em 1em;
+    overflow: hidden;
+}
+.no-carousel {
+    padding: 6em 1em 2em;
+}
+@media (max-width: 44em) {
+    html.js-unsupported .no-carousel {
+        padding: 2em 1em 2em;
+    }
+}

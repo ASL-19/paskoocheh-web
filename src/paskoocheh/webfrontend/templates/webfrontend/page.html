@@ -1,0 +1,174 @@
+{% extends 'webfrontend/base.html' %}
+{% load i18n markdowntohtml pk_meta_tags static pask_url %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        {% if has_banner %}
+            <div class="banner {{ slug }}"></div>
+        {% endif %}
+        <main class="main pk-g-centred {% if has_banner %}pk-g-centred-less-top-padding{% endif %} pk-g-boxed-main pk-boxed-standalone pk-g-no-focus-outline">
+            <div class="pk-page columns-wrapper">
+                {% if has_social_media_sharelinks %}
+                    <div class="column column-1">
+                        <h1 id="main-heading" class="pk-g-page-heading page-heading about-heading hide-on-mobile">{{ title }}</h1>
+                        <div class="follow-label">{% trans 'Follow us:' context 'About' %}</div>
+                        <section class="social group">
+                            {% if twitter %}
+                                <a href="https://twitter.com/{{ twitter }}" class="social-link twitter pk-g-image-button" rel="noopener noreferrer">{% trans 'Twitter' context 'Footer' %}</a>
+                            {% endif %}
+                            {% if facebook %}
+                                <a href="https://www.facebook.com/{{ facebook }}/" class="social-link facebook pk-g-image-button" rel="noopener noreferrer">{% trans 'Facebook' context 'Footer' %}</a>
+                            {% endif %}
+                            {% if instagram %}
+                                <a href="https://www.instagram.com/{{ instagram }}/" class="social-link instagram pk-g-image-button" rel="noopener noreferrer">{% trans 'Instagram' context 'Footer' %}</a>
+                            {% endif %}
+                            {% if telegram %}
+                                <a href="https://telegram.me/{{ telegram }}" class="social-link telegram pk-g-image-button" rel="noopener noreferrer">{% trans 'Telegram' context 'Footer' %}</a>
+                            {% endif %}
+                        </section>
+                    </div>
+                {% endif %}
+                <article class="main-article {% if has_social_media_sharelinks %}column column-2{% endif %}">
+                    <h1 id="main-heading" class="pk-g-page-heading page-heading {% if has_social_media_sharelinks %}about-heading hide-on-desktop{% endif %}">{{ title }}</h1>
+                    {% if slug == 'contact' %}
+                    {% if display_contact_success %}
+                        {# Translators: Appears inside a box at the top of the page after a contact request has been submitted. #}
+                        <p class="success-message" role="alert">{% trans 'Contact request submitted successfully. We’ll get back to you soon!' context 'Contact form' %}</p>
+                    {% endif %}
+                        <form
+                            class="pk-form pk-form-validated"
+                            id="contact-form"
+                            action="{% pask_url 'webfrontend:page' p_slug='contact' %}"
+                            method="post"
+                        >
+
+                            <input
+                                class="pk-form-field email"
+                                data-pk-form-field-validate="true"
+                                name="email"
+                                type="email"
+                                id="contact-email"
+                                placeholder="{% trans 'E-mail address' context 'Contact form' %}"
+                            />
+
+                            <select
+                                class="pk-form-field country"
+                                name="country"
+                                id="contact-country"
+                            >
+                                <option value="" selected>{% trans 'Country (optional)' context 'Contact form' %}</option>
+                                {% if app == 'zanga' %}
+                                    {% include 'webfrontend/partials/country_options_ar.html' %}
+                                {% else %}
+                                    {% include 'webfrontend/partials/country_options_fa.html' %}
+                                {% endif %}
+                            </select>
+
+                            <textarea
+                                class="pk-form-field text"
+                                data-pk-form-field-validate="true"
+                                name="message"
+                                id="contact-message"
+                                rows="8"
+                                placeholder="{% trans 'Please describe your issue here...' context 'Contact form' %}"
+                            ></textarea>
+                            {% if nocookies %}
+                                <input type="hidden" name="nocookies" />
+                            {% endif %}
+                            <input type="hidden" name="type" value="contact" />
+                            <input type="hidden" name="csrfmiddlewaretoken" value="[csrf_token]">
+
+                            <input type="hidden" name="grecaptcha-type" value="invisible" />
+
+                            <button
+                                class="pk-button submit action"
+                                id="contact-submit"
+                                type="submit"
+                            >{% trans 'Submit' context 'Form' %}</button>
+                            <div
+                                class="pk-invisible-grecaptcha contact"
+                                data-pk-invisible-grecaptcha-form-slug="contact"
+                            ></div>
+                        </form>
+                    {% else %}
+
+                        <div class="html-content pk-html-content">
+                            {{ body_markdown|markdowntohtml }}
+                        </div>
+
+                        {% if app == 'paskoocheh' and slug == 'about' %}
+                            <div class="mascots-content">
+                                <h2>{% trans 'Paskoocheh team' context 'About page' %}</h2>
+                                <ul class="mascots-list">
+                                    <li>
+                                        <a class="wrapper-link no-underline" href="https://asl19.org/fa/">
+                                            <div class="image-sizing-container">
+                                                <img alt="بچه های اصل۱۹" src="{% static 'webfrontend/images/mascots/asl19.png' %}">
+                                            </div>
+                                            <h3>بچه‌های اصل۱۹</h3>
+                                        </a>
+                                        <p>پشتیبانی پس‌کوچه</p>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="wrapper-link no-underline"
+                                            href="/blog/"
+                                        >
+                                            <div class="image-sizing-container">
+                                                <img alt="روشن" src="{% static 'webfrontend/images/mascots/roshan.png' %}">
+                                            </div>
+                                            <h3>روشن</h3>
+                                        </a>
+                                        <p>مخالف سانسور</p>
+                                        <p>معلم پس‌کوچه</p>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="wrapper-link no-underline"
+                                            href="https://twitter.com/PasKoocheh"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <div class="image-sizing-container">
+                                                <img alt="سایه" src="{% static 'webfrontend/images/mascots/sayeh.png' %}">
+                                            </div>
+                                            <h3>سایه</h3>
+                                        </a>
+                                        <p>دستیار روشن</p>
+                                        <p>خبررسان پس‌کوچه</p>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="wrapper-link no-underline"
+                                            href="https://telegram.me/paskoochehbot"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <div class="image-sizing-container">
+                                                <img alt="روبات" src="{% static 'webfrontend/images/mascots/robot.png' %}">
+                                            </div>
+                                            <h3>روبات</h3>
+                                        </a>
+                                        <p>متخصص تلگرام بات</p>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="wrapper-link no-underline"
+                                            href="mailto:bia@paskoocheh.com"
+                                        >
+                                            <div class="image-sizing-container">
+                                                <img alt="آقای پستچی" src="{% static 'webfrontend/images/mascots/postchi.png' %}">
+                                            </div>
+                                            <h3>آقای پستچی</h3>
+                                        </a>
+                                        <p>مسئول ارسال ایمیلی</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    </article>
+            </div>
+        </main>
+    </div>
+{% endblock %}

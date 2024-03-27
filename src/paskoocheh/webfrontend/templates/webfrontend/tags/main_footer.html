@@ -1,0 +1,159 @@
+<div class="pk-main-footer pk-g-responsive-centring-container">{% load i18n pask_url static %}
+    <footer class="columns-container">
+        <div class="column column-1">
+            <section class="group">
+                {% if app == 'zanga' %}
+                    <div class="zanga group">
+                        <a class="zanga-logo-link" href="https://zanga.tech">
+                            <img class="zanga-logo" src="{% static 'webfrontend/images/zanga-logo-white.svg' %}" alt="{% trans 'Zanga' context 'Footer' %}" />
+                            <span class="logo-text" aria-hidden="true">{% trans 'Paskoocheh' %}</span>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="asl19 group">
+                        <h2 class="heading">{% trans 'A project by' context 'Footer heading' %}</h2>
+                        <a class="asl19-logo-link" href="https://asl19.org/fa/">
+                            <img class="asl19-logo" src="{% static 'webfrontend/images/asl19-logo-white.svg' %}" alt="{% trans 'ASL19' context 'Footer' %}" />
+                        </a>
+                    </div>
+                {% endif %}
+                <h2 class="heading">{% trans 'Register for the Paskoocheh mailing list' context 'Footer heading' %}</h2>
+                <form class="subscribe-form" action="{{ EMAIL_LIST_URL }}" method="post">
+                    <input
+                        {# Translators: E-mail address field accessibility label #}
+                        aria-label="{% trans 'E-mail address' context 'Footer mailing list form' %}"
+                        class="input-email"
+                        name="EMAIL"
+                        {# Translators: E-mail address field placeholder text #}
+                        placeholder="{% trans 'Enter your e-mail address' context 'Footer mailing list form' %}"
+                        type="email"
+                    />
+                    <input type="hidden" name="{{ EMAIL_LIST_HIDDEN }}" tabindex="-1" aria-hidden="true" value="">
+                    {# Translators: Mailing list sign-up submit button #}
+                    <button type="submit" class="button-submit pk-button">{% trans 'Register' context 'Footer mailing list form' %}</button>
+                </form>
+            </section>
+
+            <section class="social group">
+                {% if telegram %}
+                    <a href="https://telegram.me/{{ telegram }}" class="social-link telegram pk-g-image-button" rel="noopener noreferrer">{% trans 'Telegram' context 'Footer' %}</a>
+                {% endif %}
+                {% if instagram %}
+                    <a href="https://www.instagram.com/{{ instagram }}/" class="social-link instagram pk-g-image-button" rel="noopener noreferrer">{% trans 'Instagram' context 'Footer' %}</a>
+                {% endif %}
+                {% if facebook %}
+                    <a href="https://www.facebook.com/{{ facebook }}/" class="social-link facebook pk-g-image-button" rel="noopener noreferrer">{% trans 'Facebook' context 'Footer' %}</a>
+                {% endif %}
+                {% if twitter %}
+                    <a href="https://twitter.com/{{ twitter }}" class="social-link twitter pk-g-image-button" rel="noopener noreferrer">{% trans 'Twitter' context 'Footer' %}</a>
+                {% endif %}
+            </section>
+        </div>
+
+        <div class="v-line hide-on-tablet hide-on-mobile"></div>
+
+        <div class="column column-2">
+            <section class="about group">
+                {# Translators: Hidden accessibility heading above the page links (second column) #}
+                <h2 class="heading">{% trans 'About Paskoocheh' context 'Footer heading' %}</h2>
+                <a
+                    href="{% pask_url 'webfrontend:blogposts' %}"
+                    class="deemphasized-link"
+                    {% if current_view_name == 'blogindex' %}
+                        aria-current="page"
+                    {% endif %}
+                >{% trans 'Blog' context 'Navigation' %}</a>
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='about' %}"
+                    class="deemphasized-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'about' %}
+                        aria-current="page"
+                    {% endif %}
+                >{% trans 'About' context 'Navigation' %}</a>
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='terms-of-service' %}"
+                    class="deemphasized-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'terms-of-service' %}
+                        aria-current="page"
+                    {% endif %}
+                >{% trans 'Terms of service' context 'Navigation' %}</a>
+                <a
+                href="{% pask_url 'webfrontend:page' p_slug='privacy-policy' %}"
+                class="deemphasized-link"
+                {% if current_view_name == 'page' and current_page_slug == 'privacy-policy' %}
+                    aria-current="page"
+                {% endif %}
+                >{% trans 'Privacy policy' context 'Navigation' %}</a>
+            </section>
+        </div>
+
+        <div class="v-line hide-on-tablet hide-on-mobile"></div>
+
+        <div class="column column-3">
+            {% if app == 'zanga' %}
+                <section class="group">
+                    <h2 class="heading">{% trans 'Download apps through' context 'Footer heading' %}</h2>
+                    <a href="https://telegram.me/zangatech_bot" rel="noopener noreferrer" class="deemphasized-link">{% trans 'Our Telegram Bot' context 'Footer Telegram link' %}</a>
+                    <a href="mailto:ezzanga@zanga.tech" class="deemphasized-link">{% trans 'Our Email Responder' context 'Footer email link' %}</a>
+                </section>
+            {% else %}
+                <section class="group">
+                    <h2 class="heading">{% trans 'Download apps through' context 'Footer heading' %}</h2>
+                    <a href="https://telegram.me/paskoochehbot" rel="noopener noreferrer" class="deemphasized-link">{% trans 'Our Telegram Bot' context 'Footer Telegram link' %}</a>
+                    <a href="mailto:bia@paskoocheh.com" class="deemphasized-link">{% trans 'Our Email Responder' context 'Footer email link' %}</a>
+                </section>
+            {% endif %}
+
+            <section class="contact-us group">
+                {% if support_email %}
+                    <h2 class="heading">{% trans 'Contact us' context 'Footer heading' %}</h2>
+                    <a href="mailto:{{ support_email }}" class="deemphasized-link">{{ support_email }}</a>
+                {% endif %}
+            </section>
+        </div>
+
+        <div class="v-line hide-on-mobile hide-on-tablet"></div>
+
+        <div class="column column-4">
+            {% if app != 'zanga' %}
+                <section class="download group">
+                    <a href="{% pask_url 'webfrontend:toolversion' p_tool_id='42' p_platform_slug='android' %}">
+                        <button
+                            class="android-download-button"
+                            {% if current_view_name == 'blogindex' %}
+                                aria-current="page"
+                            {% endif %}
+                        >{% trans 'Download App' context 'Footer button' %}</button>
+                    </a>
+                </section>
+            {% endif %}
+
+            {% if app == 'zanga' %}
+                <section class="license group">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ar" class="cc-link" rel="noopener noreferrer">
+                        <img class="license-logo" src="{% static 'webfrontend/images/footer-assets/by-nc-sa.svg' %}" alt="{% trans 'Creative Commons' context 'Footer license' %}" />
+                    </a>
+
+                    <div class="license-info">
+                        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ar"></a>{% trans 'This work is licensed under ' context 'Footer license' %} <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ar"> {% trans 'a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.' context 'Footer license' %}</a>
+                    </div>
+                </section>
+            {% else %}
+                <section class="license group">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fa" class="cc-link" rel="noopener noreferrer">
+                        <img class="license-logo" src="{% static 'webfrontend/images/footer-assets/by-nc-sa.svg' %}" alt="{% trans 'Creative Commons' context 'Footer license' %}" />
+                    </a>
+
+                    <div class="license-info">
+                        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fa"></a>{% trans 'This work is licensed under ' context 'Footer license' %} <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fa"> {% trans 'a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.' context 'Footer license' %}</a>
+                    </div>
+                </section>
+            {% endif %}
+        </div>
+
+        <div class="rights hide-on-desktop show-on-mobile show-on-tablet">
+            <hr>
+            <span>{% trans '©2020 - Paskoocheh  |  All right reserved' context 'Footer rights' %}</span>
+        </div>
+    </footer>
+</div>

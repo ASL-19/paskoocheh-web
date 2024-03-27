@@ -1,0 +1,224 @@
+.pk-mobile-menu-background {
+    visibility: hidden;
+    z-index: 100;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    /* Height is >100% to avoid gaps showing up on mobile browsers when visible
+       viewport changes (e.g. Android Chrome toolbar scrolls away, iOS Safari
+       toolbar shifts, etc.). This shouldn’t have any downside. */
+    height: 150%;
+    background-color: rgba(44, 44, 44, 0);
+    -webkit-backdrop-filter: none;
+    -moz-backdrop-filter: none;
+    -ms-backdrop-filter: none;
+    backdrop-filter: none;
+    -webkit-transition-property: background-color, -webkit-backdrop-filter, -moz-backdrop-filter, -ms-backdrop-filter, backdrop-filter;
+    transition-property: background-color, -webkit-backdrop-filter, -moz-backdrop-filter, -ms-backdrop-filter, backdrop-filter;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.pk-mobile-menu {
+    position: absolute;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 300;
+    right: 0;
+    top: 4em;
+    width: 100%;
+    padding: 0;
+    background-color: #f2f5f7;
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    text-align: center;
+}
+.pk-mobile-menu.component-initialized {
+    -webkit-transition: -webkit-transform 0.4s, transform 0.4s;
+    transition: -webkit-transform 0.4s, transform 0.4s;
+}
+.pk-mobile-menu hr {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #d5d5d5;
+}
+.pk-mobile-menu .separator {
+    margin: 0.5em 0;
+}
+@media (max-width: 61.99em) {
+    .pk-mobile-menu {
+        display: block;
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    html.js-unsupported .pk-mobile-menu {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: auto;
+        min-height: initial;
+        right: initial;
+        top: initial;
+        padding: 0;
+        border-top: none;
+    }
+    html.js-supported:not(.mobile-menu-visible) .pk-mobile-menu {
+        -ms-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    html.js-supported .pk-mobile-menu-background.visible {
+        visibility: visible;
+    }
+    html.js-supported.mobile-menu-visible .pk-mobile-menu-background {
+        background-color: rgba(44, 44, 44, 0.85);
+        -webkit-backdrop-filter: blur(5px);
+        -moz-backdrop-filter: blur(5px);
+        -ms-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    html.js-unsupported .pk-mobile-menu .menu-list-item {
+        width: auto;
+    }
+    html.js-unsupported .pk-mobile-menu .menu-section:last-of-type {
+        margin-bottom: 0.5rem;
+    }
+    html.js-unsupported .pk-toolversion .pk-mobile-menu .menu-section:last-of-type .menu-list {
+        padding-bottom: 0;
+    }
+}
+.pk-mobile-menu .main-heading,
+.pk-mobile-menu .section-heading,
+.pk-mobile-menu a,
+.pk-mobile-menu p {
+    margin: 0 0 1rem 0;
+    padding: 0 1rem 0 1rem;
+    color: #505d68;
+    font-weight: bold;
+}
+.pk-mobile-menu .menu-section {
+    width: 100%;
+}
+.pk-mobile-menu .section-heading {
+    height: 4rem;
+    line-height: 4rem;
+    margin: 0;
+}
+.pk-mobile-menu .menu-list,
+.pk-mobile-menu .menu-list-item,
+.pk-mobile-menu .menu-list-item-link {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.pk-mobile-menu .menu-list {
+    list-style-type: none;
+}
+.pk-mobile-menu .menu-list-item-link {
+    height: 3em;
+    line-height: 3em;
+    margin: 0;
+    padding: 0 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pk-mobile-menu .menu-list-item-link[aria-current='page'],
+.pk-mobile-menu .menu-list-item-link:hover {
+    border-right: 6px solid #87ceff;
+}
+.pk-mobile-menu .pk-expandable-list {
+    margin: 0;
+    border-bottom: 1px solid #d5d5d5;
+}
+.pk-mobile-menu .pk-expandable-list .mobile.link {
+    position: relative;
+    display: block;
+    float: right;
+    width: 100%;
+    top: unset;
+    min-height: 2rem;
+}
+.pk-mobile-menu .pk-expandable-list .mobile.link.toggle::after {
+    content: ' ';
+    position: absolute;
+    left: 5em;
+    top: 0.55em;
+    width: 2em;
+    background-size: 1.5em auto;
+    background-image: url('../images/icons/ic-chevron-up-grey.svg');
+    transform: rotateZ(180deg);
+}
+.pk-mobile-menu .pk-expandable-list .mobile.link.toggle.app-category-link::after {
+    left: 6.5em;
+}
+.pk-mobile-menu .pk-expandable-list .mobile.link.toggle[aria-expanded="true"]::after {
+    transform: rotateZ(0deg);
+}
+.pk-expandable-list hr {
+    width: 100%;
+    height: 1px;
+    background-color: #d5d5d5;
+    border: none;
+}
+.pk-mobile-menu .pk-expandable-list .body {
+    background-color: #fff;
+    padding: 1em 0.5em;
+    margin-bottom: 0;
+}
+.pk-mobile-menu .pk-expandable-list .body.open {
+    border-top: 1px solid #d5d5d5;
+}
+.menu-list-item .expanded-nav-link {
+    display: flex;
+}
+.menu-list-item .expanded-nav-link[aria-current='page'],
+.menu-list-item .expanded-nav-link:hover {
+    border-right: unset;
+    border-bottom: 3px solid #87ceff;
+    border-image: linear-gradient(to left, #87ceff 40%, rgba(0, 0, 0, 0) 40%); /* to left - at 30% transparent */
+    border-image-slice: 1;
+}
+.pk-mobile-menu .pk-expandable-list .body.open p,
+.pk-mobile-menu .pk-expandable-list .body.open a {
+    font-weight: normal;
+    text-align: right;
+    margin-bottom: 0;
+}
+.menu-list-item .menu-list-item .item-thumbnail-container {
+    height: 2.5em;
+    width: 2.5em;
+    position: relative;
+    display: block;
+}
+.menu-list-item .item-thumbnail-container.platform-icon {
+    background-color: unset;
+    border-radius: unset;
+    height: 2.5em;
+    width: 2.5em;
+    position: relative;
+    display: block;
+    margin: 0;
+}
+.menu-list-item .item-thumbnail-container.app-category-icon {
+    background-color: #eee;
+    border-radius: 2em;
+    height: 2.5em;
+    width: 2.5em;
+    position: relative;
+    display: block;
+    margin: 0 0 0 0.5em;
+}
+.menu-list-item .item-thumbnail {
+    height: 1.5em;
+}
+.pk-mobile-menu #platform-list p {
+    margin: 0;
+}
+.pk-mobile-menu #platform-list .platform-category-label {
+    margin: 0.5em 0;
+}

@@ -1,0 +1,33 @@
+{% extends 'webfrontend/base.html' %}
+{% load pk_meta_tags toolversion_main toolversion_review_overlay toolversion_support_overlay %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container container pk-g-main-container">
+        {% toolversion_main
+            display_review_success=display_review_success
+            display_support_success=display_support_success
+            tool=tool
+            tool_info=tool_info
+            tool_logo=tool_logo
+            tool_name_localized=tool_name_localized
+            tool_screenshots=tool_screenshots
+            tool_version=tool_version
+            tool_versions=tool_versions
+            version_name_localized=version_name_localized
+        %}
+        {% toolversion_review_overlay
+            tool=tool
+            tool_logo=tool_logo
+            version=tool_version
+            version_name_localized=version_name_localized
+        %}
+        {% toolversion_support_overlay
+            tool=tool
+            tool_logo=tool_logo
+            version=tool_version
+            version_name_localized=version_name_localized
+        %}
+    </div>
+{% endblock %}

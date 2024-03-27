@@ -1,0 +1,419 @@
+.pk-main-footer {
+    position: relative;
+    width: 100%;
+    min-height: 230px;
+    background-color: #1b3a6b;
+    padding: 1.5em 0;
+}
+.pk-main-footer .columns-container {
+    display: table;
+    margin: 0 2em;
+}
+.pk-main-footer .column {
+    padding: 1rem;
+    display: table-cell;
+    vertical-align: top;
+}
+.pk-main-footer .column-1 {
+    width: 28%;
+}
+.pk-main-footer .column-2 {
+    width: 15%;
+}
+.pk-main-footer .column-3 {
+    width: 15%;
+}
+.pk-main-footer .column-4 {
+    width: 22.5%;
+}
+.pk-main-footer .group {
+    display: block;
+    float: right;
+    width: 100%;
+}
+.pk-main-footer .group:last-child {
+    margin-bottom: 0;
+}
+.pk-main-footer .heading {
+    font-size: 1em;
+    float: right;
+    clear: right;
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+    font-weight: bold;
+    color: #fff;
+}
+.pk-main-footer .emphasized-link,
+.pk-main-footer .deemphasized-link {
+    float: right;
+    clear: right;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.pk-main-footer .emphasized-link {
+    color: #fff;
+    font-weight: bold;
+    margin: 1em;
+}
+.pk-main-footer .deemphasized-link {
+    color: #fff;
+    width: 100%;
+    margin: 0.3em 0.5em;
+}
+.pk-main-footer .contact-us {
+    margin-top: 2em;
+}
+.pk-main-footer .social-link {
+    float: right;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 0 0.5em 0.5em;
+}
+.pk-main-footer .heading + .social-link {
+    clear: right;
+}
+.pk-main-footer .social-link:last-of-type {
+    margin-left: 0;
+}
+.pk-main-footer .social-link.telegram {
+    background-image: url('../images/footer-assets/ic-telegram.svg');
+}
+.pk-main-footer .social-link.twitter {
+    background-image: url('../images/footer-assets/ic-twitter.svg');
+}
+.pk-main-footer .social-link.facebook {
+    background-image: url('../images/footer-assets/ic-facebook-f.svg');
+}
+.pk-main-footer .social-link.instagram {
+    background-image: url('../images/footer-assets/ic-instagram.svg');
+}
+.pk-main-footer .subscribe-form {
+    float: right;
+    clear: right;
+    width: 100%;
+    max-width: 22.5em;
+}
+.pk-main-footer .subscribe-form .input-email,
+.pk-main-footer .subscribe-form .button-submit {
+    float: right;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 0;
+    margin-bottom: 2em;
+}
+.pk-main-footer .subscribe-form .input-email {
+    width: 12em;
+    padding: 0 0.5em 0 0;
+    border: 1px solid rgb(213, 213, 213);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.pk-main-footer .subscribe-form .input-email::placeholder {
+    color: #666;
+}
+.pk-main-footer .subscribe-form .button-submit {
+    width: 8.5em;
+    background-color: #287cfc;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    padding: 0 0.5em;
+}
+.pk-main-footer .about {
+    margin-bottom: 0;
+}
+.pk-main-footer .about .page-link {
+    margin-bottom: 1rem;
+}
+.pk-main-footer .asl19 .asl19-logo-link {
+    margin-bottom: 1em;
+}
+.pk-main-footer .asl19 .asl19-logo {
+    width: 25%;
+}
+.pk-main-footer .android-download-button {
+    color: #fff;
+    border-radius: 10px;
+    min-width: 90%;
+    margin-bottom: 2em;
+    cursor: pointer;
+    line-height: 20px;
+    height: 2.5em;
+    background-color: #287cfc;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-position: calc(100% - 2em) 50%;
+    background-size: auto 75%;
+}
+.pk-main-footer .android-download-button:hover {
+    background-color: #1b75ba;
+}
+.pk-main-footer .android-download-button:focus {
+    border: 2px solid #1b75ba;
+    border-radius: 10px;
+}
+.pk-main-footer .cc-link {
+    cursor: pointer;
+    position: relative;
+}
+.pk-main-footer .license-info {
+    direction: rtl;
+    color: #fff;
+    text-align: right;
+}
+.pk-main-footer .license-info a {
+    color: #287cfc;
+}
+.pk-main-footer .v-line {
+    height: 14.5em;
+    background-color: #fff;
+    width: 1px;
+    margin: auto;
+}
+.pk-main-footer .rights {
+    direction: rtl;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+.pk-main-footer .hide-on-desktop {
+    display: none;
+}
+
+@supports (width: calc(100% - 64px)) {
+    .pk-main-footer .subscribe-form .input-email {
+        width: calc(100% - 8.5em);
+        border-left: none;
+        border-top-right-radius: 0.2em;
+        border-bottom-right-radius: 0.2em;
+    }
+    .pk-main-footer .subscribe-form .button-submit {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+}
+/* stylelint-disable indentation  */
+@media (min-width: 928px) and (max-width: 1024px) {
+    .pk-main-footer {
+        padding-bottom: 0;
+    }
+    .pk-main-footer .columns-container {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+    }
+    .pk-main-footer .column {
+        width: 100%;
+        text-align: center;
+    }
+    .pk-main-footer .column-1 {
+        min-width: 200px;
+    }
+    .pk-main-footer .asl19 .asl19-logo {
+        width: 12.5%;
+    }
+    .pk-main-footer .subscribe-form {
+        float: none;
+        margin: auto;
+    }
+    section.social.group {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+    }
+    .pk-main-footer .android-download-button {
+        display: block;
+        margin: 0 auto 2em;
+        min-width: 50%;
+    }
+    .pk-main-footer .column-3 {
+        float: left;
+    }
+    .pk-main-footer .heading {
+        text-align: center;
+    }
+    .pk-main-footer .deemphasized-link {
+        width: 100%;
+        text-align: center;
+        margin: 0.3em 0;
+    }
+    .pk-main-footer .emphasized-link .deemphasized-link {
+        width: 100%;
+        text-align: center;
+    }
+    section.license.group {
+        width: 100%;
+    }
+    .pk-main-footer .license-logo {
+        width: 12.5%;
+    }
+    .pk-main-footer .license-info {
+        text-align: center;
+    }
+    .pk-main-footer .rights {
+        margin-bottom: 1em;
+    }
+
+    .pk-main-footer .hide-on-tablet {
+        display: none;
+    }
+    .pk-main-footer .show-on-tablet {
+        display: block;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 927px) {
+    .pk-main-footer {
+        padding-bottom: 0;
+    }
+    .pk-main-footer .columns-container {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+    }
+    .pk-main-footer .column {
+        width: 100%;
+        text-align: center;
+    }
+    .pk-main-footer .column-1 {
+        min-width: 200px;
+    }
+    .pk-main-footer .asl19 .asl19-logo {
+        width: 12.5%;
+    }
+    .pk-main-footer .subscribe-form {
+        float: none;
+        margin: auto;
+    }
+    section.social.group {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+    }
+    .pk-main-footer .android-download-button {
+        display: block;
+        margin: 0 auto 2em;
+        min-width: 50%;
+    }
+    .pk-main-footer .column-3 {
+        float: left;
+    }
+    .pk-main-footer .heading {
+        text-align: center;
+    }
+    .pk-main-footer .deemphasized-link {
+        width: 100%;
+        text-align: center;
+        margin: 0.3em 0;
+    }
+    .pk-main-footer .emphasized-link .deemphasized-link {
+        width: 100%;
+        text-align: center;
+    }
+    .pk-main-footer .license-logo {
+        width: 12.5%;
+    }
+    .pk-main-footer .license-info {
+        text-align: center;
+    }
+    .pk-main-footer .rights {
+        margin-bottom: 1em;
+    }
+    .pk-main-footer .hide-on-tablet {
+        display: none;
+    }
+    .pk-main-footer .show-on-tablet {
+        display: block;
+    }
+}
+/* stylelint-enable */
+@media (max-width: 639px) {
+    .pk-main-footer {
+        padding-top: 1.5em;
+        padding-bottom: 0;
+    }
+    .pk-main-footer .heading {
+        font-size: 1.1em;
+    }
+    .pk-main-footer .columns-container {
+        display: grid;
+        margin: 0;
+    }
+    .pk-main-footer .column {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 1rem;
+    }
+    .pk-main-footer .emphasized-link,
+    .pk-main-footer .deemphasized-link,
+    .pk-main-footer .subscribe-form,
+    .pk-main-footer .social-link,
+    .pk-main-footer .asl19 .asl19-logo-link {
+        display: inline-block;
+        float: none;
+        clear: none;
+    }
+    .pk-main-footer .emphasized-link {
+        width: 75%;
+        margin: 5px;
+    }
+    .pk-main-footer .deemphasized-link {
+        margin: 0.3em 0;
+    }
+    .pk-main-footer .about {
+        margin-bottom: 0;
+    }
+    .pk-main-footer .about .page-link {
+        margin: 0 0.75rem 1rem 0.75rem;
+        width: 100%;
+    }
+    .pk-main-footer .android-download-button {
+        width: 60%;
+    }
+    .pk-main-footer .rights {
+        margin-bottom: 1em;
+    }
+    .pk-main-footer hr {
+        color: #fff;
+        width: 100%;
+        border-top: 0;
+        margin: 1em 0;
+    }
+    .pk-main-footer .hide-on-mobile {
+        display: none;
+    }
+    .pk-main-footer .show-on-mobile {
+        display: block;
+    }
+    .pk-main-footer .download-button {
+        width: 60%;
+    }
+    .pk-main-footer .license .group {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pk-main-footer .license-info {
+        padding-right: 7.5%;
+    }
+}
+
+@media (min-width: 160em) { /* 2560px */
+    .pk-main-footer .license-logo {
+        width: 20%;
+    }
+}

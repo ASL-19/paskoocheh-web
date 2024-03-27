@@ -1,0 +1,255 @@
+.banner {
+    height: 0;
+    padding-bottom: 22.5%;
+    margin-top: 4em;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.banner.about {
+    background-image: url('../images/banners/paskoocheh-about-us-banner-desktop.png');
+}
+.banner.contact {
+    background-image: url('../images/banners/paskoocheh-contact-us-banner-desktop.png');
+}
+html.js-unsupported .banner {
+    margin-top: 6em;
+}
+.pk-page .page-heading {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0 !important;
+}
+.pk-page h3,
+.pk-page h4,
+.pk-page h5,
+.pk-page h6 {
+    font-size: 1rem;
+}
+.pk-page .html-content {
+    width: 100%;
+}
+.pk-page .mascots-content {
+    float: right;
+    width: 100%;
+    margin-top: 1rem;
+}
+.pk-page .mascots-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: calc(100% + 1rem);
+    margin-right: -0.5rem;
+    float: right;
+    display: block;
+}
+.pk-page .mascots-list li {
+    float: right;
+    width: 20%;
+    width: calc(96% / 5);
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+.pk-page .mascots-list li .wrapper-link {
+    float: right;
+    width: 100%;
+}
+.pk-page .mascots-list .image-sizing-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-bottom: 0.5rem;
+}
+.pk-page .mascots-list .image-sizing-container img {
+    display: block;
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+}
+.pk-page .mascots-list h3 {
+    float: none;
+    clear: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    color: #1a396e;
+}
+.pk-page .mascots-list p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+}
+.pk-page.columns-wrapper {
+    display: table;
+    margin: 0 auto;
+}
+.pk-page.columns-wrapper .column {
+    display: table-cell;
+    margin: 1rem 0;
+    vertical-align: top;
+}
+.pk-page.columns-wrapper .column-1 {
+    width: 28%;
+    min-width: 10em;
+    position: relative;
+}
+.pk-page.columns-wrapper .column-2 {
+    margin-right: 2em;
+}
+.pk-page .main-article {
+    float: none;
+}
+.follow-label {
+    display: inline-block;
+}
+.pk-page.columns-wrapper .column.column-1 .social.group {
+    display: inline-block;
+    position: relative;
+    top: 0.25em;
+}
+.pk-page.columns-wrapper .social-link {
+    float: right;
+    width: 1.5em;
+    margin: 0 0 0 0.5em;
+    background-size: 100%;
+}
+.pk-page.columns-wrapper .social-link:last-of-type {
+    margin-left: 0;
+}
+.pk-page.columns-wrapper .social-link.telegram {
+    background-image: url('../images/icons/ic-telegram.svg');
+}
+.pk-page.columns-wrapper .social-link.twitter {
+    background-image: url('../images/icons/ic-twitter.svg');
+}
+.pk-page.columns-wrapper .social-link.facebook {
+    background-image: url('../images/icons/ic-facebook-f.svg');
+}
+.pk-page.columns-wrapper .social-link.instagram {
+    background-image: url('../images/icons/ic-instagram.svg');
+}
+.pk-page .about-heading.hide-on-mobile {
+    display: block;
+}
+.pk-page .about-heading.hide-on-desktop {
+    display: none;
+}
+.pk-page .pk-form textarea {
+    float: none;
+}
+.pk-page .pk-form .pk-button.submit {
+    float: none;
+    display: block;
+    margin: 0 auto;
+}
+.pk-page.columns-wrapper .success-message {
+    background-color: #d0f9d0;
+    padding: 0.5em;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+@media (max-width: 39.99em) and (min-width: 22em) {
+    .banner {
+        padding-bottom: 45%;
+    }
+    .banner.about {
+        background-image: url('../images/banners/paskoocheh-about-us-banner-mobile.png');
+    }
+    .banner.contact {
+        background-image: url('../images/banners/paskoocheh-contact-us-banner-mobile.png');
+    }
+    html.js-unsupported .banner {
+        margin-top: 0;
+    }
+    .pk-page.columns-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    .pk-page.columns-wrapper .column {
+        display: block;
+        width: 100%;
+    }
+    .pk-page.columns-wrapper .column-1 {
+        min-width: 200px;
+        position: relative;
+        top: 0;
+        margin: 0 0 1.5em 0;
+    }
+    .pk-page.columns-wrapper .column-2 {
+        width: 100%;
+        margin: 0;
+    }
+    .pk-page.columns-wrapper .social.group {
+        height: 24px;
+        padding-top: 6px;
+    }
+    .pk-page.columns-wrapper .social-link {
+        height: 24px;
+        width: 2.5em;
+        background-size: 24px;
+    }
+    .pk-page .mascots-list li {
+        width: 33%;
+        width: calc(100% / 3);
+    }
+    .pk-page .mascots-list li:nth-child(3n + 1) {
+        clear: right;
+    }
+    .pk-page .about-heading.hide-on-mobile {
+        display: none;
+    }
+    .pk-page .about-heading.hide-on-desktop {
+        display: block;
+    }
+}
+@media (max-width: 21.99em) {
+    .banner {
+        padding-bottom: 55%;
+    }
+    .banner.about {
+        background-image: url('../images/banners/paskoocheh-about-us-banner-mobile.png');
+    }
+    .banner.contact {
+        background-image: url('../images/banners/paskoocheh-contact-us-banner-mobile.png');
+    }
+    .pk-page.columns-wrapper {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    .pk-page.columns-wrapper .column {
+        display: block;
+        width: 100%;
+    }
+    .pk-page.columns-wrapper .column-1 {
+        min-width: 200px;
+        position: relative;
+        top: 0;
+        margin: 0 0 1.5em 0;
+    }
+    .pk-page.columns-wrapper .column-2 {
+        width: 100%;
+        margin: 0;
+    }
+    .pk-page .html-content {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .pk-page .mascots-list li {
+        width: 50%;
+        width: calc(100% / 2);
+    }
+    .pk-page .mascots-list li:nth-child(3n + 1) {
+        clear: none;
+    }
+    .pk-page .mascots-list li:nth-child(2n + 1) {
+        clear: right;
+    }
+}

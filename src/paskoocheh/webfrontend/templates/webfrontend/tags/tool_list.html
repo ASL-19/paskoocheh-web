@@ -1,0 +1,13 @@
+{% load i18n tool_list tool_list_item %}
+{% if tool_list_item_contexts %}
+    <div class="pk-tool-list-container">
+        <ul class="pk-tool-list{% if is_preview %} is-preview{% endif %}{% if in_search_view %} search-view{% endif %}">
+            {% for tool_list_item_context in tool_list_item_contexts %}
+                {% tool_list_item tool_list_item_context %}
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    {# Translators: Appears if a tool list (e.g. homepage section, category page, search result, etc.) contains no tools. Should be general enough to account for the many different contexts tools lists appear in. This could be split into context-specific strings if that makes more sense. #}
+    <p class="pk-tool-list-no-tools-message">{% trans 'No matching tools.' context 'Tool list' %}</p>
+{% endif %}

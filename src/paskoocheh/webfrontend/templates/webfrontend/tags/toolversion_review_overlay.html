@@ -1,0 +1,17 @@
+{% include 'webfrontend/partials/overlay_wrap_before.html' with
+    slug=overlay_slug
+    title=overlay_title
+    subtitle=overlay_subtitle
+    only
+%}
+    {% include 'webfrontend/partials/toolversion_review_form.html' with
+        form_slug='toolversion-review-form-overlay'
+        is_in_overlay=True
+        overlay_slug=overlay_slug
+        rating_options=rating_options
+        version=tool_version
+        tool_logo=tool_logo
+        app=app
+        only
+    %}
+{% include 'webfrontend/partials/overlay_wrap_after.html' %}

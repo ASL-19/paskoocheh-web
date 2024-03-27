@@ -1,0 +1,83 @@
+[
+{
+    "model": "preferences.platform",
+    "pk": 1,
+    "fields": {
+        "name": "android",
+        "display_name": "Android",
+        "slug_name": "android"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 2,
+    "fields": {
+        "name": "ios",
+        "display_name": "iOS",
+        "slug_name": "ios"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 3,
+    "fields": {
+        "name": "Linux32",
+        "display_name": "Linux 32",
+        "slug_name": "linux"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 4,
+    "fields": {
+        "name": "linux64",
+        "display_name": "Linux 64",
+        "slug_name": "linux"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 5,
+    "fields": {
+        "name": "macos",
+        "display_name": "MacOS",
+        "slug_name": "macos"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 6,
+    "fields": {
+        "name": "windows",
+        "display_name": "Windows",
+        "slug_name": "windows"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 7,
+    "fields": {
+        "name": "chrome",
+        "display_name": "Chrome Extension",
+        "slug_name": "chrome"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 8,
+    "fields": {
+        "name": "firefox",
+        "display_name": "Firefox Extension",
+        "slug_name": "firefox"
+    }
+},
+{
+    "model": "preferences.platform",
+    "pk": 9,
+    "fields": {
+        "name": "windowsphone",
+        "display_name": "Windows Phone",
+        "slug_name": "windowsphone"
+    }
+}
+]

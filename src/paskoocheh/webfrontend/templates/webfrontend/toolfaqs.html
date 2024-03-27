@@ -1,0 +1,17 @@
+{% extends 'webfrontend/base.html' %}
+{% load faq_list i18n pask_url pk_meta_tags %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="main pk-g-centred pk-g-boxed-main pk-g-no-focus-outline">
+            <h1 id="main-heading" class="pk-g-page-heading">{{ page_heading_inner_html | safe }}</h1>
+
+            {% faq_list
+                faqs=faqs
+                tool=tool
+            %}
+        </main>
+    </div>
+{% endblock %}

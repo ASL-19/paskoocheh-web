@@ -1,0 +1,206 @@
+.pk-tool-list-item {
+    position: relative;
+    display: block;
+    list-style-type: none;
+    float: right;
+    margin: 0.1875em 0;
+    border: 0.375em solid transparent;
+    font-size: 1em;
+    -ms-transform: translateX(0) translateY(0);
+    -webkit-transform: translateX(0) translateY(0);
+    /* Workaround for subpixel rounding(?) issues in macOS Safari that caused various 1px gaps/cuts. This triggers GPU compositing and/or higher calculation precision? */
+    transform: translateX(0) translateY(0);
+}
+/* Note: This <div> exists to work around a Chrome (65, macOS) subpixel rounding
+issue when `.inner` had both 100% width and a border-radius. */
+.pk-tool-list-item .border-container {
+    width: 10em;
+    -webkit-box-shadow: 0 1px 4px 0 #d5d5d5;
+    -moz-box-shadow: 0 1px 4px 0 #d5d5d5;
+    box-shadow: 0 1px 4px 0 #d5d5d5;
+    border-bottom: 1px solid #a0a0a0;
+    border-top: 1px solid #eee;
+}
+.pk-tool-list-item .inner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 0.5em 0.5em 2.2em 0.5em;
+}
+.pk-tool-list-item.version-badge .inner::after {
+    position: absolute;
+    content: ' ';
+    top: 0.25em;
+    right: 0.25em;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    background-repeat: no-repeat;
+    background-position: 49.9999% 49.9999%;
+    background-size: auto 70%;
+    background-color: #001d4a;
+    z-index: 9;
+}
+.pk-tool-list-item.version-badge.chrome .inner::after {
+    background-image: url('../images/version-icons/chrome.svg');
+}
+.pk-tool-list-item.version-badge.firefox .inner::after {
+    background-image: url('../images/version-icons/firefox.svg');
+}
+.pk-tool-list-item .link-underlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+.pk-tool-list-item .logo-sizing-container,
+.pk-tool-list-item .meta {
+    position: relative;
+    z-index: 8;
+}
+.pk-tool-list-item .logo-sizing-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0;
+    z-index: -1;
+}
+.pk-tool-list-item .logo-sizing-container .logo {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: calc(0.5em);
+}
+.pk-tool-list-item .logo-sizing-container .logo.full-bleed {
+    padding: calc(0px);  /* stylelint-disable-line length-zero-no-unit */
+}
+.pk-tool-list-item .name-container,
+.pk-tool-list-item .name-link,
+.pk-tool-list-item .meta {
+    float: right;
+    clear: right;
+    margin: 0;
+}
+.pk-tool-list-item .name-container {
+    position: relative;
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 100%;
+    height: 3em;
+    margin: 1em 0 0 0;
+    z-index: 11;
+}
+.pk-tool-list-item .name-link {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.pk-tool-list-item .name {
+    color: #001d4a;
+    font-size: inherit;
+    font-weight: 500;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.pk-tool-list-item .meta,
+.pk-tool-list-item .category-text {
+    font-size: 0.9em;
+}
+.pk-tool-list-item .category {
+    position: absolute;
+    overflow: hidden;
+    line-height: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    right: 0;
+    top: 1.5em;
+    width: 100%;
+    height: 1.5em;
+    margin: 0;
+    z-index: -1;
+}
+.pk-tool-list-item .category-text {
+    color: #3188e8;
+}
+.pk-tool-list-item .name .ellipsis {
+    display: inline !important;
+}
+.pk-tool-list-item .name .ellipsis.ltr {
+    unicode-bidi: embed;
+}
+.pk-tool-list-item .meta {
+    position: absolute;
+    bottom: 0;
+    color: #555;
+    line-height: 1.2em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+    background-size: auto 1em;
+    background-position: 0 0.5em;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.pk-tool-list-item .meta.download-count {
+    left: 0.5em;
+    background-image: url('../images/download-grey.svg');
+    background-size: auto 1.1em;
+    background-position: 0 0.5em;
+    max-width: 55%;
+    max-width: calc(62.5% - 0.5em);
+    max-width: calc(100% - 4em);
+    padding-left: 1em;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+.pk-tool-list-item .meta.average-rating {
+    right: 0.5em;
+    background-size: auto 0.8em;
+    background-position: 0 0.5em;
+    padding-left: 1em;
+    padding-left: 1.1em;
+    direction: ltr;
+}
+.pk-tool-list-item .meta.meta.average-rating .no-js-rating-fallback {
+    display: none;
+}
+html.js-unsupported .pk-tool-list-item .meta.average-rating {
+    display: block;
+    background-image: url('../images/rating-star-darkblue.svg');
+    background-position: 0 0.625em;
+}
+html.js-unsupported .pk-tool-list-item .meta.meta.average-rating .no-js-rating-fallback {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .pk-tool-list-item .border-container {
+        width: 10em;
+    }
+
+    .pk-tool-list-item .logo-sizing-container {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        margin: 0;
+        z-index: -1;
+    }
+    .pk-tool-list-item .name-container {
+        height: 4em;
+        margin: 0.5em 0 0 0;
+    }
+    .pk-tool-list-item .meta.download-count {
+        left: unset;
+        bottom: 1.5em;
+    }
+    .pk-tool-list-item .meta.average-rating {
+        bottom: -0.25em;
+    }
+}

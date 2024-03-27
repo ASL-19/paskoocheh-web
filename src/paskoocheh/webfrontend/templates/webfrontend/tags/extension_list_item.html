@@ -1,0 +1,44 @@
+<li class="pk-extension-list-item {% if should_display_browser_badge %}version-badge {{ platform_slug }}{% endif %}">{% load i18n pask_url %}
+    <div class="border-container">
+        <article class="inner">
+            <a
+            aria-hidden="true"
+                class="link-underlay"
+                href="{% pask_url 'webfrontend:toolversion' p_tool_id=version.tool.id p_platform_slug=platform_slug %}"
+                tabindex="-1"
+            ></a>
+            <div class="logo-sizing-container">
+                {% if logo %}
+                    <img
+                        alt=""
+                        {% if logo.should_display_full_bleed %}
+                            class="logo full-bleed"
+                        {% else %}
+                            class="logo"
+                        {% endif %}
+                        src="{{ logo.image.url }}"
+                    />
+                {% endif %}
+            </div>
+            <div class="name-container">
+                <a class="name-link" href="{% pask_url 'webfrontend:toolversion' p_tool_id=version.tool.id p_platform_slug=platform_slug %}">
+                    <h3 class="name" title="{{ name }}">{{ name_inner_html|safe }}</h3>
+                </a>
+                <p
+                    {# Translators: Hidden accessibility label for category. Necessary because category name would be confusing without visual context. #}
+                    aria-label="{% trans 'Category' context 'Tool list item' %}: {{ tool_type_localized_name }}"
+                    class="category"
+                ><span class="category-text" aria-hidden="true">{{ tool_type_localized_name }}</span></p>
+            </div>
+            {# Translators: Displayed if extension has no ratings. Should be very short so that it fits inside the circle at a large font size. #}
+            <footer
+                class="average-rating meta"
+                aria-label="{% trans 'Average rating' context 'Tool version' %}: {% blocktrans context 'Tool version' with average_rating=versionrating_cache_placeholder trimmed %}{{ average_rating }} stars{% endblocktrans %}"
+            ><span aria-hidden="true">{{ versionrating_cache_placeholder }}</span></footer>
+            <footer
+                class="download-count meta"
+                aria-label="{% trans 'Download count' context 'extension version' %}: {{ versiondownload_cache_placeholder }}"
+            ><span aria-hidden="true">{{ versiondownload_cache_placeholder }}</span></footer>
+        </article>
+    </div>
+</li>

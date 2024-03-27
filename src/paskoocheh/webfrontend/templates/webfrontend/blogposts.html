@@ -1,0 +1,74 @@
+{% extends 'webfrontend/base.html' %}
+{% load blog_post_list i18n pask_url pk_meta_tags static %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="index-main pk-g-centred pk-g-no-focus-outline" tabindex="-1">
+            <h1 class="blog-heading">{% trans 'Paskoocheh blog' context 'Blog' %}</h1>
+
+            <section class="category-nav">
+                <li>
+                    <a
+                        class="category-nav-link"
+                        href="{% pask_url
+                            'webfrontend:blogposts'
+                        %}"
+                        {% if current_view_name == 'blogposts' and not current_category_slug %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% trans 'All stories' context 'Blog' %}
+                    </a>
+                </li>
+                {% for category in categories %}
+                    <li>
+                        <a
+                            class="category-nav-link"
+                            href="{% pask_url
+                                'webfrontend:blogposts'
+                                q_category=category.slug
+                            %}"
+                            {% if current_view_name == 'blogposts' and current_category_slug == category.slug %}
+                                aria-current="page"
+                            {% endif %}
+                        >{% if app == 'zanga' and category.name_ar %}
+                            {{ category.name_ar }}
+                        {% elif app == 'paskoocheh' %}
+                            {{ category.name_fa }}
+                        {% else %}
+                            {{ category.name }}
+                        {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </section>
+            <div id='posts-container'
+                {% if app == 'zanga' %}
+                    class="zanga"
+                {% endif %}
+            >
+                {% blog_post_list
+                    displayed_rows_limit=2
+                    post_heading_tag='h3'
+                    posts=current_page_posts
+                    show_summary=True
+                %}
+                {% if next_page_link %}
+                    {# Translators: Used for blog pagination links #}
+                    <a
+                        class="older-link pk-button"
+                        href="{{ next_page_link }}"
+                    >{% trans 'Older posts' context 'Blog' %}</a>
+                {% endif %}
+                {% if previous_page_link %}
+                    {# Translators: Used for blog pagination links #}
+                    <a
+                        class="newer-link pk-button"
+                        href="{{ previous_page_link }}"
+                    >{% trans 'Newer posts' context 'Blog' %}</a>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+{% endblock %}

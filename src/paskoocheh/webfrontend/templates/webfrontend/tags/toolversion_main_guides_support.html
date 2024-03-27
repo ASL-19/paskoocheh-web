@@ -1,0 +1,79 @@
+{% load
+    faq_list
+    i18n
+    pask_url
+    toolversion_blog_post_list
+    tutorial_list
+%}<div class="pk-toolversion-main-guides-support guides main-section">
+    {% if version_has_guide %}
+        <section class="section">
+            {# Translators: Heading for guide section #}
+            <h2 class="section-heading">{% trans 'Guide' context 'Tool version' %}</h2>
+
+            {# Translators: Description of guide; appears above link to guide #}
+            <p class="guide-explanation">{% trans 'For installation instructions, please see our guide:' context 'Tool version' %}</p>
+
+            {# Translators: Text for link to guide; looks like a button #}
+            <a
+                class="pk-button guide-button"
+                href="{% pask_url
+                    'webfrontend:toolversionguide'
+                    p_tool_id=version.tool.id
+                    p_platform_slug=version.supported_os.slug_name
+                %}"
+            >{% blocktrans with version_name=version_name_localized context 'Tool version' trimmed %}
+                    {{ version_name }} guide
+                {% endblocktrans %}</a>
+        </section>
+    {% endif %}
+
+    {% if faqs.count > 0 %}
+        <section class="section">
+            {# Translators: Heading for FAQs section #}
+            <h2 class="section-heading">{% trans 'Frequently asked questions' context 'Tool version' %}</h2>
+
+            {% faq_list
+                faqs=faqs
+                tool=version.tool
+                version=version
+            %}
+
+            <div class="pk-g-button-centring-container">
+                {# Translators: Link to dedicated page listing all FAQs for tool and/or version #}
+                <a
+                    class="pk-button pk-g-centred-button"
+                    href="{% pask_url
+                        'webfrontend:toolversionfaqs'
+                        p_tool_id=version.tool.id
+                        p_platform_slug=version.supported_os.slug_name
+                    %}"
+                >{% trans 'All FAQs' context 'Tool version' %}</a>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if tutorials and tutorials.count > 0 %}
+        <section class="section">
+            {# Translators: Heading for tutorials section #}
+            <h2 class="section-heading">{% trans 'Video tutorials' context 'Tool version' %}</h2>
+
+            {% tutorial_list
+                tool=version.tool
+                tutorials=tutorials
+                version=version
+            %}
+
+            <div class="pk-g-button-centring-container">
+                {# Translators: Link to dedicated page listing all tutorials for tool and/or version #}
+                <a
+                    class="pk-button pk-g-centred-button"
+                    href="{% pask_url
+                        'webfrontend:toolversiontutorials'
+                        p_tool_id=version.tool.id
+                        p_platform_slug=version.supported_os.slug_name
+                    %}"
+                >{% trans 'All video tutorials' context 'Tool version' %}</a>
+            </div>
+        </section>
+    {% endif %}
+</div>

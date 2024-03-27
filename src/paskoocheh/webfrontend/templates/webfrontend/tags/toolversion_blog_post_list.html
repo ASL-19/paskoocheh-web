@@ -1,0 +1,9 @@
+{% load
+    toolversion_blog_post_list_item
+%}<ul class="pk-toolversion-blog-post-list pk-expandable-list">
+    {% for post in posts %}
+        {% toolversion_blog_post_list_item
+            post=post
+        %}
+    {% endfor %}
+</ul>

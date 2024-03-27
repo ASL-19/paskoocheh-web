@@ -1,0 +1,204 @@
+.pk-tool-list {
+    display: block;
+    width: 100%;
+    width: calc(100% + 0.75em);
+    margin: 0 -0.375em 0 0;
+    padding: 0;
+}
+
+.pk-tool-list-no-tools-message {
+    width: 100%;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+/* stylelint-disable indentation  */
+
+/*
+These styles control the number of displayed tools per row. They’re
+complicated because they need to account for the fact that .pk-mobile-menu
+stops taking space when the viewport is <62em (<992px) wide.
+
+At the moment, the target minimum tool list item width is ~155px. It’s
+problematic to make them much smaller because the entire title needs to fit on
+a single line. Since we have many left-to-right titles display with right- to-
+left overflow cut-off, the beginning of the title ends up getting cut off.
+
+Maybe someday we’ll have container queries:
+https://alistapart.com/article/container-queries-once-more-unto-the-breach
+*/
+.pk-tool-list .pk-tool-list-item {                  /* 6 per row, fixed nav, */
+    width: 16.66666%;
+}
+@media (max-width: 1359px) and (min-width: 1184px) {  /* 5 per row, fixed nav, */
+    .pk-homepage-centred {
+        width: 70%;
+    }
+    .pk-tool-list .pk-tool-list-item {
+        width: 20%;
+    }
+
+    /* when search-view is enabled tool items should display in pairs per row  (2 per row) */
+    .pk-tool-list .pk-tool-list-item.search-view {
+        width: 20%;
+    }
+}
+@media (max-width: 991px) and (min-width: 864px) { /* 5 per row, hidden nav */
+    .pk-homepage-centred {
+        width: 90%;
+    }
+    .pk-tool-list .pk-tool-list-item {
+        width: 20%;
+    }
+
+    /* when search-view is enabled tool items should display in pairs per row  (2 per row) */
+    .pk-tool-list .pk-tool-list-item.search-view {
+        width: 20%;
+    }
+}
+@media (max-width: 1183px) and (min-width: 992px){  /* 4 per row, fixed nav */
+    .pk-homepage-centred {
+        width: 70%;
+    }
+
+    .pk-tool-list .pk-tool-list-item {
+        width: 25%;
+    }
+
+    /* when search-view is enabled tool items should display in pairs per row  (2 per row) */
+    .pk-tool-list .pk-tool-list-item.search-view {
+        width: 25%;
+    }
+}
+@media (max-width: 863px) and (min-width: 688px) { /* 4 per row, hidden nav */
+    .pk-homepage-centred {
+        width: 90%;
+    }
+
+    .pk-tool-list .pk-tool-list-item {
+        width: 25%;
+    }
+
+    /* when search-view is enabled tool items should display in pairs per row  (2 per row) */
+    .pk-tool-list .pk-tool-list-item.search-view {
+        width: 25%;
+    }
+}
+
+@media (max-width: 1007px) and (min-width: 992px),  /* 3 per row, fixed nav */
+       (max-width: 687px) and (min-width: 368px) { /* 3 per row, hidden nav */
+    .pk-tool-list .pk-tool-list-item {
+        width: 40%;
+    }
+
+    /* when search-view is enabled tool items should display in pairs per row  (2 per row) */
+    .search-view .pk-tool-list .pk-tool-list-item {
+        width: 45%;
+    }
+}
+@media (max-width: 527px) {
+    .pk-tool-list {
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    /* stylelint-disable declaration-block-no-duplicate-properties */
+    .pk-tool-list.search-view {
+        font-size: 1em;
+        display: inline-block;
+        margin-top: 0.5em;
+    }
+
+    .pk-tool-list-container li {
+        display: inline-block;
+    }
+}
+@media (max-width: 367px) and (min-width: 320px) { /* 2 per row, hidden nav */
+    .pk-tool-list .pk-tool-list-item {
+        width: 50%;
+    }
+}
+@media (max-width: 319px) {                       /* 1 per row, hidden nav */
+    .pk-tool-list .pk-tool-list-item {
+        width: 100%;
+    }
+}
+/* Workarounds for weird Opera Mini device-width reporting issue. Would like a better solution. */
+@media (max-width: 367px) and (min-width: 320px) {
+    html.opera-mini-extreme .pk-tool-list .pk-tool-list-item {
+        width: 33.33333% !important;
+    }
+}
+@media (max-width: 319px) and (min-width: 288px) {
+    html.opera-mini-extreme .pk-tool-list .pk-tool-list-item {
+        width: 50% !important;
+    }
+}
+@media (max-width: 287px) {
+    html.opera-mini-extreme .pk-tool-list .pk-tool-list-item {
+        width: 100% !important;
+    }
+}
+
+/*
+When the tool list is a preview (i.e. it’s displayed on index page), these
+styles enforce the number of items displayed.
+
+The idea is to keep the length of each row consistent, and to prevent a list
+from taking up 3 rows when the viewport is very narrow. There are always at
+least 4 tools displayed per list.
+
+While these styles ensure that no more than 6 items will be displayed, the
+number of items in the document should still be limited on the server.
+*/
+
+/* Only hide elements if em media queries supported to ensure we don’t
+   inadvertently hide everything on browsers that don’t support media queries */
+@media (min-width: 0) {
+    .pk-tool-list.is-preview .pk-tool-list-item {
+        display: none;
+    }
+}
+@media (min-width: 1360px),                           /* 1 row of 6, fixed nav */
+       (max-width: 1007px) and (min-width: 992px),  /* 2 rows of 3, fixed nav */
+       (max-width: 687px) and (min-width: 368px) { /* 2 rows of 3, hidden nav */
+    /* Show first 6 items */
+    .pk-tool-list.is-preview .pk-tool-list-item:nth-of-type(-n+6) {
+        display: table-cell;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: inline-flex;
+    }
+}
+@media (max-width: 1359px) and (min-width: 1184px),  /* 1 row of 5, fixed nav */
+       (max-width: 991px) and (min-width: 864px) { /* 1 row of 5, hidden nav */
+    /* Show first 5 items */
+    .pk-tool-list.is-preview .pk-tool-list-item:nth-of-type(-n+5) {
+        display: table-cell;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: inline-flex;
+    }
+}
+@media (max-width: 1183px) and (min-width: 992px),  /* 1 row of 4, fixed nav */
+       (max-width: 863px) and (min-width: 688px),  /* 1 row of 4, hidden nav */
+       (max-width: 367px) {                       /* 2 rows of 2 or 4 rows of 1, hidden nav */
+    /* Show first 4 items */
+    .pk-tool-list.is-preview .pk-tool-list-item:nth-of-type(-n+4) {
+        display: table-cell;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: -o-flex;
+        display: inline-flex;
+    }
+}
+
+/* stylelint-enable */

@@ -1,0 +1,59 @@
+.pk-review {
+    position: relative;
+    float: right;
+    width: 100%;
+}
+.pk-review .no-js.rating {
+    display: none;
+    position: absolute;
+    top: -0.75em;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem 0 0 1.375rem;
+}
+
+html.js-unsupported .pk-review .rating {
+    display: block;
+}
+.pk-review .no-js.rating::after {
+    content: ' ';
+    text-indent: -9999px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    background-position: 0 50%;
+    background-image: url('../images/rating-star-darkblue.svg');
+}
+.pk-review .text {
+    width: 100%;
+    margin-top: 1.5em;
+    color: #666;
+}
+.pk-review .meta {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 2em;
+}
+.pk-review .meta .date,
+.pk-review .meta .version {
+    display: inline-block;
+    margin: 0;
+    color: #555;
+}
+
+.pk-review .meta .version {
+    padding: 0 1.5em;
+}
+
+.pk-review .stars-container.review {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

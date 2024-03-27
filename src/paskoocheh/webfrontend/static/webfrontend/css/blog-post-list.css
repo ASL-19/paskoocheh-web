@@ -1,0 +1,101 @@
+.pk-blog-post-list {
+    float: right;
+    width: 100%;
+    width: calc(100% + 1rem);
+    margin: -0.5rem 0 0 0;
+    margin: -0.5rem calc(-0.5rem) 0 0;
+    padding: 0;
+}
+.pk-blog-post-list .pk-blog-post-list-item {
+    width: 33.33333%;
+    border: 0.5rem solid transparent;
+}
+.pk-blog-post-list-no-blog-posts-message {
+    float: right;
+    width: 100%;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+/* stylelint-disable indentation  */
+
+/*
+These styles control the number of displayed blog post items per row. They’re
+complicated because they need to account for the fact that .pk-mobile-menu
+stops taking space when the viewport is <62em (<992px) wide.
+
+At the moment, the target minimum tool blog post item width is ~285px. Up to 3
+lines of the title and 4 lines of the summary (for posts without feature
+images) are displayed, so the minimum width needs to take into account that
+worst-case scenario.
+
+Note that post list items at 2+ columns are square. In the single-column
+(100%-width) layout they’re variable-height since there’s no need to have them
+line up vertically.
+
+Maybe someday we’ll have container queries:
+https://alistapart.com/article/container-queries-once-more-unto-the-breach
+*/
+
+@media (min-width: 62em) and (max-width: 77.99em),  /* 2 per row, fixed nav */
+       (min-width: 20em) and (max-width: 57.99em) { /* 2 per row, hidden nav */
+    .pk-blog-post-list .pk-blog-post-list-item {
+        width: 50%;
+    }
+}
+@media (max-width: 37.99em) {                       /* 1 per row, hidden nav */
+    .pk-blog-post-list .pk-blog-post-list-item {
+        width: 100%;
+    }
+}
+
+/*
+If the blog post list template tag was provided the displayed_rows_list
+argument, these styles enforce the number of items displayed in order to produce
+that number of rows.
+
+The idea is to keep the length of each row consistent, and to prevent list items
+from getting too narrow at narrow viewport width. There are always at least 3
+posts displayed per list.
+
+While these styles ensure that no more than 6 items will be displayed, the
+number of items in the document should still be limited on the server.
+*/
+
+/* Only hide elements if em media queries supported to ensure we don’t
+   inadvertently hide everything on browsers that don’t support media queries */
+/* @media (min-width: 0) {
+    .pk-blog-post-list.rows-limited .pk-blog-post-list-item {
+        display: none;
+    }
+} */
+@media (min-width: 78em),                           /* 2 rows of 3, fixed nav */
+       (min-width: 58em) and (max-width: 61.99em) { /* 2 rows of 3, hidden nav */
+    /* Show first 3 items */
+    .pk-blog-post-list.rows-limited-1 .pk-blog-post-list-item:nth-of-type(-n+3) {
+        display: block;
+    }
+    /* Show first 6 items */
+    .pk-blog-post-list.rows-limited-2 .pk-blog-post-list-item:nth-of-type(-n+6) {
+        display: block;
+    }
+}
+@media (min-width: 62em) and (max-width: 77.99em),  /* 2 per row, fixed nav */
+       (min-width: 38em) and (max-width: 57.99em) { /* 2 per row, hidden nav */
+    /* Show first 2 items */
+    .pk-blog-post-list.rows-limited-1 .pk-blog-post-list-item:nth-of-type(-n+2) {
+        display: block;
+    }
+    /* Show first 4 items */
+    .pk-blog-post-list.rows-limited-2 .pk-blog-post-list-item:nth-of-type(-n+4) {
+        display: block;
+    }
+}
+@media (max-width: 37.99em) {                       /* 1 per row, hidden nav */
+    /* Show first 3 items */
+    .pk-blog-post-list.rows-limited .pk-blog-post-list-item:nth-of-type(-n+3) {
+        display: block;
+    }
+}
+
+/* stylelint-enable */

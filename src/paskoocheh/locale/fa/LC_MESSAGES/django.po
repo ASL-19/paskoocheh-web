@@ -1,0 +1,997 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-30 18:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: ASL19\n"
+"Language-Team: ASL19\n"
+"Language: Farsi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: blog/apps.py:30
+msgid "Blog"
+msgstr ""
+
+#: blog/models.py:57 paskoocheh/helpers.py:200 preferences/models.py:270
+msgid "Last Modified Time"
+msgstr ""
+
+#: blog/models.py:60
+msgid "Category Name (English)"
+msgstr ""
+
+#: blog/models.py:65
+msgid "Category Name (Arabic)"
+msgstr ""
+
+#: blog/models.py:70
+msgid "Category Name (Farsi)"
+msgstr ""
+
+#: blog/models.py:83
+msgid "Photo"
+msgstr ""
+
+#: blog/models.py:84
+msgid "Note: This is currently unused."
+msgstr ""
+
+#: blog/models.py:88 tools/models.py:327
+msgid "Description"
+msgstr ""
+
+#: blog/models.py:89
+msgid ""
+"Not displayed on site, but used as social media description and search "
+"engine snippet suggestion for blog category pages."
+msgstr ""
+
+#: blog/models.py:111
+msgid "Categories"
+msgstr ""
+
+#: blog/models.py:142
+msgid "Published Date"
+msgstr ""
+
+#: blog/models.py:158
+msgid "Category"
+msgstr ""
+
+#: blog/models.py:165
+msgid "Summary"
+msgstr ""
+
+#: blog/models.py:166
+msgid ""
+"Used for post listing previews if the post has no associated featured image. "
+"Also appears in RSS feeds, social media preview, and search engine snippets."
+msgstr ""
+
+#: blog/models.py:173 templates/reversion/object_history.html:16
+msgid "User"
+msgstr "کاربر"
+
+#: blog/models.py:174
+msgid ""
+"Note: The post‘s associated user is not currently displayed on the site, but "
+"this may change in the future."
+msgstr ""
+
+#: blog/models.py:184
+msgid "Comments Allowed"
+msgstr ""
+
+#: blog/models.py:185
+msgid ""
+"Note: Comments aren’t currently supported, but this may change in the future."
+msgstr ""
+
+#: blog/models.py:200
+msgid "Feature Order"
+msgstr ""
+
+#: blog/models.py:201
+msgid ""
+"If set, the post will be considered featured. Featured posts with lower "
+"feature orders will appear earlier in featured lists."
+msgstr ""
+
+#: blog/models.py:206
+msgid "Featured Image"
+msgstr ""
+
+#: blog/models.py:207
+msgid ""
+"Feature images should have a 2.5:1 aspect ratio (e.g. 800x320). This target "
+"ratio can be changed with minor changes to the site, but it needs to be "
+"consistent across all blog posts."
+msgstr ""
+
+#: blog/models.py:212
+msgid "Featured Image Description"
+msgstr ""
+
+#: blog/models.py:213
+msgid "Text describing the image (for screen readers and search engines)"
+msgstr ""
+
+#: blog/models.py:218 preferences/models.py:202 preferences/models.py:267
+#: stats/models.py:171 tools/models.py:141 tools/models.py:314
+#: tools/models.py:628 tools/models.py:770
+msgid "Language"
+msgstr ""
+
+#: blog/models.py:221 paskoocheh/helpers.py:212 preferences/models.py:444
+#: tools/models.py:260
+msgid "Tags"
+msgstr ""
+
+#: blog/models.py:254 blog/models.py:343
+msgid "Post"
+msgstr ""
+
+#: blog/models.py:255
+msgid "Posts"
+msgstr ""
+
+#: blog/models.py:326
+msgid "Comment Date"
+msgstr ""
+
+#: blog/models.py:329
+msgid "Email"
+msgstr "ایمیل"
+
+#: blog/models.py:332
+msgid "Name"
+msgstr ""
+
+#: blog/models.py:335 paskoocheh/helpers.py:203 tools/models.py:785
+msgid "Title"
+msgstr ""
+
+#: blog/models.py:337 paskoocheh/helpers.py:207
+msgid "Content"
+msgstr ""
+
+#: blog/models.py:340
+msgid "Approved"
+msgstr ""
+
+#: paskoocheh/helpers.py:213
+msgid ""
+"Note: This field is currently only used for search relevance. It isn’t "
+"displayed on the site."
+msgstr ""
+
+#: preferences/models.py:46
+msgid "Android ID"
+msgstr ""
+
+#: preferences/models.py:51
+msgid "Email Address"
+msgstr ""
+
+#: preferences/models.py:56
+msgid "Password"
+msgstr ""
+
+#: preferences/models.py:61
+msgid "Token"
+msgstr ""
+
+#: preferences/models.py:67
+msgid "Google Play API"
+msgstr ""
+
+#: preferences/models.py:77
+msgid "Update Recipients (csv)"
+msgstr ""
+
+#: preferences/models.py:81
+msgid "Android Apps"
+msgstr ""
+
+#: preferences/models.py:102
+#, fuzzy
+#| msgid "Type"
+msgid "Type Name"
+msgstr "نوع"
+
+#: preferences/models.py:107
+msgid "Type Name in Farsi"
+msgstr ""
+
+#: preferences/models.py:112
+msgid "Type Name in Arabic"
+msgstr ""
+
+#: preferences/models.py:118
+msgid "Type URL slug"
+msgstr ""
+
+#: preferences/models.py:126 preferences/models.py:362
+msgid "Tool Type Icon"
+msgstr ""
+
+#: preferences/models.py:176
+msgid "Promo Image"
+msgstr ""
+
+#: preferences/models.py:181
+msgid "Image title"
+msgstr ""
+
+#: preferences/models.py:186
+msgid "Link URL"
+msgstr ""
+
+#: preferences/models.py:189
+msgid "Open in new window?"
+msgstr ""
+
+#: preferences/models.py:213 tools/models.py:131 tools/models.py:637
+#: tools/models.py:788
+msgid "Order"
+msgstr ""
+
+#: preferences/models.py:274
+#, fuzzy
+#| msgid "Paskoocheh Admin"
+msgid "About Paskoocheh"
+msgstr "ادمین پسکوچه"
+
+#: preferences/models.py:279
+msgid "Contact Email"
+msgstr ""
+
+#: preferences/models.py:283
+#, fuzzy
+#| msgid "Privacy tools"
+msgid "Privacy Policy"
+msgstr "حریم خصوصی"
+
+#: preferences/models.py:287
+msgid "Terms of Service and Privacy Policy"
+msgstr ""
+
+#: preferences/models.py:292
+msgid "Terms of Service"
+msgstr ""
+
+#: preferences/models.py:296
+msgid "FAQ Page Footer"
+msgstr ""
+
+#: preferences/models.py:301 tools/models.py:134 tools/models.py:266
+#: tools/models.py:333 tools/models.py:488 tools/models.py:642
+#: tools/models.py:793
+msgid "Publish"
+msgstr ""
+
+#: preferences/models.py:310
+msgid "Web Texts"
+msgstr ""
+
+#: preferences/models.py:339 stats/models.py:73 stats/models.py:226
+msgid "Platform Name"
+msgstr ""
+
+#: preferences/models.py:344
+msgid "Platform Name in Farsi"
+msgstr ""
+
+#: preferences/models.py:349
+msgid "Platform Name in Arabic"
+msgstr ""
+
+#: preferences/models.py:382
+#, fuzzy
+#| msgid "Email"
+msgid "From Email"
+msgstr "ایمیل"
+
+#: preferences/models.py:383
+msgid ""
+"The email address from which notification emails such as support or contact "
+"update emails will be sent.<br /><strong>WARNING: Please arrange with SysOps "
+"before changing these values.</strong>"
+msgstr ""
+
+#: preferences/models.py:386
+msgid "Support Ticket Recipients (comma separated)"
+msgstr ""
+
+#: preferences/models.py:388
+msgid ""
+"The email address(es) to which notification emails such as support or "
+"contact update emails will be sent.<br /><strong>WARNING: Please arrange "
+"with SysOps before changing these values.</strong>"
+msgstr ""
+
+#: preferences/models.py:394
+msgid "Support Email Address"
+msgstr ""
+
+#: preferences/models.py:400
+msgid "Twitter"
+msgstr ""
+
+#: preferences/models.py:406
+msgid "Facebook"
+msgstr ""
+
+#: preferences/models.py:412
+msgid "Instagram"
+msgstr ""
+
+#: preferences/models.py:418
+msgid "Telegram"
+msgstr ""
+
+#: preferences/models.py:421
+msgid "General Settings"
+msgstr ""
+
+#: preferences/models.py:432
+#, fuzzy
+#| msgid "Type"
+msgid "Tag Name"
+msgstr "نوع"
+
+#: preferences/models.py:436
+msgid "Tag slug"
+msgstr ""
+
+#: preferences/models.py:443
+msgid "Tag"
+msgstr ""
+
+#: s3_email/validators.py:37
+#, python-format
+msgid "%(value)s is not a valid bucket"
+msgstr ""
+
+#: s3_email/validators.py:47
+msgid "%(value)s is not accessible %(error)"
+msgstr ""
+
+#: stats/models.py:64 stats/models.py:194 tools/models.py:97
+#: tools/models.py:182 tools/models.py:303 tools/models.py:396
+#: tools/models.py:616 tools/models.py:759
+msgid "Last modified time"
+msgstr ""
+
+#: stats/models.py:70 tools/models.py:198
+msgid "Tool name"
+msgstr ""
+
+#: stats/models.py:78 tools/models.py:286
+msgid "Tool"
+msgstr ""
+
+#: stats/models.py:97 stats/models.py:150
+msgid "Star Rating"
+msgstr ""
+
+#: stats/models.py:132 stats/models.py:208
+msgid "Subject"
+msgstr ""
+
+#: stats/models.py:137 stats/models.py:146 stats/models.py:203
+#, fuzzy
+#| msgid "Username"
+msgid "User Name"
+msgstr "نام کاربری"
+
+#: stats/models.py:141
+msgid "Text"
+msgstr ""
+
+#: stats/models.py:157
+msgid "Checked"
+msgstr ""
+
+#: stats/models.py:162
+msgid "Tool Version"
+msgstr ""
+
+#: stats/models.py:197
+#, fuzzy
+#| msgid "Expiration Date"
+msgid "Creation Date"
+msgstr "تاریخ انقضا"
+
+#: stats/models.py:213
+msgid "Message"
+msgstr ""
+
+#: stats/models.py:223
+msgid "Channel Version"
+msgstr ""
+
+#: stats/models.py:231
+msgid "Platform Version"
+msgstr ""
+
+#: stats/models.py:239
+msgid "Status"
+msgstr ""
+
+#: templates/403.html:3
+msgid "forbidden"
+msgstr "عدم اجازه دسترسی"
+
+#: templates/403.html:5 templates/404.html:5 templates/500.html:5
+msgid "error"
+msgstr "خطا"
+
+#: templates/403.html:7
+msgid "We're sorry, but the requested action is forbidden"
+msgstr ""
+
+#: templates/404.html:3
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:7
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: templates/500.html:3
+msgid "Server Error"
+msgstr "خطای سرور"
+
+#: templates/500.html:7
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: templates/admin/paskoocheh/view.html:6
+msgid "Back to list"
+msgstr ""
+
+#: templates/admin/s3_email/change_list.html:9
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/tools/change_form.html:6
+msgid "Delete AWS File ID"
+msgstr ""
+
+#: templates/index.html:10 templates/index.html:11 templates/index.html:57
+#: templates/index.html:58
+msgid "Paskoocheh"
+msgstr "پس‌کوچه"
+
+#: templates/index.html:72
+msgctxt "Index"
+msgid "This browser is unfortunately unsupported as of now"
+msgstr ""
+"متاسفانه نسخه‌ی فعلی مرورگر شما توسط وبسایت پس‌کوچه پشتیبانی نمی‌شود. لطفا "
+"نسخه‌ی جدیدتری را استفاده کنید."
+
+#: templates/reversion/change_list.html:8
+#: templates/reversion/recover_form.html:13
+#: templates/reversion/recover_list.html:13
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr ""
+
+#: templates/reversion/object_history.html:8
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: templates/reversion/object_history.html:15
+#: templates/reversion/recover_list.html:26
+msgid "Date/time"
+msgstr ""
+
+#: templates/reversion/object_history.html:17
+msgid "Comment"
+msgstr ""
+
+#: templates/reversion/object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: templates/reversion/recover_form.html:7
+#: templates/reversion/recover_list.html:7
+#: templates/reversion/revision_form.html:7
+msgid "Home"
+msgstr "خانه"
+
+#: templates/reversion/recover_form.html:21
+msgid "Press the save button below to recover this version of the object."
+msgstr ""
+
+#: templates/reversion/recover_list.html:20
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr ""
+
+#: templates/reversion/recover_list.html:40
+msgid "There are no deleted objects to recover."
+msgstr ""
+
+#: templates/reversion/revision_form.html:15
+msgid "History"
+msgstr ""
+
+#: templates/reversion/revision_form.html:17
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr ""
+
+#: templates/reversion/revision_form.html:30
+msgid "Press the save button below to revert to this version of the object."
+msgstr ""
+
+#: tools/models.py:91
+msgid "LOGO"
+msgstr ""
+
+#: tools/models.py:92
+msgid "SCREENSHOT"
+msgstr ""
+
+#: tools/models.py:93
+msgid "HEADER"
+msgstr ""
+
+#: tools/models.py:101
+msgid "Image File"
+msgstr ""
+
+#: tools/models.py:106
+msgid "Image Type"
+msgstr ""
+
+#: tools/models.py:127
+msgid "Should display full-bleed"
+msgstr ""
+
+#: tools/models.py:128
+msgid ""
+"If checked, and if the image is a logo image, clients should display it full-"
+"bleed (without any padding). Full-bleed images should have a coloured "
+"background and internal padding, or a transparent background and internal "
+"padding. Has no effect on non-logo images."
+msgstr ""
+
+#: tools/models.py:142
+msgid ""
+"If set, this image will only appear in the specified language. Otherwise, it "
+"will appear in all languages."
+msgstr ""
+
+#: tools/models.py:171
+msgid "Image"
+msgstr ""
+
+#: tools/models.py:172
+msgid "Images"
+msgstr ""
+
+#: tools/models.py:185 tools/models.py:399
+msgid "Created time"
+msgstr ""
+
+#: tools/models.py:193
+msgid "Author"
+msgstr ""
+
+#: tools/models.py:197
+msgid "This is just a latin name for admin panel only"
+msgstr ""
+
+#: tools/models.py:204
+msgid "Whether you trust the tool's source"
+msgstr ""
+
+#: tools/models.py:205
+msgid "Trusted Source"
+msgstr ""
+
+#: tools/models.py:208
+msgid "Is this tool featured"
+msgstr ""
+
+#: tools/models.py:209
+msgid "Featured Tool"
+msgstr ""
+
+#: tools/models.py:213
+msgid "Open source"
+msgstr ""
+
+#: tools/models.py:218
+msgid "Source url on Github or Bitbucket"
+msgstr ""
+
+#: tools/models.py:222
+#, fuzzy
+#| msgid "Type"
+msgid "Tool Type"
+msgstr "نوع"
+
+#: tools/models.py:227
+msgid "Main website of the tool"
+msgstr ""
+
+#: tools/models.py:232
+msgid "Facebook URL"
+msgstr ""
+
+#: tools/models.py:237
+msgid "Twitter URL"
+msgstr ""
+
+#: tools/models.py:241
+msgid "Feed URL"
+msgstr ""
+
+#: tools/models.py:245
+msgid "Link of the company blog"
+msgstr ""
+
+#: tools/models.py:252
+msgid "Support email address"
+msgstr ""
+
+#: tools/models.py:257
+msgid "Support url on the company website"
+msgstr ""
+
+#: tools/models.py:287
+msgid "Tools"
+msgstr ""
+
+#: tools/models.py:308 tools/models.py:405 tools/models.py:676
+msgid "Corresponding tool"
+msgstr ""
+
+#: tools/models.py:319
+msgid "Language-specific name"
+msgstr ""
+
+#: tools/models.py:320
+msgid "Name of the tool in the corresponding language"
+msgstr ""
+
+#: tools/models.py:323
+msgid "Company name"
+msgstr ""
+
+#: tools/models.py:328
+msgid "Description of tool, max 2000 character"
+msgstr ""
+
+#: tools/models.py:353
+msgid "Information about the tool"
+msgstr ""
+
+#: tools/models.py:354
+msgid "Tools information"
+msgstr ""
+
+#: tools/models.py:410
+msgid "Tool version number"
+msgstr ""
+
+#: tools/models.py:411
+msgid ""
+"Each version might have different number, when an update happens, this field "
+"must change or the user will not receive a notification"
+msgstr ""
+
+#: tools/models.py:417
+msgid "Platforms"
+msgstr ""
+
+#: tools/models.py:420
+msgid "Actual release date from publisher"
+msgstr ""
+
+#: tools/models.py:424
+msgid "Release date in Jalali"
+msgstr ""
+
+#: tools/models.py:428
+msgid "Download url"
+msgstr ""
+
+#: tools/models.py:433
+msgid "Release Binary"
+msgstr ""
+
+#: tools/models.py:438
+msgid "Checksum for release binary"
+msgstr ""
+
+#: tools/models.py:442
+msgid "Size of download in bytes"
+msgstr ""
+
+#: tools/models.py:447
+msgid "Link to the release news if any"
+msgstr ""
+
+#: tools/models.py:453
+msgid "Android-specific Package Name"
+msgstr ""
+
+#: tools/models.py:458
+msgid "Android-specific Automatic Update"
+msgstr ""
+
+#: tools/models.py:463
+msgid "Android-specific App Permissions (CSV)"
+msgstr ""
+
+#: tools/models.py:469
+msgid "Guide url"
+msgstr ""
+
+#: tools/models.py:474
+msgid "FAQ url"
+msgstr ""
+
+#: tools/models.py:479
+msgid "Binary Signature"
+msgstr ""
+
+#: tools/models.py:483
+msgid "Signature File"
+msgstr ""
+
+#: tools/models.py:598
+msgid "Version"
+msgstr ""
+
+#: tools/models.py:599
+msgid "Versions"
+msgstr ""
+
+#: tools/models.py:622 tools/models.py:764
+msgid "Corresponding version"
+msgstr ""
+
+#: tools/models.py:680
+msgid "Click count"
+msgstr ""
+
+#: tools/models.py:700
+msgid "FAQ"
+msgstr ""
+
+#: tools/models.py:701
+msgid "FAQs"
+msgstr ""
+
+#: tools/models.py:721
+msgid "URL slug"
+msgstr ""
+
+#: tools/models.py:775
+msgid "Video File"
+msgstr ""
+
+#: tools/models.py:779
+msgid "Video Link"
+msgstr ""
+
+#: tools/models.py:813
+msgid "Tutorial"
+msgstr ""
+
+#: tools/models.py:814
+msgid "Tutorials"
+msgstr ""
+
+#: tools/views.py:230
+msgid "Failure"
+msgstr "ناموفق"
+
+#: tools/views.py:231
+msgid "Bad request"
+msgstr "درخواست اشتباه"
+
+#: tools/views.py:242
+msgid "Success"
+msgstr "انجام شد"
+
+#: user_management/apps.py:29
+#, fuzzy
+#| msgid "Username"
+msgid "User Management"
+msgstr "نام کاربری"
+
+#, fuzzy
+#~| msgid "User must have a valid email address."
+#~ msgid "Enter a valid email address."
+#~ msgstr "شما باید یک ایمیل درست را وارد کنید."
+
+#, fuzzy
+#~| msgid "User must have a valid email address."
+#~ msgid "Enter a valid IPv4 address."
+#~ msgstr "شما باید یک ایمیل درست را وارد کنید."
+
+#, fuzzy
+#~| msgid "User must have a valid email address."
+#~ msgid "Enter a valid IPv6 address."
+#~ msgstr "شما باید یک ایمیل درست را وارد کنید."
+
+#, fuzzy
+#~| msgid "Report was submitted"
+#~ msgid "No file was submitted."
+#~ msgstr "بازخورد با موفقیت فرستاده شد"
+
+#, fuzzy
+#~| msgid "Please correct the error below."
+#~| msgid_plural " Please correct the errors below."
+#~ msgid "Please correct the duplicate data for %(field)s."
+#~ msgstr "لطفا خطاهای زیر را اصلاح کنید"
+
+#, fuzzy
+#~| msgid "Please correct the error below."
+#~| msgid_plural " Please correct the errors below."
+#~ msgid "Please correct the duplicate values below."
+#~ msgstr "لطفا خطاهای زیر را اصلاح کنید"
+
+#, fuzzy
+#~| msgid "User must have a valid email address."
+#~ msgid "This is not a valid IPv6 address."
+#~ msgstr "شما باید یک ایمیل درست را وارد کنید."
+
+#, fuzzy
+#~| msgid "forbidden"
+#~ msgid "Forbidden"
+#~ msgstr "عدم اجازه دسترسی"
+
+#, fuzzy
+#~| msgid "Object does not exist."
+#~ msgid "\"%(path)s\" does not exist"
+#~ msgstr "این ابزار وجود ندارد."
+
+#, fuzzy
+#~| msgid "Type"
+#~ msgid "Template Name"
+#~ msgstr "نوع"
+
+#~ msgid "Users must have a valid username."
+#~ msgstr "کاربر باید یک نام کابری مناسب داشته باشد"
+
+#~ msgid "Admin?"
+#~ msgstr "ادمین سایت"
+
+#~ msgid "The time when the user was created"
+#~ msgstr "زمانی که کاربر در سیستم ساخته شد"
+
+#~ msgid "Last time user got update"
+#~ msgstr "آخرین باری که اطلاعات کاربر به روز شد"
+
+#~ msgid "Number of new notifications"
+#~ msgstr "تعداد اعلانهای جدید"
+
+#~ msgid "Forgot Password"
+#~ msgstr "گذرواژه فراموش شده"
+
+#~ msgid "Account Activation"
+#~ msgstr "فعال سازی حساب کاربری"
+
+#~ msgid "Globally Unique Identifier (GUID)"
+#~ msgstr "مشخصه یکتای عمومی"
+
+#~ msgid "Your account is created."
+#~ msgstr "حساب کاربری ساخته شد"
+
+#~ msgid "Account could not be created with the received data."
+#~ msgstr "مشکل در ساخت حساب کاربری"
+
+#~ msgid "You are logged in."
+#~ msgstr "شما با موفقیت وارد سیستم شدید"
+
+#~ msgid "Unauthorized"
+#~ msgstr "عدم اجازه دسترسی"
+
+#~ msgid "You can not log in with this account."
+#~ msgstr "شما با این اطلاعات نمیتوانید وارد سیستم بشوید"
+
+#~ msgid "Username/password combination invalid."
+#~ msgstr "ترکیب حساب کاربری و گذرواژه اشتباه است."
+
+#~ msgid "You are logged out."
+#~ msgstr "کاربر از برنامه خارج شد."
+
+#~ msgid "Successfully updated the user password."
+#~ msgstr "گذرواژه کاربر با موفقیت به روزرسانی شد."
+
+#~ msgid ""
+#~ "An internal server error happened when trying to update the password."
+#~ msgstr "مشکل داخلی سرور در فرستادن ایمیل."
+
+#~ msgid "You cannot update the password on this account."
+#~ msgstr "شما نمیتوانید گذرواژه خود را به روز کنید"
+
+#~ msgid "If registered, an email will be sent to: "
+#~ msgstr "اگر ثبت نام کرده اید، دستور کار به این ایمیل فرستاده خواهد شد:"
+
+#~ msgid "Fail"
+#~ msgstr "ناموفق"
+
+#~ msgid "Internal server error in sending forgot password email"
+#~ msgstr "مشکل داخلی سرور در فرستادن ایمیل."
+
+#~ msgid "There is no account registered with the given email address"
+#~ msgstr "هیچ حساب کاریری با این ایمیل یافت نشد."
+
+#~ msgid "New Password and Confirm password do not match."
+#~ msgstr "گذرواژه جدید و تکرار گذرواژه یکسان نیستند."
+
+#~ msgid "The activation link is not valid"
+#~ msgstr "لینک فعال سازی معتبر نیست."
+
+#~ msgid "Internal server error, please try again later."
+#~ msgstr "مشکل داخلی سرور در فرستادن ایمیل."
+
+#~ msgid "Your password has been updated."
+#~ msgstr "گذرواژه جدید با موفقیت به روز رسانی شد."
+
+#~ msgid "The activation link is not valid."
+#~ msgstr "لینک فعال سازی معتبر نیست."
+
+#~ msgid "Successfully deleted the account."
+#~ msgstr "گذرواژه کاربر با موفقیت به روزرسانی شد."
+
+#~ msgid "Password is not valid."
+#~ msgstr "گذرواژه اشتباه است."
+
+#~ msgid "Change password"
+#~ msgstr "تغییر گذرواژه"
+
+#~ msgid "Successfully moved"
+#~ msgstr "کاربر از برنامه خارج شد."
+
+#~ msgid "Proxy tools"
+#~ msgstr "ابزار پراکسی"
+
+#~ msgid "Circumvention tools"
+#~ msgstr "فیلترشکن"
+
+#~ msgid "Anonymity tools"
+#~ msgstr "ناشناس‌ساز"
+
+#~ msgid "Supports Windows"
+#~ msgstr "ویندوز"
+
+#~ msgid "Supports Android"
+#~ msgstr "اندروید"
+
+#~ msgid "Supports Iphone"
+#~ msgstr "آیفون"
+
+#~ msgid "Supports Linux"
+#~ msgstr "لینوکس"
+
+#~ msgid "success"
+#~ msgstr "انجام شد"
+
+#~ msgid "Cannot submit a report with the data given."
+#~ msgstr "اطلاعات داده شده برای ثبت بازخورد کافی نیست."

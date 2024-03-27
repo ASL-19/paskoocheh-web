@@ -1,0 +1,42 @@
+<dl class="pk-expandable-list js-supported">{% load i18n pask_url markdowntohtml %}
+    {% for faq in faqs %}
+        {% if faq.version is not None %}
+            <dt class="title">
+                <a
+                    href="#version-faq-answer-{{ faq.id }}"
+                    data-controls-id="version-faq-answer-{{ faq.id }}"
+                    data-record-click-path="{% pask_url 'webfrontend:toolversionfaqrecordclick' p_tool_id=faq.tool.id p_platform_slug=faq.version.supported_os.slug_name p_faq_id=faq.id %}"
+                    class="link toggle"
+                >{{ faq.headline }} <span class="sub">(
+                    {% if app == 'zanga' %}
+                        {{ faq.version.supported_os.display_name_ar }}
+                    {% elif app == 'paskoocheh' %}
+                        {{ faq.version.supported_os.display_name_fa }}
+                    {% else %}
+                        {{ faq.version.supported_os.display_name }}
+                    {% endif %})</span></a>
+            </dt>
+            <dd id="version-faq-answer-{{ faq.id }}" class="body">
+                <div class="html pk-html-content">
+                    {{ faq.body|markdowntohtml }}
+                </div>
+                {# Translators: Used for links to individual reviews and FAQs #}
+                <a href="{% pask_url 'webfrontend:toolversionfaq' p_tool_id=faq.tool.id p_platform_slug=faq.version.supported_os.slug_name p_faq_id=faq.id %}" class="permalink">{% trans 'Permalink' %}</a>
+            </dd>
+        {% elif faq.tool is not None %}
+            <dt class="title">
+                <a
+                    href="#tool-faq-answer-{{ faq.id }}"
+                    data-controls-id="tool-faq-answer-{{ faq.id }}" class="link toggle"
+                    data-record-click-path="{% pask_url 'webfrontend:toolfaqrecordclick' p_tool_id=faq.tool.id  p_faq_id=faq.id %}"
+                >{{ faq.headline }}{% if app == 'paskoocheh' %}<span class="sub">({% trans 'All' context 'Tool list' %})</span>{% endif %}</a>
+            </dt>
+            <dd id="tool-faq-answer-{{ faq.id }}" class="body">
+                <div class="html pk-html-content">
+                    {{ faq.body|markdowntohtml }}
+                </div>
+                <a href="{% pask_url 'webfrontend:toolfaq' p_tool_id=faq.tool.id  p_faq_id=faq.id %}" class="permalink">{% trans 'Permalink' %}</a>
+            </dd>
+        {% endif %}
+    {% endfor %}
+</dl>

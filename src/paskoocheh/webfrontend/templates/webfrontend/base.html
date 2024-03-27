@@ -1,0 +1,146 @@
+<!DOCTYPE html>{% load
+    android_promo_notice
+    console_log_level
+    i18n
+    main_footer
+    main_header
+    mobile_menu
+    pask_url
+    webfrontend_version_number
+    pipeline
+    pk_request_is_noop_value
+    settings_value
+    static
+    csp_nonce
+%}
+{% settings_value 'PLATFORM' as app %}
+{% settings_value 'GOOGLE_TAG_MANAGER_CONTAINER_ID' as gtmId %}
+{% csp_nonce as nonce %}
+
+{% if app == 'zanga' %}
+    <html lang="ar-SA" dir="rtl" class="ar-SA flickity-unsupported js-unsupported">
+{% else %}
+    <html lang="fa-IR" dir="rtl" class="fa-IR flickity-unsupported js-unsupported">
+{% endif %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {% comment %}
+        Note: The server doesn’t send a CSP header for non-admin documents.
+        The policy specified in the meta tag isn’t override – it’s the only
+        policy!
+    {% endcomment %}
+    {% settings_value 'DEBUG' as is_debug %}
+
+    {% if is_debug %}
+        {# Add 'unsafe-eval' and 'unsafe-inline' for Django Debug Toolbar #}
+        <meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-src https://player.vimeo.com https://www.google.com https://www.youtube.com https://e.infogram.com; img-src 'self' https://s3.amazonaws.com https://www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://www.google-analytics.com; object-src 'none'; script-src 'self' https://www.google.com https://tagmanager.google.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.gstatic.com https://e.infogram.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data: 'unsafe-inline'; upgrade-insecure-requests" />
+    {% else %}
+        <meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-src https://player.vimeo.com https://www.google.com https://www.youtube.com https://e.infogram.com; img-src 'self' https://s3.amazonaws.com https://www.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://www.google-analytics.com; object-src 'none'; script-src 'nonce-{{ nonce }}' 'self' https://www.google.com https://tagmanager.google.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.gstatic.com https://e.infogram.com; style-src 'self' https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data: 'unsafe-inline'; upgrade-insecure-requests" />
+    {% endif %}
+
+    <!-- webfrontend version: {% webfrontend_version_number %} -->
+
+    {% if gtmId %}
+        <!-- Google Tag Manager -->
+            <script nonce='{{ nonce }}'>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;var n=d.querySelector('[nonce]');
+                n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));f.parentNode.insertBefore(j,f);
+                })(window,document,'script','gtmDataLayer','{{ gtmId }}');</script>
+        <!-- End Google Tag Manager -->
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    {% if is_blog_page %}
+        <link
+            rel="alternate"
+            type="application/atom+xml"
+            title="{% trans 'Paskoocheh blog' context 'Blog' %}"
+            href="{% pask_url 'webfrontend:blogpostsfeed' %}"
+        />
+    {% endif %}
+
+    <meta name="pk-console-log-level" content="{% console_log_level %}" />
+    <meta name="pk-debug" content="{{ is_debug }}" />
+    <meta name="pk-csrf-token" content="[csrf_token]" />
+    <meta name="pk-invisible-grecaptcha-site-key" content="{% settings_value 'GRECAPTCHA_INVISIBLE_SITE_KEY' %}" />
+    <meta name="pk-language-code" content="{% settings_value 'LANGUAGE_CODE' %}" />
+    <meta name="pk-request-is-noop" content="{% pk_request_is_noop_value %}" />
+    <meta name="pk-version-number" content="{% webfrontend_version_number %}" />
+    <meta name="platform" content="{{ app }}" />
+
+    <!-- Via RealFaviconGenerator.net -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'webfrontend/favicons/android-chrome-192x192.png' %}">
+    <meta name="apple-mobile-web-app-title" content="{% trans 'Paskoocheh' %}">
+    <meta name="application-name" content="{% trans 'Paskoocheh' %}">
+    <meta name="msapplication-config" content="{% static 'webfrontend/browserconfig.xml' %}">
+
+    {% if app == 'zanga' %}
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'webfrontend/favicons/zanga-apple-touch-icon.png' %}">
+        <link rel="shortcut icon" href="{% static 'webfrontend/favicons/zanga-favicon.ico' %}">
+        <link rel="icon" type="image/png" sizes="194x194" href="{% static 'webfrontend/favicons/zanga-favicon-194x194.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'webfrontend/favicons/zanga-favicon-16x16.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'webfrontend/favicons/zanga-favicon-32x32.png' %}">
+        <link rel="manifest" href="{% static 'webfrontend/zanga-manifest.webmanifest' %}">
+        <meta name="theme-color" content="#0054B0">
+    {% else %}
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'webfrontend/favicons/apple-touch-icon.png' %}">
+        <link rel="shortcut icon" href="{% static 'webfrontend/favicons/favicon.ico' %}">
+        <link rel="icon" type="image/png" sizes="194x194" href="{% static 'webfrontend/favicons/favicon-194x194.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'webfrontend/favicons/favicon-16x16.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'webfrontend/favicons/favicon-32x32.png' %}">
+        <link rel="manifest" href="{% static 'webfrontend/manifest.webmanifest' %}">
+        <meta name="theme-color" content="#001d4a">
+    {% endif %}
+
+    {% block meta_tags %}<title>{% trans 'Paskoocheh' %}</title>{% endblock %}
+
+    {# MIME types are text/javascript since IE<=8 won’t read application/javascript scripts #}
+    <!--[if lte IE 8]>
+        <script src="{% static 'webfrontend/lib/html5shiv-printshiv-3.7.3.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'webfrontend/lib/rem-unit-polyfill-1.3.4.min.js' %}" type="text/javascript"></script>
+    <![endif]-->
+
+    {% comment %}
+        This script tag is here because it’s important to add/remove classes
+        that will influence rendering before anything is rendered. If this
+        code was part of the main JS bundle or even at the bottom of <body>,
+        users would see parts of the page change in some cases, and browsers
+        would waste CPU/GPU cycles re-rendering the page for no reason.
+    {% endcomment %}
+    {% javascript 'webfrontend_head' %}
+
+    {% stylesheet 'webfrontend_global' %}
+</head>
+<body class="{{ view_body_class }}">
+    {% if gtmId %}
+        <!-- Google Tag Manager (noscript) -->
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id={{ gtmId }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+
+    <!--[if lt IE 9 ]>
+        <div class="pk-overlay browser-unsupported-overlay"></div>
+        <div class="browser-unsupported-notice">{% trans 'This browser is unfortunately unsupported as of now' context 'Index'%}</div>
+    <![endif]-->
+    {% main_header %}
+    {% mobile_menu %}
+    <div id="loading"></div>
+    <div id="content">
+        {% block body %}{% endblock %}
+    </div>
+    {% main_footer %}
+    {% android_promo_notice %}
+    <a
+        class="pk-a11y-shortcut pk-g-a11y-nav-link pk-g-skip-to-main-header-link"
+        href="#main-heading"
+        {# Translators: Hidden accessibility button at the bottom of the page. If the user clicks it, it moves their focus back to the top. #}
+    >{% trans 'Return to header' %}</a>
+    {% javascript 'webfrontend_global' %}
+</body>

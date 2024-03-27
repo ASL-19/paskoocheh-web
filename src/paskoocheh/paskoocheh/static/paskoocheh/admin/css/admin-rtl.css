@@ -1,0 +1,48 @@
+/* =============
+   === FONTS ===
+   ============= */
+
+/* Iran Sans with Perso-Arabic numerals */
+@font-face {
+    font-family: 'Iran Sans PA';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/iran-sans-pa-numerals.eot');
+    src:
+        url('../fonts/iran-sans-pa-numerals.eot#iefix') format('embedded-opentype'),
+        url('../fonts/iran-sans-pa-numerals.woff2') format('woff2'),
+        url('../fonts/iran-sans-pa-numerals.woff') format('woff'),
+        url('../fonts/iran-sans-pa-numerals.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Iran Sans PA';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/iran-sans-pa-numerals-bold.eot');
+    src:
+        url('../fonts/iran-sans-pa-numerals-bold.eot#iefix') format('embedded-opentype'),
+        url('../fonts/iran-sans-pa-numerals-bold.woff2') format('woff2'),
+        url('../fonts/iran-sans-pa-numerals-bold.woff') format('woff'),
+        url('../fonts/iran-sans-pa-numerals-bold.ttf') format('truetype');
+}
+body.change-form .field-headline input,
+body.change-form .field-body .markdownx-editor,
+body.change-form .field-body .markdownx-preview,
+body.change-form .field-description .markdownx-editor,
+body.change-form .field-description .markdownx-preview,
+body.change-form.model-info .field-name input,
+body.change-form.model-platform .field-display_name_ar input,
+body.change-form.model-platform .field-display_name_fa input,
+body.change-form.model-promoimage .field-title input,
+body.change-form.model-text .markdownx-editor,
+body.change-form.model-text .markdownx-preview,
+body.change-form.model-tooltype .field-name_ar input,
+body.change-form.model-tooltype .field-name_fa input {
+    font-family: 'Iran Sans PA', Tahoma, Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+body.change-form #content-main .select2-results__option {
+    list-style-type: none;
+    overflow: hidden;
+}

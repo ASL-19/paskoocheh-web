@@ -1,0 +1,664 @@
+/* ==============
+    === HEADER ===
+   ============== */
+
+.pk-main-header {
+    font-size: 1em;
+    display: block;
+    position: fixed;
+    z-index: 500;
+    width: 100%;
+    height: 4em;
+    background: #1b3a6b;
+}
+/* .main-header-is-relative is set in focusSearchInput */
+html.main-header-is-relative .pk-main-header {
+    position: relative;
+}
+/* Push down next sibling of fixed header by height of header */
+.pk-mobile-menu + * {
+    margin-top: 0;
+}
+html.main-header-is-relative .pk-mobile-menu + * {
+    margin-top: 0;
+}
+.pk-main-header .main-header-header {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: inline-flex;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    position: relative;
+    width: 100%;
+}
+.pk-main-header .pk-mobile-menu-trigger {
+    margin: 0.5rem 1rem 0 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+    background-image: url('../images/icons/ic-hamburger.svg');
+    position: absolute;
+    top: 7px;
+    left: 12px;
+}
+.pk-main-header .pk-mobile-menu-cross {
+    display: none;
+    margin: 0.5rem 1rem 0 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.2rem;
+    background-image: url('../images/icons/ic-cross-white.svg');
+    position: absolute;
+    top: 7px;
+    left: 12px;
+}
+html.js-unsupported .pk-mobile-menu-trigger {
+    display: none;
+}
+.pk-main-header .logo-link {
+    height: 3em;
+    line-height: 3em;
+    margin: 0 0 0 2rem;
+}
+.pk-main-header .logo-link .logo-img {
+    width: 3em;
+    height: 3em;
+}
+.pk-main-header .logo-link .logo-text {
+    font-size: 1.25em;
+    height: inherit;
+    line-height: inherit;
+    margin: 0 1em 0 0;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0.4em;
+    right: 2.5em;
+}
+/* stylelint-disable no-descending-specificity  */
+.pk-main-header .search-form,
+.pk-main-header .search-form *,
+.pk-main-header .pk-platform-select,
+.pk-main-header .pk-platform-select * {
+    position: relative;
+    height: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+}
+/* stylelint-enable */
+.pk-main-header .rectangular-box {
+    display: block;
+    position: relative;
+    border: none;
+    color: #fff;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.pk-main-header .centred-header-elem {
+    margin: 0;
+}
+.pk-main-header .header-buttons .centred-header-elem:last-child {
+    margin-left: 0;
+}
+
+/* ============================
+    === Platform select box ===
+   ============================ */
+
+.pk-main-header .pk-platform-select {
+    width: 11%;
+    min-width: 10em;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    position: absolute;
+    top: 0.75em;
+    left: 0.5em;
+}
+html.js-unsupported .pk-main-header .pk-platform-select {
+    display: none;
+}
+.pk-main-header .pk-platform-select::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    left: 0.85rem;
+    top: 1.1em;
+    width: 1rem;
+    height: 0.5em;
+    pointer-events: none;
+    z-index: 4;
+
+    background-size: 1em auto;
+    background-image: url('../images/icons/ic-chevron-up-white.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transform: rotateZ(180deg);
+}
+.pk-main-header .pk-platform-select.selected::after {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    display: inline-block;
+}
+.pk-main-header .pk-platform-select .platform-select {
+    width: 100%;
+    padding: 0 1rem 0 2rem;
+    background-color: #287cfc;
+    z-index: 2;
+}
+
+.pk-main-header .pk-platform-select .platform-select.rectangular-box .all-platforms {
+    padding: 0;
+}
+
+/* ===================
+    === Search form ===
+   =================== */
+.pk-main-header .activate-search {
+    display: none;
+    height: 2em;
+    width: 2em;
+    padding: 0.1em;
+    margin-top: 0.5em;
+    background-image: url('../images/icons/ic-search-white.svg');
+    position: absolute;
+    top: 0.5em;
+    left: 14em;
+    z-index: 1;
+    cursor: pointer;
+}
+.pk-main-header .search-form {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    width: 25%;
+    margin-left: 2em;
+}
+.pk-main-header .search-form .search-query-input {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0;
+    border: none;
+    margin: 0.75em 0 0 0;
+    padding: 0 0 0 4rem;
+    background-color: #fff;
+    color: #000;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    text-indent: 1em;
+}
+
+.pk-main-header .search-form .search-query-input::-webkit-input-placeholder { text-indent: 1.2em !important; }
+.pk-main-header .search-form .search-query-input::-moz-placeholder { text-indent: 1.2em !important; }
+.pk-main-header .search-form .search-query-input:-moz-placeholder { text-indent: 1.2em !important; }
+.pk-main-header .search-form .search-query-input:-ms-input-placeholder { text-indent: 1.2em !important; }
+
+.pk-main-header .search-form input::-webkit-search-decoration,
+.pk-main-header .search-form input::-webkit-search-cancel-button,
+.pk-main-header .search-form input::-webkit-search-results-button,
+.pk-main-header .search-form input::-webkit-search-results-decoration {
+    display: none;
+}
+.pk-main-header .search-form input::-ms-clear {
+    display: none;
+}
+.pk-main-header .search-form .close-search-button {
+    display: none;
+    position: absolute;
+    top: 1em;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    background-image: url('../images/icons/ic-cross.svg');
+    background-size: 125%;
+    z-index: 2;
+    cursor: pointer;
+}
+.ie9 .pk-main-header.search-has-value .search-form .submit-button {
+    display: block;
+}
+.ie9 .pk-main-header.search-has-value .search-form .close-search-button {
+    display: none;
+}
+.pk-main-header .search-form .submit-button { /* stylelint-disable-line no-descending-specificity */
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    width: 3.5em;
+    height: 2.5em;
+    cursor: pointer;
+    background-color: #287cfc;
+}
+.pk-main-header .search-form .submit-button svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.ie9 .pk-main-header .search-form .submit-button svg {
+    left: 10%;
+}
+.black-filter {
+    filter: invert(0%) sepia(80%) saturate(13%) hue-rotate(64deg) brightness(97%) contrast(100%);
+}
+.header-nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+    margin: 0 auto;
+    justify-content: start;
+    align-items: center;
+}
+.header-nav li {
+    display: inline-block;
+    margin: 0.75em 1em;
+    *zoom: 1;
+}
+.header-nav li a {
+    color: #fff;
+}
+.nav-link {
+    color: #000;
+    text-align: center;
+}
+
+.active {
+    border-bottom: 3px solid #287cfc;
+    padding-bottom: 5px;
+}
+html.js-unsupported .app-categories-link {
+    display: none;
+}
+.app-categories-link::after {
+    content: ' ';
+    display: inline-block;
+    position: relative;
+    right: 0.3rem;
+    top: 0;
+    width: 1rem;
+    height: 0.5em;
+    pointer-events: none;
+    z-index: 4;
+
+    background-size: 1em auto;
+    background-image: url('../images/icons/ic-chevron-up-white.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transform: rotateZ(180deg);
+}
+.app-categories-link.selected::after {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    display: inline-block;
+}
+
+.pk-main-header .nav-menu {
+    margin: 0 10em 0 0;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    position: absolute;
+}
+.pk-main-header .nav-menu.platform-menu {
+    padding-top: 1.25em;
+    margin: 0 10% 0 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+/* stylelint-disable declaration-block-no-duplicate-properties */
+.nav-menu li {
+    display: inline-block;
+    text-align: center;
+    *display: inline;
+    margin: 0.75em 1em;
+}
+.all-link {
+    font-size: 12px;
+    color: #287cfc;
+    position: relative;
+}
+
+/* ===================
+    === Content Pane ===
+   =================== */
+
+.content-wrapper {
+    display: none;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: 3.5em;
+    left: auto;
+    right: 17.7em;
+    z-index: 3;
+}
+
+.arrow-up.left {
+    right: auto;
+    left: 1.35em;
+}
+
+.pk-main-header .content-pane {
+    position: fixed;
+    top: 3.95em;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    z-index: 4;
+    width: 99.9%;
+    min-height: 8em;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px #a0a0a0;
+    -webkit-box-shadow: 0 3px 8px #a0a0a0;
+    -moz-box-shadow: 0 3px 8px #a0a0a0;
+}
+
+.pk-main-header .item-thumbnail-container {
+    height: 2.5em;
+    width: 2.5em;
+    position: relative;
+    display: block;
+    margin: 0 auto 0.5em;
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(207deg) brightness(100%) contrast(100%);
+}
+.pk-main-header .item-thumbnail-container.no-filter {
+    filter: none;
+}
+.item-thumbnail-container .item-thumbnail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2.25em;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+}
+.pk-main-header .platform-logo-container {
+    height: 2em;
+    width: 2em;
+    position: relative;
+    margin: 0 auto 0;
+}
+.platform-logo-container .item-thumbnail {
+    height: 100%;
+}
+
+.tinted {
+    filter: invert(20%) sepia(81%) saturate(2349%) hue-rotate(199deg) brightness(94%) contrast(102%);
+}
+
+.pk-main-header .v-line {
+    display: inline-block;
+    height: 60px;
+    border: 1px solid #d3d3d3;
+    margin: 0 1.5em;
+}
+.pk-main-header .ref-point {
+    display: inline-block;
+    position: relative;
+    width: 0;
+    height: 0;
+}
+.pk-main-header .platform-category {
+    position: absolute;
+    bottom: 4em;
+    right: 1.2em;
+    font-size: 0.95em;
+    width: 6em;
+}
+
+html.js-unsupported .pk-main-header .content-wrapper {
+    display: block;
+}
+html.js-unsupported .pk-main-header .arrow-up {
+    display: none;
+}
+html.js-unsupported .pk-main-header .content-pane {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border: 1px solid #0054b0;
+    width: 100%;
+    border-radius: unset;
+    min-height: 2em;
+}
+html.js-unsupported .pk-main-header .nav-menu {
+    font-size: 12px;
+}
+html.js-unsupported .pk-main-header .nav-menu.app-category-menu {
+    position: absolute;
+    right: 1em;
+    padding: 0;
+    margin: 0;
+}
+html.js-unsupported .pk-main-header .nav-menu.platform-menu {
+    position: absolute;
+    left: 1em;
+    padding: 0;
+    margin: 0;
+}
+html.js-unsupported .all-link {
+    bottom: 0.7em;
+}
+html.js-unsupported .pk-main-header .item-thumbnail-container {
+    display: none;
+}
+html.js-unsupported .pk-main-header .platform-logo-container {
+    display: none;
+}
+html.js-unsupported .pk-main-header .v-line {
+    display: none;
+}
+html.js-unsupported .pk-main-header .ref-point {
+    display: none;
+}
+html.js-unsupported .pk-main-header .search-form {
+    left: 0;
+}
+
+@media (min-width: 992px) {
+    .pk-main-header .header-buttons {
+        top: 0.5em;
+        right: 10em;
+        width: auto;
+        overflow: hidden;
+        position: absolute;
+    }
+    .pk-main-header .pk-mobile-menu-trigger {
+        display: none;
+    }
+}
+@media (min-width: 85.375em) { /* 1366px */
+    .pk-main-header .header-buttons {
+        top: 0;
+        right: 5%;
+        position: relative;
+    }
+}
+@media (max-width: 991px) {
+    .pk-main-header .logo-link {
+        margin: 0 auto;
+    }
+    .pk-main-header .logo-link .logo-img {
+        margin-left: 5em;
+    }
+    .pk-main-header .logo-link .logo-text {
+        right: unset;
+        margin-right: 3em;
+    }
+    html.js-unsupported .pk-mobile-menu + * {
+        margin-top: 0;
+    }
+    html.js-unsupported .pk-main-header {
+        position: relative;
+    }
+    html.js-unsupported .pk-main-header + * {
+        margin-top: 0;
+    }
+    .pk-main-header .header-buttons .centred-header-elem {
+        margin-left: 1rem;
+    }
+    .pk-main-header .header-buttons {
+        position: relative;
+    }
+    html.js-unsupported .pk-main-header .header-buttons {
+        margin-left: 0;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+
+/*  ===================
+    === Search form ===
+    =================== */
+    html.js-supported .pk-main-header .activate-search {
+        display: block;
+        left: 3em;
+    }
+    html.js-supported .pk-main-header .search-form {
+        left: 3em;
+    }
+    html.js-unsupported .pk-main-header .content-wrapper {
+        display: none;
+    }
+    html.js-supported .pk-main-header .activate-search {
+        display: block;
+        left: unset;
+    }
+    html.js-supported .pk-main-header .search-form {
+        display: none;
+        margin: 4em 0 0 0;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 999;
+    }
+    .pk-main-header .search-form .search-query-input {
+        margin: 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        height: 4em;
+    }
+    html.js-supported .pk-main-header .search-form .close-search-button {
+        display: block;
+        top: 1em;
+        left: 0.25em;
+    }
+    html.js-supported .pk-main-header.search-has-value .search-form .close-search-button {
+        display: block;
+    }
+    html.js-supported .pk-main-header.search-is-active .pk-platform-select {
+        position: absolute !important;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+    .pk-main-header .search-form .submit-button { /* stylelint-disable-line no-descending-specificity */
+        display: none;
+    }
+
+    html.js-unsupported .pk-main-header {
+        height: 8.65em;
+    }
+
+    html.js-unsupported .pk-main-header .search-form {
+        margin: 0;
+        top: 4em;
+        left: 0;
+        width: 100%;
+    }
+    html.js-unsupported .pk-main-header .search-form .submit-button {
+        display: block;
+    }
+    html.js-unsupported .pk-main-header .search-form .submit-button {
+        top: 0;
+        left: 0;
+        width: 3.75em;
+        height: 4em;
+        border-radius: 5px;
+    }
+}
+@media (min-width: 750px) {
+    .ie9 .pk-main-header .search-form {
+        /* This is necessary to override `display: none` set if
+        searchCanBeActivatedByFocus */
+        display: block !important;
+        width: 18em;
+    }
+}
+@media (max-width: 1289px) and (min-width: 1172px) {
+    html.js-supported .pk-main-header .search-form {
+        width: 27.5%;
+        left: 15%;
+    }
+    html.js-unsupported .pk-main-header .search-form {
+        width: 35%;
+    }
+    html.js-unsupported .nav-menu li {
+        margin: 0.75em 0.2em;
+    }
+}
+@media (max-width: 1171px) and (min-width: 992px) {
+    html.js-supported .pk-main-header .search-form {
+        width: 17.5%;
+        left: 15%;
+    }
+    html.js-unsupported .pk-main-header .search-form {
+        width: 35%;
+    }
+    html.js-unsupported .nav-menu li {
+        margin: 0.75em 0.2em;
+    }
+}
+
+@media (max-width: 799px) {
+    .pk-main-header {
+        position: absolute;
+    }
+}
+
+@media (max-width: 459px) {
+    html.js-unsupported .pk-main-header .search-form .submit-button {
+        height: 4.25em;
+    }
+}

@@ -1,0 +1,17 @@
+{% extends 'webfrontend/base.html' %}
+{% load pk_meta_tags tool_list %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="index-main pk-g-centred pk-g-no-focus-outline search-view" tabindex="-1">
+            <h1 id="main-heading" class="pk-g-page-heading heading">{% block title %}{{ filtered_tools_title }}{% endblock %}</h1>
+            {% tool_list filtered_tools_list_item_contexts in_search_view=True %}
+            {% if other_platform_tools_list_item_contexts %}
+                <h2 class="other-heading heading">{{ other_platform_tools_title }}</h2>
+                {% tool_list other_platform_tools_list_item_contexts %}
+            {% endif %}
+        </main>
+    </div>
+{% endblock %}

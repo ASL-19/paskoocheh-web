@@ -1,0 +1,299 @@
+.pk-toolversion-main hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 2em 0;
+    border: none;
+    background-color: rgb(213, 213, 213);
+    clear: both;
+}
+.pk-toolversion-main .main-section {
+    float: right;
+    width: 100%;
+    margin: 1em 0;
+}
+.pk-toolversion-main .pk-g-page-heading {
+    margin: 0.3em 0 0 0;
+}
+.pk-toolversion-main .section-heading,
+.pk-toolversion-main .section-secondary-heading {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+}
+.pk-toolversion-main .section-heading {
+    color: #505d68;
+}
+.pk-toolversion-main .success-message {
+    background-color: #d0f9d0;
+    padding: 0.5em;
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+.pk-toolversion-main .logo-sizing-container {
+    display: block;
+    position: relative;
+    float: right;
+    width: 17%;
+}
+.pk-toolversion-main .logo-sizing-container::after {
+    display: block;
+    content: ' ';
+    padding-bottom: 100%;
+}
+.pk-toolversion-main .logo {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.pk-toolversion-main .top {
+    position: relative;
+    float: left;
+    width: 80%;
+}
+.pk-toolversion-main .top .name {
+    overflow: hidden;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+.pk-toolversion-main .top .company,
+.pk-toolversion-main .top .category {
+    margin: 0 0 0.5rem 0;
+    color: #555;
+}
+.pk-toolversion-main .top .company {
+    direction: ltr;
+    text-align: right;
+    color: #7c7c7c;
+}
+.pk-support-request-button-container {
+    float: left;
+}
+.pk-toolversion-main .download-links-container {
+    float: left;
+    position: relative;
+    top: -4.5em;
+    left: 0;
+    max-width: 90%;
+}
+.pk-toolversion-main .pk-g-button-centring-container.contact-support-button-container {
+    position: relative;
+    top: -3.25em;
+    right: 0;
+    text-align: left;
+}
+.pk-toolversion-main-support .overlay-trigger-button {
+    display: none;
+}
+.pk-toolversion-main .pk-toolversion-main-support .overlay-trigger-button {
+    position: relative;
+    top: -1em;
+    border-radius: 8px;
+    border-width: 0.15em;
+    display: block;
+    float: left;
+    clear: both;
+}
+.pk-toolversion-main .more-info .section-heading {
+    margin-bottom: 0;
+}
+html.js-unsupported .pk-toolversion-main-support .section-heading {
+    float: right !important;
+    position: relative !important;
+    clip: auto !important;
+    white-space: normal !important;
+    text-align: center;
+    color: #0054b0;
+}
+/* The form is hidden on Android 4.1 WebKit because Google keeps breaking the
+   fallback reCAPTCHA form to the point where it’s no longer worth fighting. */
+html.android-41-webkit .pk-toolversion-main-support .contact-support-form-container,
+html.opera-mini-extreme .pk-toolversion-main-support .contact-support-form-container {
+    display: none;
+}
+html.js-supported .pk-toolversion-main-support .pk-form {
+    display: none;
+}
+.pk-toolversion-main .footer {
+    float: right;
+    width: 100%;
+}
+.pk-toolversion-main .footer .heading {
+    float: right;
+    clear: right;
+    margin: 0 0 1rem 0;
+}
+.pk-toolversion-main .post-top-section-hr {
+    margin: 0 0 0.75em 0;
+    width: 80%;
+    float: left;
+}
+.pk-toolversion-main .badges {
+    width: 100%;
+    text-align: center;
+    display: table;
+    display: -ms-grid;
+    display: grid;
+    margin: 0;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 20% 20% 20% 20%;
+    -ms-grid-rows: 130px 130px 130px 130px;
+    height: 100%;
+}
+.ie9 .pk-toolversion-main .badges {
+    padding-top: 0.5em;
+}
+.pk-toolversion-main .badges .badge {
+    direction: rtl;
+    width: 100%;
+}
+.ie9 .pk-toolversion-main .badges .badge {
+    display: table-cell; /* for IE9 */
+    vertical-align: top; /* for IE9 */
+}
+.pk-toolversion-main .stars-container {
+    position: absolute;
+    top: 3px;
+}
+.pk-toolversion-main .flickity-viewport {
+    border-radius: 8px;
+}
+.pk-toolversion-main .description {
+    float: right;
+}
+.pk-toolversion-main .more-info .item {
+    float: right;
+    margin: 1rem 0 0 2rem;
+    max-width: 100%;
+}
+.pk-toolversion-main .more-info .item a,
+.pk-toolversion-main .more-info .item p {
+    margin: 0;
+}
+.pk-toolversion-main .more-info .item.website {
+    clear: right;
+}
+.pk-toolversion-main .more-info .item.checksum h3 {
+    display: inline-block;
+}
+.pk-toolversion-main .more-info .item.checksum .checksum-info-link-container {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+.pk-toolversion-main .more-info .item.checksum p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.pk-toolversion-main .more-info .info-label {
+    color: #888;
+    margin: 0 0 0.5rem 0;
+}
+.pk-toolversion-main .pk-blog-associated-tool-list-item .inner .logo-sizing-container {
+    width: 30%;
+}
+html.js-unsupported .pk-toolversion-main-support {
+    display: none;
+}
+.pk-toolversion-main .pk-bundled-app-notice {
+  float: right;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  border: 1px solid #287CFC;
+  background: rgba(40, 124, 252, 0.20);
+  padding: 0.5em;
+  color: #287CFC;
+  gap: 1em;
+}
+.pk-toolversion-main .pk-bundled-app-notice.hidden {
+  display: none;
+}
+.pk-toolversion-main .pk-bundled-app-notice-icon {
+  font-size: 1.25em;
+  flex: 0 0 auto;
+}
+.pk-bundled-app-notice-close-button {
+  appearance: none;
+  background: none;
+  display: flex;
+  padding: 0;
+}
+@media (max-width: 61.99em) {
+    .pk-toolversion-main .pk-g-page-heading {
+        float: none;
+        margin: 2em 0 0 0;
+    }
+    .pk-toolversion-main.pk-g-centred {
+        padding: 6em 1em 0;
+    }
+    html.js-unsupported .pk-toolversion-main.pk-g-centred {
+        padding: 2em 1em 0;
+    }
+    .pk-toolversion-main .logo-sizing-container {
+        width: 25%;
+        margin-left: 1em;
+    }
+    .pk-toolversion-main .top {
+        float: none;
+        width: 100%;
+    }
+
+    .pk-toolversion-main .top .company,
+    .pk-toolversion-main .top .category {
+        margin: 0 6em 0 0;
+    }
+    .pk-toolversion-main .download-links-container {
+        padding: 1em 0 0 0;
+        float: none;
+        margin: 0 auto;
+        top: 0;
+        clear: both;
+        max-width: 100%;
+    }
+    .pk-toolversion-main .pk-toolversion-main-download-links .download-link {
+        text-align: center;
+    }
+    .pk-toolversion-main-support {
+        clear: both;
+        padding: 1em 0;
+    }
+    .pk-toolversion-main-reviews .overlay-trigger-button {
+        max-width: unset !important;
+    }
+    html.js-supported .pk-toolversion-main-support .overlay-trigger-button {
+        display: block;
+        float: right;
+        margin: 0 auto;
+        top: 0;
+    }
+    .pk-toolversion-main .post-top-section-hr {
+        position: relative;
+        margin: 1.5em 0 0.5em 0;
+        width: 100%;
+    }
+    .pk-toolversion-main .badges {
+        height: auto;
+        margin: 0 0 1em 0;
+        grid-template-columns: 50% 50%;
+        clear: both;
+    }
+    .pk-toolversion-main .pk-g-button-centring-container.contact-support-button-container {
+        position: inherit;
+    }
+    .pk-toolversion-main .more-info .item.website {
+        clear: none;
+    }
+}
+@media (max-width: 44em) {
+    .pk-toolversion-main .footer {
+        padding: 0;
+    }
+    .pk-toolversion-main .pk-g-page-heading {
+        margin: 0 4em 0 0;
+        max-width: 75%;
+    }
+    html.js-unsupported .pk-toolversion-main-support {
+        display: block;
+    }
+}

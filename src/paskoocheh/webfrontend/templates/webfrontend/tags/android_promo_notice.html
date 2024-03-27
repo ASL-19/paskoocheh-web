@@ -1,0 +1,16 @@
+{% load
+    i18n
+%}<div class="pk-android-promo-notice">
+    <div class="centred">
+        <p class="text">{% trans 'Download Android app for free' context 'Android promo notice' %}</p>
+        <a
+            class="pk-button download-button js-download-button"
+            href="{{ paskoocheh_android_download_url }}"
+        {# Translators: Download button text #}
+        >{% trans 'Download' context 'Android promo notice' %}</a>
+        <button
+            class="close-button js-close-button pk-g-image-button"
+        {# Translators: Hidden accessibility text for close button #}
+        >{% trans 'Close' context 'Android promo notice' %}</button>
+    </div>
+</div>

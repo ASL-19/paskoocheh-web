@@ -1,0 +1,43 @@
+/* stylelint-disable declaration-block-no-duplicate-properties */
+.share-links .share-link {
+    *display: inline;
+    *zoom: 1;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin: 1em 0.5em 0;
+}
+.share-links .share-link:first-child {
+    margin-right: 0;
+}
+.share-links .share-link:last-child {
+    margin-left: 0;
+}
+
+.share-links .share-link {
+    background-image: url('../images/icons/ic-telegram.svg');
+    background-repeat: no-repeat;
+    background-color: #ddd;
+    border-radius: 1em;
+    background-position: center;
+    background-size: 50%;
+}
+
+.share-links .share-link.telegram {
+    background-image: url('../images/icons/ic-telegram.svg');
+}
+.share-links .share-link.twitter {
+    background-image: url('../images/icons/ic-twitter.svg');
+}
+.share-links .share-link.facebook {
+    background-image: url('../images/icons/ic-facebook-f.svg');
+}
+.share-links .share-link.instagram {
+    background-image: url('../images/icons/ic-instagram.svg');
+}
+@media (max-width: 44em) {
+    .share-links {
+        text-align: center;
+        clear: both;
+    }
+}

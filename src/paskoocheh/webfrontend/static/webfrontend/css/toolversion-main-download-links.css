@@ -1,0 +1,54 @@
+.pk-toolversion-main-download-links {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+.pk-toolversion-main-download-links:first-of-type:not(:last-of-type) {
+    margin: 0 0 1rem 0;
+}
+.pk-toolversion-main-download-links .download-link {
+    float: right;
+    margin: 0.2em;
+    border-width: 0.15em;
+}
+.pk-toolversion-main-download-links.double-version .download-link {
+    float: left;
+    padding: 0.25em 0.5em;
+}
+.pk-toolversion-main-download-links .download-link.image {
+    height: 2.875em;
+    /* Calculated width is hard-coded into element style attribute. The
+    container’s dimensions are hard-coded to prevent the layout from jumping
+    around as the image loads in. */
+    width: auto;
+    overflow: hidden;
+    position: relative;
+}
+.pk-toolversion-main-download-links .download-link.image.microsoft-store {
+    border-radius: 0.25em;
+}
+.pk-toolversion-main-download-links .download-link.image img {
+    float: right;
+    position: relative;
+    height: 100%;
+    width: auto;
+    width: calc(100%);
+}
+
+@media (max-width: 991px) {
+    .pk-toolversion-main-download-links .download-link.image img {
+        display: block;
+        float: none;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 499px) {
+    .pk-toolversion-main-download-links {
+        float: none;
+    }
+}
+@media (max-width: 61.99em) {
+    .pk-toolversion-main .pk-toolversion-main-download-links.double-version .download-link {
+        float: none;
+    }
+}

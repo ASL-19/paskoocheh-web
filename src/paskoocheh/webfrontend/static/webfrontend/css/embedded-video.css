@@ -1,0 +1,21 @@
+.embedded-video {
+    text-align: center;
+    margin: 0.5em auto;
+    clear: both;
+}
+.embedded-video.in-carousel {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.embedded-video,
+.embedded-video .video-iframe,
+.embedded-video .iframe-wrapper-noscript,
+.embedded-video .message {
+    width: 100%;
+}
+html.js-unsupported .embedded-video .js-supported-video-wrapper {
+    display: none;
+}
+

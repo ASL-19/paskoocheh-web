@@ -1,0 +1,13 @@
+{% extends 'webfrontend/base.html' %}
+{% load pk_meta_tags %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="pk-g-centred pk-g-no-focus-outline pk-g-boxed-main" tabindex="-1">
+            <h1 id="main-heading" class="pk-g-page-heading">{{ page_title }}</h1>
+            <p>{{ error_message }}</p>
+        </main>
+    </div>
+{% endblock %}

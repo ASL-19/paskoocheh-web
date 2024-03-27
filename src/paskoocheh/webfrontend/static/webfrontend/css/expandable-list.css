@@ -1,0 +1,83 @@
+.pk-expandable-list {
+    float: right;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    border-bottom: 1px solid rgb(213, 213, 213);
+    list-style-type: none;
+}
+.pk-expandable-list:last-child {
+    border-bottom: none;
+}
+.pk-expandable-list .title,
+.pk-expandable-list .body {
+    position: relative;
+    display: block;
+    width: 100%;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.pk-expandable-list .title {
+    padding-top: 1rem;
+    border-top: 1px solid rgb(213, 213, 213);
+}
+.pk-expandable-list .title:first-of-type {
+    border-top: none;
+}
+html.js-supported .pk-expandable-list .title {
+    margin-bottom: 1rem;
+}
+.pk-expandable-list .link {
+    position: relative;
+    display: block;
+    float: right;
+    width: 100%;
+    padding-top: 0.25rem;
+    padding-left: 2rem;
+    min-height: 2rem;
+    color: #1f2432;
+}
+.pk-expandable-list .link .sub {
+    color: #555;
+    font-weight: normal;
+}
+html.js-supported .pk-expandable-list .link.toggle::after {
+    content: ' ';
+    position: absolute;
+    left: 0.5em;
+    top: 0;
+    width: 2em;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 1em auto;
+    background-image: url('../images/down-arrow-grey.svg');
+    transform: rotateZ(0deg);
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+html.js-supported .pk-expandable-list .link.toggle[aria-expanded='true']::after {
+    transform: rotateZ(180deg);
+}
+.pk-expandable-list .body {
+    margin-bottom: 1rem;
+}
+html.js-unsupported .pk-expandable-list .body {
+    padding-top: 1rem;
+}
+.pk-expandable-list .body .html {
+    margin: 0 0 1rem 0;
+}
+
+.pk-expandable-list .body .html p {
+    color: #666;
+}
+
+html.js-supported .pk-expandable-list .body {
+    display: none;
+}
+html.js-supported .pk-expandable-list .body.open {
+    display: block;
+}

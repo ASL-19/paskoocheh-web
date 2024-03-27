@@ -1,0 +1,15 @@
+{% load i18n review %}
+{% if reviews %}
+    <div class="pk-review-list">
+        {% for review in reviews %}
+            {% review
+                review=review
+                url_path=review.url_path
+                invisible_heading_tag=review_invisible_heading_tag invisible_heading_text=review_invisible_heading_text
+            %}
+        {% endfor %}
+    </div>
+{% else %}
+    {# Translators: Explanatory text that appears when the version has no reviews #}
+    <p class="pk-review-list-no-reviews-explanation">{% blocktrans with version_name=version_name_localized context 'Review' %}There are no reviews for {{ version_name }}.{% endblocktrans %}</p>
+{% endif %}

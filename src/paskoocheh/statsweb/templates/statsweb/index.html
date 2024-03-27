@@ -1,0 +1,61 @@
+<!DOCTYPE html>{% load pipeline pk_statsweb_version_number static settings_value %}
+{% settings_value 'PLATFORM' as app %}
+<html lang="en-CA" id="root-html">
+  <head>
+    <meta charset="utf-8" />
+    <!-- statsweb {% pk_statsweb_version_number %} -->
+    <title>{{ app|title }} Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css" data-norem />
+    {% with 'statsweb/favicons/'|add:app|add:'-favicon.png' as favicon %}
+      <link rel="icon" type="image/png" sizes="32x32" href="{% static favicon %}">
+    {% endwith %}
+    {% stylesheet 'statsweb_global' %}
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo-header">
+        <a class="logo-link" href="/">
+          <div class="logo-sizing-container">
+            {% with 'statsweb/img/'|add:app|add:'-logo.svg' as logo %}
+              <img class="logo" src="{% static logo %}" alt="{{ app|title }} logo">
+            {% endwith %}
+          </div>
+          <span class="title">{{ app|title }} Stats</span>
+        </a>
+      </div>
+      <div id="total-downloads"></div>
+    </header>
+
+    <div class="buttons-container">
+      <label id="start-date-label" for="startDate">Start date:</label>
+      <input type="text" id="startDate">
+
+      <label id="end-date-label" for="endDate">End date:</label>
+      <input type="text" id="endDate">
+
+      <h2 class="button-title">Downloads/day</h2>
+
+      <button class="button" id="total-button">Total</button>
+      <button class="button" id="per-channel-button">Per channel</button>
+      <button class="button" id="per-tool-button">Per tool</button>
+      <button class="button" id="per-platform-button">Per platform</button>
+    </div>
+    <div id="chart-container"></div>
+    <footer class="footer">
+      <div>
+        <a class="logo-link" href="https://asl19.org/">
+            <div class="logo-footer">
+                <img class="logo" src="{% static 'statsweb/img/asl19-logo.svg' %}" alt="ASL19 Logo">
+            </div>
+        </a>
+        {% settings_value 'TOP_LEVEL_DOMAIN' as tld %}
+        <span class="footer-text">A project by ASL19</span>
+        <a href="https://{{ app }}.{{ tld }}/">
+            <span class="store-text">Visit {{ app|title }}</span>
+        </a>
+      </div>
+    </footer>
+    {% javascript 'statsweb_global' %}
+  </body>
+</html>

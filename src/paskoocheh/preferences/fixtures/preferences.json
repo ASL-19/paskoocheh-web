@@ -1,0 +1,18 @@
+[
+    {
+        "model": "preferences.googleplayapipreference",
+        "pk": 1,
+        "fields": {
+            "android_id": "ANDROID_ID",
+            "google_user": "GOOGLE_ACCOUNT_EMAIL",
+            "google_pass": "GOOGLE_ACCOUNT_PASSWORD"
+        }
+    },
+    {
+        "model": "preferences.paskoochehandroidpreference",
+        "pk": 1,
+        "fields": {
+            "android_update_emails": "ANDROID_UPDATE_EMAILS"
+        }
+    }
+]

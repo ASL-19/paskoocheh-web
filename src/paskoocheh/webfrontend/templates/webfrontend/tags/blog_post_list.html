@@ -1,0 +1,17 @@
+{% load blog_post_list_item i18n %}
+{% if posts %}
+    <ul class="pk-blog-post-list{% if displayed_rows_limit %} rows-limited rows-limited-{{ displayed_rows_limit }}{% endif %}">
+        {% for post in posts %}
+            {% blog_post_list_item
+                heading_tag=post_heading_tag
+                post=post
+                show_summary=show_summary
+                disable_jalali=disable_jalali
+                current_view_name=current_view_name
+            %}
+        {% endfor %}
+    </ul>
+{% else %}
+    {# Translators: Appears if a blog post list (e.g. on blog homepage, blog post listing page, related posts section, etc.) contains no posts. Should be general enough to account for the many different contexts blog post lists appear in. This could be split into context-specific strings if that makes more sense. #}
+    <p class="pk-blog-post-list-no-blog-posts-message">{% trans 'No matching blog posts.' context 'Blog' %}</p>
+{% endif %}

@@ -1,0 +1,46 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% load localization_filters %}
+<!-- ##### THIS TEMPLATE IS OBSOLETE ##### -->
+<div class="navbar-wrapper full-width-wrapper">
+    <header class="navbar main">
+        <a class="logo-link no-subpixel" href="/">
+            <div class="logo-sizing-container">
+                <img class="logo" src="/static/img/logo.svg" onerror="this.src='/static/img/logo.png'; this.onerror=null;" alt="پس‌کوچه آرم" />
+            </div>
+            <span translate="TITLE">
+        </a>
+
+        <div filter-search></div>
+
+        <button menu-open-trigger class="menu-control open image-button">Menu</button>
+
+        <ul class="header-social">
+            <li class="instagram">
+                <a href="https://www.instagram.com/paskoocheh/" target="_blank">
+                    <img alt="اینستا گرام" src="/static/img/social/instagram.svg" onerror="this.src='/static/img/social/instagram.png'; this.onerror=null;" />
+                </a>
+            </li>
+            <li class="facebook">
+                <a  href="https://www.facebook.com/biapaskoocheh/" target="_blank">
+                    <img alt="فیسبوک" src="/static/img/social/facebook.svg" onerror="this.src='/static/img/social/facebook.png'; this.onerror=null;" />
+                </a>
+            </li>
+            <li class="twitter">
+                <a href="https://twitter.com/paskoocheh" target="_blank">
+                    <img alt="تویتر" src="/static/img/social/twitter.svg" onerror="this.src='/static/img/social/twitter.png'; this.onerror=null;" />
+                </a>
+            </li>
+            <li class="telegram">
+                <a href="https://telegram.me/Paskoocheh" target="_blank">
+                    <img alt="تلگرام" src="/static/img/social/telegram.svg" onerror="this.src='/static/img/social/telegram.png'; this.onerror=null;" />
+                </a>
+            </li>
+        </ul>
+
+        <button search-trigger class="search-button image-button" ng-click="trigger($event)">Search</button>
+        
+        <button android-app-download-button class="button android-download-button no-subpixel">دانلود پس‌کوچه</button>
+    </header>
+</div>

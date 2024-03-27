@@ -1,0 +1,25 @@
+FROM python:3.9-bullseye
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && \
+        apt-get install -y postgresql-client
+
+COPY ./paskoocheh/requirements.txt /usr/src/app/
+RUN pip install -r requirements.txt
+
+RUN groupadd -g 998 appuser && \
+    useradd -r -u 998 -g appuser appuser
+
+RUN chown -R appuser:appuser /usr/src/app
+
+COPY ./paskoocheh/entrypoint.sh /usr/src/app/
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+EXPOSE 8001
+USER 998
+
+COPY ./paskoocheh/ /usr/src/app/

@@ -1,0 +1,27 @@
+{% extends 'webfrontend/base.html' %}
+{% load i18n pask_url pk_meta_tags review_list %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="pk-toolversionreviews main pk-g-centred pk-g-boxed-main pk-g-no-focus-outline">
+            <h1 id="main-heading" class="pk-g-page-heading">{{ page_heading_inner_html | safe }}</h1>
+
+            {% review_list
+                review_invisible_heading_tag='h2'
+                reviews=current_page_reviews
+                version_name_localized=version_name_localized
+            %}
+
+            {% if current_page_reviews.has_next %}
+                {# Translators: Used for review listing pagination links #}
+                <a class="older-link pk-button" href="{% pask_url 'webfrontend:toolversionreviews' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name q_page=current_page_reviews.next_page_number %}">{% trans 'Older reviews' context 'Review' %}</a>
+            {% endif %}
+            {% if current_page_reviews.has_previous %}
+                {# Translators: Used for review listing pagination links #}
+                <a class="newer-link pk-button" href="{% pask_url 'webfrontend:toolversionreviews' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name q_page=current_page_reviews.previous_page_number %}">{% trans 'Newer reviews' context 'Review' %}</a>
+            {% endif %}
+        </main>
+    </div>
+{% endblock %}

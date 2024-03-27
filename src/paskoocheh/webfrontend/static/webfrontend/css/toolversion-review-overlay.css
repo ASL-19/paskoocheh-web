@@ -1,0 +1,10 @@
+@media (min-height: 700px) {
+    .pk-toolversion-review-overlay .overlay-centred {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translate(-50%, -50%);
+    }
+}

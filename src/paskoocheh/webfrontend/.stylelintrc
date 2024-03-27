@@ -1,0 +1,12 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "at-rule-empty-line-before": null,
+        "comment-empty-line-before": null,
+        "comment-whitespace-inside": null,
+        "declaration-empty-line-before": null,
+        "indentation": 4,
+        "media-query-list-comma-newline-after": null,
+        "rule-empty-line-before": null
+    }
+}

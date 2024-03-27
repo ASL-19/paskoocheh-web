@@ -1,0 +1,119 @@
+/* stylelint-disable no-descending-specificity  */
+.pk-html-content {
+    font-family: 'NotoNaskhArabic', Tahoma, Arial, sans-serif;
+    float: right;
+    width: 100%;
+}
+.pk-html-content > * {
+    float: right;
+    clear: right;
+}
+.pk-html-content h2,
+.pk-html-content h3,
+.pk-html-content h4,
+.pk-html-content h5,
+.pk-html-content h6 {
+    margin: 1rem 0 1rem 0;
+    font-size: 1rem;
+    color: #001d4a;
+}
+.pk-html-content blockquote,
+.pk-html-content h1 + h2,
+.pk-html-content h2 + h3,
+.pk-html-content h3 + h4,
+.pk-html-content h4 + h5,
+.pk-html-content h5 + h6,
+.pk-html-content img,
+.pk-html-content li,
+.pk-html-content ol,
+.pk-html-content p,
+.pk-html-content table,
+.pk-html-content ul {
+    margin: 0 0 1rem 0;
+}
+.pk-html-content blockquote:last-child,
+.pk-html-content h2:last-child,
+.pk-html-content h3:last-child,
+.pk-html-content h4:last-child,
+.pk-html-content h5:last-child,
+.pk-html-content h6:last-child,
+.pk-html-content img:last-child,
+.pk-html-content li:last-child,
+.pk-html-content ol:last-child,
+.pk-html-content p:last-child,
+.pk-html-content table:last-child,
+.pk-html-content ul:last-child {
+    margin-bottom: 0;
+}
+.pk-html-content h2 {
+    font-size: 1.25rem;
+}
+.pk-html-content p {
+    width: 100%;
+}
+.pk-html-content img {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pk-html-content ol,
+.pk-html-content ul {
+    padding: 0 1.5em 0 0;
+    width: 100%;
+}
+.pk-html-content li > ol,
+.pk-html-content li > ul {
+    margin-top: 1rem;
+}
+html.fa-IR .pk-html-content ol {
+    list-style-type: -moz-persian;
+    list-style-type: persian;
+}
+html.ar-SA .pk-html-content ol {
+    list-style-type: -moz-arabic-indic;
+    list-style-type: arabic-indic;
+}
+.pk-html-content a {
+    color: #287cfc;
+    border-bottom: 0.125em solid #287cfc;
+    display: inline-block;
+    line-height: 1.35em;
+}
+@supports ( background-image: linear-gradient(to bottom, #287cfc 100%, #287cfc 100%) ) {
+    .pk-html-content a {
+        border-bottom: none;
+        display: inline;
+        line-height: inherit;
+        background-image: linear-gradient(to bottom, #287cfc 100%, #287cfc 100%);
+        background-position: 0 1.5em;
+        background-repeat: repeat-x;
+        background-size: 1px 0.125em;
+    }
+}
+.pk-html-content table {
+    max-width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.pk-html-content table thead {
+    background-color: #287cfc;
+    color: #fff;
+}
+.pk-html-content table th,
+.pk-html-content table td {
+    padding: 0.5em;
+    text-align: right;
+    border: 1px solid #d5d5d5;
+}
+.pk-html-content table tbody tr:nth-child(odd) {
+    background-color: rgb(247, 247, 247);
+}
+.pk-html-content blockquote {
+    margin-right: 1rem;
+    padding: 0 1rem 0 0;
+    border-right: 4px solid #d5d5d5;
+}
+/* stylelint-enable */

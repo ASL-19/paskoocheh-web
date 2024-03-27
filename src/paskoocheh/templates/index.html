@@ -1,0 +1,105 @@
+<!DOCTYPE html>{% load i18n static settings_value %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <base href="/">
+
+    <title ng-bind="$root.title">{% trans 'Paskoocheh' %}</title>
+    <meta property="og:title" content="{% trans 'Paskoocheh' %}" />
+
+    {% settings_value 'PLATFORM' as app %}
+    {% if app == 'zanga' %}
+        <meta property="og:locale" content="ar_SA" />
+        <meta name="description" content="مكان واحد لاكتشاف، تنزيل، وتقييم تطبيقات الأمان الرّقمي." />
+        <meta property="og:description" content="مكان واحد لاكتشاف، تنزيل، وتقييم تطبيقات الأمان الرّقمي." />
+        <meta property="twitter:description" content="مكان واحد لاكتشاف، تنزيل، وتقييم تطبيقات الأمان الرّقمي." />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@zangatech" />
+        <meta name="twitter:creator" content="@zangatech" />
+        <meta property="og:image" content="https://zanga.tech/static/webfrontend/images/zanga-logo-meta-314w.png" />
+        <meta property="twitter:image" content="https://zanga.tech/static/webfrontend/images/zanga-logo-meta-1000w.png" />
+    {% else %}
+        <meta property="og:locale" content="fa_IR" />
+        <meta name="description" content="پس‌کوچه بازارچه فیلترشکن است! مکانی امن برای دسترسی آسان به هر آنچه که برای عبور از فیلترنت می‌خواهید. کاری از بچه‌های اصل۱۹." />
+        <meta property="og:description" content="پس‌کوچه بازارچه فیلترشکن است! مکانی امن برای دسترسی آسان به هر آنچه که برای عبور از فیلترنت می‌خواهید. کاری از بچه‌های اصل۱۹." />
+        <meta property="twitter:description" content="پس‌کوچه بازارچه فیلترشکن است! مکانی امن برای دسترسی آسان به هر آنچه که برای عبور از فیلترنت می‌خواهید. کاری از بچه‌های اصل۱۹." />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@paskoocheh" />
+        <meta name="twitter:creator" content="@aslnoozdah" />
+        <meta property="og:image" content="https://paskoocheh.com/static/webfrontend/images/paskoocheh-logo-meta-314w.png" />
+        <meta property="twitter:image" content="https://paskoocheh.com/static/webfrontend/images/paskoocheh-logo-meta-1000w.png" />
+    {% endif %}
+
+    <meta property="og:type" content="website" />
+
+    <!-- RealFaviconGenerator.net favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/img/favicons/apple-touch-icon-57x57.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/img/favicons/apple-touch-icon-60x60.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/favicons/apple-touch-icon-72x72.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/img/favicons/apple-touch-icon-76x76.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/favicons/apple-touch-icon-114x114.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/img/favicons/apple-touch-icon-120x120.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/img/favicons/apple-touch-icon-144x144.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/img/favicons/apple-touch-icon-152x152.png?v=2016-06-13" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicons/apple-touch-icon-180x180.png?v=2016-06-13" />
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-32x32.png?v=2016-06-13" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-194x194.png?v=2016-06-13" sizes="194x194" />
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-96x96.png?v=2016-06-13" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/static/img/favicons/android-chrome-192x192.png?v=2016-06-13" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-16x16.png?v=2016-06-13" sizes="16x16" />
+    <link rel="manifest" href="/static/img/favicons/manifest.json?v=2016-06-13" />
+    <link rel="shortcut icon" href="/static/img/favicons/favicon.ico?v=2016-06-13" />
+    <meta name="apple-mobile-web-app-title" content="{% trans 'Paskoocheh' %}" />
+    <meta name="application-name" content="{% trans 'Paskoocheh' %}" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="/static/img/favicons/mstile-144x144.png?v=2016-06-13" />
+    <meta name="msapplication-config" content="/static/img/favicons/browserconfig.xml?v=2016-06-13" />
+    <meta name="theme-color" content="#1b75ba" />
+
+    {% if BUILD_ENV == 'production' %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.rtl.css' %}" />
+    {% else %}
+        {% include 'stylesheets.html' %}
+    {% endif %}
+</head>
+
+<body>
+    <p id="browser-unsupported-notice">{% trans 'This browser is unfortunately unsupported as of now' context 'Index'%}‎</p>
+
+    <script type="text/javascript">
+        var ua = window.navigator.userAgent;
+
+        if ( ua.indexOf('MSIE 6.0') != -1 ||
+             ua.indexOf('MSIE 7.0') != -1 ||
+             ua.indexOf('MSIE 8.0') != -1 ||
+             (ua.indexOf('Android 2.') != -1 && ua.indexOf('AppleWebKit/530.17') != -1) ||
+             (ua.indexOf('Android 2.') != -1 && ua.indexOf('AppleWebKit/533.1') != -1) ||
+             (ua.indexOf('Android 2.') != -1 && ua.indexOf('534.13') != -1) ) {
+            document.getElementById('browser-unsupported-notice').className = 'visible';
+            document.body.className = "hide-all";
+        }
+    </script>
+
+    {% include 'navbar.html' %}
+
+    <div ng-view class="view-frame full-width-wrapper" autoscroll="true"></div>
+
+    {% if BUILD_ENV == 'production' %}
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    {% else %}
+        {% include 'javascripts.html' %}
+    {% endif %}
+
+    {% if app == 'zanga' %}
+        <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit&hl=ar" async defer></script>
+    {% else %}
+        <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit&hl=fa" async defer></script>
+    {% endif %}
+</body>
+
+</html>

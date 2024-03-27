@@ -1,0 +1,75 @@
+.pk-toolversion-main-reviews .form-container {
+    float: right;
+    width: 100%;
+    margin: 0;
+}
+/* The form is hidden on Android 4.1 WebKit because Google keeps breaking the
+   fallback reCAPTCHA form to the point where it’s no longer worth fighting. */
+html.android-41-webkit .pk-toolversion-main-reviews .form-container,
+html.opera-mini-extreme .pk-toolversion-main-reviews .form-container,
+html.js-supported .pk-toolversion-main-reviews .form-container {
+    display: none;
+}
+
+.pk-toolversion-main-reviews .overlay-trigger-button {
+    display: none;
+    margin: 0 0 1rem 0;
+}
+html.js-supported .pk-toolversion-main-reviews .overlay-trigger-button {
+    display: block;
+    width: 100%;
+    float: none;
+    max-width: 350px;
+    margin: 1em auto;
+}
+.pk-toolversion-main-reviews .latest-reviews {
+    float: right;
+    width: 100%;
+}
+.pk-toolversion-main-reviews .pk-review-list-no-reviews-explanation {
+    margin-top: 1rem;
+}
+.pk-toolversion-main-reviews .value {
+    width: 10rem;
+    color: #7c7c7c;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+html.js-unsupported .pk-toolversion-main-reviews .value {
+    background-image: url(../images/rating-star-darkblue.svg);
+    background-position: 3.5em 0.35em;
+    background-size: auto 0.75em;
+    background-repeat: no-repeat;
+}
+.pk-toolversion-main-reviews .value.no-rating {
+    font-size: 1.2em;
+}
+.pk-toolversion-main-reviews .star-rating-container .value.no-rating {
+    font-size: 16px;
+    font-weight: 500;
+}
+html.js-unsupported .pk-toolversion-main-reviews .value.no-rating {
+    background-image: none;
+}
+.pk-toolversion-main-reviews .star-rating-container {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.pk-toolversion-main-reviews .stars-container {
+    position: relative;
+    top: 0;
+    text-align: center;
+}
+.pk-toolversion-main-reviews .star-rating-container .value .pk-g-invisible,
+.pk-toolversion-main-reviews .star-rating-container .sub-value {
+    position: relative;
+    font-size: 0.8em;
+    color: #a1aeb7;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}

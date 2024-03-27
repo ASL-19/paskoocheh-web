@@ -1,0 +1,11 @@
+<dl class="pk-expandable-list pk-tutorial-list js-supported">{% load i18n pask_url embedded_video %}
+    {% for tutorial in tutorials %}
+        <dt class="title">
+            <a href="#version-video-{{ tutorial.id }}" data-controls-id="version-video-{{ tutorial.id }}" class="link toggle">{{ tutorial.title }}</a>
+        </dt>
+        <dd id="version-video-{{ tutorial.id }}" class="body">
+            {% embedded_video tutorial is_lazy_loading=True %}
+            <a href="{% pask_url 'webfrontend:toolversiontutorial' p_tool_id=tool.id p_platform_slug=version.supported_os.slug_name p_tutorial_id=tutorial.id %}" class="permalink">{% trans 'Permalink' %}</a>
+        </dd>
+    {% endfor %}
+</dl>

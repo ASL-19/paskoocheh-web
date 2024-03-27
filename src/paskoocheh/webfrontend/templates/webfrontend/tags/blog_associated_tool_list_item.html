@@ -1,0 +1,11 @@
+<li class="pk-blog-associated-tool-list-item">
+    <div class="inner">
+        <a class="link-underlay" href="{{ link }}" tabindex="-1" aria-hidden="true"></a>
+            <div class="logo-sizing-container">
+                <img class="logo" src="{{ logo_path | default_if_none:default_image_path }}" alt="" />
+            </div>
+        <div class="name-wrapper">
+            <a class="name" href="{{ link }}">{{ name }}</a>
+        </div>
+    </div>
+</li>

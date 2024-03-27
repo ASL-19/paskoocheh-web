@@ -1,0 +1,850 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Django_Short\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-30 18:18+0000\n"
+"PO-Revision-Date: 2020-03-24 10:10-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Poedit 2.3\n"
+
+#: blog/apps.py:30
+msgid "Blog"
+msgstr "المدونة"
+
+#: blog/models.py:57 paskoocheh/helpers.py:200 preferences/models.py:270
+msgid "Last Modified Time"
+msgstr "موعد آخر تعديل"
+
+#: blog/models.py:60
+msgid "Category Name (English)"
+msgstr "اسم التصنيف (بالانجليزيّة)"
+
+#: blog/models.py:65
+msgid "Category Name (Arabic)"
+msgstr "اسم التصنيف (بالعربية)"
+
+#: blog/models.py:70
+msgid "Category Name (Farsi)"
+msgstr "اسم التصنيف (بالفارسيّة)"
+
+#: blog/models.py:83
+msgid "Photo"
+msgstr "صورة"
+
+#: blog/models.py:84
+msgid "Note: This is currently unused."
+msgstr "ملاحظة: حاليّاً غير مستخدم."
+
+#: blog/models.py:88 tools/models.py:327
+msgid "Description"
+msgstr "توضيح"
+
+#: blog/models.py:89
+msgid ""
+"Not displayed on site, but used as social media description and search "
+"engine snippet suggestion for blog category pages."
+msgstr ""
+"لا يتم عرضه على الموقع، ولكنه يستخدم كوصف في وسائل الإعلام الاجتماعية "
+"وكاقتراح مقتطف في محرك البحث لصفحات تصفنيفات المدونة."
+
+#: blog/models.py:111
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: blog/models.py:142
+msgid "Published Date"
+msgstr "تاريخ النّشر"
+
+#: blog/models.py:158
+msgid "Category"
+msgstr "التصنيف"
+
+#: blog/models.py:165
+msgid "Summary"
+msgstr "موجز"
+
+#: blog/models.py:166
+msgid ""
+"Used for post listing previews if the post has no associated featured image. "
+"Also appears in RSS feeds, social media preview, and search engine snippets."
+msgstr ""
+"يستخدم في معاينات قائمة التدوينات، إن لم يُحدّد للتدوينة صورة غلاف. كما يظهر "
+"في نشرات ال RSS، معاينات الإعلام الاجتماعي، وفي مقتضبات محركات البحث."
+
+#: blog/models.py:173 templates/reversion/object_history.html:16
+msgid "User"
+msgstr "المستخدم(ة)"
+
+#: blog/models.py:174
+msgid ""
+"Note: The post‘s associated user is not currently displayed on the site, but "
+"this may change in the future."
+msgstr ""
+"ملاحظة: المستخدم المرتبط بهذه المدوّنة غير معروض حاليّاً على الموقع، لكن ذلك قد "
+"يتغيّر في المستقبل."
+
+#: blog/models.py:184
+msgid "Comments Allowed"
+msgstr "التعليقات مسموحة"
+
+#: blog/models.py:185
+msgid ""
+"Note: Comments aren’t currently supported, but this may change in the future."
+msgstr "ملاحظة: التعليقات غير مدعومة حاليّاً، لكن ذلك قد يتغيّر في المستقبل."
+
+#: blog/models.py:200
+msgid "Feature Order"
+msgstr "ترتيب المُختارات"
+
+#: blog/models.py:201
+msgid ""
+"If set, the post will be considered featured. Featured posts with lower "
+"feature orders will appear earlier in featured lists."
+msgstr ""
+"إن تمّ الضبط، سيتم اعتبار الإدخال من “المُختارات”. الإدخالات المختارة في أسفل "
+"ترتيب المُختارات ستبدو وكأنّها أقدم في قوائم المُختارات."
+
+#: blog/models.py:206
+msgid "Featured Image"
+msgstr "صورة الغلاف"
+
+#: blog/models.py:207
+msgid ""
+"Feature images should have a 2.5:1 aspect ratio (e.g. 800x320). This target "
+"ratio can be changed with minor changes to the site, but it needs to be "
+"consistent across all blog posts."
+msgstr ""
+"يجب أن يكون متوسّط البعد للصور المُختارة أو صور الغلاف ١:٢،٥ (مثلاً العرض ٨٠٠ "
+"في ٣٢٠). يمكن أن يطرأ على متوسّط البُعد  تغيّرات طفيفة، لكن يجب أن يكون موحّداً "
+"عبر جميع التدونيات."
+
+#: blog/models.py:212
+msgid "Featured Image Description"
+msgstr "وصف صورة الغلاف"
+
+#: blog/models.py:213
+msgid "Text describing the image (for screen readers and search engines)"
+msgstr "النص الذي يصف الصّورة (لقُرّاء الشاشات ومحرّكات البحث)"
+
+#: blog/models.py:218 preferences/models.py:202 preferences/models.py:267
+#: stats/models.py:171 tools/models.py:141 tools/models.py:314
+#: tools/models.py:628 tools/models.py:770
+msgid "Language"
+msgstr "اللغة"
+
+#: blog/models.py:221 paskoocheh/helpers.py:212 preferences/models.py:444
+#: tools/models.py:260
+msgid "Tags"
+msgstr "الوسومات"
+
+#: blog/models.py:254 blog/models.py:343
+msgid "Post"
+msgstr "التدوينة"
+
+#: blog/models.py:255
+#, fuzzy
+#| msgid "Post"
+msgid "Posts"
+msgstr "التدوينة"
+
+#: blog/models.py:326
+msgid "Comment Date"
+msgstr "تاريخ التعليق"
+
+#: blog/models.py:329
+msgid "Email"
+msgstr "الإيميل"
+
+#: blog/models.py:332
+msgid "Name"
+msgstr "الإسم"
+
+#: blog/models.py:335 paskoocheh/helpers.py:203 tools/models.py:785
+msgid "Title"
+msgstr "العنوان"
+
+#: blog/models.py:337 paskoocheh/helpers.py:207
+msgid "Content"
+msgstr "المحتوى"
+
+#: blog/models.py:340
+msgid "Approved"
+msgstr "موافق عليه"
+
+#: paskoocheh/helpers.py:213
+msgid ""
+"Note: This field is currently only used for search relevance. It isn’t "
+"displayed on the site."
+msgstr ""
+"ملاحظة: يستخدم هذا الحقل في إيجاد المواضيع ذات الصُّلة في البحث فقط. ولن يظهر "
+"على الموقع."
+
+#: preferences/models.py:46
+msgid "Android ID"
+msgstr "هويّة الأندرويد"
+
+#: preferences/models.py:51
+msgid "Email Address"
+msgstr "الإيميل"
+
+#: preferences/models.py:56
+msgid "Password"
+msgstr "كلمة السّر"
+
+#: preferences/models.py:61
+msgid "Token"
+msgstr "الفيشة"
+
+#: preferences/models.py:67
+msgid "Google Play API"
+msgstr "واجهة برمجة التطبيقات لچوچل پلاي"
+
+#: preferences/models.py:77
+msgid "Update Recipients (csv)"
+msgstr "تحديث المُستلمين (csv)"
+
+#: preferences/models.py:81
+msgid "Android Apps"
+msgstr "تطبيقات آندرويد"
+
+# @Adam this is type like a command right?
+#: preferences/models.py:102
+msgid "Type Name"
+msgstr "إطبع الإسم"
+
+#: preferences/models.py:107
+msgid "Type Name in Farsi"
+msgstr "إطبع الإسم (بالفارسيّة)"
+
+#: preferences/models.py:112
+msgid "Type Name in Arabic"
+msgstr "‫إطبع الإسم (بالعربية)"
+
+#: preferences/models.py:118
+msgid "Type URL slug"
+msgstr "إطبع عنوان التدوينة في الرّابط (بالانجليزيّة)"
+
+#: preferences/models.py:126 preferences/models.py:362
+msgid "Tool Type Icon"
+msgstr "إطبع نوع الأيقونة"
+
+#: preferences/models.py:176
+msgid "Promo Image"
+msgstr "الصورة الترويجيّة"
+
+#: preferences/models.py:181
+msgid "Image title"
+msgstr "عنوان الصّورة"
+
+#: preferences/models.py:186
+msgid "Link URL"
+msgstr "رابط الرّابط"
+
+#: preferences/models.py:189
+msgid "Open in new window?"
+msgstr "الفتح في شبّاك جديد؟"
+
+#: preferences/models.py:213 tools/models.py:131 tools/models.py:637
+#: tools/models.py:788
+msgid "Order"
+msgstr "الترتيب"
+
+#: preferences/models.py:274
+msgid "About Paskoocheh"
+msgstr "حول زنچة"
+
+#: preferences/models.py:279
+msgid "Contact Email"
+msgstr "إيميل الاتصال"
+
+#: preferences/models.py:283
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصيّة"
+
+#: preferences/models.py:287
+msgid "Terms of Service and Privacy Policy"
+msgstr "شروط الاستخدام وسياسة الخصوصيّة"
+
+#: preferences/models.py:292
+msgid "Terms of Service"
+msgstr "شروط الخدمة"
+
+#: preferences/models.py:296
+msgid "FAQ Page Footer"
+msgstr "ذيل صفحة الأسئلة المُتكرّرة"
+
+#: preferences/models.py:301 tools/models.py:134 tools/models.py:266
+#: tools/models.py:333 tools/models.py:488 tools/models.py:642
+#: tools/models.py:793
+msgid "Publish"
+msgstr "أُنشر"
+
+#: preferences/models.py:310
+msgid "Web Texts"
+msgstr "نصوص الويب"
+
+#: preferences/models.py:339 stats/models.py:73 stats/models.py:226
+msgid "Platform Name"
+msgstr "اسم المنصّة"
+
+#: preferences/models.py:344
+msgid "Platform Name in Farsi"
+msgstr "‫اسم المنصّة (بالفارسيّة)"
+
+#: preferences/models.py:349
+msgid "Platform Name in Arabic"
+msgstr "‫‫اسم المنصّة (بالعربية)"
+
+#: preferences/models.py:382
+#, fuzzy
+#| msgid "Email"
+msgid "From Email"
+msgstr "الإيميل"
+
+#: preferences/models.py:383
+msgid ""
+"The email address from which notification emails such as support or contact "
+"update emails will be sent.<br /><strong>WARNING: Please arrange with SysOps "
+"before changing these values.</strong>"
+msgstr ""
+
+#: preferences/models.py:386
+msgid "Support Ticket Recipients (comma separated)"
+msgstr ""
+
+#: preferences/models.py:388
+msgid ""
+"The email address(es) to which notification emails such as support or "
+"contact update emails will be sent.<br /><strong>WARNING: Please arrange "
+"with SysOps before changing these values.</strong>"
+msgstr ""
+
+#: preferences/models.py:394
+#, fuzzy
+#| msgid "Support email address"
+msgid "Support Email Address"
+msgstr "عنوان إيميل الدّعم"
+
+#: preferences/models.py:400
+#, fuzzy
+#| msgid "Twitter URL"
+msgid "Twitter"
+msgstr "رابط تويتر"
+
+#: preferences/models.py:406
+#, fuzzy
+#| msgid "Facebook URL"
+msgid "Facebook"
+msgstr "رابط فيسبوك"
+
+#: preferences/models.py:412
+msgid "Instagram"
+msgstr ""
+
+#: preferences/models.py:418
+msgid "Telegram"
+msgstr ""
+
+#: preferences/models.py:421
+msgid "General Settings"
+msgstr ""
+
+# @Adam this is type like a command right?
+#: preferences/models.py:432
+#, fuzzy
+#| msgid "Type Name"
+msgid "Tag Name"
+msgstr "إطبع الإسم"
+
+#: preferences/models.py:436
+#, fuzzy
+#| msgid "URL slug"
+msgid "Tag slug"
+msgstr "العنوان في الرابط (بالانجليزيّة)"
+
+#: preferences/models.py:443
+#, fuzzy
+#| msgid "Tags"
+msgid "Tag"
+msgstr "الوسومات"
+
+#: s3_email/validators.py:37
+#, python-format
+msgid "%(value)s is not a valid bucket"
+msgstr "‫%(value)s ليست حزمة صالحة"
+
+#: s3_email/validators.py:47
+msgid "%(value)s is not accessible %(error)"
+msgstr "‫%(value) غير متاحة %(error)"
+
+#: stats/models.py:64 stats/models.py:194 tools/models.py:97
+#: tools/models.py:182 tools/models.py:303 tools/models.py:396
+#: tools/models.py:616 tools/models.py:759
+msgid "Last modified time"
+msgstr "موعد آخر تعديل"
+
+#: stats/models.py:70 tools/models.py:198
+msgid "Tool name"
+msgstr "اسم الأداة"
+
+#: stats/models.py:78 tools/models.py:286
+msgid "Tool"
+msgstr "الأداة"
+
+#: stats/models.py:97 stats/models.py:150
+msgid "Star Rating"
+msgstr "التقييم بعدد النّجوم"
+
+#: stats/models.py:132 stats/models.py:208
+msgid "Subject"
+msgstr "الموضوع"
+
+#: stats/models.py:137 stats/models.py:146 stats/models.py:203
+msgid "User Name"
+msgstr "اسم المستخدم(ة)"
+
+#: stats/models.py:141
+msgid "Text"
+msgstr "النص"
+
+#: stats/models.py:157
+msgid "Checked"
+msgstr "تمّ التدقيق"
+
+#: stats/models.py:162
+msgid "Tool Version"
+msgstr "إصدار الأداة"
+
+#: stats/models.py:197
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#: stats/models.py:213
+msgid "Message"
+msgstr "الرّسالة"
+
+#: stats/models.py:223
+msgid "Channel Version"
+msgstr "إصدار القناة"
+
+#: stats/models.py:231
+msgid "Platform Version"
+msgstr "إصدار المنصّة"
+
+#: stats/models.py:239
+msgid "Status"
+msgstr "الحالة"
+
+#: templates/403.html:3
+msgid "forbidden"
+msgstr "ممنوع"
+
+#: templates/403.html:5 templates/404.html:5 templates/500.html:5
+msgid "error"
+msgstr "خطأ"
+
+#: templates/403.html:7
+msgid "We're sorry, but the requested action is forbidden"
+msgstr "نعتذر، لكن الفعل الإجراء ممنوع"
+
+#: templates/404.html:3
+msgid "Page not found"
+msgstr "لم يتم العثور على الصّفحة"
+
+#: templates/404.html:7
+msgid "We're sorry, but the requested page could not be found."
+msgstr "نعتذر، لم يتم العثور على الصّفحة المطلوبة"
+
+#: templates/500.html:3
+msgid "Server Error"
+msgstr "خطأ في الخادوم"
+
+#: templates/500.html:7
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+"تمّ هناك خطأ. تمّ التبليغ عنه إلى مدراء الموقع عبر الإيميل ومن المرجّح إصلاحة "
+"قريباً. شكراً على تفهّمكم. "
+
+#: templates/admin/paskoocheh/view.html:6
+msgid "Back to list"
+msgstr "العودة إلى القائمة"
+
+#: templates/admin/s3_email/change_list.html:9
+#, python-format
+msgid "Add %(name)s"
+msgstr "إضافة %(name)s"
+
+#: templates/admin/tools/change_form.html:6
+msgid "Delete AWS File ID"
+msgstr "حذف هويّة ملف AWS"
+
+#: templates/index.html:10 templates/index.html:11 templates/index.html:57
+#: templates/index.html:58
+#, fuzzy
+#| msgid "About Paskoocheh"
+msgid "Paskoocheh"
+msgstr "حول زنچة"
+
+#: templates/index.html:72
+msgctxt "Index"
+msgid "This browser is unfortunately unsupported as of now"
+msgstr "المتصفح المستخدم غير مدعوم حالياً"
+
+#: templates/reversion/change_list.html:8
+#: templates/reversion/recover_form.html:13
+#: templates/reversion/recover_list.html:13
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr "استرجاع  %(name)s المحذوفة"
+
+#: templates/reversion/object_history.html:8
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr "اختر تاريخ من القائمة أدناه للعودة لإصدار سابق من هذا الشيء."
+
+#: templates/reversion/object_history.html:15
+#: templates/reversion/recover_list.html:26
+msgid "Date/time"
+msgstr "التاريخ/الوقت"
+
+#: templates/reversion/object_history.html:17
+msgid "Comment"
+msgstr "تعليق"
+
+#: templates/reversion/object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+"لا يملك هذا الشيء تاريخ تغييرات. على الأرجح لم تتم إضافته من قبل مدير الموقع "
+"هذا."
+
+#: templates/reversion/recover_form.html:7
+#: templates/reversion/recover_list.html:7
+#: templates/reversion/revision_form.html:7
+msgid "Home"
+msgstr "الرئيسيّة"
+
+#: templates/reversion/recover_form.html:21
+msgid "Press the save button below to recover this version of the object."
+msgstr "اضغط زر الحفظ أدناه لاسترجاع هذه النّسخة من الشيء."
+
+#: templates/reversion/recover_list.html:20
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr "اختر تاريخ من القائمة أدناه لاسترجاع إصدار محذوف من شيء ما."
+
+#: templates/reversion/recover_list.html:40
+msgid "There are no deleted objects to recover."
+msgstr "ليس هناك أشياء حتى يتم استرجاعها."
+
+#: templates/reversion/revision_form.html:15
+msgid "History"
+msgstr "التاريخ"
+
+#: templates/reversion/revision_form.html:17
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr "استرجاع %(verbose_name)s"
+
+#: templates/reversion/revision_form.html:30
+msgid "Press the save button below to revert to this version of the object."
+msgstr "اضغط زر الحفظ أدناه لاسترجاع هذه النّسخة من الشيء."
+
+#: tools/models.py:91
+msgid "LOGO"
+msgstr "الشّعار"
+
+#: tools/models.py:92
+msgid "SCREENSHOT"
+msgstr "لقطة للشاشة"
+
+#: tools/models.py:93
+msgid "HEADER"
+msgstr "الترويسة"
+
+#: tools/models.py:101
+msgid "Image File"
+msgstr "ملف الصّورة"
+
+#: tools/models.py:106
+msgid "Image Type"
+msgstr "نوع الصّورة"
+
+#: tools/models.py:127
+msgid "Should display full-bleed"
+msgstr "يجب أن تظهر بدون هوامش"
+
+#: tools/models.py:128
+msgid ""
+"If checked, and if the image is a logo image, clients should display it full-"
+"bleed (without any padding). Full-bleed images should have a coloured "
+"background and internal padding, or a transparent background and internal "
+"padding. Has no effect on non-logo images."
+msgstr ""
+"إن وضعت علامة صح، وإذا كانت الصورة عبارة عن صورة شِعار، سيعرضها العملاء بدون "
+"هوامش (على كامل الصّفحة). يجب أن تتضمّن الصّور بلا هوامش خلفيّة ملوّنة وهوامش "
+"داخليّة، أو خلفيّة شفّافة وهوامش داخليّة. لن يؤثّر على الصّور الأخرى."
+
+#: tools/models.py:142
+msgid ""
+"If set, this image will only appear in the specified language. Otherwise, it "
+"will appear in all languages."
+msgstr ""
+"إن تمّ الضّبط، ستظهر هذه الصّورة فقط في الٌُلغة المُحدّدة. عدا عن ذلك، ستبدو في "
+"جميع اللغات."
+
+#: tools/models.py:171
+msgid "Image"
+msgstr "الصّورة"
+
+#: tools/models.py:172
+msgid "Images"
+msgstr "الصّور"
+
+#: tools/models.py:185 tools/models.py:399
+msgid "Created time"
+msgstr "وقت الإنشاء"
+
+#: tools/models.py:193
+msgid "Author"
+msgstr "المؤلفّ"
+
+#: tools/models.py:197
+msgid "This is just a latin name for admin panel only"
+msgstr "هذا مجرّد إسم لاتيني للائحة المُدراء فقط"
+
+#: tools/models.py:204
+msgid "Whether you trust the tool's source"
+msgstr "حول الثّقة بمصدر الأداة"
+
+#: tools/models.py:205
+msgid "Trusted Source"
+msgstr "مصدر موثوق"
+
+#: tools/models.py:208
+msgid "Is this tool featured"
+msgstr "هل هذه أداة مُختارة؟"
+
+#: tools/models.py:209
+msgid "Featured Tool"
+msgstr "أداة مُختارة لكم"
+
+#: tools/models.py:213
+msgid "Open source"
+msgstr "مفتوح-المصدر"
+
+#: tools/models.py:218
+msgid "Source url on Github or Bitbucket"
+msgstr "رابط المصدر على جيت هب أو بت بكت"
+
+#: tools/models.py:222
+msgid "Tool Type"
+msgstr "نوع الأداة"
+
+#: tools/models.py:227
+msgid "Main website of the tool"
+msgstr "الموقع الرئيسي للأداة"
+
+#: tools/models.py:232
+msgid "Facebook URL"
+msgstr "رابط فيسبوك"
+
+#: tools/models.py:237
+msgid "Twitter URL"
+msgstr "رابط تويتر"
+
+#: tools/models.py:241
+msgid "Feed URL"
+msgstr "رابط النّشرة"
+
+#: tools/models.py:245
+msgid "Link of the company blog"
+msgstr "موقع مدوّنة الشّركة"
+
+#: tools/models.py:252
+msgid "Support email address"
+msgstr "عنوان إيميل الدّعم"
+
+#: tools/models.py:257
+msgid "Support url on the company website"
+msgstr "رابط الدّعم على موقع الشّركة"
+
+#: tools/models.py:287
+msgid "Tools"
+msgstr "الأدوات"
+
+#: tools/models.py:308 tools/models.py:405 tools/models.py:676
+msgid "Corresponding tool"
+msgstr "الأداة المُشابهة"
+
+#: tools/models.py:319
+msgid "Language-specific name"
+msgstr "الأسم في اللٌغة التي تم تحديدها"
+
+#: tools/models.py:320
+msgid "Name of the tool in the corresponding language"
+msgstr "اسم الأداة في اللّغة المُطابقة"
+
+#: tools/models.py:323
+msgid "Company name"
+msgstr "اسم الشّركة"
+
+#: tools/models.py:328
+msgid "Description of tool, max 2000 character"
+msgstr "توضيح الأداة، ٢٠٠٠ خانة بالأكثر"
+
+#: tools/models.py:353
+msgid "Information about the tool"
+msgstr "معلومات حول الأداة"
+
+#: tools/models.py:354
+msgid "Tools information"
+msgstr "معلومات الأداة"
+
+#: tools/models.py:410
+msgid "Tool version number"
+msgstr "رقم إصدار الأداة"
+
+#: tools/models.py:411
+msgid ""
+"Each version might have different number, when an update happens, this field "
+"must change or the user will not receive a notification"
+msgstr ""
+"قد يكون لكل إصدار رقم مُختلف، وعند حدوث تحديث، يجب أن يتغيّر هذا الحقل. إن لم "
+"يتم ذلك، لن يحصل المستخدمين على تنبيه."
+
+#: tools/models.py:417
+msgid "Platforms"
+msgstr "المنصّات"
+
+#: tools/models.py:420
+msgid "Actual release date from publisher"
+msgstr "تاريخ الإصدار الحقيقي من قبل النّاشر"
+
+#: tools/models.py:424
+msgid "Release date in Jalali"
+msgstr "تاريخ الإصدار بالتقويم الجلالي"
+
+#: tools/models.py:428
+msgid "Download url"
+msgstr "رابط التّحميل"
+
+#: tools/models.py:433
+msgid "Release Binary"
+msgstr "ثنائية النّشر"
+
+#: tools/models.py:438
+msgid "Checksum for release binary"
+msgstr "تدقيق المجموع لثُنائية الإصدار"
+
+#: tools/models.py:442
+msgid "Size of download in bytes"
+msgstr "حجم التنزيل بالبايتات"
+
+#: tools/models.py:447
+msgid "Link to the release news if any"
+msgstr "رابط إلى أخبار عن الإصدار إن وجدت"
+
+#: tools/models.py:453
+msgid "Android-specific Package Name"
+msgstr "اسم الحزمة (package) المخصّصة بأندرويد"
+
+#: tools/models.py:458
+msgid "Android-specific Automatic Update"
+msgstr "التحديث التلقائي الخاص بأندرويد"
+
+#: tools/models.py:463
+msgid "Android-specific App Permissions (CSV)"
+msgstr "أذونات التطبيق (CSV)المخصّصة بأندرويد"
+
+#: tools/models.py:469
+msgid "Guide url"
+msgstr "رابط الدليل"
+
+#: tools/models.py:474
+msgid "FAQ url"
+msgstr "رابط الأسئلة المتكرّرة"
+
+#: tools/models.py:479
+msgid "Binary Signature"
+msgstr "توقيع الثنائية"
+
+#: tools/models.py:483
+msgid "Signature File"
+msgstr "ملف التوقيع"
+
+#: tools/models.py:598
+msgid "Version"
+msgstr "الإصدار"
+
+#: tools/models.py:599
+msgid "Versions"
+msgstr "الإصدارات"
+
+#: tools/models.py:622 tools/models.py:764
+msgid "Corresponding version"
+msgstr "الإصدار المُشابه"
+
+#: tools/models.py:680
+msgid "Click count"
+msgstr "عدد مرّات النّقل"
+
+#: tools/models.py:700
+msgid "FAQ"
+msgstr "الأسئلة الأكثر تكراراً"
+
+#: tools/models.py:701
+msgid "FAQs"
+msgstr "‫الأسئلة الأكثر تكرارا"
+
+#: tools/models.py:721
+msgid "URL slug"
+msgstr "العنوان في الرابط (بالانجليزيّة)"
+
+#: tools/models.py:775
+msgid "Video File"
+msgstr "ملف الفيديو"
+
+#: tools/models.py:779
+msgid "Video Link"
+msgstr "رابط الفيديو"
+
+#: tools/models.py:813
+msgid "Tutorial"
+msgstr "إرشادات"
+
+#: tools/models.py:814
+msgid "Tutorials"
+msgstr "إرشادات"
+
+#: tools/views.py:230
+msgid "Failure"
+msgstr "فشل"
+
+#: tools/views.py:231
+msgid "Bad request"
+msgstr "طلب غير صالح"
+
+#: tools/views.py:242
+msgid "Success"
+msgstr "تمّ بنجاح"
+
+#: user_management/apps.py:29
+msgid "User Management"
+msgstr "إدارة المستخدم"

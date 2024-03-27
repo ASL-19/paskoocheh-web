@@ -1,0 +1,56 @@
+{% load
+    i18n
+    pa_numerals
+    pask_url
+%}
+
+{% if h1_inner_html %}
+<h1 id="main-heading" class="pk-g-page-heading">{{ h1_inner_html | safe }}</h1>
+{% elif invisible_heading_tag and invisible_heading_text %}
+<{{ invisible_heading_tag }} id="review-{{ review.id }}-heading" class="pk-g-invisible">{{ invisible_heading_text }}</{{ invisible_heading_tag }}>
+{% endif %}
+
+<article
+    class="pk-review"
+    {% if not h1_inner_html and invisible_heading_tag and invisible_heading_text %}
+        aria-labelledby="review-{{ review.id }}-heading"
+    {% endif %}
+>
+    <div class="stars-container review" dir="ltr">
+        <input name="stars" type="number" class="rating" data-size="xxs" data-rating-val="{{ review.rating }}">
+    </div>
+    <p class="no-js rating">{{ rating_inner_html | safe }}</p>
+    {% if review.text %}
+        <p class="text">{{ review.text }}</p>
+    {% endif %}
+    <div class="meta">
+        {% if review_url_path %}
+            <a href="{{ review_url_path }}">
+        {% endif %}
+        {% if review_timestamp_jalali and review_timestamp_iso8601 %}
+            <time class="date" datetime="{{ review_timestamp_iso8601 }}">
+                {% if app == 'zanga' %}
+                    {{ review.timestamp | date:'d/M/Y' }}
+                {% else %}
+                    {{ review_timestamp_jalali }}
+                {% endif %}
+            </time>
+        {% endif %}
+        {% if review_url_path %}
+            </a>
+        {% endif %}
+        {% if review.tool_version %}
+            {# Translators: Appears on tool version page and review footers. Translation should include “%(version_number)s” where the version number should go. #}
+            {% if app == 'zanga' %}
+                <p class="version">{% blocktrans with
+                    version_number=review.tool_version
+                %}Version {{ version_number }}{% endblocktrans %}</p>
+            {% else %}
+                <p class="version">{% blocktrans with
+                    version_number=review.tool_version|pa_numerals
+                %}Version {{ version_number }}{% endblocktrans %}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</article>
+<hr class="review-separator">

@@ -1,0 +1,49 @@
+.pk-index-section {
+    float: right;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.pk-index-section:last-of-type {
+    margin-bottom: 0;
+}
+.pk-index-section .heading-container {
+    float: right;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+.pk-index-section .heading {
+    font-size: 1.25rem;
+    min-height: 1.75rem;
+    line-height: 1.75rem;
+    color: #1b3a6b;
+    max-width: 75%;
+    max-width: calc(100% - 6.25rem);
+    float: right;
+    clear: right;
+    margin: 0;
+}
+/* Android 4.4 Browser (WebKit) will wrap heading too early without this. */
+html.android-44-webkit .pk-index-section .heading {
+    width: 100%;
+}
+.pk-index-section .nav-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5.5rem;
+}
+/* stylelint-disable indentation  */
+@supports ( (transform: translateY(-50%)) or
+            (-webkit-transform: translateY(-50%)) or
+            (transform: translateY(-50%))
+          ) and
+          (top: calc(50%)) {
+    .pk-index-section .nav-link {
+        top: calc(50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
+/* stylelint-enable */

@@ -1,0 +1,27 @@
+{% load i18n settings_value %}
+{% settings_value 'DEBUG' as is_debug %}
+<div class="pk-form-recaptcha-fallback">
+    {# Translators: Message explaining Google reCAPTCHA. Only displayed on older browsers that load a more intrusive CAPTCHA interface. #}
+    <p class="explanation">{% trans 'We require you to solve this challenge to prevent spam. Sorry for the inconvenience!' context 'Fallback form' %}</p>
+    <noscript class="pk-iframe-wrapper-noscript" data-container-classname="noscript-replacement-container">
+        <iframe
+            class="recaptcha"
+            {% if is_debug %}
+                src="https://www.google.com/recaptcha/api/fallback?k={% settings_value 'GRECAPTCHA_V2_SITE_KEY' %}"
+            {% else %}
+                src="https://www.google.com/recaptcha/api/fallback?k={% settings_value 'GRECAPTCHA_V2_SITE_KEY' %}&hl={% settings_value 'LANGUAGE_CODE' %}"
+            {% endif %}
+        ></iframe>
+    </noscript>{# Translators: Label for reCAPTCHA field in forms. Only displayed on older browsers. #}
+    <label class="overlay-form-label" for="{{ form_slug }}-recaptcha">{% trans 'Verification code (reCAPTCHA)' context 'Fallback form' %}</label>
+    <textarea
+        name="g-recaptcha-response"
+        id="{{ form_slug }}-recaptcha"
+        class="text"
+        rows="8"
+        spellcheck="false"
+        autocapitalize="none"
+        autocomplete="off"
+        autocorrect="off"
+    ></textarea>
+</div>

@@ -1,0 +1,31 @@
+.pk-boxed-standalone {
+    overflow: hidden;
+}
+.pk-boxed-standalone .main-article {
+    float: right;
+    width: 100%;
+}
+.pk-boxed-standalone .pk-g-page-heading,
+.pk-boxed-standalone .top-meta,
+.pk-boxed-standalone .body {
+    float: right;
+    clear: right;
+}
+.pk-boxed-standalone .pk-g-page-heading {
+    margin: 0 0 0.5rem 0;
+}
+.pk-boxed-standalone .top-meta {
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+.pk-boxed-standalone .top-meta p {
+    margin: 0;
+}
+.pk-boxed-standalone .top-meta .inline-link {
+    color: #287cfc;
+    font-weight: bold;
+}
+.pk-boxed-standalone .body {
+    width: 100%;
+    margin: 0 0 2rem 0;
+}

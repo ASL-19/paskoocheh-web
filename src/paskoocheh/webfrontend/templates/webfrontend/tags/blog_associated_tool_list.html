@@ -1,0 +1,8 @@
+<ul class="pk-blog-associated-tool-list">{% load blog_associated_tool_list_item %}
+    {% for version in associated_versions %}
+        {% blog_associated_tool_list_item version=version %}
+    {% endfor %}
+    {% for tool in associated_tools %}
+        {% blog_associated_tool_list_item tool=tool %}
+    {% endfor %}
+</ul>

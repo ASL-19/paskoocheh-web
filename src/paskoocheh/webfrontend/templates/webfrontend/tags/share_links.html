@@ -1,0 +1,24 @@
+{% load i18n %}
+<div class="share-links">
+    <a
+        class="share-link telegram pk-g-image-button"
+        href="https://telegram.me/share/url?url={{ url_urlencoded }}"
+        rel="noopener noreferrer"
+        target="_blank"
+    {# Translators: Hidden accessibility text for Telegram share button. #}
+    >{% trans 'Share on Telegram' context 'Blog post' %}</a>
+    <a
+        class="share-link facebook pk-g-image-button"
+        href="http://www.facebook.com/sharer/sharer.php?u={{ url_urlencoded }}"
+        rel="noopener noreferrer"
+        target="_blank"
+    {# Translators: Hidden accessibility text for Facebook share button. #}
+    >{% trans 'Share on Facebook' context 'Blog post' %}</a>
+    <a
+        class="share-link twitter pk-g-image-button"
+        href="https://twitter.com/intent/tweet?text={{ twitter_text_urlencoded }}"
+        rel="noopener noreferrer"
+        target="_blank"
+    {# Translators: Hidden accessibility text for Twitter share button. #}
+    >{% trans 'Share on Twitter' context 'Blog post' %}</a>
+</div>

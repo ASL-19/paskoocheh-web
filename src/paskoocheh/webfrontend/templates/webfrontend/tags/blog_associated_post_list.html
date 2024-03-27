@@ -1,0 +1,7 @@
+<div class="pk-blog-associated-post-list-container">
+    <ul class="pk-blog-associated-post-list">{% load blog_associated_post_list_item %}
+        {% for post in related_posts %}
+        {% blog_associated_post_list_item post=post %}
+        {% endfor %}
+    </ul>
+</div>

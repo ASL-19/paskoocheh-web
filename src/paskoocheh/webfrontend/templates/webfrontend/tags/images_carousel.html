@@ -1,0 +1,55 @@
+<div class="pk-images-carousel-container{% if has_portrait_images %} portrait-layout{% else %} landscape-layout{% endif %}{% if should_fit_viewport %} should-fit-viewport{% endif %}">
+    <div class="pk-images-carousel{% if version %} tool-version{% endif %} images-list flickity-carousel" aria-hidden="true">
+        {% if version.video or version.video_link %}
+            {% load embedded_video %}
+            {% embedded_video version in_carousel=True %}
+        {% endif %}
+        {% for image in images %}
+            <div class="images-list-item flickity-carousel-cell">
+                {% if image.link %}
+                    <a
+                        href="{{ image.link }}"
+                        id="image-sizing-container-{{ image.id }}"
+                        class="image-sizing-container js-image-sizing-container-link"
+                        {% if image.new_window %}
+                            target="_blank"
+                        {% endif %}
+                        {% if image.link_is_external %}
+                            rel="noopener noreferrer"
+                        {% endif %}
+                        style="{{ image.inline_style|safe }}"
+                        data-cell-number="{{ forloop.counter0 }}"
+                    >
+                {% else %}
+                    <div
+                        class="image-sizing-container"
+                        id="image-sizing-container-{{ image.id }}"
+                        style="{{ image.inline_style|safe }}"
+                    >
+                {% endif %}
+                        <div class="image-container">
+                            <img class="image" src="{{ image.image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="" />
+                        </div>
+                {% if image.link %}
+                    </a>
+                {% else %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<style type="text/css">
+    html.flickity-supported .pk-images-carousel-container::after {
+        display: block;
+        content: ' ';
+        padding-bottom: {{ container_padding_bottom_percentage_wide|floatformat:5 }}%;
+    }
+    @media (max-width: 37.99em) {
+        html.flickity-supported .pk-images-carousel-container::after {
+            display: block;
+            content: ' ';
+            padding-bottom: {{ container_padding_bottom_percentage_narrow|floatformat:5 }}%;
+        }
+    }
+</style>

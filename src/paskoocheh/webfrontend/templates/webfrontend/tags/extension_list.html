@@ -1,0 +1,11 @@
+{% load i18n extension_list extension_list_item %}
+{% if extension_list_item_contexts %}
+    <ul class="pk-extension-list{% if is_preview %} is-preview{% endif %}">
+        {% for extension_list_item_context in extension_list_item_contexts %}
+            {% extension_list_item extension_list_item_context %}
+        {% endfor %}
+    </ul>
+{% else %}
+    {# Translators: Appears if the extension list (e.g. homepage section, category page, search result, etc.) contains no extensions. Should be general enough to account for the many different contexts extensions lists appear in. This could be split into context-specific strings if that makes more sense. #}
+    <p class="pk-extension-list-no-extensions-message">{% trans 'No matching extensions.' context 'extension list' %}</p>
+{% endif %}

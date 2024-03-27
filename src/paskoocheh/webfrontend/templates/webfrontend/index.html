@@ -1,0 +1,88 @@
+{% extends 'webfrontend/base.html' %}
+{% load i18n images_carousel pask_url pk_meta_tags tool_list blog_post_list %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-main-container">
+        {% if promo_images %}
+            <div class="pk-g-responsive-centring-container images-carousel-centring-container">
+                {% images_carousel
+                    images=promo_images
+                    should_fit_viewport=False
+                %}
+            </div>
+        {% endif %}
+        <div class="pk-g-responsive-centring-container">
+            <main class="index-main pk-homepage-centred pk-g-no-focus-outline {% if not is_carousel_visible %}no-carousel{% endif %}" tabindex="-1">
+                <h1 id="main-heading" class="pk-g-invisible">{% trans 'Paskoocheh' %}</h1>
+
+                {% if just_added_tools_list_item_contexts %}
+                    <section class="pk-index-section">
+                        <div class="heading-container">
+                            <h2 class="section-heading heading">{{ just_added_title }}</h2>
+                            {# Translators: Button next to tool list titles on homepage and category pages. Links to a search page containing all results for associated list. #}
+                            <a class="pk-button nav-link forward" href="{{ just_added_search_path }}">{% trans 'All' context 'Tool list' %}</a>
+                        </div>
+                        {% tool_list just_added_tools_list_item_contexts is_preview=True %}
+                    </section>
+                {% endif %}
+
+                {% if show_sorted_lists and most_downloaded_tools_list_item_contexts %}
+                    <section class="pk-index-section">
+                        <div class="heading-container">
+                            <h2 class="section-heading heading">{{ most_downloaded_title }}</h2>
+                            <a class="pk-button nav-link forward" href="{{ most_downloaded_search_path }}">{% trans 'All' context 'Tool list' %}</a>
+                        </div>
+                        {% tool_list most_downloaded_tools_list_item_contexts is_preview=True %}
+                    </section>
+                {% endif %}
+
+                {% if show_sorted_lists and recently_updated_tools_list_item_contexts %}
+                    <section class="pk-index-section">
+                        <div class="heading-container">
+                            <h2 class="section-heading heading">{{ recently_updated_title }}</h2>
+                            <a class="pk-button nav-link forward" href="{{ recently_updated_search_path }}">{% trans 'All' context 'Tool list' %}</a>
+                        </div>
+                        {% tool_list recently_updated_tools_list_item_contexts is_preview=True %}
+                    </section>
+                {% endif %}
+
+                {% if not show_sorted_lists %}
+                    <section class="pk-index-section">
+                        <div class="heading-container">
+                            <h2 class="section-heading heading">{{ all_matched_title }}</h2>
+                            {% if all_matched_tools_list_item_contexts %}
+                                <a class="pk-button nav-link forward" href="{{ all_matched_search_path }}">{% trans 'All' context 'Tool list' %}</a>
+                            {% endif %}
+                        </div>
+                        {% tool_list all_matched_tools_list_item_contexts %}
+                    </section>
+                {% endif %}
+
+
+                {% if latest_posts %}
+                    <section class="pk-index-section">
+                        <div class="heading-container">
+                            <h2 class="section-heading heading">{{ latest_posts_title }}</h2>
+                            {# Translators: “All” buttons on blog homepage #}
+                            <a
+                                class="pk-button nav-link forward"
+                                href="{% pask_url
+                                    'webfrontend:blogposts'
+                                %}"
+                            >{% trans 'All' context 'Blog' %}</a>
+                        </div>
+                        {% blog_post_list
+                            displayed_rows_limit=3
+                            post_heading_tag='h3'
+                            posts=latest_posts
+                            show_summary=False
+                            current_view_name='index'
+                        %}
+                    </section>
+                {% endif %}
+            </main>
+        </div>
+    </div>
+{% endblock %}

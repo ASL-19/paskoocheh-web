@@ -1,0 +1,332 @@
+# -*- coding: utf-8 -*-
+# Paskoocheh - A tool marketplace for Iranian
+#
+# Copyright (C) 2024 ASL19 Organization
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+from django.test import TestCase
+from django.core.files.uploadedfile import SimpleUploadedFile
+from conffile.models import ConfigFile
+from tools.models import (
+    Tool,
+    Faq,
+    Version,
+    Image,
+    Tutorial
+)
+
+
+class test_finds(TestCase):
+    """
+    Test Search Functions
+    """
+    def setUp(self):
+        """
+        Set up test data
+        """
+        tool2 = Tool.objects.create(
+            name="Test Tool2",
+            last_update="2016-03-22 10:11:12",
+            trusted=True,
+            opensource=True,
+            source="https://github.com/TestTool2",
+            type="pri",
+            website="https://TestTool2Website.com",
+            facebook="https://facebook.com/TestTool2",
+            twitter="https://twitter.com/TestTool2",
+            rss="https://TestTool2Website.com/RSS",
+            blog="https://TestTool2Website.com/blog",
+            contact_email="contact@TestTool2Website.com",
+            contact_url="https://TestTool2Website.com/contact",
+            publishable=True)
+
+        tool1 = Tool.objects.create(
+            name="Test Tool1",
+            last_update="2016-03-22 10:11:12",
+            trusted=True,
+            opensource=True,
+            source="https://github.com/TestTool1",
+            type="pri",
+            website="https://TestTool1Website.com",
+            facebook="https://facebook.com/TestTool1",
+            twitter="https://twitter.com/TestTool1",
+            rss="https://TestTool1Website.com/RSS",
+            blog="https://TestTool1Website.com/blog",
+            contact_email="contact@TestTool1Website.com",
+            contact_url="https://TestTool1Website.com/contact",
+            publishable=True)
+
+        Version.objects.create(
+            tool=tool1.id,
+            version_number="tt1 win 1.0",
+            supported_os="windows",
+            release_date="2015-03-20 7:8:9",
+            last_modified="2016-03-22 10:11:12",
+            download_url="https://TestTool1Website.com/download",
+            release_url="http://TestTool1Website.com/release",
+            delivery_email="delivery@TestTool1Website.com",
+            download_count=123)
+
+        Version.objects.create(
+            tool=tool1.id,
+            version_number="tt1 lin 2.0",
+            supported_os="linux_32",
+            release_date="2015-03-19 6:7:8",
+            last_modified="2016-03-22 10:11:13",
+            download_url="https://TestTool1Website.com/download",
+            release_url="http://TestTool1Website.com/release",
+            delivery_email="delivery@TestTool1Website.com",
+            download_count=134)
+
+        Faq.objects.create(
+            tool=tool1.id,
+            language="fa",
+            question="Tool1 Test Question 1?",
+            answer="Tool1 Test Answer 1.")
+
+        Faq.objects.create(
+            tool=tool1.id,
+            language="fa",
+            question="Tool1 Test Question 2?",
+            answer="Tool1 Test Answer 2.")
+
+        Faq.objects.create(
+            tool=tool2.id,
+            language="fa",
+            question="Tool2 Test Question 1?",
+            answer="Tool2 Test Answer 1.")
+
+        Faq.objects.create(
+            tool=tool2.id,
+            language="fa",
+            question="Tool2 Test Question 2?",
+            answer="Tool2 Test Answer 2.")
+
+        Tutorial.objects.create(
+            tool=tool1.id,
+            os="win",
+            language="fa",
+            video=SimpleUploadedFile("Tool1Tut1.mov", "Tool1Tut1Contents"))
+
+        Tutorial.objects.create(
+            tool=tool1.id,
+            os="win",
+            language="fa",
+            youtube_link="https://youtube.com/Tool1Tut2")
+
+        Tutorial.objects.create(
+            tool=tool1.id,
+            os="win",
+            language="fa",
+            youtube_link="https://vimeo.com/Tool1Tut3")
+
+        Tutorial.objects.create(
+            tool=tool1.id,
+            os="linux",
+            language="fa",
+            video=SimpleUploadedFile("Tool1Tut4.mov", "Tool1Tut4Contents"))
+
+        Tutorial.objects.create(
+            tool=tool2.id,
+            os="mac",
+            language="fa",
+            video=SimpleUploadedFile("Tool2Tut1.mov", "Tool2Tut1Contents"))
+
+        Tutorial.objects.create(
+            tool=tool2.id,
+            os="ios",
+            language="fa",
+            youtube_link="https://youtube.com/Tool2Tut2")
+
+        Tutorial.objects.create(
+            tool=tool2.id,
+            os="android",
+            language="fa",
+            youtube_link="https://vimeo.com/Tool2Tut3")
+
+        Tutorial.objects.create(
+            tool=tool2.id,
+            os="linux",
+            language="fa",
+            video=SimpleUploadedFile("Tool2Tut4.mov", "Tool2Tut4Contents"))
+
+        Image.objects.create(
+            tool1.id,
+            image=SimpleUploadedFile("Tool1Image1.png", "Tool1Image1Content"))
+
+        Image.objects.create(
+            tool1.id,
+            image=SimpleUploadedFile("Tool1Image2.png", "Tool1Image2Content"))
+
+        Image.objects.create(
+            tool2.id,
+            image=SimpleUploadedFile("Tool1Image1.png", "Tool1Image1Content"))
+
+        Image.objects.create(
+            tool2.id,
+            image=SimpleUploadedFile("Tool2Image2.png", "Tool2Image2Content"))
+
+        Version.objects.create(
+            tool=tool2.id,
+            version_number="tt2 win 1.0",
+            supported_os="windows",
+            release_date="2015-03-20 7:8:9",
+            last_modified="2016-03-22 10:11:12",
+            download_url="https://TestTool2Website.com/download",
+            release_url="http://TestTool2Website.com/release",
+            delivery_email="delivery@TestTool2Website.com",
+            download_count=345)
+
+        Version.objects.create(
+            tool=tool2.id,
+            version_number="tt2 lin 2.0",
+            supported_os="linux_32",
+            release_date="2015-03-19 6:7:8",
+            last_modified="2016-03-22 10:11:13",
+            download_url="https://TestTool2Website.com/download",
+            release_url="http://TestTool2Website.com/release",
+            delivery_email="delivery@TestTool2Website.com",
+            download_count=567)
+
+    def test_find_platform(self):
+        """
+            Test Platform Search
+        """
+
+        conf = ConfigFile()
+        self.assertTrue(len(conf.find_platform("win")) == 2)
+        self.assertTrue(len(conf.find_platform("linux")) == 2)
+        self.assertTrue(len(conf.find_platform("firext")) == 0)
+        self.assertTrue(len(conf.find_platform("linux64")) == 0)
+
+    def test_find_tool(self):
+        """
+            Test Tool Search
+        """
+
+        conf = ConfigFile()
+        pl1 = conf.find_platform("win")
+        self.assertTrue(len(conf.find_tool(pl1, "Test Tool1").releases) == 2)
+        self.assertTrue(len(conf.find_tool(pl1, "Test Tool2").releases) == 2)
+        self.assertTrue(len(conf.find_tool(pl1, "Noname Tool").releases) == 0)
+        self.assertTrue(len(conf.find_tool(pl1, "Tool1").releases) == 0)
+        self.assertTrue(len(conf.find_tool(pl1, "Test").releases) == 0)
+
+    def test_update_tool(self):
+        """
+            This also covers _update_contact
+        """
+
+        conf = ConfigFile()
+        neutool = Tool.objects.create(
+            name="Neu Tool",
+            last_update="2010-02-11 11:21:32",
+            trusted=False,
+            opensource=False,
+            source="https://github.com/NewTool",
+            type="vpn",
+            website="https://NeuToolWebsite.com",
+            facebook="https://facebook.com/NeuTool",
+            twitter="https://twitter.com/NeuTool",
+            rss="https://NeuToolWebsite.com/RSS",
+            blog="https://NeuToolWebsite.com/blog",
+            contact_email="contact@NeuToolWebsite.com",
+            contact_url="https://NeuToolWebsite.com/contact",
+            publishable=False)
+
+        self.assertTrue(
+            conf.platforms["win"].tools[0].contact.name !=
+            neutool.name)
+
+        self.assertTrue(conf.platforms["win"].tools[0].last_update !=
+                        neutool.last_update)
+        self.assertTrue(conf.platforms["win"].tools[0].trusted !=
+                        neutool.trusted)
+        self.assertTrue(conf.platforms["win"].tools[0].opensource !=
+                        neutool.opensource)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.source_url !=
+                        neutool.source)
+        self.assertTrue(conf.platforms["win"].tools[0].type !=
+                        neutool.type)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.website_url !=
+                        neutool.website)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.facebook_url !=
+                        neutool.facebook)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.twitter_handle !=
+                        neutool.twitter)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.feed_url !=
+                        neutool.rss)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.blog_url !=
+                        neutool.blog)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.support_email !=
+                        neutool.contact_email)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.user_support_url !=
+                        neutool.contact_url)
+        self.assertTrue(conf.platforms["win"].tools[0].publishable !=
+                        neutool.publishable)
+
+        # Create the new platform
+        conf.update_contact(conf.platforms["win"].tools[0], neutool)
+
+        self.assertTrue(conf.platforms["win"].tools[0].contact.name ==
+                        neutool.name)
+        self.assertTrue(conf.platforms["win"].tools[0].last_update ==
+                        neutool.last_update)
+        self.assertTrue(conf.platforms["win"].tools[0].trusted ==
+                        neutool.trusted)
+        self.assertTrue(conf.platforms["win"].tools[0].opensource ==
+                        neutool.opensource)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.source_url ==
+                        neutool.source)
+        self.assertTrue(conf.platforms["win"].tools[0].type ==
+                        neutool.type)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.website_url ==
+                        neutool.website)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.facebook_url ==
+                        neutool.facebook)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.twitter_handle ==
+                        neutool.twitter)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.feed_url ==
+                        neutool.rss)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.blog_url ==
+                        neutool.blog)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.support_email ==
+                        neutool.contact_email)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.user_support_url ==
+                        neutool.contact_url)
+        self.assertTrue(conf.platforms["win"].tools[0].contact.description ==
+                        "Description for " + neutool.name)
+        self.assertTrue(conf.platforms["win"].tools[0].publishable ==
+                        neutool.publishable)
+
+    def test_find_release(self):
+        """
+            Test Release Search
+        """
+
+        conf = ConfigFile()
+        platform = conf.find_platform("win")
+        tool = conf.find_tool(platform, "Test Tool2")
+        self.assertTrue(conf.find_release(tool, "tt2 win 1.0").version_number ==
+                        "tt2 win 1.0")
+        self.assertTrue(conf.find_release(tool, "tt2 lin 1.0").version_number ==
+                        "tt2 lin 1.0")
+        self.assertTrue(conf.find_release(tool, "tt1 win 1.0").version_number !=
+                        "tt1 win 1.0")
+        platform = conf.find_platform("linux")
+        tool = conf.find_tool(platform, "Test Tool1")
+        self.assertTrue(conf.find_release(tool, "tt1 lin 2.0").version_number ==
+                        "tt1 lin 2.0")

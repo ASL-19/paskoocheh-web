@@ -1,0 +1,38 @@
+<div class="embedded-video{% if in_carousel %} in-carousel{% endif %}">{% load i18n %}
+    {% if parsed_video_info %}
+        <div
+            class="pk-video-wrapper video-wrapper js-supported-video-wrapper{% if in_carousel %} in-carousel{% endif %}"
+            data-is-lazy-loading="{{ is_lazy_loading }}"
+            data-video-url="{{ content_object.video_link }}"
+            data-video-type="{{ parsed_video_info.type }}"
+            data-container-elem-id="{{ js_container_elem_prefix | default_if_none:'version-video' }}-{{ content_object.id }}"
+            {% if parsed_video_info.type == 'youtube' or parsed_video_info.type == 'vimeo' %}
+                data-external-video-id="{{ parsed_video_info.external_id }}"
+            {% endif %}
+        ></div>
+        {% if parsed_video_info.type == 'youtube' %}
+            <noscript
+                class="pk-iframe-wrapper-noscript iframe-wrapper-noscript"
+                data-container-classname="pk-video-wrapper video-wrapper"
+            >
+                <iframe class="video-iframe" allowfullscreen src="https://www.youtube.com/embed/{{ parsed_video_info.external_id }}?autoplay=0&amp;hl=fa-ir&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;showinfo=0"></iframe>
+            </noscript>
+        {% elif parsed_video_info.type == 'vimeo' %}
+            <noscript class="pk-iframe-wrapper-noscript iframe-wrapper-noscript">
+                <iframe class="video-iframe" allowfullscreen src="https://player.vimeo.com/video/{{ parsed_video_info.external_id }}?title=0&amp;byline=0&amp;portrait=0"></iframe>
+            </noscript>
+        {% else %}
+            {# Translators: Appears when there’s an error finding/loading a embedded video #}
+            <p>{% trans 'Error displaying video' context 'Video error' %}</p>
+        {% endif %}
+    {% elif video_path %}
+        <video class="g-video-viewport" controls>
+            <source src="{{ video_path }}" type="video/webm">
+            <source src="{{ video_path }}" type="video/mp4">
+            {# Translators: Appears when the used browser doesn't support a video extension. Please keep the <a href=""></a> tags as they are #}
+            <p>{% blocktrans context 'Video error' with link=video_path trimmed %}
+                Your browser doesn't support HTML5 video. Here is a <a href="{{link}}">link to the video</a>.
+            {% endblocktrans %}</p>
+        </video>
+    {% endif %}
+</div>

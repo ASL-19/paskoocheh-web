@@ -1,0 +1,18 @@
+.pk-blogindex .main-heading {
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+.pk-blogindex .heading-container {
+    margin-bottom: 0.875rem !important;
+}
+.pk-blogindex .section-heading {
+    font-size: 1.625rem !important;
+    line-height: 2.275rem !important;
+}
+.pk-blogindex .pk-g-centred {
+    padding-top: 6em;
+}
+
+.blog-heading {
+    text-align: center;
+}

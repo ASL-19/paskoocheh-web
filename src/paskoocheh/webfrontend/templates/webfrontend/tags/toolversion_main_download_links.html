@@ -1,0 +1,97 @@
+{% load
+    i18n
+    pask_url
+    static
+    l10n
+%}
+<section class="pk-toolversion-main-download-links{% if linux32_version or windows32_version %} double-version{% endif %}">
+    <h2 class="pk-g-invisible">{% trans 'Download links' context 'Tool version' %} {{ version_name_localized }}</h2>
+    {% if version.supported_os.slug_name != 'android' and version.version_codes and version.version_codes.first.uploaded_file %}
+        {# Translators: Direct (S3) download button #}
+        <a
+            class="pk-g-boxed download-link s3"
+            href="{% pask_url 'webfrontend:toolversiondownload' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name %}"
+            >{% trans 'Download' context 'Tool version' %}{% if linux32_version or windows32_version %} ({{ version_variant_name_localized }}){% endif %}
+        </a>
+        {% if linux32_version and linux32_version.version_codes and linux32_version.version_codes.first.uploaded_file %}
+            {# Translators: Direct (S3) download button #}
+            <a
+                class="pk-g-boxed download-link s3"
+                href="{% pask_url 'webfrontend:toolversiondownload' p_tool_id=linux32_version.tool.id p_platform_slug=linux32_version.supported_os.slug_name %}"
+                >{% trans 'Download' context 'Tool version' %} ({% trans '32-bit' context 'Tool version download links heading' %})
+            </a>
+        {% elif windows32_version and windows32_version.version_codes and windows32_version.version_codes.first.uploaded_file %}
+            {# Translators: Direct (S3) download button #}
+            <a
+                class="pk-g-boxed download-link s3"
+                href="{% pask_url 'webfrontend:toolversiondownload' p_tool_id=windows32_version.tool.id p_platform_slug=windows32_version.supported_os.slug_name %}"
+                >{% trans 'Download' context 'Tool version' %} ({% trans '32-bit' context 'Tool version download links heading' %})
+            </a>
+        {% endif %}
+    {% endif %}
+    {% if version.supported_os.slug_name == 'android' and not version.is_bundled_app and version.version_codes and version.version_codes.first.uploaded_file.name.lower|slice:"-3:" == "apk" %}
+        {# Translators: Direct (S3) download button #}
+        <a
+            class="pk-g-boxed download-link s3"
+            href="{% pask_url 'webfrontend:toolversiondownload' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name %}"
+            >{% trans 'Download' context 'Tool version' %}{% if linux32_version or windows32_version %} ({{ version_variant_name_localized }}){% endif %}
+        </a>
+    {% endif %}
+    {% if paskoocheh_download_link_custom_badge %}
+        <a
+            class="download-link image {{ paskoocheh_download_link_custom_badge.code }}"
+            href="https://paskoocheh.com/tools/42/android.html"
+            style="width: calc(2.875 * {{ paskoocheh_download_link_custom_badge.image_aspect_ratio | unlocalize }}em);"
+        >
+            <img
+                alt="{{ paskoocheh_download_link_custom_badge.alt }}"
+                src="{% static paskoocheh_download_link_custom_badge.image %}"
+            >
+        </a>
+    {% endif %}
+    {% if version.download_url %}
+        {% if download_link_custom_badge %}
+            <a
+                class="pk-external-download-link download-link image {{ download_link_custom_badge.code }}"
+                data-record-referral-path="{% pask_url 'webfrontend:toolversionrecordreferral' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name %}"
+                href="{{ version.download_url }}"
+                style="width: calc(2.875 * {{ download_link_custom_badge.image_aspect_ratio | unlocalize }}em);"
+            >
+                <img
+                    alt="{{ download_link_custom_badge.alt }}"
+                    src="{% static download_link_custom_badge.image %}"
+                >
+            </a>
+        {% else %}
+            <a
+                class="pk-external-download-link pk-g-boxed download-link"
+                data-record-referral-path="{% pask_url 'webfrontend:toolversionrecordreferral' p_tool_id=version.tool.id p_platform_slug=version.supported_os.slug_name %}"
+                href="{{ version.download_url }}"
+            {# Translators: Text for download button that links to the publisher’s website (fallback if there isn’t a custom image and translation for the store) #}
+            >{% trans 'Download from website' context 'Tool version download link' %}</a>
+        {% endif %}
+    {% endif %}
+    {% if not version.is_bundled_app and version.delivery_email %}
+        {# Translators: Download button that opens a new email to the appropriate Paskoocheh email responder address #}
+        <a
+            class="pk-g-boxed download-link email"
+            href="mailto:{{ version.delivery_email }}"
+        >{% trans 'Download via email' context 'Tool version' %}{% if linux32_version or windows32_version %} ({{ version_variant_name_localized }}){% endif %}
+        </a>
+        {% if linux32_version and linux32_version.delivery_email %}
+            {# Translators: Download button that opens a new email to the appropriate Paskoocheh email responder address #}
+            <a
+                class="pk-g-boxed download-link email"
+                href="mailto:{{ linux32_version.delivery_email }}"
+            >{% trans 'Download via email' context 'Tool version' %} ({% trans '32-bit' context 'Tool version download links heading' %})
+            </a>
+        {% elif windows32_version and windows32_version.delivery_email %}
+            {# Translators: Download button that opens a new email to the appropriate Paskoocheh email responder address #}
+            <a
+                class="pk-g-boxed download-link email"
+                href="mailto:{{ windows32_version.delivery_email }}"
+            >{% trans 'Download via email' context 'Tool version' %} ({% trans '32-bit' context 'Tool version download links heading' %})
+            </a>
+        {% endif %}
+    {% endif %}
+</section>

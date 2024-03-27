@@ -1,0 +1,21 @@
+.pk-form-recaptcha-fallback {
+    float: right;
+    width: 100%;
+}
+.pk-form-recaptcha-fallback .explanation {
+    float: right;
+    width: 100%;
+}
+.pk-form-recaptcha-fallback .recaptcha {
+    float: right;
+    width: 302px;
+    height: 423px;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    border: none;
+    overflow: hidden;
+}
+.pk-form-recaptcha-fallback .noscript-replacement-container {
+    float: right;
+    clear: right;
+}

@@ -1,0 +1,8 @@
+{
+    "name": "paskoocheh-server",
+    "private": true,
+    "devDependencies": {
+        "clean-css-cli": "4.*",
+        "uglify-js": "3.*"
+    }
+}

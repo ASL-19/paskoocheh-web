@@ -1,0 +1,226 @@
+<div class="pk-main-header" id="main-header">{% load i18n pask_url static %}
+    <header class="main-header-header pk-g-no-focus-outline">
+        <a id="main-logo-link" class="logo-link" href="{{ logo_link_destination }}">
+            <img class="logo-img" src="{% static logo_path %}" alt="{% trans 'Paskoocheh' %}" />
+            <p class="logo-text" aria-hidden="true">{% trans 'Paskoocheh' %}</p>
+        </a>
+        <div class="header-buttons">
+            <section class="header-nav hide-on-mobile">
+                <li>
+                    <a
+                    class="app-categories-link"
+                    href="#app-categories"
+                    {% if current_view_name == 'index' %}
+                        aria-current="page"
+                    {% endif %}
+                >{% trans 'App categories' context 'Navigation' %}</a>
+                </li>
+                <li>
+                    <a
+                    class="nav-link"
+                    href="{% pask_url
+                        'webfrontend:blogposts'
+                    %}"
+                    {% if current_view_name == 'blogposts' %}
+                        aria-current="page"
+                    {% endif %}
+                >{% trans 'Blog' context 'Navigation' %}</a>
+                </li>
+                <li>
+                    <a
+                    href="{% pask_url 'webfrontend:page' p_slug='about' %}"
+                    class="nav-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'about' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to about page (appears in header, mobile menu, and footer) #}
+                >{% trans 'About' context 'Navigation' %}</a>
+                </li>
+                <li>
+                    <a
+                    href="{% pask_url 'webfrontend:page' p_slug='contact' %}"
+                    class="nav-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'contact' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to contact-us page (appears in header, mobile menu, and footer) #}
+                >{% trans 'Contact us' context 'Navigation' %}</a>
+                </li>
+            </section>
+        </div>
+        {# Translators: Accessibility text for mobile header search field activation button (mangifying glass). Only appears at narrow screen widths (e.g. phones). Clicking it displays and focusses the search field. #}
+        <button id="main-header-activate-search" class="activate-search pk-g-image-button" tabindex="-1" aria-hidden="true">{% trans 'Search' context 'Header' %}</button>
+        <form id="main-header-search-form" class="search-form centred-header-elem" action="{% pask_url 'webfrontend:search' %}" method="get">
+            <input
+                type="search"
+                name="query"
+                id="main-header-search-input"
+                class="search-query-input"
+                value="{{ search_query }}"
+                {# Translators: Accessibility label for search query text box. #}
+                aria-label="{% trans 'Search query' context 'Header' %}"
+                spellcheck="false"
+                autocapitalize="none"
+                autocorrect="off"
+                placeholder="{% trans 'Search for tools' context 'Search' %}"
+            />
+            <button
+                id="main-header-close-search-button"
+                class="close-search-button pk-g-image-button"
+                aria-hidden="true"
+                tabindex="-1"
+                type="button"
+            {# Translators: Accessibility text for header search close button (appears when text has been entered in search field) #}
+            >{% trans 'Clear' context 'Header search form' %}</button>
+            {% if hidden_form_values.category %}
+                <input name="category" type="hidden" value="{{ hidden_form_values.category }}" />
+            {% endif %}
+            {% if nocookies %}
+                <input name="nocookies" type="hidden" />
+            {% endif %}
+            <input name="platform" type="hidden" value="{{ global_platform_slug }}" />
+            {# Translators: Text for header search submit button. Only appears on-screen for old browsers; important for accessibility. #}
+            <button type="submit" id="main-header-search-submit" class="submit-button pk-g-image-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <rect width="24" height="24" fill="none"/>
+                    <path d="M20.49,19.5193l-5.93-5.93a6.5655,6.5655,0,1,0-.98.97l5.93,5.93a.7.7,0,0,0,.98,0A.7006.7006,0,0,0,20.49,19.5193ZM9.5,14.6293a5.13,5.13,0,1,1,5.13-5.13A5.1341,5.1341,0,0,1,9.5,14.6293Z" fill="#ffffff"/>
+                </svg>
+            </button>
+        </form>
+        <section
+            class="pk-platform-select centred-header-elem hide-on-mobile"
+            action="{% pask_url 'webfrontend:setplatform' %}"
+            method="post"
+        >
+            <div
+                class="platform-select rectangular-box"
+                id="global-platform-box"
+                {# Translators: Accessibility label for platform drop-down menu. #}
+                aria-label="{% trans 'Platform' context 'Header' %}"
+            >
+                {% if global_platform_slug == 'all' %}
+                    {# Translators: “All platforms” selection in platform drop-down menu #}
+                    <span class="all-platforms">{% trans 'All platforms' context 'Header' %}</span>
+                {% else %}
+                    {% blocktrans context 'Navigation' with selected_platform=localized_global_platform_name trimmed %} Showing Apps of <span id="global-platform-slug">{{ selected_platform }}</span> {% endblocktrans %}
+                {% endif %}
+            </div>
+            <input type='hidden' name='globalplatformslug' value={{global_platform_slug}} />
+            <input type='hidden' name='csrfmiddlewaretoken' value='[csrf_token]' />
+            {# Translators: Text for a button that submits the platform selection. The button only appears on older browsers and browsers with JavaScript disabled. It’s usually not necessary since the site uses JavaScript to automatically reload the page when the user chooses a new platform. #}
+        </section>
+
+        <div id="main-header-dropdown-content-wrapper" class="content-wrapper hide-on-mobile">
+            <div class="arrow-up"></div>
+            <div class="content-pane">
+                <section id="app-category-menu" class="nav-menu app-category-menu">
+                    {% for tool_type in tool_types %}
+                        <li>
+                            <a
+                            data-slug="{{ tool_type.slug }}"
+                            class="nav-link"
+                            href="{% pask_url 'webfrontend:index' q_platform=global_platform_slug q_category=tool_type.slug %}"
+                            {% if current_view_name == 'index' and current_type_slug == tool_type.slug %}
+                                aria-current="page"
+                            {% endif %}
+                            >
+                                {% if tool_type.icon %}
+                                    <div class="item-thumbnail-container">
+                                        <img class="item-thumbnail" src="/media/{{ tool_type.icon }}"/>
+                                    </div>
+                                {% endif %}
+                                {% if app == 'zanga' and tool_type.name_ar %}
+                                    {{ tool_type.name_ar }}
+                                {% else %}
+                                    {{ tool_type.name_fa }}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </section>
+                <section id="platform-menu" class="nav-menu platform-menu">
+                    <li>
+                        <a
+                            data-slug="all"
+                            class="nav-link all-link"
+                            href="{% pask_url 'webfrontend:index' q_platform='all' %}"
+                            value="all"
+                        {# Translators: “All platforms” link in platform drop-down menu #}
+                        >
+                            {% trans 'All platforms' context 'Platform menu' %}
+                        </a>
+                    </li>
+                    <div class="ref-point"><div class="platform-category desktop">{% trans 'Desktop' context 'Platform menu' %}</div></div>
+                    {% for platform in sorted_desktop_platforms %}
+                        <li>
+                            <a
+                                data-slug="{{ platform.slug_name }}"
+                                class="nav-link"
+                                href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                                {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                                    aria-current="page"
+                                {% endif %}
+                            >
+                                {% if platform.icon %}
+                                    <div class="platform-logo-container">
+                                        <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                                    </div>
+                                {% endif %}
+                                {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    <div class="v-line"></div>
+                    <div class="ref-point"><div class="platform-category web">{% trans 'Web' context 'Platform menu' %}</div></div>
+                    {% for platform in sorted_web_platforms %}
+                        <li>
+                            <a
+                                data-slug="{{ platform.slug_name }}"
+                                class="nav-link"
+                                href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                                {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                                    aria-current="page"
+                                {% endif %}
+                            >
+                                {% if platform.icon %}
+                                    <div class="platform-logo-container">
+                                        <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                                    </div>
+                                {% endif %}
+                                {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    <div class="v-line"></div>
+                    <div class="ref-point"><div class="platform-category mobile">{% trans 'Mobile' context 'Platform menu' %}</div></div>
+                    {% for platform in sorted_mobile_platforms %}
+                        <li>
+                            <a
+                                data-slug="{{ platform.slug_name }}"
+                                class="nav-link"
+                                href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                                {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                                    aria-current="page"
+                                {% endif %}
+                            >
+                                {% if platform.icon %}
+                                    <div class="platform-logo-container">
+                                        <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                                    </div>
+                                {% endif %}
+                                {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </section>
+            </div>
+        </div>
+        <a
+        class="pk-a11y-shortcut skip-to-main-link pk-g-a11y-nav-link"
+        href="#main-heading" {# Translators: Hidden accessibility button that lets users without mouse/touch to skip past the menu to the main content #}
+        >{% trans 'Skip to main content' context 'Header' %}</a>
+        {# Translators: Accessibility text for header menu button (which only appears at narrower screen widths) #}
+        <a class="pk-mobile-menu-trigger pk-g-image-button" href="#navigation" aria-hidden="true">{% trans 'Menu' context 'Header' %}</a>
+        <a class="pk-mobile-menu-cross pk-g-image-button" href="#navigation" aria-hidden="true">{% trans 'Menu' context 'Header' %}</a>
+    </header>
+</div>

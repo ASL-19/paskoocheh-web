@@ -1,0 +1,11 @@
+<li class="pk-blog-associated-post-list-item">
+    <div class="inner">
+        <a class="link-underlay" href="{{ link }}" tabindex="-1" aria-hidden="true"></a>
+        <div class="thumbnail-sizing-container">
+            <img class="thumbnail" src="{{ post.image_url | default_if_none:default_image_path }}" alt="" />
+        </div>
+        <div class="title-wrapper">
+            <a class="title-link" href="{{ link }}">{{ post.title }}</a>
+        </div>
+    </div>
+</li>

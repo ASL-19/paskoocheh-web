@@ -1,0 +1,12 @@
+<entry>
+    <title type="text">{{ post.title }}</title>
+    <link rel="alternate" type="text/html" href="{{ post_url }}" />
+    <id>{{ post_url }}</id>
+    <updated>{{ post_updated_datetime_iso8601 }}</updated>
+    <published>{{ post_published_datetime_iso8601 }}</published>
+    {% if post_category_name %}
+        <category term="{{ post.category.slug }}" label="{{ post_category_name }}" />
+    {% endif %}
+    <summary type="text">{{ post.summary }}</summary>
+    <content type="html"><![CDATA[{{ post_content_html|safe }}]]></content>
+</entry>

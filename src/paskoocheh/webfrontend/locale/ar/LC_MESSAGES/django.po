@@ -1,0 +1,1552 @@
+# Zanga English to Arabic Translations
+# Copyright (C) 2020 Mada19
+# This file is distributed under the same license as the PACKAGE package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-03 21:01+0000\n"
+"PO-Revision-Date: 2020-04-20 19:04-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Poedit 2.3\n"
+
+#: webfrontend/middleware.py:71
+msgctxt "Error message"
+msgid ""
+"Paskoocheh requires cookies to save your platform selection. Please allow "
+"cookies from paskoocheh.com."
+msgstr ""
+"تحتاج زنچة إلى الكوكيز ‫(‬ملفّات تعريف الارتباط‫)‬ لحفظ خياراتكم على منصّتها‫.‬ يرجى "
+"السّماح بحفظ الكوكيز من موقعنا."
+
+#: webfrontend/middleware.py:80
+msgctxt "Error message"
+msgid ""
+"Paskoocheh requires cookies to accept reviews or support requests. Please "
+"allow cookies from paskoocheh.com."
+msgstr ""
+"تحتاج زنچة الكوكيز لتلقّي تقييماتكم للتطبيقات وطلباتكم للدعم‫.‬ يرجى السماح "
+"بحفظ الكوكيز من Zanga.tech."
+
+#: webfrontend/middleware.py:88
+msgctxt "Error message"
+msgid ""
+"Paskoocheh requires cookies for this feature. Please allow cookies from "
+"paskoocheh.com."
+msgstr "تتطلب زنچة الكوكيز لهذه الخاصيّة‫.‬ يرجى السّماح بحفظ الكوكيز من موقعنا."
+
+#: webfrontend/middleware.py:111
+msgctxt "Tool version download count"
+msgid "None"
+msgstr "0"
+
+#: webfrontend/middleware.py:115
+msgctxt "Tool version rating"
+msgid "None"
+msgstr "لا يوجد تقييم"
+
+#: webfrontend/middleware.py:180 webfrontend/middleware.py:197
+#, python-brace-format
+msgctxt "Tool version"
+msgid "{rating_count} rating"
+msgid_plural "{rating_count} ratings"
+msgstr[0] "{rating_count} تقييم"
+msgstr[1] "{rating_count} تقييم"
+msgstr[2] "{rating_count} تقييمات"
+msgstr[3] "{rating_count} تقييمات"
+msgstr[4] "{rating_count} تقييمات"
+msgstr[5] "{rating_count} تقييمات"
+
+#: webfrontend/mixins/tool.py:78 webfrontend/mixins/toolversion.py:109
+#: webfrontend/mixins/toolversion.py:148 webfrontend/views/toolversion.py:196
+msgctxt "Error message"
+msgid "No tool matching this URL exists. The tool may no longer be listed."
+msgstr ""
+"لا يوجد تطبيق عبر هذا الرّابط‫.‬ من الممكن أن يكون قد تمّ إزالة هذا التطبيق‫."
+
+#: webfrontend/mixins/toolversion.py:77
+#: webfrontend/templatetags/main_header.py:105
+#: webfrontend/templatetags/mobile_menu.py:82 webfrontend/views/index.py:115
+#: webfrontend/views/search.py:126
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains unknown platform code “{platform_code}”."
+msgstr "يحتوي الرّابط على على كود غير معروف على المنصّة ‫‫“{platform_code}”."
+
+#: webfrontend/mixins/toolversion.py:126
+msgctxt "Error message"
+msgid ""
+"The requested version of this tool doesn’t exist. The version may be "
+"discontinued or removed."
+msgstr ""
+"الإصدار المطلوب من هذا التطبيق غير موجود‫.‬ من الممكن أن يكون قد تمّ إلغاء أو "
+"توقيف هذا الإصدار‫."
+
+#. Translators: Used to format tool version title
+#: webfrontend/mixins/toolversion.py:170
+#, python-brace-format
+msgctxt "Tool version"
+msgid "{tool_name} for {platform_name}"
+msgstr "‫{tool_name} - {platform_name}"
+
+#. Translators: Title of the Paskoocheh blog. Appears on the blog
+#. homepage and in page titles.
+#: webfrontend/templates/webfrontend/base.html:47
+#: webfrontend/templates/webfrontend/blogindex.html:9
+#: webfrontend/templates/webfrontend/blogposts.html:9
+#: webfrontend/views/blogindex.py:51 webfrontend/views/blogpostsfeed.py:72
+msgctxt "Blog"
+msgid "Paskoocheh blog"
+msgstr "مدوّنة زنچة"
+
+#: webfrontend/templates/webfrontend/base.html:64
+#: webfrontend/templates/webfrontend/base.html:65
+#: webfrontend/templates/webfrontend/base.html:86
+#: webfrontend/templates/webfrontend/index.html:17
+#: webfrontend/templates/webfrontend/tags/main_footer.html:9
+#: webfrontend/templates/webfrontend/tags/main_header.html:4
+#: webfrontend/templates/webfrontend/tags/main_header.html:5
+#: webfrontend/templates/webfrontend/tags/meta_tags.html:18
+msgid "Paskoocheh"
+msgstr "زنچة"
+
+#: webfrontend/templates/webfrontend/base.html:109
+msgctxt "Index"
+msgid "This browser is unfortunately unsupported as of now"
+msgstr ""
+
+#. Translators: Hidden accessibility button at the bottom of the page. If the user clicks it, it moves their focus back to the top.
+#: webfrontend/templates/webfrontend/base.html:123
+msgid "Return to header"
+msgstr "العودة للترويسة"
+
+#: webfrontend/templates/webfrontend/blogindex.html:20
+#: webfrontend/templates/webfrontend/blogindex.html:36
+#: webfrontend/templates/webfrontend/index.html:72
+msgctxt "Blog"
+msgid "All"
+msgstr "الكل"
+
+#. Translators: Heading above the list of tools and versions associated with the post.
+#: webfrontend/templates/webfrontend/blogpost.html:67
+msgctxt "Blog post"
+msgid "Associated tools"
+msgstr "تطبيقات ذات صلة"
+
+#. Translators: Heading above the list of related posts
+#: webfrontend/templates/webfrontend/blogpost.html:74
+msgctxt "Blog post"
+msgid "Associated posts"
+msgstr "تدوينات ذات صلة"
+
+#: webfrontend/templates/webfrontend/blogposts.html:20
+msgctxt "Blog"
+msgid "All stories"
+msgstr "جميع التدوينات"
+
+#: webfrontend/templates/webfrontend/blogposts.html:59
+msgctxt "Blog"
+msgid "Older posts"
+msgstr "التدوينات الأقدم"
+
+#: webfrontend/templates/webfrontend/blogposts.html:66
+msgctxt "Blog"
+msgid "Newer posts"
+msgstr "التدوينات الأحدث"
+
+#. Translators: Button next to tool list titles on homepage and category pages. Links to a search page containing all results for associated list.
+#: webfrontend/templates/webfrontend/index.html:24
+#: webfrontend/templates/webfrontend/index.html:34
+#: webfrontend/templates/webfrontend/index.html:44
+#: webfrontend/templates/webfrontend/index.html:55
+#: webfrontend/templates/webfrontend/tags/faq_list.html:32
+msgctxt "Tool list"
+msgid "All"
+msgstr "الكل"
+
+#: webfrontend/templates/webfrontend/page.html:20
+msgctxt "About"
+msgid "Follow us:"
+msgstr "تابعونا:"
+
+#: webfrontend/templates/webfrontend/page.html:23
+#: webfrontend/templates/webfrontend/tags/main_footer.html:48
+msgctxt "Footer"
+msgid "Twitter"
+msgstr "تويتر"
+
+#: webfrontend/templates/webfrontend/page.html:26
+#: webfrontend/templates/webfrontend/tags/main_footer.html:45
+msgctxt "Footer"
+msgid "Facebook"
+msgstr "فيسبوك"
+
+#: webfrontend/templates/webfrontend/page.html:29
+#: webfrontend/templates/webfrontend/tags/main_footer.html:42
+msgctxt "Footer"
+msgid "Instagram"
+msgstr "انستاجرام"
+
+#: webfrontend/templates/webfrontend/page.html:32
+#: webfrontend/templates/webfrontend/tags/main_footer.html:39
+msgctxt "Footer"
+msgid "Telegram"
+msgstr "تيليجرام"
+
+#. Translators: Appears inside a box at the top of the page after a contact request has been submitted.
+#: webfrontend/templates/webfrontend/page.html:42
+msgctxt "Contact form"
+msgid "Contact request submitted successfully. We’ll get back to you soon!"
+msgstr "تمّ إرسال الرسالة بنجاح‫.‬ سنرد عليكم قريباً‫!"
+
+#: webfrontend/templates/webfrontend/page.html:57
+msgctxt "Contact form"
+msgid "E-mail address"
+msgstr "الإيميل"
+
+#: webfrontend/templates/webfrontend/page.html:65
+msgctxt "Contact form"
+msgid "Country (optional)"
+msgstr "الدولة (اختياري)"
+
+#: webfrontend/templates/webfrontend/page.html:79
+msgctxt "Contact form"
+msgid "Please describe your issue here..."
+msgstr "كيف نستطيع دعمكم؟"
+
+#. Translators: Form submit buttons
+#: webfrontend/templates/webfrontend/page.html:93
+#: webfrontend/templates/webfrontend/partials/toolversion_review_form.html:75
+#: webfrontend/templates/webfrontend/partials/toolversion_support_form.html:65
+msgctxt "Form"
+msgid "Submit"
+msgstr "إرسال"
+
+#: webfrontend/templates/webfrontend/page.html:107
+msgctxt "About page"
+msgid "Paskoocheh team"
+msgstr "فريق زنچة"
+
+#. Translators: Message explaining Google reCAPTCHA. Only displayed on older browsers that load a more intrusive CAPTCHA interface.
+#: webfrontend/templates/webfrontend/partials/form_recaptcha_fallback.html:5
+msgctxt "Fallback form"
+msgid ""
+"We require you to solve this challenge to prevent spam. Sorry for the "
+"inconvenience!"
+msgstr ""
+"يرجى منكم حل المسألة لمساعدتنا في محاربة المحتوى الطّفيلي‫.‬ نعتذر عن الإزعاج‫!"
+
+#. Translators: Label for reCAPTCHA field in forms. Only displayed on older browsers.
+#: webfrontend/templates/webfrontend/partials/form_recaptcha_fallback.html:16
+msgctxt "Fallback form"
+msgid "Verification code (reCAPTCHA)"
+msgstr "كود التحقّق ‏‫(reCAPTCH)"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_review_form.html:20
+msgctxt "Review overlay"
+msgid "Rating required"
+msgstr "التقييم مطلوب"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_review_form.html:30
+msgctxt "Review form"
+msgid "Select a rating"
+msgstr "اختيار تقييم"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_review_form.html:56
+msgctxt "Review form"
+msgid ""
+"What do you think of this tool? Would you recommend it to others? Why or why "
+"not?"
+msgstr "ما رأيكم بهذا التطبيق؟ كيف يعمل أو لا يعمل؟ هل ستنصحون به؟ ولماذا؟"
+
+#. Translators: Form cancel buttons
+#: webfrontend/templates/webfrontend/partials/toolversion_review_form.html:82
+#: webfrontend/templates/webfrontend/partials/toolversion_support_form.html:72
+msgctxt "Form"
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_support_form.html:30
+msgctxt "Support form"
+msgid "E-mail address"
+msgstr "الإيميل"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_support_form.html:38
+msgctxt "Support form"
+msgid "Subject"
+msgstr "العنوان"
+
+#: webfrontend/templates/webfrontend/partials/toolversion_support_form.html:46
+msgctxt "Support form"
+msgid "Please describe your issue here..."
+msgstr "كيف نستطيع دعمكم؟"
+
+#: webfrontend/templates/webfrontend/tags/android_promo_notice.html:4
+msgctxt "Android promo notice"
+msgid "Download Android app for free"
+msgstr "نزّلوا تطبيق الأندويد مجّاناً"
+
+#. Translators: Download button text
+#: webfrontend/templates/webfrontend/tags/android_promo_notice.html:9
+msgctxt "Android promo notice"
+msgid "Download"
+msgstr "للتنزيل مباشرةً"
+
+#. Translators: Hidden accessibility text for close button
+#: webfrontend/templates/webfrontend/tags/android_promo_notice.html:13
+msgctxt "Android promo notice"
+msgid "Close"
+msgstr "إغلاق"
+
+#. Translators: Appears if a blog post list (e.g. on blog homepage, blog post listing page, related posts section, etc.) contains no posts. Should be general enough to account for the many different contexts blog post lists appear in. This could be split into context-specific strings if that makes more sense.
+#: webfrontend/templates/webfrontend/tags/blog_post_list.html:15
+msgctxt "Blog"
+msgid "No matching blog posts."
+msgstr "ليس هناك تدوينات مرتبطة‫."
+
+#. Translators: Appears when there’s an error finding/loading a embedded video
+#: webfrontend/templates/webfrontend/tags/embedded_video.html:26
+msgctxt "Video error"
+msgid "Error displaying video"
+msgstr "خطأ في عرض الڤيديو"
+
+#. Translators: Appears when the used browser doesn't support a video extension. Please keep the <a href=""></a> tags as they are
+#: webfrontend/templates/webfrontend/tags/embedded_video.html:33
+#, python-format
+msgctxt "Video error"
+msgid ""
+"Your browser doesn't support HTML5 video. Here is a <a href=\"%(link)s"
+"\">link to the video</a>."
+msgstr "النسخة المستخدمة من هذا المتصفح لا تدعم فيديو HTML5. يمكنكم استخدام <a href=\"%(link)s"
+"\">رابط الفيديو</a>."
+
+#. Translators: Appears if the extension list (e.g. homepage section, category page, search result, etc.) contains no extensions. Should be general enough to account for the many different contexts extensions lists appear in. This could be split into context-specific strings if that makes more sense.
+#: webfrontend/templates/webfrontend/tags/extension_list.html:10
+msgctxt "extension list"
+msgid "No matching extensions."
+msgstr "ليس هناك إضافات مرتبطة‫."
+
+#. Translators: Hidden accessibility label for category. Necessary because category name would be confusing without visual context.
+#: webfrontend/templates/webfrontend/tags/extension_list_item.html:29
+#: webfrontend/templates/webfrontend/tags/tool_list_item.html:27
+msgctxt "Tool list item"
+msgid "Category"
+msgstr "التصنيف"
+
+#: webfrontend/templates/webfrontend/tags/extension_list_item.html:36
+#: webfrontend/templates/webfrontend/tags/tool_list_item.html:38
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:75
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:77
+msgctxt "Tool version"
+msgid "Average rating"
+msgstr "معدّل التقييم"
+
+# @Adam can you please explain this again?
+#: webfrontend/templates/webfrontend/tags/extension_list_item.html:36
+#: webfrontend/templates/webfrontend/tags/tool_list_item.html:38
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:80
+#: webfrontend/templates/webfrontend/tags/toolversion_main_reviews.html:5
+#, python-format
+msgctxt "Tool version"
+msgid "%(average_rating)s stars"
+msgstr "‫%(average_rating)s نجوم"
+
+#: webfrontend/templates/webfrontend/tags/extension_list_item.html:40
+msgctxt "extension version"
+msgid "Download count"
+msgstr "عدد التنزيلات"
+
+#. Translators: Used for links to individual reviews and FAQs
+#: webfrontend/templates/webfrontend/tags/faq_list.html:24
+#: webfrontend/templates/webfrontend/tags/faq_list.html:38
+#: webfrontend/templates/webfrontend/tags/tutorial_list.html:8
+msgid "Permalink"
+msgstr "الرّابط"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:8
+msgctxt "Footer"
+msgid "Zanga"
+msgstr ""
+
+# @Adam I don’t think we can put it’s a project by ASL19 here. Need to double check this.
+#: webfrontend/templates/webfrontend/tags/main_footer.html:14
+msgctxt "Footer heading"
+msgid "A project by"
+msgstr "مشروع من تطوير"
+
+# Again this issue needs to be cleared.
+#: webfrontend/templates/webfrontend/tags/main_footer.html:16
+msgctxt "Footer"
+msgid "ASL19"
+msgstr "مادّة ١٩"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:20
+msgctxt "Footer heading"
+msgid "Register for the Paskoocheh mailing list"
+msgstr "انضمّوا لنشرة زنچة"
+
+#. Translators: E-mail address field accessibility label
+#: webfrontend/templates/webfrontend/tags/main_footer.html:24
+msgctxt "Footer mailing list form"
+msgid "E-mail address"
+msgstr "الإيميل"
+
+#. Translators: E-mail address field placeholder text
+#: webfrontend/templates/webfrontend/tags/main_footer.html:28
+msgctxt "Footer mailing list form"
+msgid "Enter your e-mail address"
+msgstr "إدخال الإيميل"
+
+#. Translators: Mailing list sign-up submit button
+#: webfrontend/templates/webfrontend/tags/main_footer.html:33
+msgctxt "Footer mailing list form"
+msgid "Register"
+msgstr "التسجيل"
+
+#. Translators: Hidden accessibility heading above the page links (second column)
+#: webfrontend/templates/webfrontend/tags/main_footer.html:58
+msgctxt "Footer heading"
+msgid "About Paskoocheh"
+msgstr "المزيد من المعلومات"
+
+#. Translators: Link to blog (appears in menu and footer)
+#: webfrontend/templates/webfrontend/tags/main_footer.html:65
+#: webfrontend/templates/webfrontend/tags/main_header.html:26
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:136
+msgctxt "Navigation"
+msgid "Blog"
+msgstr "المدوّنة"
+
+#. Translators: Link to about page (appears in header, mobile menu, and footer)
+#. Translators: Link to about page (appears in menu and footer)
+#: webfrontend/templates/webfrontend/tags/main_footer.html:72
+#: webfrontend/templates/webfrontend/tags/main_header.html:36
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:147
+msgctxt "Navigation"
+msgid "About"
+msgstr "عن زنچة"
+
+#. Translators: Link to terms of service (appears in menu and footer)
+#: webfrontend/templates/webfrontend/tags/main_footer.html:79
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:169
+msgctxt "Navigation"
+msgid "Terms of service"
+msgstr "شروط الاستخدام"
+
+#. Translators: Link to privacy policy page (appears in menu and footer)
+#: webfrontend/templates/webfrontend/tags/main_footer.html:86
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:180
+msgctxt "Navigation"
+msgid "Privacy policy"
+msgstr "سياسة الخصوصيّة"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:95
+#: webfrontend/templates/webfrontend/tags/main_footer.html:101
+msgctxt "Footer heading"
+msgid "Download apps through"
+msgstr "تحميل التطبيقات عبر"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:96
+#: webfrontend/templates/webfrontend/tags/main_footer.html:102
+msgctxt "Footer Telegram link"
+msgid "Our Telegram Bot"
+msgstr "بوت زنچة‫-‬تيليجرام"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:97
+#: webfrontend/templates/webfrontend/tags/main_footer.html:103
+msgctxt "Footer email link"
+msgid "Our Email Responder"
+msgstr "مُجيب الإيميل الآلي"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:109
+msgctxt "Footer heading"
+msgid "Contact us"
+msgstr "اتصلوا بنا"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:126
+msgctxt "Footer button"
+msgid "Download App"
+msgstr "تنزيل التطبيق"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:134
+#: webfrontend/templates/webfrontend/tags/main_footer.html:144
+msgctxt "Footer license"
+msgid "Creative Commons"
+msgstr "مشاع إبداعي"
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:138
+#: webfrontend/templates/webfrontend/tags/main_footer.html:148
+msgctxt "Footer license"
+msgid "This work is licensed under "
+msgstr "حقوق هذا العمل مصنّفة تحت "
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:138
+#: webfrontend/templates/webfrontend/tags/main_footer.html:148
+msgctxt "Footer license"
+msgid ""
+"a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International "
+"License."
+msgstr "رخصة مشاع إبداعي: نَسْبُ الـمُصنَّف، الترخيص بالمثل 4.0 دولي."
+
+#: webfrontend/templates/webfrontend/tags/main_footer.html:156
+msgctxt "Footer rights"
+msgid "©2020 - Paskoocheh  |  All right reserved"
+msgstr "جميع الحقوق محفوظة | 2020© زنجة"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:16
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:94
+msgctxt "Navigation"
+msgid "App categories"
+msgstr "تصنيف التطبيقات"
+
+#. Translators: Link to contact-us page (appears in header, mobile menu, and footer)
+#. Translators: Link to contact-us page (appears in menu and footer)
+#: webfrontend/templates/webfrontend/tags/main_header.html:46
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:158
+msgctxt "Navigation"
+msgid "Contact us"
+msgstr "اتصلوا بنا"
+
+#. Translators: Accessibility text for mobile header search field activation button (mangifying glass). Only appears at narrow screen widths (e.g. phones). Clicking it displays and focusses the search field.
+#: webfrontend/templates/webfrontend/tags/main_header.html:51
+msgctxt "Header"
+msgid "Search"
+msgstr "البحث"
+
+#. Translators: Accessibility label for search query text box.
+#: webfrontend/templates/webfrontend/tags/main_header.html:60
+msgctxt "Header"
+msgid "Search query"
+msgstr "مسألة البحث"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:64
+msgctxt "Search"
+msgid "Search for tools"
+msgstr "بحث عن التطبيقات"
+
+#. Translators: Accessibility text for header search clear button (appears when text has been entered in search field)
+#: webfrontend/templates/webfrontend/tags/main_header.html:73
+msgctxt "Header search form"
+msgid "Clear"
+msgstr "محو"
+
+#. Translators: Text for header search submit button. Only appears on-screen for old browsers; important for accessibility.
+#: webfrontend/templates/webfrontend/tags/main_header.html:82
+msgctxt "Header search form"
+msgid "Search"
+msgstr "بحث"
+
+#. Translators: Accessibility label for platform drop-down menu.
+#: webfrontend/templates/webfrontend/tags/main_header.html:93
+msgctxt "Header"
+msgid "Platform"
+msgstr "المنصّة"
+
+#. Translators: “All platforms” selection in platform drop-down menu
+#: webfrontend/templates/webfrontend/tags/main_header.html:97
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:16
+msgctxt "Header"
+msgid "All platforms"
+msgstr "جميع المنصّات"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:99
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:18
+#, python-format
+msgctxt "Navigation"
+msgid ""
+"Showing Apps of <span id=\"global-platform-slug\">%(selected_platform)s</"
+"span>"
+msgstr ""
+"تغيير المنصّة من: <span id=\"global-platform-slug\">%(selected_platform)s</"
+"span>"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:144
+msgctxt "Platform menu"
+msgid "All platforms"
+msgstr "جميع المنصّات"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:147
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:25
+msgctxt "Platform menu"
+msgid "Desktop"
+msgstr "مكتبي"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:168
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:44
+msgctxt "Platform menu"
+msgid "Web"
+msgstr "ويب"
+
+#: webfrontend/templates/webfrontend/tags/main_header.html:189
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:63
+msgctxt "Platform menu"
+msgid "Mobile"
+msgstr "محمول"
+
+#. Translators: Hidden accessibility button that lets users without mouse/touch to skip past the menu to the main content
+#: webfrontend/templates/webfrontend/tags/main_header.html:215
+msgctxt "Header"
+msgid "Skip to main content"
+msgstr "إلى المحتوى الرّئيسي"
+
+#. Translators: Accessibility text for header menu button (which only appears at narrower screen widths)
+#: webfrontend/templates/webfrontend/tags/main_header.html:217
+#: webfrontend/templates/webfrontend/tags/main_header.html:218
+msgctxt "Header"
+msgid "Menu"
+msgstr "القائمة"
+
+#: webfrontend/templates/webfrontend/tags/meta_tags.html:8
+#: webfrontend/templatetags/pk_meta_tags.py:61
+msgid "Zanga"
+msgstr "زنچة"
+
+#. Translators: Hidden accessibility heading describing entire navigation/menu/menu
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:4
+msgctxt "Navigation"
+msgid "Navigation"
+msgstr "التنقل"
+
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:24
+msgctxt "Platform menu"
+msgid "What device are you using?"
+msgstr "ما المنصّة المستخدمة؟"
+
+#. Translators: Heading describing list of categories
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:84
+msgctxt "Navigation"
+msgid "Category"
+msgstr "التصنيف"
+
+#. Translators: Hidden accessibility heading describing list of pages (e.g. About, Terms & Privacy)
+#: webfrontend/templates/webfrontend/tags/mobile_menu.html:126
+msgctxt "Navigation"
+msgid "Pages"
+msgstr "الصفحات"
+
+#: webfrontend/templates/webfrontend/tags/review.html:36
+#: webfrontend/templates/webfrontend/tags/review.html:38
+#, python-format
+msgid "Version %(version_number)s"
+msgstr "الإصدار %(version_number)s"
+
+#. Translators: Explanatory text that appears when the version has no reviews
+#: webfrontend/templates/webfrontend/tags/review_list.html:13
+#, python-format
+msgctxt "Review"
+msgid "There are no reviews for %(version_name)s."
+msgstr "لا يوجد أيّة تقييمات لِ %(version_name)s."
+
+#. Translators: Hidden accessibility text for Telegram share button.
+#: webfrontend/templates/webfrontend/tags/share_links.html:9
+msgctxt "Blog post"
+msgid "Share on Telegram"
+msgstr "المشاركة عبر تليجرام"
+
+#. Translators: Hidden accessibility text for Facebook share button.
+#: webfrontend/templates/webfrontend/tags/share_links.html:16
+msgctxt "Blog post"
+msgid "Share on Facebook"
+msgstr "المشاركة على فيسبوك"
+
+#. Translators: Hidden accessibility text for Twitter share button.
+#: webfrontend/templates/webfrontend/tags/share_links.html:23
+msgctxt "Blog post"
+msgid "Share on Twitter"
+msgstr "المشاركة على تويتر"
+
+#. Translators: Appears if a tool list (e.g. homepage section, category page, search result, etc.) contains no tools. Should be general enough to account for the many different contexts tools lists appear in. This could be split into context-specific strings if that makes more sense.
+#: webfrontend/templates/webfrontend/tags/tool_list.html:12
+msgctxt "Tool list"
+msgid "No matching tools."
+msgstr "لا تطبيقات مطابقة."
+
+#: webfrontend/templates/webfrontend/tags/tool_list_item.html:34
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:92
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:94
+msgctxt "Tool version"
+msgid "Download count"
+msgstr "عدد التنزيلات"
+
+#. Translators: Appears inside a box at the top of the page after a review has been submitted.
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:19
+msgctxt "Tool version"
+msgid ""
+"Review submitted successfully. It will appear on the site once it is "
+"approved."
+msgstr "تمّ إرسال تقييمكم بنجاح‫.‬ سيظهر على الموقع فور المراجعة."
+
+#. Translators: Appears inside a box at the top of the page after a support request has been submitted.
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:23
+msgctxt "Tool version"
+msgid "Support request submitted successfully. We’ll get back to you soon!"
+msgstr "تمّ إرسال طلب الدّعم بنجاح‫.‬ سنرد عليكم قريباً‫!"
+
+#. Translators: Hidden accessibility heading/description for the blue tool version selection bar at the top of the page
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:34
+#, python-format
+msgctxt "Tool version"
+msgid "Other versions of %(tool_name)s"
+msgstr "إصدارات أخرى من  %(tool_name)s"
+
+#. Translators: Invisible accessibility heading for support section
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:50
+msgctxt "Tool version"
+msgid "Contact support"
+msgstr "اتّصلوا بفريق الدّعم"
+
+#. Translators: Text for button that opens the support form. Because we’re removing the heading and explanatory text, this needs to explain the button on its own. It should be clear that they’re contacting us, not the tool developer. Let us know if you’d rather keep the explanatory text, or even add an explanation to the overlay form.
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:58
+msgctxt "Tool version"
+msgid "Contact Paskoocheh support team"
+msgstr "الاتصال بخدمات الدّعم"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:100
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:102
+msgctxt "Tool version"
+msgid "App available on"
+msgstr "التطبيق متوفر على"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:112
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:114
+msgctxt "Tool version"
+msgid "Extension available on"
+msgstr "الإضافة متوفرة على"
+
+#. Translators: More info (miscellaneous) section heading. At the bottom.
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:160
+msgctxt "Tool version"
+msgid "More information"
+msgstr "المزيد من المعلومات"
+
+#. Translators: Subheading above version
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:164
+msgctxt "Tool version"
+msgid "Version"
+msgstr "الإصدار"
+
+#. Translators: Subheading above OS
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:174
+msgctxt "Tool version"
+msgid "OS"
+msgstr "نظام التشغيل"
+
+#. Translators: Subheading above size
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:185
+msgctxt "Tool version"
+msgid "Size"
+msgstr "الحجم"
+
+#. Translators: Subheading above date of latest release of this version
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:192
+msgctxt "Tool version"
+msgid "Latest update"
+msgstr "آخر التحديثات"
+
+#. Translators: Subheading above URL for developer
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:204
+msgctxt "Tool version"
+msgid "Developer website"
+msgstr "موقع المطوّر"
+
+#. Translators: Subheading above checksum of this version
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:211
+msgctxt "Tool version"
+msgid "SHA256 checksum"
+msgstr "تدقيق المجموع ‫‫SHA256"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:214
+msgctxt "Tool version checksum"
+msgid "What is this?"
+msgstr "ما هذا؟"
+
+#. Translators: Heading above the list of tools and versions associated with the version.
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:226
+msgctxt "Tool version"
+msgid "Associated tools"
+msgstr "تطبيقات ذات صلة"
+
+#. Translators: Heading above the list of related posts
+#: webfrontend/templates/webfrontend/tags/toolversion_main.html:233
+msgctxt "Tool version"
+msgid "Associated posts"
+msgstr "تدوينات ذات صلة"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:7
+msgctxt "Tool version"
+msgid "Download links"
+msgstr "روابط التنزيل"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:13
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:20
+msgctxt "Tool version"
+msgid "Download"
+msgstr "تنزيل مُباشر"
+
+#. Translators: This is used in the headings above version download
+#. links to differentiate between 32-bit Linux and 64-bit Linux. The
+#. “Linux” platform you see on the site is actually 64-bit Linux,
+#. while 32-bit Linux is hidden from platform selection. On (64-bit)
+#. Linux version pages, if the tool also has a 32-bit version,
+#. 32-bit download links appear beneath the 64-bit download links.
+#. For almost all users, 64-bit is the appropriate choice. We could
+#. add an explanation to the site if you want.
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:20
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:58
+#: webfrontend/templatetags/toolversion_main_download_links.py:60
+msgctxt "Tool version download links heading"
+msgid "32-bit"
+msgstr "32-bit"
+
+#. Translators: Text for download button that links to the publisher’s website (fallback if there isn’t a custom image and translation for the store)
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:43
+msgctxt "Tool version download link"
+msgid "Download from website"
+msgstr "تنزيل عبر الانترنت"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:51
+#: webfrontend/templates/webfrontend/tags/toolversion_main_download_links.html:58
+msgctxt "Tool version"
+msgid "Download via email"
+msgstr "تنزيل عبر الإيميل"
+
+#. Translators: Heading for guide section
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:10
+msgctxt "Tool version"
+msgid "Guide"
+msgstr "دليل"
+
+#. Translators: Description of guide; appears above link to guide
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:13
+msgctxt "Tool version"
+msgid "For installation instructions, please see our guide:"
+msgstr "لتعليمات التثبيت يرجى مراجعة دليلنا‫:"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:22
+#, python-format
+msgctxt "Tool version"
+msgid "%(version_name)s guide"
+msgstr "دليل %(version_name)s"
+
+#. Translators: Heading for FAQs section
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:31
+msgctxt "Tool version"
+msgid "Frequently asked questions"
+msgstr "الأسئلة الشّائعة"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:46
+msgctxt "Tool version"
+msgid "All FAQs"
+msgstr "جميع الأسئلة الشّائعة"
+
+#. Translators: Heading for tutorials section
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:54
+msgctxt "Tool version"
+msgid "Video tutorials"
+msgstr "ڤيديو إرشادي"
+
+#: webfrontend/templates/webfrontend/tags/toolversion_main_guides_support.html:69
+msgctxt "Tool version"
+msgid "All video tutorials"
+msgstr "جميع الڤيديوهات الإرشاديّة"
+
+#. Translators: Text for button that opens the review form
+#: webfrontend/templates/webfrontend/tags/toolversion_main_reviews.html:20
+msgctxt "Review"
+msgid "Write review"
+msgstr "كتابة تقييم"
+
+# @Adam what is this? How would it look in English? why is there an S after the bracket?
+#. Translators: Heading for review form
+#: webfrontend/templates/webfrontend/tags/toolversion_main_reviews.html:24
+#, python-format
+msgctxt "Review"
+msgid "Review %(version_name)s"
+msgstr "مراجعة %(version_name)s"
+
+#. Translators: Heading for list of up to 5 latest reviews
+#: webfrontend/templates/webfrontend/tags/toolversion_main_reviews.html:35
+msgctxt "Tool version"
+msgid "Latest reviews"
+msgstr "آخر التقييمات"
+
+#. Translators: Link to dedicated page containing all reviews of this version
+#. Translators: Button that links to review listing page.
+#: webfrontend/templates/webfrontend/tags/toolversion_main_reviews.html:48
+#: webfrontend/templates/webfrontend/toolversionreview.html:17
+msgctxt "Review"
+msgid "More reviews"
+msgstr "المزيد من التقييمات"
+
+#. Translators: Hidden accessibility heading for the version page platform selector bar. Describes the list of platforms the tool is available for.
+#: webfrontend/templates/webfrontend/tags/toolversion_nav.html:3
+#, python-format
+msgctxt "Tool version platforms bar"
+msgid "Versions of %(tool_name)s"
+msgstr "إصدارات %(tool_name)s"
+
+#. Translators: Button that links to FAQ listing page
+#: webfrontend/templates/webfrontend/toolfaq.html:25
+#: webfrontend/templates/webfrontend/toolversionfaq.html:26
+#, python-format
+msgctxt "FAQ"
+msgid "All %(tool_name)s FAQs"
+msgstr "جميع الأسئلة الشائعة حول %(tool_name)s"
+
+#. Translators: Used for review listing pagination links
+#: webfrontend/templates/webfrontend/toolversionreviews.html:18
+msgctxt "Review"
+msgid "Older reviews"
+msgstr "التقييمات الأقدم"
+
+#. Translators: Used for review listing pagination links
+#: webfrontend/templates/webfrontend/toolversionreviews.html:22
+msgctxt "Review"
+msgid "Newer reviews"
+msgstr "التقييمات الأحدث"
+
+#. Translators: The name used for a Version in the associated
+#. Versions/Tools list at the bottom of blog posts. Note that
+#. both Tools and Versons can be associated with Posts. If a
+#. Tool is associated, it’s listed as just {tool_name}, which
+#. doesn’t require a translation.
+#: webfrontend/templatetags/blog_associated_tool_list_item.py:86
+#, python-brace-format
+msgctxt "Blog post associated tool"
+msgid "{tool_name} for {platform_name}"
+msgstr "{platform_name} - {tool_name}"
+
+#. Translators: This is the default site description suggested to
+#. search engines and social media previews. It’s used if the page
+#. doesn’t have its own description (e.g. tool pages will use the
+#. tool description). (The English is a placeholder.)
+#: webfrontend/templatetags/pk_meta_tags.py:95
+msgctxt "Metadata"
+msgid ""
+"An open-source app store enabling easy access to circumvention and privacy "
+"tools."
+msgstr "مكان واحد لاكتشاف، تنزيل، وتقييم تطبيقات الأمان الرّقمي."
+
+#. Translators: Used to generate the rating text (next to the star
+#. icon) for reviews. Be sure to retain “<span class="invisible"> ”
+#. and “</span>”, including the space after the first “>” and before
+#. “star(s)”. The <span> code is there for accessibility/SEO – it’s
+#. not visible, but it’s necessary to provide context for the number
+#. to search engines and non-sighted users who can’t see the star
+#. icon.
+#: webfrontend/templatetags/review.py:69
+#, python-brace-format
+msgctxt "Review"
+msgid "{rating}<span class=\"invisible\"> star</span>"
+msgid_plural "{rating}<span class=\"invisible\"> stars</span>"
+msgstr[0] "{rating}<span class=\"invisible\"></span>"
+msgstr[1] "{rating}<span class=\"invisible\"></span>"
+msgstr[2] "{rating}<span class=\"invisible\"></span>"
+msgstr[3] "{rating}<span class=\"invisible\"></span>"
+msgstr[4] "{rating}<span class=\"invisible\"></span>"
+msgstr[5] "{rating}<span class=\"invisible\"></span>"
+
+#. Translators: Single review title
+#: webfrontend/templatetags/review_list.py:38
+#: webfrontend/views/toolversionreview.py:72
+#: webfrontend/views/toolversionreview.py:90
+#, python-brace-format
+msgctxt "Review"
+msgid "Review for {tool_name_and_version}"
+msgstr "{tool_name_and_version} تقييم لِ"
+
+#. Translators: This is used in the headings above version download
+#. links to differentiate between 32-bit Linux and 64-bit Linux. The
+#. “Linux” platform you see on the site is actually 64-bit Linux,
+#. while 32-bit Linux is hidden from platform selection. On (64-bit)
+#. Linux version pages, if the tool also has a 32-bit version,
+#. 32-bit download links appear beneath the 64-bit download links.
+#. For almost all users, 64-bit is the appropriate choice. We could
+#. add an explanation to the site if you want.
+#: webfrontend/templatetags/toolversion_main_download_links.py:47
+msgctxt "Tool version download links heading"
+msgid "64-bit"
+msgstr "64-bit"
+
+#: webfrontend/templatetags/toolversion_main_download_links.py:69
+msgctxt "Tool version download link"
+msgid "Download from Apple App Store"
+msgstr "التحميل من أپل آپ ستور"
+
+#: webfrontend/templatetags/toolversion_main_download_links.py:79
+msgctxt "Tool version download link"
+msgid "Download from Google Chrome Web Store"
+msgstr "التحميل من متجر جوجل الكروم على الوب"
+
+#: webfrontend/templatetags/toolversion_main_download_links.py:89
+msgctxt "Tool version download link"
+msgid "Download from Google Play"
+msgstr "التحميل من جوجل پلاي"
+
+#: webfrontend/templatetags/toolversion_main_download_links.py:99
+msgctxt "Tool version download link"
+msgid "Download from Microsoft Store"
+msgstr "التحميل من متجر مايكروسوفت"
+
+#. Translators: Overlay title
+#: webfrontend/templatetags/toolversion_review_overlay.py:42
+#, python-brace-format
+msgctxt "Review overlay"
+msgid "Review {tool_name_and_platform}"
+msgstr "‎قيّموا {tool_name_and_platform}"
+
+#. Translators: Overlay subtitle
+#: webfrontend/templatetags/toolversion_review_overlay.py:53
+msgctxt "Review overlay"
+msgid "Reviews are public and cannot be edited once published."
+msgstr "التقييمات تظهر بشكل عام وغير قابلة للتعديل بعد النشر"
+
+#. Translators: Overlay title
+#: webfrontend/templatetags/toolversion_support_overlay.py:41
+#, python-brace-format
+msgctxt "Support overlay"
+msgid "Get support for {tool_name_and_platform}"
+msgstr "‫‎احصلوا على الدعم لِ {tool_name_and_platform}"
+
+#. Translators: Overlay subtitle
+#: webfrontend/templatetags/toolversion_support_overlay.py:52
+msgctxt "Support overlay"
+msgid "We promise to respond as soon as possible"
+msgstr "نعدكم بردنا قي أقرب فرصة"
+
+#. Translators: Selections in the review form rating
+#. drop-down
+#: webfrontend/utils.py:782 webfrontend/utils/review.py:41
+#, python-brace-format
+msgctxt "Review"
+msgid "{rating} star"
+msgid_plural "{rating} stars"
+msgstr[0] "-"
+msgstr[1] "{rating} نجمة"
+msgstr[2] "{rating} نجمتان"
+msgstr[3] "{rating} نجوم"
+msgstr[4] "{rating} نجوم"
+msgstr[5] "{rating} نجوم"
+
+#. Translators: Feeds into blog/tool list title {featured} fields
+#: webfrontend/utils.py:843 webfrontend/utils.py:964
+#: webfrontend/utils/blog.py:37 webfrontend/utils/tool_list.py:49
+msgctxt "List title"
+msgid "Featured"
+msgstr "اخترنا لكم"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils.py:855 webfrontend/utils/blog.py:49
+#, python-brace-format
+msgctxt "Blog post list title"
+msgid ""
+"{featured} {category_name} blog posts about {tool_name} for {platform_name}"
+msgstr "{platform_name} لِ {tool_name} تدوينات حول {category_name} {featured}"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils.py:875 webfrontend/utils/blog.py:69
+#, python-brace-format
+msgctxt "Blog post list title"
+msgid "{featured} {category_name} blog posts about {tool_name}"
+msgstr "{tool_name} تدوينات حول {category_name} {featured}"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils.py:894 webfrontend/utils/blog.py:88
+#, python-brace-format
+msgctxt "Blog post list title"
+msgid "{featured} {category_name} blog posts"
+msgstr "تدوينات {category_name} {featured}"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils.py:912 webfrontend/utils/blog.py:131
+msgctxt "Blog post list title"
+msgid "Latest blog posts"
+msgstr "آخر التدوينات"
+
+#. Translators: Used in tool list titles on homepage, category
+#. pages, and search pages. Feeds into tool list title
+#. {description} fields.
+#: webfrontend/utils.py:975 webfrontend/utils/tool_list.py:60
+msgctxt "Tool list title description"
+msgid "Most downloaded"
+msgstr "الأكثر تنزيلاً"
+
+#. Translators: Used in tool list titles on homepage, category
+#. pages, and search pages. Feeds into tool list title
+#. {description} fields.
+#: webfrontend/utils.py:983 webfrontend/utils/tool_list.py:68
+msgctxt "Tool list title description"
+msgid "Recently added"
+msgstr "جديدة"
+
+#. Translators: Used in tool list titles on homepage, category
+#. pages, and search pages. Feeds into tool list title
+#. {description} fields.
+#: webfrontend/utils.py:991 webfrontend/utils/tool_list.py:76
+msgctxt "Tool list title description"
+msgid "Recently updated"
+msgstr "بِتحديثات جديدة"
+
+# @adam can you explain this in English
+#. Translators: Used for the “for other platforms” list that
+#. appears in search views. The list includes all tools that
+#. don’t have a version for the requested platform. Note that
+#. the variables can be reordered as you see fit – the
+#. tranlsation system is designed to allow different
+#. ordering/formatting for different languages.
+#: webfrontend/utils.py:1016
+#, python-brace-format
+msgctxt "Tool list title"
+msgid ""
+"{description} {featured} “{query}” {tool_type} tools for other platforms"
+msgstr "تطبيقات {tool_type} {description} لمنصّات أخرى '{query}' {featured}"
+
+#. Translators: Used for tool lists with an associated platform.
+#. This string is provided separately from the non-platform-
+#. specific string to give you more formatting flexibility. Note
+#. that the variables can be reordered as you see fit – the
+#. tranlsation system is designed to allow different
+#. ordering/formatting for different languages.
+#: webfrontend/utils.py:1030
+#, python-brace-format
+msgctxt "Tool list title"
+msgid "{description} {featured} “{query}” {tool_type} tools for {platform}"
+msgstr "تطبيقات {tool_type} {description} {featured} '{query}' - {platform}"
+
+#. Translators: Used for tool lists without an associated
+#. platform (i.e. if the global platform is “All tools”). This
+#. string is provided separately from the non-platform-specific
+#. string to give you more formatting flexibility. Note that the
+#. variables can be reordered as you see fit – the tranlsation
+#. system is designed to allow different ordering/formatting for
+#. different languages.
+#: webfrontend/utils.py:1045
+#, python-brace-format
+msgctxt "Tool list title"
+msgid "{description} {featured} “{query}” {tool_type} tools"
+msgstr "تطبيقات {tool_type} {description} {featured} '{query}'"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils/blog.py:104
+#, python-brace-format
+msgctxt "Blog post list title"
+msgid "{category_name} blog posts"
+msgstr "تدوينات {category_name}"
+
+#. Translators: Used for blog post list titles (e.g. on the blog
+#. homepage, category pages, etc.). Note that the variables can
+#. be reordered as you see fit – the tranlsation system is
+#. designed to allow different ordering/formatting for different
+#. languages.
+#: webfrontend/utils/blog.py:119
+msgctxt "Blog post list title"
+msgid "Featured blog posts"
+msgstr "تدوينات اخترناها لكم"
+
+#. Translators: Used as a connected prefix to tool list titles which grammatically
+#. require article prefixes before them, in certain languages such as Arabic.
+#: webfrontend/utils/tool_list.py:87
+msgctxt "Tool list title article"
+msgid "The"
+msgstr "ال"
+
+#. Translators: Used for the “for other platforms” list that
+#. appears in search views. The list includes all tools that
+#. don’t have a version for the requested platform. Note that
+#. the variables can be reordered as you see fit – the
+#. tranlsation system is designed to allow different
+#. ordering/formatting for different languages.
+#: webfrontend/utils/tool_list.py:113
+#, python-brace-format
+msgctxt "Tool list title"
+msgid ""
+"{description} {featured} “{query}” {tool_type} {article_prefix}tools for "
+"other platforms"
+msgstr ""
+"{article_prefix}تطبيقات {tool_type} {description} لمنصّات أخرى "
+"'{query}' {featured}"
+
+#. Translators: Used for tool lists with an associated platform.
+#. This string is provided separately from the non-platform-
+#. specific string to give you more formatting flexibility. Note
+#. that the variables can be reordered as you see fit – the
+#. tranlsation system is designed to allow different
+#. ordering/formatting for different languages.
+#: webfrontend/utils/tool_list.py:127
+#, python-brace-format
+msgctxt "Tool list title"
+msgid ""
+"{description} {featured} “{query}” {tool_type} {article_prefix}tools for "
+"{platform}"
+msgstr ""
+"{article_prefix}تطبيقات {tool_type} {description} {featured} '{query}' - "
+"{platform}"
+
+#. Translators: Used for tool lists without an associated
+#. platform (i.e. if the global platform is “All tools”). This
+#. string is provided separately from the non-platform-specific
+#. string to give you more formatting flexibility. Note that the
+#. variables can be reordered as you see fit – the tranlsation
+#. system is designed to allow different ordering/formatting for
+#. different languages.
+#: webfrontend/utils/tool_list.py:142
+#, python-brace-format
+msgctxt "Tool list title"
+msgid "{description} {featured} “{query}” {tool_type} {article_prefix}tools"
+msgstr "{article_prefix}تطبيقات {tool_type} {description} {featured} '{query}'"
+
+#. Translators: Description of the Paskoocheh blog. Provided text is
+#. a placeholder! Should be short description of what the blog will
+#. contain, suitable for search engine snippets and social media
+#. previews.
+#: webfrontend/views/blogindex.py:60 webfrontend/views/blogposts.py:347
+#: webfrontend/views/blogpostsfeed.py:67
+msgctxt "Blog"
+msgid "Description of Paskoocheh blog"
+msgstr "وصف لمدوّنة زنچة"
+
+#. Translators: This could happen if the URL is wrong or
+#. outdated (e.g. we delete it, change the slug).
+#: webfrontend/views/blogpost.py:53
+msgctxt "Error message"
+msgid "No blog post matching this URL exists."
+msgstr "ليس هناك تدوينة تحت هذا الرّابط."
+
+# @Adam now the purple is ي
+#: webfrontend/views/blogposts.py:78 webfrontend/views/index.py:145
+#: webfrontend/views/search.py:150
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains unknown category code “{category_code}“."
+msgstr "يحتوى الرّابط على كود لتصنيف غير معروف: ‬{category_code}."
+
+#: webfrontend/views/blogposts.py:100 webfrontend/views/search.py:168
+msgctxt "Error message"
+msgid "URL contains invalid featured value."
+msgstr "يحتوي الرّابط على قيمة غير صحيحة."
+
+#: webfrontend/views/blogposts.py:117
+msgctxt "Error message"
+msgid "URL contains invalid tool value."
+msgstr "يحتوى الرّابط على قيمة تطبيق غير صحيحة."
+
+# purple
+#: webfrontend/views/blogposts.py:136
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains unknown tool ID “{tool_id}“."
+msgstr "يتحوي الرّابط على رقم هويّة تطبيق غير معروف: ‫‫{tool_id}."
+
+#: webfrontend/views/blogposts.py:159
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains unknown invalid version code “{version_code}“."
+msgstr "يحتوي الرّابط على كود نسخة غير معروفة وغير صحيحة: ‫{version_code}."
+
+# purple
+#: webfrontend/views/blogposts.py:186
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains unknown version “{version_arg}“."
+msgstr "يحتوى الرّابط على نسخة غير معروفة: ‬{version_arg}."
+
+#. Translators: Shown if a blog URL contains a “page”
+#. parameter that causes no posts to be returned.
+#: webfrontend/views/blogposts.py:271
+msgctxt "Error message"
+msgid "There are no posts on this page."
+msgstr "ليس هناك تدوينات على هذه الصّفحة‫."
+
+#. Translators: Shown if a user manually enters a URL
+#. with an invalid “page” parameter (e.g. not a number,
+#. less than 1, etc.)
+#: webfrontend/views/blogposts.py:284
+#: webfrontend/views/toolversionreviews.py:106
+#, python-brace-format
+msgctxt "Error message"
+msgid "URL contains invalid page value “{page_arg}”."
+msgstr "يحتوى الرابط على قيمة صفحة غير معروفة: ‬{page_arg}."
+
+#. Translators: Appears if the admin is missing a Web
+#. Text for the current static page (e.g. about, terms
+#. of service)
+#: webfrontend/views/page.py:54
+msgctxt "Error message"
+msgid "This page isn’t available in the current language."
+msgstr "هذه الصفحة غير متوفّرة في اللّغة التي تمّ اختيارها‫."
+
+#. Translators: Title of about page
+#: webfrontend/views/page.py:69
+msgctxt "Page title"
+msgid "What we do"
+msgstr "عن زنچة"
+
+#. Translators: Title of terms of service page
+#: webfrontend/views/page.py:76
+msgctxt "Page title"
+msgid "Terms of service"
+msgstr "شروط الاستخدام"
+
+#. Translators: Title of privacy policy page
+#: webfrontend/views/page.py:83
+msgctxt "Page title"
+msgid "Privacy policy"
+msgstr "سياسة الخصوصيّة"
+
+#. Translators: Title of contact us page
+#: webfrontend/views/page.py:91
+msgctxt "Page title"
+msgid "Contact us"
+msgstr "اتصلوا بنا"
+
+#. Translators: Appears if the current language’s Web
+#. Text doesn’t have a field for the requested page.
+#. Will only happen if there’s a mistake in the code.
+#: webfrontend/views/page.py:105
+msgctxt "Error message"
+msgid "This page doesn’t exist."
+msgstr "هذه الصّفحة غير موجودة‫."
+
+#: webfrontend/views/page.py:196
+msgctxt "Error message"
+msgid "Contact request rejected because email address was blank."
+msgstr "تمّ رفض طلب الاتصال لعدم تعبئة الإيميل‫.‬ نحتاجهُ للرد عليكم يا رفاق‫."
+
+#: webfrontend/views/page.py:230
+msgctxt "Error message"
+msgid "Contact request rejected because message was blank."
+msgstr ""
+"تمّ رفض طلب الاتصال بسبب ترك نص الرّسالة فارغاً‫.‬ نحن لا ننجّم بالغيب يا رفاق "
+"الزّنچة‫."
+
+#: webfrontend/views/page.py:247 webfrontend/views/toolversion.py:436
+msgctxt "Error message"
+msgid ""
+"Support request rejected because verification code (reCAPTCHA) was missing "
+"or invalid. Please navigate back and try again. If this doesn’t seem right, "
+"please contact us."
+msgstr ""
+"تمّ رفض رسالة التواصل لأنّ رمز التحقق (reCAPTCHA) غير صالح.‬ يرجى "
+"المحاولة من جديد‫.‬ إذا كانت رسالة الخطأ  هذه غير منطقيّة، يرجى الاتصال بنا‫."
+
+#: webfrontend/views/pagenotfound.py:30
+msgctxt "Error message"
+msgid "Unspecified error."
+msgstr "خطأ غير محدّد‫."
+
+#: webfrontend/views/pagenotfound.py:36
+msgctxt "Error title"
+msgid "Page not found"
+msgstr "لم يتم العثور على الصّفحة‫"
+
+#: webfrontend/views/pagenotfound.py:51
+msgctxt "Error title"
+msgid "Bad request"
+msgstr "طلب غير صالح"
+
+#: webfrontend/views/pagenotfound.py:58
+msgctxt "Error title"
+msgid "Internal server error"
+msgstr "خطأ في الخادوم الدّاخلي"
+
+#: webfrontend/views/search.py:197
+msgctxt "Error message"
+msgid "URL contains invalid orderby value."
+msgstr "الرّابط يحتوى على قيمة غير صالحة لترتيب المدخلات‫."
+
+#: webfrontend/views/search.py:216
+msgctxt "Error message"
+msgid "Search query cannot be empty."
+msgstr "لا يمكن ترك مسألة البحث فارغة‫."
+
+#: webfrontend/views/setplatform.py:30
+msgctxt "Error message"
+msgid "Required platform parameter missing."
+msgstr "معامل المنصّة المطلوب مفقود‫."
+
+#: webfrontend/views/toolfaq.py:58 webfrontend/views/toolversionfaq.py:55
+msgctxt "Error message"
+msgid "No FAQ matching this URL exists."
+msgstr "ليست هناك أسئلة متكرّرة مطابقة لهذا الرّابط‫."
+
+#. Translators: Appears beneath FAQ question/title
+#: webfrontend/views/toolfaq.py:67 webfrontend/views/toolversionfaq.py:64
+#, python-brace-format
+msgctxt "FAQ"
+msgid "FAQ for {tool_name}"
+msgstr "الأسئلة المتكرّرة حول‫‫ {tool_name}"
+
+#. Translators: Title of tool or tool version FAQs listing (e.g.
+#. /tools/42/faqs/ or /tools/42/android/faqs/)
+#: webfrontend/views/toolfaqs.py:66 webfrontend/views/toolfaqs.py:79
+#: webfrontend/views/toolversionfaqs.py:88
+#: webfrontend/views/toolversionfaqs.py:106
+#, python-brace-format
+msgctxt "FAQ"
+msgid "FAQs for {tool_name}"
+msgstr "الأسئلة المتكرّرة حول‫‫ {tool_name}"
+
+#: webfrontend/views/toolversion.py:212
+msgctxt "Error message"
+msgid "The server was unable to identify the form’s data type."
+msgstr "لم يتمكّن الخادوم من التعرّف على صنف البيانات في النموذج‫."
+
+#: webfrontend/views/toolversion.py:256
+msgctxt "Error message"
+msgid ""
+"Review rejected because rating wasn’t specified. Please navigate back and "
+"try again."
+msgstr ""
+"تمّ رفض التقييم لعدم تعبئة تقييمكم من حيث عدد النّجوم أيضاً‫.‬ يرجى المحاولة من "
+"جديد‫."
+
+#: webfrontend/views/toolversion.py:281
+msgctxt "Error message"
+msgid ""
+"Review rejected because rating was unspecified or invalid. Please navigate "
+"back and try again. If this doesn’t seem right, please contact us."
+msgstr ""
+"تمّ رفض التقييم لأنّ التقييم من حيث عدد النّجوم غير محدّد أو غير صالح.‬ يرجى "
+"المحاولة من جديد‫.‬ إذا كانت رسالة الخطأ  هذه غير منطقيّة، يرجى الاتصال بنا‫."
+
+#: webfrontend/views/toolversion.py:298
+msgctxt "Error message"
+msgid ""
+"Review rejected because verification code (reCAPTCHA) was missing or "
+"invalid. Please navigate back and try again. If this doesn’t seem right, "
+"please contact us."
+msgstr ""
+"تمّ رفض التقييم لأنّ رمز التحقق (reCAPTCHA) غير محدّد أو غير صالح.‬ يرجى "
+"المحاولة من جديد‫.‬ إذا كانت رسالة الخطأ  هذه غير منطقيّة، يرجى الاتصال بنا‫."
+
+#: webfrontend/views/toolversion.py:326
+msgctxt "Error message"
+msgid ""
+"Review rejected because referenced tool version doesn’t exist. If this "
+"doesn’t seem right, please contact us."
+msgstr ""
+"تمّ رفض التقييم لأنّ التطبيق المرتبط غير موجود‫.‬ إن لم تكن رسالة الخطأ هذه "
+"منطقيّة يرجى الاتصال بنا‫.‬ تهمّنا تقييماتكم‫."
+
+#: webfrontend/views/toolversion.py:371
+msgctxt "Error message"
+msgid "Support request rejected because email address was blank."
+msgstr "تمّ رفض طلب الدّعم لعدم تعبئة الإيميل‫.‬ نحتاجهُ للرد عليكم يا رفاق‫."
+
+#: webfrontend/views/toolversion.py:395
+msgctxt "Error message"
+msgid "Support request rejected because subject was blank."
+msgstr "تمّ رفض طلب الدّعم لعدم تعبئة حقل العنوان‫.‬ املؤوه بأي شيء‫."
+
+#: webfrontend/views/toolversion.py:419
+msgctxt "Error message"
+msgid "Support request rejected because message was blank."
+msgstr ""
+"تمّ رفض طلب الدّعم بسبب ترك نص الرّسالة فارغاً‫.‬ نحن لا ننجّم بالغيب يا رفاق "
+"الزّنچة‫."
+
+# purple
+#: webfrontend/views/toolversiondownload.py:59
+#, python-brace-format
+msgctxt "Error message"
+msgid ""
+"Sorry, the server wasn’t able to find a file for {tool_name}. If this "
+"doesn’t seem right, please contact contact us."
+msgstr ""
+"عفواً لم يتمكّن الخادوم من إيجاد ملف ل {tool_name}. يرجى الاتصال بنا مباشرة."
+
+# purple
+#: webfrontend/views/toolversionfaqs.py:68
+#, python-brace-format
+msgctxt "Error message"
+msgid "No frequently asked questions found for {tool_name_and_platform}."
+msgstr "لم يتم العثور على الأسئلة الشائعة لِ {tool_name_and_platform}."
+
+#: webfrontend/views/toolversionfaqs.py:78
+msgctxt "Error title"
+msgid "No FAQs found"
+msgstr "لم يتم العثور على الأسئلة الشّائعة"
+
+#: webfrontend/views/toolversionguide.py:58
+msgctxt "Error message"
+msgid "No guide matching this URL exists."
+msgstr "ليس هناك دليل على هذا الرّابط‫."
+
+#. Translators: Guide page title
+#: webfrontend/views/toolversionguide.py:67
+#: webfrontend/views/toolversionguide.py:86
+#, python-brace-format
+msgctxt "Guide"
+msgid "Guide for {tool_name}"
+msgstr "دليل لِ‫‫ {tool_name}"
+
+#: webfrontend/views/toolversionreview.py:63
+msgctxt "Error message"
+msgid "No review matching this URL exists."
+msgstr "ليس هناك تقييم على هذا الرّابط‫."
+
+#. Translators: Shown if a review URL contains a “page”
+#. parameter that causes no reviews to be returned.
+#: webfrontend/views/toolversionreviews.py:90
+msgctxt "Error message"
+msgid "There are no reviews on this page."
+msgstr "ليس هناك أيّة تقييمات على هذه الصّفحة‫."
+
+#. Translators: Title of tool version reviews listing
+#: webfrontend/views/toolversionreviews.py:127
+#: webfrontend/views/toolversionreviews.py:145
+#, python-brace-format
+msgctxt "Review"
+msgid "Reviews for {tool_name_and_version}"
+msgstr "التقييمات لِ  {tool_name_and_version}"
+
+#: webfrontend/views/toolversiontutorial.py:53
+msgctxt "Error message"
+msgid "No tutorial matching this URL exists."
+msgstr "ليس هناك إرشادات مرتبطة بهذا الرّابط‫."
+
+#: webfrontend/views/toolversiontutorials.py:59
+#, python-brace-format
+msgctxt "Error message"
+msgid "No tutorials found for {tool_name_and_platform}."
+msgstr "عذراً لم يتم العثور على إرشادات {tool_name_and_platform}."
+
+#: webfrontend/views/toolversiontutorials.py:69
+msgctxt "Error title"
+msgid "No tutorials found"
+msgstr "لم يتم العثور على إرشادات"
+
+#. Translators: Title of tool version tutorials listing
+#: webfrontend/views/toolversiontutorials.py:78
+#: webfrontend/views/toolversiontutorials.py:96
+#, python-brace-format
+msgctxt "Tutorial"
+msgid "Tutorials for {tool_name_and_version}"
+msgstr "إرشادات لِ ‫‫{tool_name_and_version}"

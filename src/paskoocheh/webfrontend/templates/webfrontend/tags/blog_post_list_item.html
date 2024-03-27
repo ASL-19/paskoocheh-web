@@ -1,0 +1,45 @@
+<li class="pk-blog-post-list-item">{% load pask_url %}
+    <article class="inner">
+        <a class="link-underlay" href="{{ post_path }}" tabindex="-1" aria-hidden="true"></a>
+        <div class="thumbnail-sizing-container">
+            <img
+                class="thumbnail{% if image_aspect_ratio_is_wider_than_container %} wider-than-container{% endif %}"
+                src="{{ post.image_url | default_if_none:default_image_path }}"
+                {% if post.feature_image_caption %}
+                    alt="{{ post.feature_image_caption }}"
+                {% else %}
+                    alt=""
+                {% endif %}
+            />
+        </div>
+        {% if post.category and post_category_name and current_view_name != 'index' %}
+            <div class="category">
+                <span class="pk-g-invisible">Category: </span>
+                <a
+                    href="{% pask_url
+                        'webfrontend:blogposts'
+                        q_category=post.category.slug
+                    %}"
+                    class="category-link pk-button"
+                >{{ post_category_name }}</a>
+            </div>
+        {% endif %}
+        <div class="padded">
+            <a class="title-link" href="{{ post_path }}">
+                <{{ heading_tag }} class="title">{{ post.title }}</{{ heading_tag }}>
+            </a>
+            {% if post.summary and show_summary %}
+                <p class="summary">{{ post.summary|truncatewords_html:20 }}</p>
+            {% endif %}
+        </div>
+        {% if not show_summary %}
+            <time class="date" datetime="{{ post_published_datetime_iso8601 }}">
+                {% if disable_jalali %}
+                    {{ post.published_date | date:'d/M/Y' }}
+                {% else %}
+                    {{ post_published_date_jalali }}
+                {% endif %}
+            </time>
+        {% endif %}
+    </article>
+</li>

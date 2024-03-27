@@ -1,0 +1,182 @@
+<div class="pk-mobile-menu-background" aria-hidden="true"></div> {% load i18n %}
+<nav class="pk-mobile-menu pk-g-no-focus-outline" tabindex="-1">{% load pask_url %}
+    {# Translators: Hidden accessibility heading describing entire navigation/menu/menu #}
+    <h2 class="pk-g-invisible" id="navigation">{% trans 'Navigation' context 'Navigation' %}</h2>
+    <ul class="pk-expandable-list js-supported">
+        <li id="platform-list-toggle" class="menu-list-item">
+            <a
+                class="mobile link toggle menu-list-item-link js-menu-list-item-link"
+                href="#platforms"
+                {% if current_view_name == 'index' and  current_platform_slug %}
+                    aria-current="page"
+                {% endif %}
+                data-controls-id="platform-list"
+            >{% if global_platform_slug == 'all' %}
+                {# Translators: “All platforms” selection in platform drop-down menu #}
+                {% trans 'All platforms' context 'Header' %}
+            {% else %}
+                {% blocktrans context 'Navigation' with selected_platform=localized_global_platform_name trimmed %} Showing Apps of <span id="global-platform-slug">{{ selected_platform }}</span> {% endblocktrans %}
+            {% endif %}
+            </a>
+        </li>
+        <section id="platform-list" class="expandable-list body">
+            <p>{% trans 'What device are you using?' context 'Platform menu' %}</p>
+            <p class="platform-category-label">{% trans 'Desktop' context 'Platform menu' %}</p>
+            {% for platform in sorted_desktop_platforms %}
+                <li class="menu-list-item">
+                    <a
+                        href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                        class="menu-list-item-link js-menu-list-item-link expanded-nav-link"
+                        {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% if platform.icon %}
+                        <div class="item-thumbnail-container platform-icon">
+                            <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                        </div>
+                    {% endif %}
+                    {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+            <hr class="separator">
+            <p class="platform-category-label">{% trans 'Web' context 'Platform menu' %}</p>
+            {% for platform in sorted_web_platforms %}
+                <li class="menu-list-item">
+                    <a
+                        href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                        class="menu-list-item-link js-menu-list-item-link expanded-nav-link"
+                        {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% if platform.icon %}
+                        <div class="item-thumbnail-container platform-icon">
+                            <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                        </div>
+                    {% endif %}
+                    {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+            <hr class="separator">
+            <p class="platform-category-label">{% trans 'Mobile' context 'Platform menu' %}</p>
+            {% for platform in sorted_mobile_platforms %}
+                <li class="menu-list-item">
+                    <a
+                        href="{% pask_url 'webfrontend:index' q_platform=platform.slug_name %}"
+                        class="menu-list-item-link js-menu-list-item-link expanded-nav-link"
+                        {% if current_view_name == 'index' and current_platform_slug == platform.slug_name %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% if platform.icon %}
+                        <div class="item-thumbnail-container platform-icon">
+                            <img class="item-thumbnail" src="/media/{{ platform.icon }}"/>
+                        </div>
+                    {% endif %}
+                    {% if app == 'zanga' and platform.display_name_ar %}{{platform.display_name_ar}}{% else %}{{platform.display_name_fa}}{% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </section>
+    </ul>
+    {# Translators: Heading describing list of categories #}
+    <h3 class="section-heading pk-g-invisible">{% trans 'Category' context 'Navigation' %}</h3>
+    <ul class="pk-expandable-list js-supported">
+        <li id="app-category-list-toggle" class="menu-list-item">
+            <a
+                class="mobile link toggle app-category-link menu-list-item-link js-menu-list-item-link"
+                href="#app-categories"
+                {% if current_view_name == 'index' and current_type_slug %}
+                aria-current="page"
+                {% endif %}
+                data-controls-id="app-category-list"
+            >{% trans 'App categories' context 'Navigation' %}</a>
+        </li>
+        <section id="app-category-list" class="body expandable-list">
+            {% for tool_type in tool_types %}
+                <li class="menu-list-item">
+                    <a
+                        href="{% pask_url 'webfrontend:index' q_category=tool_type.slug q_platform=global_platform_slug %}"
+                        class="menu-list-item-link js-menu-list-item-link expanded-nav-link"
+                        {% if current_view_name == 'index' and current_type_slug == tool_type.slug %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% if tool_type.icon %}
+                        <div class="item-thumbnail-container app-category-icon">
+                            <img class="item-thumbnail" src="/media/{{ tool_type.icon }}"/>
+                        </div>
+                    {% endif %}
+                    {% if app == 'zanga' %}
+                        {{ tool_type.name_ar }}
+                    {% elif app == 'paskoocheh' %}
+                        {{ tool_type.name_fa }}
+                    {% else %}
+                        {{ tool_type.name }}
+                    {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </section>
+    </ul>
+    <section class="menu-section">
+    {# Translators: Hidden accessibility heading describing list of pages (e.g. About, Terms & Privacy) #}
+    <h3 class="section-heading pk-g-invisible">{% trans 'Pages' context 'Navigation' %}</h3>
+        <ul class="menu-list">
+            <li class="menu-list-item">
+                <a
+                    href="{% pask_url 'webfrontend:blogposts' %}"
+                    class="menu-list-item-link js-menu-list-item-link"
+                    {% if current_view_name == 'blogposts' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to blog (appears in menu and footer) #}
+                >{% trans 'Blog' context 'Navigation' %}</a>
+            </li>
+            <hr>
+            <li class="menu-list-item">
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='about' %}"
+                    class="menu-list-item-link js-menu-list-item-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'about' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to about page (appears in menu and footer) #}
+                >{% trans 'About' context 'Navigation' %}</a>
+            </li>
+            <hr>
+            <li class="menu-list-item">
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='contact' %}"
+                    class="menu-list-item-link js-menu-list-item-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'contact' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to contact-us page (appears in menu and footer) #}
+                >{% trans 'Contact us' context 'Navigation' %}</a>
+            </li>
+            <hr>
+            <li class="menu-list-item">
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='terms-of-service' %}"
+                    class="menu-list-item-link js-menu-list-item-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'terms-of-service' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to terms of service (appears in menu and footer) #}
+                >{% trans 'Terms of service' context 'Navigation' %}</a>
+            </li>
+            <hr>
+            <li class="menu-list-item">
+                <a
+                    href="{% pask_url 'webfrontend:page' p_slug='privacy-policy' %}"
+                    class="menu-list-item-link js-menu-list-item-link"
+                    {% if current_view_name == 'page' and current_page_slug == 'privacy-policy' %}
+                        aria-current="page"
+                    {% endif %}
+                {# Translators: Link to privacy policy page (appears in menu and footer) #}
+                >{% trans 'Privacy policy' context 'Navigation' %}</a>
+            </li>
+        </ul>
+        <hr>
+    </section>
+</nav>

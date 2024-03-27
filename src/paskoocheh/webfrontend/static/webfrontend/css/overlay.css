@@ -1,0 +1,123 @@
+.pk-overlay {
+    visibility: hidden;
+    z-index: 400;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: calc(100% + 11rem);
+    border-bottom: 15rem solid transparent;
+    background-color: rgba(44, 44, 44, 0.85);
+}
+.pk-overlay.is-open {
+    visibility: visible;
+    opacity: 1;
+    /* As of 2016-09-13, backdrop-filter is only supported in the latest versions of iOS and macOS Safari
+       It’s in the works on other browsers:
+       - https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/JFuV5kVNPHM
+       - https://developer.microsoft.com/en-us/microsoft-edge/platform/status/backdropfilter/
+       - https://bugzilla.mozilla.org/show_bug.cgi?id=1178765
+    */
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    -ms-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.pk-overlay .overlay-centred {
+    position: relative;
+    opacity: 1;
+    width: 100%;
+    max-width: 543px;
+    height: auto;
+    margin: 0 auto;
+    border: 1rem solid transparent;
+    text-align: right;
+}
+
+.pk-overlay .overlay-centred.pk-toolversion-support-overlay {
+    max-width: 416px;
+}
+
+.pk-overlay .overlay-box {
+    padding: 2em;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    max-height: 70vh;
+    max-height: calc(100vh - 7rem);
+    border-radius: 4px;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+}
+.pk-overlay .overlay-close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2em;
+    height: 2em;
+    padding: 0.375em;
+    background-image: url('../images/close.svg');
+}
+.pk-overlay .overlay-heading {
+    overflow: hidden;
+    color: #505d68;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin: 0;
+}
+.pk-overlay .overlay-subheading {
+    width: 100%;
+    color: #a1aeb7;
+    letter-spacing: 0;
+    margin: 0 0 1em 0;
+}
+.pk-overlay .overlay-form-label {
+    float: right;
+    clear: both;
+    font-weight: bold;
+}
+html.ios-11-pre-113 .pk-overlay {
+    position: absolute;
+}
+html.ios-11-pre-113 .pk-overlay .overlay-centred {
+    top: initial !important;
+    transform: none !important;
+}
+html.ios-11-pre-113 .pk-overlay .overlay-box {
+    max-height: none;
+}
+.pk-overlay .field-info {
+    color: #505d68;
+    position: relative;
+    bottom: 1.75em;
+    right: 8em;
+}
+
+@media (max-width: 700px) {
+    .pk-form.stars-container {
+        margin: 2em 0 1em 0;
+    }
+}
+
+@media (min-width: 160em) { /* 2560px */
+    .pk-overlay .overlay-centred.pk-toolversion-support-overlay {
+        max-width: 30%;
+    }
+    .pk-overlay .overlay-centred {
+        position: relative;
+        opacity: 1;
+        width: 100%;
+        max-width: 35%;
+        height: auto;
+        margin: 0 auto;
+        border: 1rem solid transparent;
+        text-align: right;
+    }
+    .pk-overlay .field-info {
+        bottom: 1.5em;
+    }
+}

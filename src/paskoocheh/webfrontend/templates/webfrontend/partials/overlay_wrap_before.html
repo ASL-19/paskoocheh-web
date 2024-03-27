@@ -1,0 +1,10 @@
+<div {% load i18n %}
+    class="pk-overlay pk-overlay-trigger {{ slug }}"
+    data-pk-overlay-slug="{{ slug }}"
+    data-pk-overlay-trigger-slug="{{ slug }}"
+    data-pk-overlay-trigger-action="close"
+>
+    <div class="overlay-centred {{ slug }}">
+        <section class="overlay-box js-overlay-box" role="dialog" aria-labelledby="{{ slug }}-heading">
+            <h3 class="overlay-heading js-overlay-heading" id="{{ slug }}-heading">{{ title }}</h3>
+            <p class="overlay-subheading js-overlay-subheading" id="{{ slug }}-subheading">{{ subtitle }}</p>

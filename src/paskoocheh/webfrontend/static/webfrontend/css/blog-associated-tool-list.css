@@ -1,0 +1,12 @@
+.pk-blog-associated-tool-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: inline-flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+}

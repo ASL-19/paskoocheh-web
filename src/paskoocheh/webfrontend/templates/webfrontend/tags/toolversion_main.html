@@ -1,0 +1,271 @@
+{% load
+    i18n
+    images_carousel
+    markdowntohtml
+    pa_numerals
+    ar_numerals
+    toolversion_main_download_links
+    toolversion_nav
+    toolversion_main_guides_support
+    toolversion_main_reviews
+    blog_post_list
+    blog_associated_tool_list
+    blog_associated_post_list
+    share_links
+    embedded_video
+%}
+<main class="pk-toolversion-main pk-g-centred pk-g-boxed-main pk-g-no-focus-outline" tabindex="-1">
+    {% if display_review_success %}
+        {# Translators: Appears inside a box at the top of the page after a review has been submitted. #}
+        <p class="success-message" role="alert">{% trans 'Review submitted successfully. It will appear on the site once it is approved.' context 'Tool version' %}</p>
+    {% endif %}
+    {% if display_support_success %}
+        {# Translators: Appears inside a box at the top of the page after a support request has been submitted. #}
+        <p class="success-message" role="alert">{% trans 'Support request submitted successfully. We’ll get back to you soon!' context 'Tool version' %}</p>
+    {% endif %}
+    <div class="logo-sizing-container">
+        <img class="logo" src="{{ tool_logo_path | default_if_none:default_image_path }}" alt="" />
+    </div>
+    <section class="top">
+        <h1 id="main-heading" class="pk-g-page-heading">{{ version_name_localized }}</h1>
+        <a
+            class="pk-a11y-shortcut other-versions-link pk-g-a11y-nav-link"
+            href="#other-versions"
+        {# Translators: Hidden accessibility heading/description for the blue tool version selection bar at the top of the page #}
+        >{% blocktrans with tool_name=tool_name_localized context 'Tool version' %}Other versions of {{ tool_name }}{% endblocktrans %}</a>
+        {% if tool_info and tool_info.company %}
+            <p class="company">{{ tool_info.company }}</p>
+        {% endif %}
+        <p class="category">{{ tool_type_localized_name }}</p>
+
+        <div class="download-links-container">
+            {% toolversion_main_download_links
+                version=tool_version
+                linux32_version=linux32_version
+                windows32_version=windows32_version
+                version_name_localized=version_name_localized
+            %}
+        </div>
+
+        <div class="pk-toolversion-main-support">
+            <section class="form-container contact-support-form-container section">
+                {# Translators: Invisible accessibility heading for support section #}
+                <h2 class="pk-g-invisible section-heading">{% trans 'Contact support' context 'Tool version' %}</h2>
+
+                <div class="pk-g-button-centring-container contact-support-button-container">
+                    <button
+                        class="pk-overlay-trigger pk-button action overlay-trigger-button pk-g-centred-button"
+                        data-pk-overlay-trigger-slug="pk-toolversion-support-overlay"
+                        data-pk-overlay-trigger-action="open"
+                    {# Translators: Text for button that opens the support form. Because we’re removing the heading and explanatory text, this needs to explain the button on its own. It should be clear that they’re contacting us, not the tool developer. Let us know if you’d rather keep the explanatory text, or even add an explanation to the overlay form. #}
+                    >{% trans 'Contact Paskoocheh support team' context 'Tool version' %}</button>
+                </div>
+
+                {% include 'webfrontend/partials/toolversion_support_form.html' with
+                    form_slug='toolversion-support-form-inline'
+                    version=tool_version
+                    only
+                %}
+            </section>
+        </div>
+
+        {% if tool_version.is_bundled_app %}
+          <p class="pk-bundled-app-notice pk-pk-bundled-app-notice">
+            <button class="pk-bundled-app-notice-close-button js-close-button">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
+                <path d="M12 4.5L4 12.5" stroke="#287CFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5L12 12.5" stroke="#287CFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span class="pk-bundled-app-notice-text">چرا برای نصب این برنامه باید اپلیکیشن پس‌کوچه را دانلود کنید؟ </a><a href="https://paskoocheh.com/blog/posts/2024-01-12-paskoocheh-android-app-aab-support.html" target="_blank">بیشتر بخوانید</a>!</span>
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden class="pk-bundled-app-notice-icon">
+                <path d="M7.99992 15.1668C11.6818 15.1668 14.6666 12.1821 14.6666 8.50016C14.6666 4.81826 11.6818 1.8335 7.99992 1.8335C4.31802 1.8335 1.33325 4.81826 1.33325 8.50016C1.33325 12.1821 4.31802 15.1668 7.99992 15.1668Z" stroke="#287CFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 11.1667V8.5" stroke="#287CFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 5.8335H8.00667" stroke="#287CFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </p>
+        {% endif %}
+    </section>
+
+
+    <hr class="post-top-section-hr" aria-hidden="true" />
+    <div class="badges">
+        {# Translators: Label for rating badge #}
+        <div class="pk-toolversion-badge badge average-rating">
+            <span
+                aria-label="{% trans 'Average rating' context 'Tool version' %}:"
+                class="label"
+            ><span class="pk-g-invisible" aria-hidden="true">{% trans 'Average rating' context 'Tool version' %}</span></span>
+            {# Translators: Average rating, displayed inside the rating badge. Keep the “<span class="pk-g-invisible">” and “</span>” in your translation. The translation of “stars” is necessary since search engines and blind users don’t have visual context to understand the value. #}
+            <span
+                aria-label="{% blocktrans
+                    context 'Tool version'
+                    with average_rating=version_rating
+                    trimmed
+                    %}{{ average_rating }} stars{% endblocktrans %}"
+                class="value{% if no_version_rating_available %} no-rating{% endif %}"
+            ><span aria-hidden="true">{{ version_rating }}</span></span>
+            {# Translators: Rating count, displayed beneath rating in rating stars. The translation for “ratings” should be terse if possible, since it needs to fit in a tight space. #}
+            <span class="sub-value{% if no_version_rating_available %} no-rating{% endif %}">{{ versionrating_count_cache_placeholder }}</span>
+            <div class="stars-container" dir="ltr">
+                <input name="stars" type="number" class="rating" data-size="xs" data-rating-val="{{ versionrating_cache_placeholder }}">
+            </div>
+        </div>
+        {# Translators: Label for download count badge #}
+        <div class="pk-toolversion-badge badge download-count">
+            <span
+                aria-label="{% trans 'Download count' context 'Tool version' %}:"
+                class="label"
+            ><span aria-hidden="true">{% trans 'Download count' context 'Tool version' %}</span></span>
+            <span class="value">{{ versiondownload_cache_placeholder }}</span>
+        </div>
+        {% if tool_has_app_versions %}
+            <div class="pk-toolversion-badge badge available-app-versions">
+                <span
+                aria-label="{% trans 'App available on' context 'Tool version' %}:"
+                class="label"
+                ><span aria-hidden="true">{% trans 'App available on' context 'Tool version' %}</span></span>
+                {% toolversion_nav
+                    active_version=tool_version
+                    available_versions=tool_versions
+                    tool_name_localized=tool_name_localized
+                %}
+            </div>
+        {% endif %}
+        {% if tool_has_extension_versions %}
+            <div class="pk-toolversion-badge badge available-ext-versions{% if not tool_has_app_versions %} no-apps{% endif %}">
+                <span
+                aria-label="{% trans 'Extension available on' context 'Tool version' %}:"
+                class="label"
+                ><span aria-hidden="true">{% trans 'Extension available on' context 'Tool version' %}</span></span>
+                {% toolversion_nav
+                    active_version=tool_version
+                    available_versions=tool_versions
+                    tool_name_localized=tool_name_localized
+                    extensions_only=True
+                %}
+            </div>
+        {% endif %}
+    </div>
+    {% if tool_screenshots %}
+        {% images_carousel
+            images=tool_screenshots
+            should_fit_viewport=True
+            version=tool_version
+        %}
+    {% elif tool_version.video or tool_version.video_link %}
+        {% embedded_video tool_version %}
+    {% endif %}
+    {% share_links
+        url=url
+        title=tool_name_localized
+    %}
+    {% if tool_info and tool_info.description %}
+        <section class="description main-section">
+            {# Translators: Description section heading #}
+            <div class="html pk-html-content">
+                {{ tool_info.description|markdowntohtml }}
+            </div>
+        </section>
+    {% endif %}
+    {% toolversion_main_guides_support
+        blog_posts=version_blog_posts
+        faqs=version_faqs
+        tutorials=version_tutorials
+        version_has_guide=tool_version_has_guide
+        version=tool_version
+        version_name_localized=version_name_localized
+    %}
+
+    {% toolversion_main_reviews
+        version=tool_version
+        version_name_localized=version_name_localized
+        rating=version_rating
+        rating_val=versionrating_cache_placeholder
+        rating_count=versionrating_count_cache_placeholder
+        no_version_rating_available=no_version_rating_available
+    %}
+
+    <section class="more-info main-section">
+        {# Translators: More info (miscellaneous) section heading. At the bottom. #}
+        <h2 class="section-heading">{% trans 'More information' context 'Tool version' %}</h2>
+
+        <div class="item version">
+            {# Translators: Subheading above version #}
+            <h3 class="info-label">{% trans 'Version' context 'Tool version' %}</h3>
+            {% if app == 'zanga' %}
+                <p class="version">{{ tool_version.version_number }}</p>
+            {% else %}
+                <p class="version">{{ tool_version.version_number | pa_numerals }}</p>
+            {% endif %}
+        </div>
+
+        <div class="item OS">
+            {# Translators: Subheading above OS #}
+            <h3 class="info-label">{% trans 'OS' context 'Tool version' %}</h3>
+            {% if app == 'zanga' %}
+                <p class="OS">{{ tool_version.supported_os.display_name_ar }}</p>
+            {% else %}
+                <p class="OS">{{ tool_version.supported_os.display_name_fa }}</p>
+            {% endif %}
+        </div>
+
+        {% if tool_version.supported_os.slug_name != 'android' and tool_version.version_codes and tool_version.version_codes.first.size > 0 %}
+            <div class="item size">
+                {# Translators: Subheading above size #}
+                <h3 class="info-label">{% trans 'Size' context 'Tool version' %}</h3>
+                <p class="size">{{ tool_version.version_codes.first.size|filesizeformat }}</p>
+            </div>
+        {% endif %}
+
+        <div class="item release-date">
+            {# Translators: Subheading above date of latest release of this version #}
+            <h3 class="info-label">{% trans 'Latest update' context 'Tool version' %}</h3>
+            <p>
+                {% if app == 'zanga' %}
+                    {{ tool_version.release_date | date:'d/m/Y' }}
+                {% else %}
+                    {{ tool_version_formatted_release_jdate }}
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="item website">
+            {# Translators: Subheading above URL for developer #}
+            <h3 class="info-label">{% trans 'Developer website' context 'Tool version' %}</h3>
+            <a href="{{ tool.website }}" rel="noopener noreferrer" dir="ltr">{{ tool.website }}</a>
+        </div>
+
+        {% if tool_version.supported_os.slug_name != 'android' and tool_version.version_codes and tool_version.version_codes.first.checksum %}
+            <div class="item checksum">
+                {# Translators: Subheading above checksum of this version #}
+                <h3 class="info-label checksum">{% trans 'SHA256 checksum' context 'Tool version' %}</h3>
+                {% if app == 'zanga' %}
+                    <div class="checksum-info-link-container">
+                        <a href="https://zanga.tech/blog/posts/2020-05-13-what-is-checksum-and-how-to-check-it-ar.html">{% trans 'What is this?' context 'Tool version checksum' %}</a>
+                    </div>
+                {% endif %}
+                <p>{{ tool_version.version_codes.first.checksum }}</p>
+            </div>
+        {% endif %}
+    </section>
+
+    {% if related_tools.count > 0 or version_blog_posts.count > 0 %}
+        <footer class="footer">
+            {% if related_tools.count > 0 %}
+                {# Translators: Heading above the list of tools and versions associated with the version. #}
+                <h2 class="section-heading">{% trans 'Associated tools' context 'Tool version' %}</h2>
+                {% blog_associated_tool_list
+                    associated_tools=related_tools
+                %}
+            {% endif %}
+            {% if version_blog_posts and version_blog_posts.count > 0 %}
+                <section class="related-posts main-section">
+                    {# Translators: Heading above the list of related posts #}
+                    <h2 class="section-heading">{% trans 'Associated posts' context 'Tool version' %}</h2>
+                    {% blog_associated_post_list related_posts=version_blog_posts %}
+                </section>
+            {% endif %}
+        </footer>
+    {% endif %}
+</main>

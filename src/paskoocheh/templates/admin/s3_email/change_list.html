@@ -1,0 +1,19 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_urls admin_modify %}
+{% load i18n static %}
+{% block object-tools-items %}
+
+{% if has_add_permission %}
+          <li>
+            {% url cl.opts|admin_urlname:'add' as add_url %}
+            <a href="{% add_preserved_filters add_url is_popup to_field %}" class="addlink">
+              {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}
+            </a>
+          </li>
+          {% endif %}
+          <li>
+    <a href="/admin/emailupdate/" class="addlink">
+      Update Email
+    </a>
+  <li>
+{% endblock %}

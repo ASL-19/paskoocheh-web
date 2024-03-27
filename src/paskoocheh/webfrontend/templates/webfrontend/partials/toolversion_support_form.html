@@ -1,0 +1,79 @@
+{% load i18n pask_url %}
+<form
+    class="pk-form{% if is_in_overlay %} pk-form-validated{% endif %}"
+    id="{{ form_slug }}-form"
+    action="{% pask_url
+        'webfrontend:toolversion'
+        p_tool_id=version.tool.id
+        p_platform_slug=version.supported_os.slug_name
+    %}"
+    method="post"
+>
+    <div class="logo-sizing-container support">
+        {% if tool_logo %}
+            <img
+                alt=""
+                {% if logo.should_display_full_bleed %}
+                    class="logo full-bleed"
+                {% else %}
+                    class="logo"
+                {% endif %}
+                src="{{ tool_logo.image.url }}"
+            />
+        {% endif %}
+    </div>
+    <input
+        class="pk-form-field email"
+        data-pk-form-field-validate="true"
+        name="email"
+        type="email"
+        id="{{ form_slug }}-email"
+        placeholder="{% trans 'E-mail address' context 'Support form' %}"
+    />
+    <input
+        class="pk-form-field subject"
+        data-pk-form-field-validate="true"
+        name="subject"
+        type="text"
+        id="{{ form_slug }}-subject"
+        placeholder="{% trans 'Subject' context 'Support form' %}"
+    />
+    <textarea
+        class="pk-form-field text"
+        data-pk-form-field-validate="true"
+        name="message"
+        id="{{ form_slug }}-message"
+        rows="8"
+        placeholder="{% trans 'Please describe your issue here...' context 'Support form' %}"
+    ></textarea>
+    {% if nocookies %}
+        <input type="hidden" name="nocookies" />
+    {% endif %}
+    <input type="hidden" name="type" value="support" />
+    <input type="hidden" name="csrfmiddlewaretoken" value="[csrf_token]">
+
+    {% if is_in_overlay %}
+        <input type="hidden" name="grecaptcha-type" value="invisible" />
+    {% else %}
+        <input type="hidden" name="grecaptcha-type" value="v2" />
+        {% include 'webfrontend/partials/form_recaptcha_fallback.html' with form_slug=form_slug only %}
+    {% endif %}
+
+    <button
+        class="pk-button submit action"
+        id="{{ form_slug }}-submit"
+        type="submit"
+    >{% trans 'Submit' context 'Form' %}</button>
+    {% if is_in_overlay %}
+        <button
+            class="pk-overlay-trigger pk-button cancel"
+            data-pk-overlay-trigger-slug="{{ overlay_slug }}"
+            data-pk-overlay-trigger-action="close"
+            type="button"
+        >{% trans 'Cancel' context 'Form' %}</button>
+        <div
+            class="pk-invisible-grecaptcha"
+            data-pk-invisible-grecaptcha-form-slug="{{ form_slug }}"
+        ></div>
+    {% endif %}
+</form>

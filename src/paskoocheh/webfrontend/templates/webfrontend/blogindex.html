@@ -1,0 +1,49 @@
+{% extends 'webfrontend/base.html' %}
+{% load blog_post_list i18n pask_url pk_meta_tags %}
+
+{% block meta_tags %}{% pk_meta_tags view_metadata %}{% endblock %}
+
+{% block body %}
+    <div class="pk-g-responsive-centring-container pk-g-main-container">
+        <main class="index-main pk-g-centred pk-g-no-focus-outline pk-blogindex" tabindex="-1">
+            <h1 class="blog-heading">{% trans 'Paskoocheh blog' context 'Blog' %}</h1>
+
+            <h1 id="main-heading" class="pk-g-invisible main-heading">{% block title %}{{ page_title }}{% endblock %}</h1>
+            <section class="pk-index-section">
+                <div class="heading-container">
+                    <h2 class="section-heading heading">{{ latest_posts_title }}</h2>
+                    {# Translators: “All” buttons on blog homepage #}
+                    <a
+                        class="pk-button nav-link forward"
+                        href="{% pask_url
+                            'webfrontend:blogposts'
+                        %}"
+                    >{% trans 'All' context 'Blog' %}</a>
+                </div>
+                {% blog_post_list
+                    displayed_rows_limit=2
+                    post_heading_tag='h3'
+                    posts=latest_posts
+                    show_summary=True
+                %}
+            </section>
+            <section class="pk-index-section">
+                <div class="heading-container">
+                    <h2 class="section-heading heading">{{ featured_posts_title }}</h2>
+                    <a
+                        class="pk-button nav-link forward"
+                        href="{% pask_url
+                            'webfrontend:blogposts'
+                            q_featured='true'
+                        %}"
+                    >{% trans 'All' context 'Blog' %}</a>
+                </div>
+                {% blog_post_list
+                    displayed_rows_limit=1
+                    post_heading_tag='h3'
+                    posts=featured_posts
+                %}
+            </section>
+        </main>
+    </div>
+{% endblock %}

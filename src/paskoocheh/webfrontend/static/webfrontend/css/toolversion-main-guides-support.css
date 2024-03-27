@@ -1,0 +1,22 @@
+.pk-toolversion-main-guides-support .section {
+    float: right;
+    width: 100%;
+    margin: 0 0 2rem 0;
+}
+.pk-toolversion-main-guides-support .section:last-of-type {
+    margin-bottom: 0;
+}
+html.js-unsupported .pk-toolversion-main-guides-support .section-heading {
+    float: right !important;
+    position: relative !important;
+    clip: auto !important;
+    white-space: normal !important;
+}
+.pk-toolversion-main-guides-support .guide-explanation {
+    float: right;
+    margin: 0 0 1rem 0;
+}
+.pk-toolversion-main-guides-support .guide-button {
+    float: right;
+    clear: right;
+}

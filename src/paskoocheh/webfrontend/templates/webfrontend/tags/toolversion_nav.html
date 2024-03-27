@@ -1,0 +1,25 @@
+<nav class="pk-toolversion-nav pk-g-no-focus-outline" tabindex="-1" aria-describedby="other-versions">{% load i18n pask_url %}
+    {# Translators: Hidden accessibility heading for the version page platform selector bar. Describes the list of platforms the tool is available for. #}
+    <h2 class="other-versions-heading pk-g-a11y-nav-link" id="other-versions">{% blocktrans context 'Tool version platforms bar' with tool_name=tool_name_localized %}Versions of {{ tool_name }}{% endblocktrans %}</h2>
+    <ul class="version-list">
+        {% for version in sorted_available_versions %}
+            {% if version.supported_os.slug_name != 'linux32' and version.supported_os.slug_name != 'windows32' %}
+                <li class="version-list-item">
+                    <a
+                        class="version-list-item-link {{ version.supported_os.slug_name }}{% if active_version_id == version.id %} active{% endif %}"
+                        href="{% pask_url 'webfrontend:toolversion' p_tool_id=version.tool_id p_platform_slug=version.supported_os.slug_name %}"
+                        {% if active_version_id == version.id %}
+                            aria-current="page"
+                        {% endif %}
+                    >{% if app == 'zanga' %}
+                        {{ version.supported_os.display_name_ar }}
+                    {% elif app == 'paskoocheh' %}
+                        {{ version.supported_os.display_name_fa }}
+                    {% else %}
+                        {{ version.supported_os.display_name }}
+                    {% endif %}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
