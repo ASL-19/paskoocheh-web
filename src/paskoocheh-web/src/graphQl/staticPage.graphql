@@ -1,0 +1,26 @@
+fragment StaticPageBody on StaticPageBody {
+  ...CaptionedImageBlock
+  ...CollapsibleBlock
+  ...DocumentBlock
+  ...LinkBlock
+  ...EmailBlock
+  ...TextBlock
+}
+
+fragment StaticPage on StaticPageNode {
+  body {
+    ...StaticPageBody
+  }
+  image {
+    ...CaptionedImage
+  }
+  seoTitle
+  searchDescription
+  title
+}
+
+query getStaticPage($localeCode: String!, $staticPageSlug: String!) {
+  staticPage(locale: $localeCode, slug: $staticPageSlug) {
+    ...StaticPage
+  }
+}

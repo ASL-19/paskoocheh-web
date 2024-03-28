@@ -1,0 +1,13 @@
+fragment Info on InfoNode {
+  id
+  pk
+  lastModified
+  language
+  name
+  company
+  description
+  seoDescription
+  tool {
+    website
+  }
+}

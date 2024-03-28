@@ -1,0 +1,28 @@
+fragment Platform on PlatformNode {
+  id
+  pk
+  name
+  displayName
+  displayNameFa
+  displayNameAr
+  slugName
+  category
+  icon
+}
+
+fragment Platforms on PlatformNodeConnection {
+  edges {
+    node {
+      ...Platform
+    }
+  }
+}
+query getPlatforms($after: String, $count: Int, $orderBy: [String]) {
+  platforms(after: $after, first: $count, orderBy: $orderBy) {
+    edges {
+      node {
+        ...Platform
+      }
+    }
+  }
+}

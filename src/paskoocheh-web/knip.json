@@ -1,0 +1,25 @@
+{
+  "$schema": "https://unpkg.com/knip@1/schema.json",
+  "entry": [
+    "next.config.{js,ts}",
+    "src/pages/**/*.{js,jsx,ts,tsx}",
+    "src/scripts/**/*.{js,jsx,ts,tsx}",
+    "src/utils/config/__mocks__/getGraphQlSdk.ts"
+  ],
+  "project": [
+    "src/**/*.{js,jsx,ts,tsx}"
+  ],
+  "ignore": [
+    ".eslintrc.js",
+    "jest.config.js",
+    "prettier.config.js"
+  ],
+  "ignoreDependencies": [
+    "@graphql-codegen/*"
+  ],
+  "paths": {
+    "src/*": [
+      "./src/*"
+    ]
+  }
+}

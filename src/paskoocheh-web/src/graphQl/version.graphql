@@ -1,0 +1,184 @@
+fragment VersionPreview on VersionNode {
+  averageRating {
+    starRating
+    ratingCount
+  }
+  downloadCount
+  id
+  pk
+  platform {
+    ...Platform
+  }
+  tool {
+    ...ToolPreview
+  }
+}
+
+fragment Version on VersionNode {
+  ...VersionPreview
+  lastModified
+  created
+  versionNumber
+  releaseDate
+  downloadUrl
+  releaseUrl
+  packageName
+  guideUrl
+  faqUrl
+  canGenerateTempS3Url
+  deliveryEmail
+  video
+  videoLink
+  guides {
+    edges {
+      node {
+        ...Guide
+      }
+    }
+  }
+  tutorials {
+    edges {
+      node {
+        ...Tutorial
+      }
+    }
+  }
+  averageRating {
+    ...VersionRating
+  }
+  reviews {
+    totalCount
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...VersionReview
+      }
+    }
+  }
+  tool {
+    ...Tool
+  }
+}
+
+fragment VersionRating on VersionRatingNode {
+  id
+  lastModified
+  toolName
+  platformName
+  starRating
+  ratingCount
+}
+
+fragment VersionCategoryRating on VersionCategoryRatingNode {
+  id
+  starRating
+  ratingCategory {
+    ...RatingCategory
+  }
+}
+
+fragment RatingCategory on RatingCategoryNode {
+  id
+  name
+  nameFa
+  nameAr
+  slug
+}
+
+fragment UserVote on UserVote {
+  hasVoted
+  voteType
+}
+
+fragment VersionReview on VersionReviewNode {
+  id
+  pk
+  lastModified
+  toolName
+  platformName
+  subject
+  userId
+  text
+  username
+  rating
+  checked
+  toolVersion
+  timestamp
+  language
+  categoryRatings {
+    ...VersionCategoryRating
+  }
+  upvotes
+  downvotes
+  hasUserVoted(username: $username) {
+    ...UserVote
+  }
+}
+
+mutation doVoteReview($reviewPk: Int!, $vote: ReviewVoteOptions!) {
+  voteReview(reviewPk: $reviewPk, vote: $vote) {
+    success
+    errors
+  }
+}
+
+query getVersion(
+  $platformSlug: String!
+  $toolSlug: String = null
+  $username: String = ""
+) {
+  version(platformSlug: $platformSlug, toolSlug: $toolSlug) {
+    ...Version
+  }
+}
+
+query getVersionReviews(
+  $platformSlug: String!
+  $toolSlug: String = null
+  $username: String!
+  $offset: Int
+  $count: Int
+) {
+  version(platformSlug: $platformSlug, toolSlug: $toolSlug) {
+    reviews(offset: $offset, first: $count) {
+      pageInfo {
+        hasNextPage
+      }
+      edges {
+        node {
+          ...VersionReview
+        }
+      }
+    }
+  }
+}
+
+query getVersionPreview($platformSlug: String!, $toolPk: Int!) {
+  version(platformSlug: $platformSlug, toolPk: $toolPk) {
+    ...VersionPreview
+  }
+}
+
+query getVersionPreviews(
+  $category: String
+  $featured: Boolean
+  $first: Int!
+  $orderBy: [String]!
+  $platformSlug: String
+) {
+  versions(
+    category: $category
+    featured: $featured
+    first: $first
+    orderBy: $orderBy
+    platformSlug: $platformSlug
+  ) {
+    edges {
+      node {
+        ...VersionPreview
+      }
+    }
+  }
+}

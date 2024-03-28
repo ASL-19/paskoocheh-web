@@ -1,0 +1,18 @@
+fragment Faq on FaqNode {
+  id
+  pk
+  lastModified
+  language
+  headline
+  body
+  order
+  clickCount
+  video
+}
+
+mutation doIncrementClickCount($faqPk: Int!) {
+  incrementClickCount(faqPk: $faqPk) {
+    success
+    errors
+  }
+}

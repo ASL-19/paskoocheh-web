@@ -1,0 +1,56 @@
+fragment AnswersBlock on AnswersBlock {
+  id
+  value
+  answer
+  correct
+  __typename
+}
+
+fragment QuestionBlock on QuestionBlock {
+  id
+  value
+  question
+  answers {
+    ...AnswersBlock
+  }
+  __typename
+}
+
+fragment QuizPage on QuizPageNode {
+  id
+  pk
+  title
+  slug
+  numchild
+  urlPath
+  seoTitle
+  searchDescription
+  questions {
+    ...QuestionBlock
+  }
+}
+
+query getQuiz($slug: String!, $locale: String!) {
+  quiz(slug: $slug, locale: $locale) {
+    ...QuizPage
+  }
+}
+
+query getQuizzes($locale: String!, $first: Int) {
+  quizzes(locale: $locale, first: $first) {
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...QuizPage
+      }
+    }
+  }
+}
+
+query getHasFinishedQuiz($quizPk: Int!) {
+  me {
+    hasFinishedQuiz(quizPk: $quizPk)
+  }
+}

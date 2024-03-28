@@ -1,0 +1,116 @@
+fragment User on UserType {
+  id
+  username
+  email
+  firstName
+  lastName
+}
+
+fragment RefreshToken on RefreshTokenType {
+  token
+}
+
+fragment Token on TokenType {
+  payload {
+    origIat
+    exp
+    username
+  }
+  token
+}
+
+mutation doRefreshToken($refreshToken: String!) {
+  refreshToken(refreshToken: $refreshToken, revokeRefreshToken: false) {
+    errors
+    refreshToken {
+      ...RefreshToken
+    }
+    success
+    token {
+      ...Token
+    }
+  }
+}
+
+mutation doTokenAuth($password: String!, $username: String!) {
+  tokenAuth(password: $password, username: $username) {
+    refreshToken {
+      ...RefreshToken
+    }
+    user {
+      ...User
+    }
+    success
+    errors
+  }
+}
+
+mutation doDeleteAccount($password: String!) {
+  deleteAccount(password: $password) {
+    success
+    errors
+  }
+}
+
+mutation doChangePassword(
+  $newPassword1: String!
+  $newPassword2: String!
+  $oldPassword: String!
+) {
+  passwordChange(
+    newPassword1: $newPassword1
+    newPassword2: $newPassword2
+    oldPassword: $oldPassword
+  ) {
+    success
+    errors
+  }
+}
+
+mutation doSendPasswordResetEmail($email: String!) {
+  sendPasswordResetEmail(email: $email) {
+    errors
+    success
+  }
+}
+
+mutation doPasswordReset(
+  $newPassword1: String!
+  $newPassword2: String!
+  $token: String!
+) {
+  passwordReset(
+    newPassword1: $newPassword1
+    newPassword2: $newPassword2
+    token: $token
+  ) {
+    errors
+    success
+  }
+}
+
+mutation doVerifyAccount($token: String!) {
+  verifyAccount(token: $token) {
+    success
+    errors
+  }
+}
+
+mutation doSignUp(
+  $email: String!
+  $password1: String!
+  $password2: String!
+  $username: String!
+  $referralSlug: String
+) {
+  register(
+    email: $email
+    password1: $password1
+    password2: $password2
+    username: $username
+    referralSlug: $referralSlug
+  ) {
+    success
+    errors
+  }
+}

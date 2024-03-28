@@ -1,0 +1,10 @@
+# This should be kept in sync with .eslintrc.js Emotion object styles files list
+
+src/components/*.tsx
+src/components/Footer/*.tsx
+src/components/Header/*.tsx
+src/components/Home/*.tsx
+src/components/Layout/*.tsx
+src/components/Page/*.tsx
+src/pageComponents/HomePage/HomePage.tsx
+src/styles/*.ts

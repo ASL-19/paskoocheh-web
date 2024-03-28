@@ -1,0 +1,20 @@
+fragment RedemptionMethod on RedemptionMethodNode {
+  id
+  pk
+  redemptionMethodEn
+  redemptionMethodFa
+  redemptionPoints
+}
+
+query getRedemptionMethods($count: Int, $offset: Int) {
+  redemptionMethods(first: $count, offset: $offset) {
+    edges {
+      node {
+        ...RedemptionMethod
+      }
+    }
+    pageInfo {
+      hasNextPage
+    }
+  }
+}

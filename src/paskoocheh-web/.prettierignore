@@ -1,0 +1,5 @@
+*.markdown
+.next/**/*
+.next-test/**/*
+src/generated/graphQl.ts
+src/strings/strings.schema.json

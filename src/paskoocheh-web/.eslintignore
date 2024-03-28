@@ -1,0 +1,5 @@
+!.eslintrc.js
+!paskoocheh-env.d.ts
+/public/static/javascript/
+/src/static/javascript/
+/src/generated/graphQl.ts

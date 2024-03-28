@@ -1,0 +1,95 @@
+fragment ToolPreview on ToolNode {
+  availablePlatforms
+  featured
+  id
+  images {
+    ...ToolImage
+  }
+  name
+  pk
+  primaryTooltype {
+    ...ToolType
+  }
+  slug
+  toolTypes {
+    ...ToolType
+  }
+  info {
+    edges {
+      node {
+        ...ToolInfo
+      }
+    }
+  }
+}
+fragment ToolInfo on InfoNode {
+  promoText
+}
+
+fragment Tool on ToolNode {
+  ...ToolPreview
+  lastModified
+  created
+  lastUpdate
+  trusted
+  source
+  website
+  facebook
+  twitter
+  blog
+  contactUrl
+  contactEmail
+  versions {
+    edges {
+      node {
+        ...VersionPreview
+      }
+    }
+  }
+  teamAnalysis {
+    ...TeamAnalysis
+  }
+  info {
+    edges {
+      node {
+        ...Info
+      }
+    }
+  }
+  faqs {
+    edges {
+      node {
+        ...Faq
+      }
+    }
+  }
+}
+query getHomePageFeaturedTool {
+  homePageFeaturedTool {
+    ...ToolPreview
+  }
+}
+query getTool($slug: String, $pk: Int) {
+  tool(slug: $slug, pk: $pk) {
+    ...Tool
+  }
+}
+
+query getTempS3Url($versionPk: Int!) {
+  tempS3Url(versionPk: $versionPk)
+}
+
+mutation doSaveDownload(
+  $versionId: Int!
+  $channelVersion: String!
+  $downloadVia: DownloadOptions!
+) {
+  saveDownload(
+    versionId: $versionId
+    channelVersion: $channelVersion
+    downloadedVia: $downloadVia
+  ) {
+    success
+    errors
+  }
+}

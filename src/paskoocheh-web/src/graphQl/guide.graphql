@@ -1,0 +1,11 @@
+fragment Guide on GuideNode {
+  id
+  pk
+  lastModified
+  language
+  headline
+  body
+  order
+  slug
+  video
+}

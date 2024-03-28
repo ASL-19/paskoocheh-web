@@ -1,0 +1,55 @@
+fragment CaptionedImageBlock on CaptionedImageBlock {
+  __typename
+  image {
+    ...CaptionedImage
+  }
+  value
+}
+
+fragment CollapsibleBlock on CollapsibleBlock {
+  __typename
+  heading
+  slug
+  text
+}
+
+fragment DocumentBlock on DocumentBlock {
+  __typename
+  document {
+    contentType
+    file
+    fileType
+    id
+    tags
+    title
+    url
+  }
+  value
+}
+
+# TODO: Implement
+fragment EmailBlock on EmailBlock {
+  __typename
+  id
+  value
+}
+
+# TODO: Implement
+fragment LinkBlock on LinkBlock {
+  __typename
+  id
+  value
+}
+
+# TODO: Implement
+fragment MarkdownBlock on MarkdownBlock {
+  __typename
+  id
+  value
+  html
+}
+
+fragment TextBlock on TextBlock {
+  __typename
+  text
+}

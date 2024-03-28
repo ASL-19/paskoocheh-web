@@ -1,0 +1,20 @@
+fragment Topic on TopicNode {
+  __typename
+  name
+  slug
+  pk
+  id
+}
+
+query getTopics($localeCode: String!) {
+  topics(locale: $localeCode) {
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...Topic
+      }
+    }
+  }
+}

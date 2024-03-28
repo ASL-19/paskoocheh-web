@@ -1,0 +1,48 @@
+fragment RewardRecord on RewardsRecordType {
+  recordType
+  description
+  points
+  id
+  date
+}
+
+fragment EarningMethod on EarningMethodNode {
+  pk
+  earningMethod
+  earningPoints
+}
+
+query getEarningMethods {
+  earningMethods {
+    ...EarningMethod
+  }
+}
+
+query getRewardRecords($count: Int, $offset: Int) {
+  me {
+    rewardsRecords(first: $count, offset: $offset) {
+      pageInfo {
+        hasNextPage
+      }
+      edges {
+        node {
+          ...RewardRecord
+        }
+      }
+    }
+  }
+}
+
+mutation doReportQuizResults($quizPk: Int!, $won: Boolean!) {
+  reportQuizResults(quizPk: $quizPk, won: $won) {
+    success
+    errors
+  }
+}
+query getUserPurchasedApps($reviewed: Boolean!) {
+  me {
+    purchasedApps(reviewed: $reviewed) {
+      ...VersionPreview
+    }
+  }
+}

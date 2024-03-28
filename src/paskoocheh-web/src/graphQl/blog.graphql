@@ -1,0 +1,15 @@
+fragment BlogIndex on BlogIndexNode {
+  __typename
+  id
+  title
+  slug
+  seoTitle
+  searchDescription
+  description
+}
+
+query getBlogIndex($localeCode: String!) {
+  blogIndex(locale: $localeCode) {
+    ...BlogIndex
+  }
+}

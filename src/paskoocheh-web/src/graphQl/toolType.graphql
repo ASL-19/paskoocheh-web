@@ -1,0 +1,27 @@
+fragment ToolType on ToolTypeNode {
+  icon
+  name
+  nameFa
+  slug
+  pk
+  id
+}
+
+query getToolType($slug: String!) {
+  toolType(slug: $slug) {
+    ...ToolType
+  }
+}
+
+query getToolTypes {
+  toolTypes {
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...ToolType
+      }
+    }
+  }
+}

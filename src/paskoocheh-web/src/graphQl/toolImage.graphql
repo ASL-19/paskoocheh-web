@@ -1,0 +1,8 @@
+fragment ToolImage on ToolImageNode {
+  id
+  pk
+  imageType
+  width
+  height
+  image
+}

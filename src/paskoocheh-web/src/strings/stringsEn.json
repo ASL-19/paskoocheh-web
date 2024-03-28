@@ -1,0 +1,481 @@
+{
+  "$schema": "./strings.schema.json",
+  "A11yShortcutPreset": {
+    "skipToNavigation": "Skip to navigation"
+  },
+  "AccessDenied": {
+    "buttonText": "Sign in or create account",
+    "text": "Sign in to enjoy more "
+  },
+  "AccessErrorMessage": {
+    "headingText": "Error"
+  },
+  "AppFaqs": {
+    "noFaq": "There is no Faq for this App"
+  },
+  "AccountSettingsConfirmationPage": {
+    "pageDescription": "Account Settings Success Page",
+    "pageTitle": "Account Settings Success Page"
+  },
+  "AccountSettingsPageContent": {
+    "buttonDelete": "Delete account",
+    "buttonLink": "Back to Home page",
+    "buttonUpdate": "Update",
+    "emailLabel": "Email",
+    "pageDescription": "Account Settings page",
+    "pageTitle": "Account Settings",
+    "passwordLabel": "Password",
+    "reenterPasswordLabel": "Re-enter Password",
+    "oldPassword": "Old Password",
+    "signIn": "Sign In",
+    "updatedConfirmationText": "Your account has been successfully updated",
+    "usernameLabel": "User name"
+  },
+  "ActivateAccountPage": {
+    "generic": {
+      "failed": {
+        "bodyText": "Your account couldn’t be activated. It may already be activated, or your link may be incorrect.",
+        "titleText": "Couldn’t activate account"
+      },
+      "success": {
+        "bodyText": "Your account has been successfully activated.",
+        "titleText": "Activated"
+      }
+    }
+  },
+  "AppAdditionalInfoListItem": {
+    "developerInformation": "Developer Information",
+    "productDescription": " Product Description"
+  },
+  "AppAdditionalInfoProductDetails": {
+    "checksum": "Checksum",
+    "latestUpdate": "Latest Update",
+    "productDetails": "Product Details",
+    "releaseDate": "Release Date",
+    "size": "Size",
+    "version": "Version"
+  },
+  "AppAndroidInstallButton": {
+    "getItOn": "Get it on ",
+    "infoExplanation": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+  },
+  "AppDetailsSection": {
+    "headings": {
+      "additionalInfo": "Additional Information",
+      "faq": "FAQ",
+      "howToUse": "How to Use",
+      "ratingsAndReviews": "Ratings & Reviews",
+      "teamAnalysis": "Team Analysis"
+    }
+  },
+  "AppHowToUse": {
+    "howToUse": "How to use",
+    "introduction": "Introduction",
+    "guide": "Guides",
+    "noGuideOrTutorials": "There is no guides or tutorials for this app.",
+    "tutorials": "Tutorials"
+  },
+  "AppInstallOptions": {
+    "appleAppStore": "Apple App Store",
+    "directDownload": "Direct Download",
+    "downloadFromEmail": "Download From Email",
+    "downloadFromWebsite": "Download From Website",
+    "googlePlay": "Google Play",
+    "downloadFromChromeWebStore": "Download From Chrome Web Store",
+    "downloadFromFireFoxWebStore": "Download From FireFox Web Store",
+    "downloadFromMicrosoftStore": "Download From Microsoft Store"
+  },
+  "AppNavLinkList": {
+    "a11yLabel": "Sections"
+  },
+  "AppOverviewSection": {
+    "android": "Android",
+    "availableOptions": "Available Install Options",
+    "buttonText": "Install",
+    "download": "Download",
+    "operatingSystem": "Available Operating Systems",
+    "reviews": "Reviews"
+  },
+  "AppShareAndSupportLinks": {
+    "shareDialogA11yHeading": "Share",
+    "supportDialogHeading": "Support"
+  },
+  "AppStatsDetails": {
+    "a11yLabel": "Basic stats"
+  },
+  "AppTeamAnalysis": {
+    "noTeamAnalysis": "There is no team analysis for this app"
+  },
+  "AppTeamReviewsContent": {
+    "cons": "Cons",
+    "pros": "Pros",
+    "reviews": "Our Reviews"
+  },
+  "AppUsersReviewsContent": {
+    "reviews": "Reviews"
+  },
+  "BlogPage": {
+    "filter": {
+      "date": "Date",
+      "label": "Sort By",
+      "popularity": "Popularity"
+    },
+    "pageDescription": "BlogPage",
+    "pageTitle": "Blog"
+  },
+  "BlogPostContent": {
+    "published": "Published",
+    "summary": "Summary"
+  },
+  "CategoryNavList": {
+    "a11yLabel": "Filter by category"
+  },
+  "ContactPage": {
+    "pageDescription": "Contact Page",
+    "title": "How can we help you?",
+    "contacts": {
+      "email": {
+        "description": "Lorem Ipsum is simply dummy text",
+        "name": "Email Support",
+        "urlLabel": "Email Us"
+      },
+      "telegram": {
+        "description": "Lorem Ipsum is simply dummy text",
+        "name": "Telegram Chat",
+        "urlLabel": "Chat with us"
+      }
+    }
+  },
+  "ClientSideErrorFallback": {
+    "description": "Try reloading the page or using a different browser. If the problem continues please contact us and include the below error message:",
+    "title": "Unexpected error"
+  },
+  "CreateAnAccountPage": {
+    "confirmation": "Account created.",
+    "emailLabel": "Email",
+    "pageDescription": "Sign Up page",
+    "passwordLabel": "Password",
+    "reenterPasswordLabel": "Re-enter Password",
+    "signInLink": "Sign in",
+    "signInText": "Already have an account? ",
+    "submitButton": "Create Account",
+    "title": "Create an Account",
+    "usernameLabel": "User Name",
+    "youAlreadySignedIn": "You’re already signed in"
+  },
+  "CreateAnAccountReferralMessage": {
+    "message": "You’ve been referred! Sign up using your friend’s referral link and earn 1 points!"
+  },
+  "DeleteAccountOverlay": {
+    "cancelButton": "Cancel",
+    "confirmationText": "Your account has been deleted",
+    "deleteButton": "Yes, delete it",
+    "deleteConfirmationText": "Your account successfully deleted",
+    "description": "Are you sure you want to permanently delete your account?",
+    "title": "Delete your account?",
+    "enterPassword": "Please re-enter your Password"
+  },
+  "ErrorPageContent": {
+    "backToHomeButton": "Back to Home Page",
+    "generic": {
+      "404": {
+        "description": "",
+        "title": "Page not found"
+      },
+      "500": {
+        "description": "An internal error occurred.",
+        "title": "Internal error"
+      }
+    }
+  },
+  "Footer": {
+    "findUs": "Find us on"
+  },
+  "FooterNav": {
+    "a11yLabel": "Links",
+    "contactUs": {
+      "email": "Email",
+      "heading": "Contact Us",
+      "telegram": "Telegram"
+    },
+    "moreInfo": {
+      "aboutUs": "About us",
+      "heading": "More Information",
+      "privacyPolicy": "Privacy policy",
+      "termsAndConditions": "Terms and conditions"
+    }
+  },
+  "FooterNewsletterSignUp": {
+    "description": "Get the latest updates about Paskoocheh",
+    "email": "Email address",
+    "submitButton": "Submit"
+  },
+  "Header": {
+    "userMenuLabel": "Open user menu"
+  },
+  "HomePage": {
+    "bonusSectionDescription": "Lorem ipsum dolor sit amet",
+    "bonusSectionTitle": "Limited Time Bonus",
+    "heroDescription": "Lorem ipsum dolor sit amet",
+    "heroTitle": "Featured Game",
+    "pageDescription": ""
+  },
+  "HomePageEditorsChoiceSegment": {
+    "heading": "Editor’s Choice"
+  },
+  "HomePagePopularAppsSegment": {
+    "headingPrefix": "Popular",
+    "headingSuffix": "Apps"
+  },
+  "HowPointsWork": {
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "heading": "How points work"
+  },
+  "HowPointsWorkPage": {
+    "lists": {
+      "earnPoints": {
+        "items": {
+          "rateAndReviewApps": {
+            "description": "Earn 1 point by reviewing the 2 Apps you've downloaded",
+            "heading": "Rate & Review Apps"
+          },
+          "weeklyChallenge": {
+            "description": "Earn 2 points for correctly answering weekly challenge questions",
+            "heading": "Weekly Challenge Question"
+          },
+          "referFriends": {
+            "description": "Earn 1 pont when your friend creates an account using your referral link",
+            "heading": "Refer Friends"
+          },
+          "updateApps": {
+            "description": "Earn 1 point by updating all downloaded apps at once",
+            "heading": "Update Your Apps"
+          }
+        },
+        "heading": "Earn points"
+      },
+      "redeemPoints": {
+        "items": {
+          "redeemPaidVpnApps": {
+            "description": "Redeem paid VPN apps for free with your earned points",
+            "heading": "Redeem Paid VPN Apps for free"
+          }
+        },
+        "heading": "Redeem points"
+      }
+    },
+    "pageDescription": "How Points Work Page",
+    "pageTitle": "How Points Work Page"
+  },
+  "IndexPageLoadingUi": {
+    "errorMessage": "Error while loading items. Click the below button to try again.",
+    "errorReloadButtonText": "Try again"
+  },
+  "MobileHeaderNavDropdown": {
+    "a11yTitle": "Navigation"
+  },
+  "MobileHeaderNavMenuButton": {
+    "closeA11yLabel": "Close navigation",
+    "openA11yLabel": "Open navigation"
+  },
+  "NoResultsIllustrationAndMessage": {
+    "message": "No results"
+  },
+  "OverallRatings": {
+    "buttonText": "Write a review",
+    "categoryRating": "Category Ratings",
+    "overallRating": "Overall Ratings"
+  },
+  "PageMeta": {
+    "pageTitleAndSiteTitle": "{pageTitle}\u2009\u2014\u2009{siteTitle}",
+    "siteDescription": ""
+  },
+  "PlatformSelect": {
+    "a11yLabel": "Platform: {platformName}"
+  },
+  "RedemptionOverlay": {
+    "messageHtml": "This is your unique pin code. Please reach out to Paskoocheh team to redeem your points by sending this unique pin code and redemption method via email to <a href='mailto:{rewardEmailUrl}'>{rewardEmail}</a>",
+    "pinCode": "Pin code",
+    "understand": "Understand"
+  },
+  "ResetPasswordPage": {
+    "confirmation": "Your password has been reset",
+    "pageDescription": "Reset Password Page",
+    "passwordLabel": "Password",
+    "reenterPasswordLabel": "Confirm Password",
+    "title": "Reset Password",
+    "resetPasswordHeading": "Reset Password"
+  },
+  "ResetPasswordRequestPage": {
+    "confirmation": "Message Submitted",
+    "pageDescription": "Reset Password Request Page",
+    "title": "Reset Password Request",
+    "resetPasswordDescription": "Enter your email and we'll send you a link to reset your password",
+    "resetPasswordHeading": "Forgot Password?"
+  },
+  "RewardsPageContent": {
+    "dashboard": "Dashboard",
+    "myReview": "My Review",
+    "pageDescription": "Rewards Page",
+    "pageTitle": "Rewards Page",
+    "points": "Points",
+    "records": "Records",
+    "redemption": "Redemption",
+    "shareYourReferral": "Share your referral link",
+    "yourPointsBalance": "Your Points Balance",
+    "weeklyChallenge": "Weekly Challenge"
+  },
+  "RewardsReferralLink": {
+    "copyButtonA11yLabel": "Copy referral link",
+    "copyFailTooltip": "Couldn’t copy",
+    "copySuccessTooltip": "Copied!"
+  },
+  "RewardsReview": {
+    "notYetReviewed": "Not yet reviewed",
+    "previouslyReviewed": "Previously Reviewed"
+  },
+  "RewardsWeeklyChallenge": {
+    "completed": {
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "heading": "You've completed the challenge this week"
+    },
+    "notYetCompleted": {
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "heading": "Are you ready for the weekly challenge"
+    },
+    "earnedPoints": {
+      "description": "See you in the next weekly challenge",
+      "headingPrefix": "Well done! You've earned",
+      "headingPointsText": " points",
+      "headingSuffix": "for getting all the answers right!"
+    },
+    "notEarnedPoints": {
+      "description": "Oops! Not all answers were correct this time.",
+      "heading": "Let's try again in the next weekly challenge."
+    }
+  },
+  "Search": {
+    "desktop": "Desktop",
+    "inputPlaceholder": "Search apps here",
+    "mobile": "Mobile",
+    "submitButtonAriaLabel": "Submit search query",
+    "web": "Web"
+  },
+  "SearchResultsPage": {
+    "pageDescription": "Search Results Page",
+    "title": "Results for \u201C\u200E{searchQuery}\u201D\u200E",
+    "results": "{count} results"
+  },
+  "SignInPage": {
+    "confirmation": "Login successful",
+    "forgotPassword": "Forgot password?",
+    "pageDescription": "Sign In page",
+    "passwordLabel": "Password",
+    "signUpLink": "Sign up",
+    "signUpText": "Don't have an account? ",
+    "submitButton": "Sign in",
+    "title": "Sign In",
+    "usernameLabel": "User Name"
+  },
+  "StarRatings": {
+    "setRatingAriaLabel": "Set rating to {rating}",
+    "unsetRatingAriaLabel": "Unset rating"
+  },
+  "WriteYourMessagePage": {
+    "pageDescription": "Write your Message",
+    "pageTitle": "Write your Message",
+    "writeYourMessageHeading": "Write your Message"
+  },
+  "shared": {
+    "a11yAnnouncements": {
+      "loadingNewItemsComplete": "Loaded {count} items",
+      "loadingNewItemsStarted": "Loading new items"
+    },
+    "all": "All",
+    "button": {
+      "more": "More",
+      "resetPassword": "Reset Password",
+      "send": "Send",
+      "submit": "Submit",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More",
+      "next": "Next",
+      "notEnoughPoints": "Not Enough Points",
+      "redeem": "Redeem",
+      "goToHomePage": "Go to HomePage",
+      "signIn": "Sign In"
+    },
+    "dashboard": {
+      "errorMessages": {
+        "default": "Couldn’t retrieve data. This may be a problem on our end — please refresh or try again later!"
+      }
+    },
+    "dialog": {
+      "a11yCloseButton": "Close"
+    },
+    "downloadNow": "Download now",
+    "errorMessages": {
+      "videoError": "Your browser does not support the video tag.",
+      "networkError": "Network error. Please try again later!"
+    },
+    "form": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email Address",
+      "errorMessageGeneric": "Error while sending message. Please try again.",
+      "errorMessages": {
+        "network": "Couldn’t submit. Please check your internet connection.",
+        "unknown": "Couldn’t submit due to server error."
+      },
+      "messageLabel": "Message",
+      "messagePlaceholder": "Write your message here",
+      "submitButton": "Submit",
+      "titleLabel": "Title",
+      "titlePlaceholder": "Add a headline"
+    },
+    "googleDownloadButton": "Get it on GooglePlay",
+    "learnMore": "Learn More",
+    "loadMoreLinkText": "Load more",
+    "navLinks": {
+      "about": "About us",
+      "account": {
+        "accountSettings": "Edit Profile",
+        "logOut": "Logout",
+        "signInOrRegister": "Sign In / Register"
+      },
+      "app": "App",
+      "blog": "Blog",
+      "rewards": "Rewards"
+    },
+    "noJsMessage": "This page requires a modern browser (e.g. Google Chrome, Firefox, Microsoft Edge, Samsung Internet, or Safari), and for JavaScript to be enabled in your browser.",
+    "operatingSystemsNames": {
+      "android": "Android"
+    },
+    "readMore": "Read More",
+    "seeMore": "See More",
+    "siteTitle": "Paskoocheh",
+    "skipToMainContent": "Skip to main content",
+    "socialMediaPlatformNames": {
+      "email": "Email",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "twitter": "Twitter"
+    },
+    "socialMediaUsernames": {
+      "email": "",
+      "facebook": "BiaPaskoocheh",
+      "instagram": "paskoocheh",
+      "telegram": "paskoocheh",
+      "twitter": "PasKoocheh"
+    }
+  },
+  "WriteAReview": {
+    "categoryRatingsHeading": "Category Ratings:",
+    "overallRatingHeading": "Over Ratings",
+    "speedReliabilityLabel": "Speed & Reliability:"
+  },
+  "WriteAReviewPage": {
+    "description": "Write A Review description",
+    "title": "Write A Review"
+  }
+}

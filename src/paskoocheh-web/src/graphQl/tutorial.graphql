@@ -1,0 +1,10 @@
+fragment Tutorial on TutorialNode {
+  id
+  pk
+  lastModified
+  language
+  video
+  videoLink
+  title
+  order
+}

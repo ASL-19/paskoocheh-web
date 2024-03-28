@@ -1,0 +1,131 @@
+{
+  "cSpell.enableFiletypes": [
+    "shellscript"
+  ],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode",
+    "src/strings/stringsFa.json"
+  ],
+  "cSpell.spellCheckOnlyWorkspaceFiles": true,
+  "cSpell.words": [
+    "anonymize",
+    "appstore",
+    "ariakit",
+    "arrayconnection",
+    "beepass",
+    "behaviour",
+    "cicd",
+    "codegen",
+    "constate",
+    "contenteditable",
+    "crossorigin",
+    "dedupe",
+    "divs",
+    "DOWNVOTE",
+    "downvotes",
+    "Embedder",
+    "envalid",
+    "esnext",
+    "etag",
+    "etags",
+    "favicons",
+    "gtag",
+    "iframes",
+    "KHTML",
+    "knip",
+    "listitem",
+    "maxage",
+    "minmax",
+    "mizdra",
+    "mockuser",
+    "msapplication",
+    "nomodule",
+    "noninteractive",
+    "nosniff",
+    "NOVOTE",
+    "nowrap",
+    "numchild",
+    "opensource",
+    "Paskoocheh",
+    "prefetch",
+    "Roboto",
+    "rushstack",
+    "tabindex",
+    "testid",
+    "testuser",
+    "tooltype",
+    "transpiled",
+    "unoptimized",
+    "UPVOTE",
+    "upvotes",
+    "usememo",
+    "Webp",
+    "woff",
+    "yalc"
+  ],
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "files.associations": {
+    ".env.*": "shellscript",
+    "Dockerfile*": "dockerfile"
+  },
+  "files.exclude": {
+    ".next": true,
+    ".next-test": true,
+    ".packagehash": true,
+    ".previousEnableMockGraphqlSdkValue": true,
+    ".swc": true,
+    "tsconfig.tsbuildinfo": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "jest.runMode": "on-demand",
+  "jest.jestCommandLine": "npm run jest --",
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.toc.levels": "2..6",
+  "material-icon-theme.files.associations": {
+    "*.jest.test.ts": "test-jsx",
+    "*.jest.test.tsx": "test-jsx",
+    "*.playwright.test.ts": "test-ts"
+  },
+  "material-icon-theme.languages.associations": {
+    "dockerfile": "docker"
+  },
+  "prettier.configPath": "prettier.config.js",
+  "redhat.telemetry.enabled": false,
+  "rewrap.reformat": true,
+  "rewrap.wrappingColumn": 80,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/*.csv": true,
+    "src/server/": true,
+    "package-lock.json": true,
+    "yarn.lock/": true
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifierEnding": "minimal",
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[graphql][javascript][json][jsonc][typescript][typescriptreact][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4
+  },
+  "testing.openTesting": "neverOpen"
+}

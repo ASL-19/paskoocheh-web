@@ -1,0 +1,24 @@
+fragment MinimalUser on MinimalUserNode {
+  id
+  username
+  email
+  pin
+  referralSlug
+  pointsBalance
+  rewardsRecords(first: 10) {
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...RewardRecord
+      }
+    }
+  }
+}
+
+query getMe {
+  me {
+    ...MinimalUser
+  }
+}

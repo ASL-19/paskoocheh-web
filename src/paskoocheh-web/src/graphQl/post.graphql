@@ -1,0 +1,64 @@
+fragment PostBody on PostBody {
+  ...CaptionedImageBlock
+  ...CollapsibleBlock
+  ...DocumentBlock
+  ...MarkdownBlock
+  ...TextBlock
+}
+
+fragment PostPreview on PostNode {
+  __typename
+  id
+  featuredImage {
+    ...PskCaptionedImage
+  }
+  published
+  readTime
+  searchDescription
+  seoTitle
+  slug
+  summary
+  synopsis
+  title
+  topics {
+    ...Topic
+  }
+}
+
+fragment Post on PostNode {
+  ...PostPreview
+  body {
+    ...PostBody
+  }
+}
+
+query getPostPreviews(
+  $count: Int
+  $localeCode: String!
+  $orderBy: [String]
+  $topics: [String]
+  $offset: Int
+) {
+  posts(
+    first: $count
+    locale: $localeCode
+    orderBy: $orderBy
+    topics: $topics
+    offset: $offset
+  ) {
+    pageInfo {
+      hasNextPage
+    }
+    edges {
+      node {
+        ...PostPreview
+      }
+    }
+  }
+}
+
+query getPost($localeCode: String!, $slug: String!) {
+  post(locale: $localeCode, slug: $slug) {
+    ...Post
+  }
+}

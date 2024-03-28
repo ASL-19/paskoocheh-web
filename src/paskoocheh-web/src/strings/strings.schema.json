@@ -1,0 +1,2327 @@
+{
+  "$ref": "#/definitions/Strings",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "A11yShortcutPresetStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "skipToNavigation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "skipToNavigation"
+      ],
+      "type": "object"
+    },
+    "AccessDeniedStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "buttonText": {
+          "description": "Button text notifies that it navigates a user to a \"Sign in\" page",
+          "type": "string"
+        },
+        "text": {
+          "description": "\"Sign in to enjoy more\"\n\nText that appears if user is not singed in",
+          "type": "string"
+        }
+      },
+      "required": [
+        "buttonText",
+        "text"
+      ],
+      "type": "object"
+    },
+    "AccessErrorMessageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "headingText": {
+          "description": "Error message that appears if Certificate Page has failed to load",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headingText"
+      ],
+      "type": "object"
+    },
+    "AccountSettingsConfirmationPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "pageDescription": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pageDescription",
+        "pageTitle"
+      ],
+      "type": "object"
+    },
+    "AccountSettingsPageContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "buttonDelete": {
+          "type": "string"
+        },
+        "buttonLink": {
+          "type": "string"
+        },
+        "buttonUpdate": {
+          "type": "string"
+        },
+        "emailLabel": {
+          "type": "string"
+        },
+        "oldPassword": {
+          "type": "string"
+        },
+        "pageDescription": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "passwordLabel": {
+          "type": "string"
+        },
+        "reenterPasswordLabel": {
+          "type": "string"
+        },
+        "signIn": {
+          "type": "string"
+        },
+        "updatedConfirmationText": {
+          "type": "string"
+        },
+        "usernameLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "buttonDelete",
+        "buttonLink",
+        "buttonUpdate",
+        "emailLabel",
+        "oldPassword",
+        "pageDescription",
+        "pageTitle",
+        "passwordLabel",
+        "reenterPasswordLabel",
+        "signIn",
+        "updatedConfirmationText",
+        "usernameLabel"
+      ],
+      "type": "object"
+    },
+    "ActivateAccountPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "generic": {
+          "additionalProperties": false,
+          "description": "There are two versions of the messages.",
+          "properties": {
+            "failed": {
+              "additionalProperties": false,
+              "properties": {
+                "bodyText": {
+                  "type": "string"
+                },
+                "titleText": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "bodyText",
+                "titleText"
+              ],
+              "type": "object"
+            },
+            "success": {
+              "additionalProperties": false,
+              "properties": {
+                "bodyText": {
+                  "type": "string"
+                },
+                "titleText": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "bodyText",
+                "titleText"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "failed",
+            "success"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "generic"
+      ],
+      "type": "object"
+    },
+    "AppAdditionalInfoListItemStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "developerInformation": {
+          "description": "Text for developer info",
+          "type": "string"
+        },
+        "productDescription": {
+          "description": "Text for product description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "developerInformation",
+        "productDescription"
+      ],
+      "type": "object"
+    },
+    "AppAdditionalInfoProductDetailsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "checksum": {
+          "description": "Text for checksum",
+          "type": "string"
+        },
+        "latestUpdate": {
+          "description": "Text for latest Update date",
+          "type": "string"
+        },
+        "productDetails": {
+          "description": "Text for product details title",
+          "type": "string"
+        },
+        "releaseDate": {
+          "description": "Text for release date",
+          "type": "string"
+        },
+        "size": {
+          "description": "Text for size",
+          "type": "string"
+        },
+        "version": {
+          "description": "Text for version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checksum",
+        "latestUpdate",
+        "productDetails",
+        "releaseDate",
+        "size",
+        "version"
+      ],
+      "type": "object"
+    },
+    "AppAndroidInstallButtonStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "getItOn": {
+          "description": "Text for get it on Paskoocheh Button",
+          "type": "string"
+        },
+        "infoExplanation": {
+          "description": "Text for info tooltip",
+          "type": "string"
+        }
+      },
+      "required": [
+        "getItOn",
+        "infoExplanation"
+      ],
+      "type": "object"
+    },
+    "AppDetailsSectionStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "headings": {
+          "additionalProperties": false,
+          "properties": {
+            "additionalInfo": {
+              "type": "string"
+            },
+            "faq": {
+              "type": "string"
+            },
+            "howToUse": {
+              "type": "string"
+            },
+            "ratingsAndReviews": {
+              "type": "string"
+            },
+            "teamAnalysis": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "additionalInfo",
+            "faq",
+            "howToUse",
+            "ratingsAndReviews",
+            "teamAnalysis"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "headings"
+      ],
+      "type": "object"
+    },
+    "AppFaqsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "noFaq": {
+          "description": "Text for No Faq",
+          "type": "string"
+        }
+      },
+      "required": [
+        "noFaq"
+      ],
+      "type": "object"
+    },
+    "AppHowToUseStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "guide": {
+          "type": "string"
+        },
+        "howToUse": {
+          "type": "string"
+        },
+        "introduction": {
+          "type": "string"
+        },
+        "noGuideOrTutorials": {
+          "type": "string"
+        },
+        "tutorials": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guide",
+        "howToUse",
+        "introduction",
+        "noGuideOrTutorials",
+        "tutorials"
+      ],
+      "type": "object"
+    },
+    "AppInstallOptionsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "appleAppStore": {
+          "description": "Text for option Apple App Store",
+          "type": "string"
+        },
+        "directDownload": {
+          "description": "Text for option Direct Download",
+          "type": "string"
+        },
+        "downloadFromChromeWebStore": {
+          "description": "Text for option Download from Chrome web store",
+          "type": "string"
+        },
+        "downloadFromEmail": {
+          "description": "Text for option Download from email",
+          "type": "string"
+        },
+        "downloadFromFireFoxWebStore": {
+          "description": "Text for option Download from firefox web store",
+          "type": "string"
+        },
+        "downloadFromMicrosoftStore": {
+          "description": "Text for option Download from microsoft store",
+          "type": "string"
+        },
+        "downloadFromWebsite": {
+          "description": "Text for option Download from website",
+          "type": "string"
+        },
+        "googlePlay": {
+          "description": "Text for option Google Play",
+          "type": "string"
+        }
+      },
+      "required": [
+        "appleAppStore",
+        "directDownload",
+        "downloadFromChromeWebStore",
+        "downloadFromEmail",
+        "downloadFromFireFoxWebStore",
+        "downloadFromMicrosoftStore",
+        "downloadFromWebsite",
+        "googlePlay"
+      ],
+      "type": "object"
+    },
+    "AppNavLinkListStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "a11yLabel"
+      ],
+      "type": "object"
+    },
+    "AppOverviewSectionStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "android": {
+          "type": "string"
+        },
+        "availableOptions": {
+          "type": "string"
+        },
+        "buttonText": {
+          "type": "string"
+        },
+        "download": {
+          "type": "string"
+        },
+        "operatingSystem": {
+          "type": "string"
+        },
+        "reviews": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "android",
+        "availableOptions",
+        "buttonText",
+        "download",
+        "operatingSystem",
+        "reviews"
+      ],
+      "type": "object"
+    },
+    "AppShareAndSupportLinksStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "shareDialogA11yHeading": {
+          "type": "string"
+        },
+        "supportDialogHeading": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shareDialogA11yHeading",
+        "supportDialogHeading"
+      ],
+      "type": "object"
+    },
+    "AppStatsDetailsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "a11yLabel"
+      ],
+      "type": "object"
+    },
+    "AppTeamAnalysisStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "noTeamAnalysis": {
+          "description": "Text for No team Analysis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "noTeamAnalysis"
+      ],
+      "type": "object"
+    },
+    "AppTeamReviewsContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "cons": {
+          "type": "string"
+        },
+        "pros": {
+          "type": "string"
+        },
+        "reviews": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cons",
+        "pros",
+        "reviews"
+      ],
+      "type": "object"
+    },
+    "AppUsersReviewsContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "reviews": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviews"
+      ],
+      "type": "object"
+    },
+    "BlogPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "filter": {
+          "additionalProperties": false,
+          "description": "Texts for filter dropdown",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "popularity": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "label",
+            "popularity"
+          ],
+          "type": "object"
+        },
+        "pageDescription": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "filter",
+        "pageDescription",
+        "pageTitle"
+      ],
+      "type": "object"
+    },
+    "BlogPostContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "published": {
+          "description": "text for published date",
+          "type": "string"
+        },
+        "summary": {
+          "description": "Text for summary section title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "published",
+        "summary"
+      ],
+      "type": "object"
+    },
+    "CategoryNavListStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "a11yLabel"
+      ],
+      "type": "object"
+    },
+    "ClientSideErrorFallbackStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "title"
+      ],
+      "type": "object"
+    },
+    "ContactPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "contacts": {
+          "additionalProperties": false,
+          "description": "Text for contacts box",
+          "properties": {
+            "email": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "urlLabel": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "name",
+                "urlLabel"
+              ],
+              "type": "object"
+            },
+            "telegram": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "urlLabel": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "name",
+                "urlLabel"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "email",
+            "telegram"
+          ],
+          "type": "object"
+        },
+        "pageDescription": {
+          "description": "Page SEO description.",
+          "type": "string"
+        },
+        "title": {
+          "description": "Title (used for heading and page title).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contacts",
+        "pageDescription",
+        "title"
+      ],
+      "type": "object"
+    },
+    "CreateAnAccountPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "confirmation": {
+          "type": "string"
+        },
+        "emailLabel": {
+          "type": "string"
+        },
+        "pageDescription": {
+          "type": "string"
+        },
+        "passwordLabel": {
+          "type": "string"
+        },
+        "reenterPasswordLabel": {
+          "type": "string"
+        },
+        "signInLink": {
+          "type": "string"
+        },
+        "signInText": {
+          "type": "string"
+        },
+        "submitButton": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "usernameLabel": {
+          "type": "string"
+        },
+        "youAlreadySignedIn": {
+          "description": "Text for You’re already signed in message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation",
+        "emailLabel",
+        "pageDescription",
+        "passwordLabel",
+        "reenterPasswordLabel",
+        "signInLink",
+        "signInText",
+        "submitButton",
+        "title",
+        "usernameLabel",
+        "youAlreadySignedIn"
+      ],
+      "type": "object"
+    },
+    "CreateAnAccountReferralMessageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "description": "Text for user that create account from referral",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "object"
+    },
+    "DeleteAccountOverlayStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "cancelButton": {
+          "type": "string"
+        },
+        "confirmationText": {
+          "type": "string"
+        },
+        "deleteButton": {
+          "type": "string"
+        },
+        "deleteConfirmationText": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "enterPassword": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cancelButton",
+        "confirmationText",
+        "deleteButton",
+        "deleteConfirmationText",
+        "description",
+        "enterPassword",
+        "title"
+      ],
+      "type": "object"
+    },
+    "ErrorPageContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "backToHomeButton": {
+          "type": "string"
+        },
+        "generic": {
+          "additionalProperties": false,
+          "description": "These are the default versions of the error messages. In some cases they’re overridden with more specific messages.",
+          "properties": {
+            "404": {
+              "additionalProperties": false,
+              "description": "Page not found error.\n\nDisplayed if a non-existent URL is loaded.",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "title"
+              ],
+              "type": "object"
+            },
+            "500": {
+              "additionalProperties": false,
+              "description": "Server error.\n\nUsed if an existent URL is loaded, but something goes wrong while loading it (e.g. the backend is down)",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "title"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "404",
+            "500"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "backToHomeButton",
+        "generic"
+      ],
+      "type": "object"
+    },
+    "FooterNavStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yLabel": {
+          "description": "Accessibility label for two footer link lists.",
+          "type": "string"
+        },
+        "contactUs": {
+          "additionalProperties": false,
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "heading": {
+              "type": "string"
+            },
+            "telegram": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "heading",
+            "telegram"
+          ],
+          "type": "object"
+        },
+        "moreInfo": {
+          "additionalProperties": false,
+          "properties": {
+            "aboutUs": {
+              "type": "string"
+            },
+            "heading": {
+              "type": "string"
+            },
+            "privacyPolicy": {
+              "type": "string"
+            },
+            "termsAndConditions": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "aboutUs",
+            "heading",
+            "privacyPolicy",
+            "termsAndConditions"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "a11yLabel",
+        "contactUs",
+        "moreInfo"
+      ],
+      "type": "object"
+    },
+    "FooterNewsletterSignUpStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "description": "Text description to subscribe for newsletters",
+          "type": "string"
+        },
+        "email": {
+          "description": "Placeholder text that describes the expected value of a input field",
+          "type": "string"
+        },
+        "submitButton": {
+          "description": "Button text: \"Submit\" button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "email",
+        "submitButton"
+      ],
+      "type": "object"
+    },
+    "FooterStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "findUs": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "findUs"
+      ],
+      "type": "object"
+    },
+    "HeaderStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "userMenuLabel": {
+          "description": "Label for user icon when user is signed in. When clicked will open the user menu.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "userMenuLabel"
+      ],
+      "type": "object"
+    },
+    "HomePageEditorsChoiceSegmentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "heading"
+      ],
+      "type": "object"
+    },
+    "HomePagePopularAppsSegmentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "headingPrefix": {
+          "description": "Text that appears before name of active category in popular apps heading.\n\nIn English, this is the \"Popular\" segment of:\n\n\"[Popular] Entertainment Apps\"",
+          "type": "string"
+        },
+        "headingSuffix": {
+          "description": "Text that appears after the name of active category in popular apps heading.\n\nIn English, this is the \"Apps\" segment of:\n\n\"Popular Entertainment [Apps]\"",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headingPrefix",
+        "headingSuffix"
+      ],
+      "type": "object"
+    },
+    "HomePageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "bonusSectionDescription": {
+          "type": "string"
+        },
+        "bonusSectionTitle": {
+          "type": "string"
+        },
+        "heroDescription": {
+          "type": "string"
+        },
+        "heroTitle": {
+          "type": "string"
+        },
+        "pageDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bonusSectionDescription",
+        "bonusSectionTitle",
+        "heroDescription",
+        "heroTitle",
+        "pageDescription"
+      ],
+      "type": "object"
+    },
+    "HowPointsWorkListItemInfoText": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "heading"
+      ],
+      "type": "object"
+    },
+    "HowPointsWorkPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "lists": {
+          "additionalProperties": false,
+          "properties": {
+            "earnPoints": {
+              "additionalProperties": false,
+              "description": "\"Earn points\" list.",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "rateAndReviewApps": {
+                      "$ref": "#/definitions/HowPointsWorkListItemInfoText"
+                    },
+                    "referFriends": {
+                      "$ref": "#/definitions/HowPointsWorkListItemInfoText"
+                    },
+                    "updateApps": {
+                      "$ref": "#/definitions/HowPointsWorkListItemInfoText"
+                    },
+                    "weeklyChallenge": {
+                      "$ref": "#/definitions/HowPointsWorkListItemInfoText"
+                    }
+                  },
+                  "required": [
+                    "rateAndReviewApps",
+                    "referFriends",
+                    "updateApps",
+                    "weeklyChallenge"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "heading",
+                "items"
+              ],
+              "type": "object"
+            },
+            "redeemPoints": {
+              "additionalProperties": false,
+              "description": "\"Redeem points\" list.",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "redeemPaidVpnApps": {
+                      "$ref": "#/definitions/HowPointsWorkListItemInfoText"
+                    }
+                  },
+                  "required": [
+                    "redeemPaidVpnApps"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "heading",
+                "items"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "earnPoints",
+            "redeemPoints"
+          ],
+          "type": "object"
+        },
+        "pageDescription": {
+          "description": "Page SEO description.",
+          "type": "string"
+        },
+        "pageTitle": {
+          "description": "Page title.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lists",
+        "pageDescription",
+        "pageTitle"
+      ],
+      "type": "object"
+    },
+    "HowPointsWorkStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "description": "Text for How points work description",
+          "type": "string"
+        },
+        "heading": {
+          "description": "Text for How points work heading",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "heading"
+      ],
+      "type": "object"
+    },
+    "IndexPageLoadingUiStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorReloadButtonText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "errorMessage",
+        "errorReloadButtonText"
+      ],
+      "type": "object"
+    },
+    "MobileHeaderNavDropdownStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yTitle": {
+          "description": "Accessibility title for the mobile navigation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "a11yTitle"
+      ],
+      "type": "object"
+    },
+    "MobileHeaderNavMenuButtonStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "closeA11yLabel": {
+          "description": "Label text for mobile navigation menu button for accessibility purposes",
+          "type": "string"
+        },
+        "openA11yLabel": {
+          "description": "Label text for mobile navigation menu button for accessibility purposes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "closeA11yLabel",
+        "openA11yLabel"
+      ],
+      "type": "object"
+    },
+    "NoResultsIllustrationAndMessageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "type": "object"
+    },
+    "OverallRatingsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "buttonText": {
+          "type": "string"
+        },
+        "categoryRating": {
+          "type": "string"
+        },
+        "overallRating": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "buttonText",
+        "categoryRating",
+        "overallRating"
+      ],
+      "type": "object"
+    },
+    "PageMetaStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "pageTitleAndSiteTitle": {
+          "description": "Page title + site title (e.g. About us — Paskoocheh).\n\nUsed if the page has a title.",
+          "type": "string"
+        },
+        "siteDescription": {
+          "description": "Description of entire site.\n\nUsed for pages that don’t have a dedicated description, and for the homepage.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pageTitleAndSiteTitle",
+        "siteDescription"
+      ],
+      "type": "object"
+    },
+    "PlatformSelectStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yLabel": {
+          "description": "Menu button accessibility label, to give the user context for what the select is for.\n\n\\{platformName\\} is replaced by the platform name.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "a11yLabel"
+      ],
+      "type": "object"
+    },
+    "RedemptionOverlayStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "messageHtml": {
+          "description": "Text for message (includes HTML for email link).\n\n- \\{rewardEmail\\} is replaced by   NEXT_PUBLIC_REWARD_REDEMPTION_EMAIL_ADDRESS",
+          "type": "string"
+        },
+        "pinCode": {
+          "description": "Text for pin code",
+          "type": "string"
+        },
+        "understand": {
+          "description": "Text for understand",
+          "type": "string"
+        }
+      },
+      "required": [
+        "messageHtml",
+        "pinCode",
+        "understand"
+      ],
+      "type": "object"
+    },
+    "ResetPasswordPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "confirmation": {
+          "description": "Confirmation message after successful submission.",
+          "type": "string"
+        },
+        "pageDescription": {
+          "description": "Page SEO description.",
+          "type": "string"
+        },
+        "passwordLabel": {
+          "description": "Label for Password field.",
+          "type": "string"
+        },
+        "reenterPasswordLabel": {
+          "description": "Label for Confirm Password field.",
+          "type": "string"
+        },
+        "resetPasswordHeading": {
+          "description": "Text for ResetPassword Heading",
+          "type": "string"
+        },
+        "title": {
+          "description": "Title (used for heading and page title).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation",
+        "pageDescription",
+        "passwordLabel",
+        "reenterPasswordLabel",
+        "resetPasswordHeading",
+        "title"
+      ],
+      "type": "object"
+    },
+    "ResetPasswordRequestPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "confirmation": {
+          "description": "Confirmation message after successful submission.",
+          "type": "string"
+        },
+        "pageDescription": {
+          "description": "Page SEO description.",
+          "type": "string"
+        },
+        "resetPasswordDescription": {
+          "description": "Text for ResetPassword Description",
+          "type": "string"
+        },
+        "resetPasswordHeading": {
+          "description": "Text for ResetPassword Heading",
+          "type": "string"
+        },
+        "title": {
+          "description": "Title (used for heading and page title).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation",
+        "pageDescription",
+        "resetPasswordDescription",
+        "resetPasswordHeading",
+        "title"
+      ],
+      "type": "object"
+    },
+    "RewardsPageContentStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "dashboard": {
+          "description": "Dashboard heading",
+          "type": "string"
+        },
+        "myReview": {
+          "description": "MyReview heading",
+          "type": "string"
+        },
+        "pageDescription": {
+          "description": "Page SEO description",
+          "type": "string"
+        },
+        "pageTitle": {
+          "description": "Page SEO title.",
+          "type": "string"
+        },
+        "points": {
+          "description": "text for points",
+          "type": "string"
+        },
+        "records": {
+          "description": "Records heading",
+          "type": "string"
+        },
+        "redemption": {
+          "description": "Redemption heading",
+          "type": "string"
+        },
+        "shareYourReferral": {
+          "description": "Share you referral link heading",
+          "type": "string"
+        },
+        "weeklyChallenge": {
+          "description": "weekly challenge heading",
+          "type": "string"
+        },
+        "yourPointsBalance": {
+          "description": "Your Points Balance heading",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dashboard",
+        "myReview",
+        "pageDescription",
+        "pageTitle",
+        "points",
+        "records",
+        "redemption",
+        "shareYourReferral",
+        "weeklyChallenge",
+        "yourPointsBalance"
+      ],
+      "type": "object"
+    },
+    "RewardsReferralLinkStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "copyButtonA11yLabel": {
+          "type": "string"
+        },
+        "copyFailTooltip": {
+          "type": "string"
+        },
+        "copySuccessTooltip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "copyButtonA11yLabel",
+        "copyFailTooltip",
+        "copySuccessTooltip"
+      ],
+      "type": "object"
+    },
+    "RewardsReviewStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "notYetReviewed": {
+          "description": "Text for Not yet Reviewed",
+          "type": "string"
+        },
+        "previouslyReviewed": {
+          "description": "Text for previously Reviewed",
+          "type": "string"
+        }
+      },
+      "required": [
+        "notYetReviewed",
+        "previouslyReviewed"
+      ],
+      "type": "object"
+    },
+    "RewardsWeeklyChallengeStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "completed": {
+          "additionalProperties": false,
+          "description": "Text for completed weekly challenge",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "heading": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "heading"
+          ],
+          "type": "object"
+        },
+        "earnedPoints": {
+          "additionalProperties": false,
+          "description": "Text for weekly challenge result with earned points",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "headingPointsText": {
+              "type": "string"
+            },
+            "headingPrefix": {
+              "type": "string"
+            },
+            "headingSuffix": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "headingPointsText",
+            "headingPrefix",
+            "headingSuffix"
+          ],
+          "type": "object"
+        },
+        "notEarnedPoints": {
+          "additionalProperties": false,
+          "description": "Text for weekly challenge result with no earned points",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "heading": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "heading"
+          ],
+          "type": "object"
+        },
+        "notYetCompleted": {
+          "additionalProperties": false,
+          "description": "Text for not yet completed weekly challenge",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "heading": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "heading"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "completed",
+        "earnedPoints",
+        "notEarnedPoints",
+        "notYetCompleted"
+      ],
+      "type": "object"
+    },
+    "SearchResultsPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "pageDescription": {
+          "type": "string"
+        },
+        "results": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pageDescription",
+        "results",
+        "title"
+      ],
+      "type": "object"
+    },
+    "SearchStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "desktop": {
+          "type": "string"
+        },
+        "inputPlaceholder": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "submitButtonAriaLabel": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "desktop",
+        "inputPlaceholder",
+        "mobile",
+        "submitButtonAriaLabel",
+        "web"
+      ],
+      "type": "object"
+    },
+    "SharedStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "a11yAnnouncements": {
+          "additionalProperties": false,
+          "description": "Accessibility announcements. Used when loading new items in the listing pages.",
+          "properties": {
+            "loadingNewItemsComplete": {
+              "description": "Read by screen reader when finished loading new list items.\n\n\"\\{count\\}\" is replaced by the number of new items loaded.",
+              "type": "string"
+            },
+            "loadingNewItemsStarted": {
+              "description": "Read by screen reader when beginning to load new list items.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "loadingNewItemsComplete",
+            "loadingNewItemsStarted"
+          ],
+          "type": "object"
+        },
+        "all": {
+          "description": "\"All\" string used in various places (e.g. category/topic nav lists).",
+          "type": "string"
+        },
+        "button": {
+          "additionalProperties": false,
+          "description": "Shared strings for button",
+          "properties": {
+            "getStarted": {
+              "type": "string"
+            },
+            "goToHomePage": {
+              "type": "string"
+            },
+            "learnMore": {
+              "type": "string"
+            },
+            "more": {
+              "type": "string"
+            },
+            "next": {
+              "type": "string"
+            },
+            "notEnoughPoints": {
+              "type": "string"
+            },
+            "redeem": {
+              "type": "string"
+            },
+            "resetPassword": {
+              "type": "string"
+            },
+            "send": {
+              "type": "string"
+            },
+            "signIn": {
+              "type": "string"
+            },
+            "submit": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "getStarted",
+            "goToHomePage",
+            "learnMore",
+            "more",
+            "next",
+            "notEnoughPoints",
+            "redeem",
+            "resetPassword",
+            "send",
+            "signIn",
+            "submit"
+          ],
+          "type": "object"
+        },
+        "dashboard": {
+          "additionalProperties": false,
+          "description": "Shared strings for rewards dashboard",
+          "properties": {
+            "errorMessages": {
+              "additionalProperties": false,
+              "properties": {
+                "default": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "default"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "errorMessages"
+          ],
+          "type": "object"
+        },
+        "dialog": {
+          "additionalProperties": false,
+          "description": "Shared strings for dialogs/menus",
+          "properties": {
+            "a11yCloseButton": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "a11yCloseButton"
+          ],
+          "type": "object"
+        },
+        "downloadNow": {
+          "description": "\"Download now\" button text",
+          "type": "string"
+        },
+        "errorMessages": {
+          "additionalProperties": false,
+          "properties": {
+            "networkError": {
+              "type": "string"
+            },
+            "videoError": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "networkError",
+            "videoError"
+          ],
+          "type": "object"
+        },
+        "form": {
+          "additionalProperties": false,
+          "description": "Shared Text for forms",
+          "properties": {
+            "emailLabel": {
+              "type": "string"
+            },
+            "emailPlaceholder": {
+              "type": "string"
+            },
+            "errorMessageGeneric": {
+              "type": "string"
+            },
+            "errorMessages": {
+              "additionalProperties": false,
+              "properties": {
+                "network": {
+                  "description": "Displayed if form submission failed due to network error.",
+                  "type": "string"
+                },
+                "unknown": {
+                  "description": "Displayed if form submission failed due to unknown error.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "network",
+                "unknown"
+              ],
+              "type": "object"
+            },
+            "messageLabel": {
+              "type": "string"
+            },
+            "messagePlaceholder": {
+              "type": "string"
+            },
+            "submitButton": {
+              "type": "string"
+            },
+            "titleLabel": {
+              "type": "string"
+            },
+            "titlePlaceholder": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "emailLabel",
+            "emailPlaceholder",
+            "errorMessageGeneric",
+            "errorMessages",
+            "messageLabel",
+            "messagePlaceholder",
+            "submitButton",
+            "titleLabel",
+            "titlePlaceholder"
+          ],
+          "type": "object"
+        },
+        "googleDownloadButton": {
+          "type": "string"
+        },
+        "learnMore": {
+          "description": "\"Learn more\" button text",
+          "type": "string"
+        },
+        "loadMoreLinkText": {
+          "type": "string"
+        },
+        "navLinks": {
+          "additionalProperties": false,
+          "description": "Nav links strings",
+          "properties": {
+            "about": {
+              "type": "string"
+            },
+            "account": {
+              "additionalProperties": false,
+              "properties": {
+                "accountSettings": {
+                  "type": "string"
+                },
+                "logOut": {
+                  "type": "string"
+                },
+                "signInOrRegister": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "accountSettings",
+                "logOut",
+                "signInOrRegister"
+              ],
+              "type": "object"
+            },
+            "app": {
+              "type": "string"
+            },
+            "blog": {
+              "type": "string"
+            },
+            "rewards": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "about",
+            "account",
+            "app",
+            "blog",
+            "rewards"
+          ],
+          "type": "object"
+        },
+        "noJsMessage": {
+          "description": "Message explaining why interactive features require JavaScript and a modern browser to work.\n\nDisplays if the user has disabled JavaScript, or if they’re using an older browser that doesn’t support the site’s JavaScript code.",
+          "type": "string"
+        },
+        "operatingSystemsNames": {
+          "additionalProperties": false,
+          "properties": {
+            "android": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "android"
+          ],
+          "type": "object"
+        },
+        "readMore": {
+          "description": "Shared string \"Read More\" button text.",
+          "type": "string"
+        },
+        "seeMore": {
+          "description": "Shared string \"See More\" button text.",
+          "type": "string"
+        },
+        "siteTitle": {
+          "description": "Site title (reused where appropriate).",
+          "type": "string"
+        },
+        "skipToMainContent": {
+          "description": "Skip to main content accessibility text. Used for hidden accessibility shortcuts.",
+          "type": "string"
+        },
+        "socialMediaPlatformNames": {
+          "additionalProperties": false,
+          "description": "Names of social media platforms.",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "facebook": {
+              "type": "string"
+            },
+            "instagram": {
+              "type": "string"
+            },
+            "telegram": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "facebook",
+            "instagram",
+            "telegram",
+            "twitter"
+          ],
+          "type": "object"
+        },
+        "socialMediaUsernames": {
+          "additionalProperties": false,
+          "description": "Paskoocheh social media usernames.",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "facebook": {
+              "type": "string"
+            },
+            "instagram": {
+              "type": "string"
+            },
+            "telegram": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "facebook",
+            "instagram",
+            "telegram",
+            "twitter"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "a11yAnnouncements",
+        "all",
+        "button",
+        "dashboard",
+        "dialog",
+        "downloadNow",
+        "errorMessages",
+        "form",
+        "googleDownloadButton",
+        "learnMore",
+        "loadMoreLinkText",
+        "navLinks",
+        "noJsMessage",
+        "operatingSystemsNames",
+        "readMore",
+        "seeMore",
+        "siteTitle",
+        "skipToMainContent",
+        "socialMediaPlatformNames",
+        "socialMediaUsernames"
+      ],
+      "type": "object"
+    },
+    "SignInPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "confirmation": {
+          "type": "string"
+        },
+        "forgotPassword": {
+          "type": "string"
+        },
+        "pageDescription": {
+          "type": "string"
+        },
+        "passwordLabel": {
+          "type": "string"
+        },
+        "signUpLink": {
+          "type": "string"
+        },
+        "signUpText": {
+          "type": "string"
+        },
+        "submitButton": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "usernameLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "confirmation",
+        "forgotPassword",
+        "pageDescription",
+        "passwordLabel",
+        "signUpLink",
+        "signUpText",
+        "submitButton",
+        "title",
+        "usernameLabel"
+      ],
+      "type": "object"
+    },
+    "StarRatingsStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "setRatingAriaLabel": {
+          "description": "Accessibility label for rating star when clicking a new rating.\n\n\\{rating\\} is replaced by the star’s rating number (1/2/3/4/5)",
+          "type": "string"
+        },
+        "unsetRatingAriaLabel": {
+          "description": "Accessibility label for rating star when clicking the current rating’s star to unset the rating.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "setRatingAriaLabel",
+        "unsetRatingAriaLabel"
+      ],
+      "type": "object"
+    },
+    "Strings": {
+      "additionalProperties": false,
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "A11yShortcutPreset": {
+          "$ref": "#/definitions/A11yShortcutPresetStrings",
+          "description": "Accessibility shortcut preset.\n\nThese accessibility shortcuts appear when using keyboard or screen reader navigation."
+        },
+        "AccessDenied": {
+          "$ref": "#/definitions/AccessDeniedStrings",
+          "description": "UserAccess - Access denied"
+        },
+        "AccessErrorMessage": {
+          "$ref": "#/definitions/AccessErrorMessageStrings",
+          "description": "UserAccess - AccessErrorMessage"
+        },
+        "AccountSettingsConfirmationPage": {
+          "$ref": "#/definitions/AccountSettingsConfirmationPageStrings",
+          "description": "AccountSettingsConfirmationPage"
+        },
+        "AccountSettingsPageContent": {
+          "$ref": "#/definitions/AccountSettingsPageContentStrings",
+          "description": "Account Setting Page Content"
+        },
+        "ActivateAccountPage": {
+          "$ref": "#/definitions/ActivateAccountPageStrings",
+          "description": "ActivateAccountPage"
+        },
+        "AppAdditionalInfoListItem": {
+          "$ref": "#/definitions/AppAdditionalInfoListItemStrings",
+          "description": "AppAdditionalInfoLIstItem"
+        },
+        "AppAdditionalInfoProductDetails": {
+          "$ref": "#/definitions/AppAdditionalInfoProductDetailsStrings",
+          "description": "AppAdditionalInfoProductDetails"
+        },
+        "AppAndroidInstallButton": {
+          "$ref": "#/definitions/AppAndroidInstallButtonStrings",
+          "description": "App detail page Get it on Paskoocheh Button"
+        },
+        "AppDetailsSection": {
+          "$ref": "#/definitions/AppDetailsSectionStrings",
+          "description": "App page tabbed details section."
+        },
+        "AppFaqs": {
+          "$ref": "#/definitions/AppFaqsStrings",
+          "description": "AppFaq"
+        },
+        "AppHowToUse": {
+          "$ref": "#/definitions/AppHowToUseStrings",
+          "description": "AppHowToUse component"
+        },
+        "AppInstallOptions": {
+          "$ref": "#/definitions/AppInstallOptionsStrings",
+          "description": "AppPage - AppInstallOptions"
+        },
+        "AppNavLinkList": {
+          "$ref": "#/definitions/AppNavLinkListStrings",
+          "description": "App page detail section links."
+        },
+        "AppOverviewSection": {
+          "$ref": "#/definitions/AppOverviewSectionStrings",
+          "description": "AppOverviewSection component"
+        },
+        "AppShareAndSupportLinks": {
+          "$ref": "#/definitions/AppShareAndSupportLinksStrings",
+          "description": "App page share and support links (at top corner)."
+        },
+        "AppStatsDetails": {
+          "$ref": "#/definitions/AppStatsDetailsStrings",
+          "description": "App page top stats area (containing review count, download count, supported platform version, etc.)."
+        },
+        "AppTeamAnalysis": {
+          "$ref": "#/definitions/AppTeamAnalysisStrings",
+          "description": "AppTeamAnalysis"
+        },
+        "AppTeamReviewsContent": {
+          "$ref": "#/definitions/AppTeamReviewsContentStrings",
+          "description": "AppTeamReviewsContent component"
+        },
+        "AppUsersReviewsContent": {
+          "$ref": "#/definitions/AppUsersReviewsContentStrings",
+          "description": "AppUsersReviewsContent component"
+        },
+        "BlogPage": {
+          "$ref": "#/definitions/BlogPageStrings",
+          "description": "Blog page."
+        },
+        "BlogPostContent": {
+          "$ref": "#/definitions/BlogPostContentStrings",
+          "description": "BlogPostPage BlogPostContent Section"
+        },
+        "CategoryNavList": {
+          "$ref": "#/definitions/CategoryNavListStrings",
+          "description": "Home page categories nav."
+        },
+        "ClientSideErrorFallback": {
+          "$ref": "#/definitions/ClientSideErrorFallbackStrings",
+          "description": "Error view that appears if there’s an unrecoverable error while the browser is rendering the page."
+        },
+        "ContactPage": {
+          "$ref": "#/definitions/ContactPageStrings",
+          "description": "Contact page."
+        },
+        "CreateAnAccountPage": {
+          "$ref": "#/definitions/CreateAnAccountPageStrings",
+          "description": "Create an account page."
+        },
+        "CreateAnAccountReferralMessage": {
+          "$ref": "#/definitions/CreateAnAccountReferralMessageStrings",
+          "description": "CreateAnAccountPage - CreateAnAccountReferralMessage"
+        },
+        "DeleteAccountOverlay": {
+          "$ref": "#/definitions/DeleteAccountOverlayStrings",
+          "description": "DeleteAccountOverlay component."
+        },
+        "ErrorPageContent": {
+          "$ref": "#/definitions/ErrorPageContentStrings",
+          "description": "Error page.\n\nAppears for non-existent pages, and when a page encounters an error."
+        },
+        "Footer": {
+          "$ref": "#/definitions/FooterStrings",
+          "description": "Footer component."
+        },
+        "FooterNav": {
+          "$ref": "#/definitions/FooterNavStrings",
+          "description": "Footer navigation links (“Contact Us” and “More Information”)."
+        },
+        "FooterNewsletterSignUp": {
+          "$ref": "#/definitions/FooterNewsletterSignUpStrings",
+          "description": "Newsletter SignUp component"
+        },
+        "Header": {
+          "$ref": "#/definitions/HeaderStrings",
+          "description": "Header component."
+        },
+        "HomePage": {
+          "$ref": "#/definitions/HomePageStrings",
+          "description": "Home page."
+        },
+        "HomePageEditorsChoiceSegment": {
+          "$ref": "#/definitions/HomePageEditorsChoiceSegmentStrings",
+          "description": "Home “Editor’s choice” section."
+        },
+        "HomePagePopularAppsSegment": {
+          "$ref": "#/definitions/HomePagePopularAppsSegmentStrings",
+          "description": "Home “Popular apps” section."
+        },
+        "HowPointsWork": {
+          "$ref": "#/definitions/HowPointsWorkStrings",
+          "description": "RewardsPage - HowPointsWork"
+        },
+        "HowPointsWorkPage": {
+          "$ref": "#/definitions/HowPointsWorkPageStrings",
+          "description": "HowPointsWorkPage"
+        },
+        "IndexPageLoadingUi": {
+          "$ref": "#/definitions/IndexPageLoadingUiStrings",
+          "description": "Index page “load more” link, loading indicator, and error messages."
+        },
+        "MobileHeaderNavDropdown": {
+          "$ref": "#/definitions/MobileHeaderNavDropdownStrings",
+          "description": "Mobile nav open/close button. Mobile navigation menu."
+        },
+        "MobileHeaderNavMenuButton": {
+          "$ref": "#/definitions/MobileHeaderNavMenuButtonStrings",
+          "description": "Mobile navigation menu open/close button."
+        },
+        "NoResultsIllustrationAndMessage": {
+          "$ref": "#/definitions/NoResultsIllustrationAndMessageStrings",
+          "description": "No results illustration and message.\n\nAppears on index pages when no matched items are found."
+        },
+        "OverallRatings": {
+          "$ref": "#/definitions/OverallRatingsStrings",
+          "description": "OverallRatings component"
+        },
+        "PageMeta": {
+          "$ref": "#/definitions/PageMetaStrings",
+          "description": "Page metadata (including SEO and social media tags)."
+        },
+        "PlatformSelect": {
+          "$ref": "#/definitions/PlatformSelectStrings",
+          "description": "Header platform select menu."
+        },
+        "RedemptionOverlay": {
+          "$ref": "#/definitions/RedemptionOverlayStrings",
+          "description": "RedemptionOverlay"
+        },
+        "ResetPasswordPage": {
+          "$ref": "#/definitions/ResetPasswordPageStrings",
+          "description": "ResetPasswordPage"
+        },
+        "ResetPasswordRequestPage": {
+          "$ref": "#/definitions/ResetPasswordRequestPageStrings",
+          "description": "ResetPasswordRequestPage"
+        },
+        "RewardsPageContent": {
+          "$ref": "#/definitions/RewardsPageContentStrings",
+          "description": "Rewards Page"
+        },
+        "RewardsReferralLink": {
+          "$ref": "#/definitions/RewardsReferralLinkStrings",
+          "description": "Rewards page referral link."
+        },
+        "RewardsReview": {
+          "$ref": "#/definitions/RewardsReviewStrings",
+          "description": "Rewards Page - RewardsMyReview"
+        },
+        "RewardsWeeklyChallenge": {
+          "$ref": "#/definitions/RewardsWeeklyChallengeStrings",
+          "description": "Rewards Page - RewardsWeeklyChallenge"
+        },
+        "Search": {
+          "$ref": "#/definitions/SearchStrings",
+          "description": "Header Search component"
+        },
+        "SearchResultsPage": {
+          "$ref": "#/definitions/SearchResultsPageStrings",
+          "description": "SearchResultsPage"
+        },
+        "SignInPage": {
+          "$ref": "#/definitions/SignInPageStrings",
+          "description": "Sign In page."
+        },
+        "StarRatings": {
+          "$ref": "#/definitions/StarRatingsStrings",
+          "description": "Review form rating stars."
+        },
+        "WriteAReview": {
+          "$ref": "#/definitions/WriteAReviewStrings",
+          "description": "Write a review form."
+        },
+        "WriteAReviewPage": {
+          "$ref": "#/definitions/WriteAReviewPageStrings",
+          "description": "Write A Review page."
+        },
+        "WriteYourMessagePage": {
+          "$ref": "#/definitions/WriteYourMessagePageStrings"
+        },
+        "shared": {
+          "$ref": "#/definitions/SharedStrings",
+          "description": "[PHASES 1-3] Shared (reused in several components)."
+        }
+      },
+      "required": [
+        "$schema",
+        "A11yShortcutPreset",
+        "AccessDenied",
+        "AccessErrorMessage",
+        "AccountSettingsConfirmationPage",
+        "AccountSettingsPageContent",
+        "ActivateAccountPage",
+        "AppAdditionalInfoListItem",
+        "AppAdditionalInfoProductDetails",
+        "AppAndroidInstallButton",
+        "AppDetailsSection",
+        "AppFaqs",
+        "AppHowToUse",
+        "AppInstallOptions",
+        "AppNavLinkList",
+        "AppOverviewSection",
+        "AppShareAndSupportLinks",
+        "AppStatsDetails",
+        "AppTeamAnalysis",
+        "AppTeamReviewsContent",
+        "AppUsersReviewsContent",
+        "BlogPage",
+        "BlogPostContent",
+        "CategoryNavList",
+        "ClientSideErrorFallback",
+        "ContactPage",
+        "CreateAnAccountPage",
+        "CreateAnAccountReferralMessage",
+        "DeleteAccountOverlay",
+        "ErrorPageContent",
+        "Footer",
+        "FooterNav",
+        "FooterNewsletterSignUp",
+        "Header",
+        "HomePage",
+        "HomePageEditorsChoiceSegment",
+        "HomePagePopularAppsSegment",
+        "HowPointsWork",
+        "HowPointsWorkPage",
+        "IndexPageLoadingUi",
+        "MobileHeaderNavDropdown",
+        "MobileHeaderNavMenuButton",
+        "NoResultsIllustrationAndMessage",
+        "OverallRatings",
+        "PageMeta",
+        "PlatformSelect",
+        "RedemptionOverlay",
+        "ResetPasswordPage",
+        "ResetPasswordRequestPage",
+        "RewardsPageContent",
+        "RewardsReferralLink",
+        "RewardsReview",
+        "RewardsWeeklyChallenge",
+        "Search",
+        "SearchResultsPage",
+        "SignInPage",
+        "StarRatings",
+        "WriteAReview",
+        "WriteAReviewPage",
+        "WriteYourMessagePage",
+        "shared"
+      ],
+      "type": "object"
+    },
+    "WriteAReviewPageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "title"
+      ],
+      "type": "object"
+    },
+    "WriteAReviewStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "categoryRatingsHeading": {
+          "type": "string"
+        },
+        "overallRatingHeading": {
+          "type": "string"
+        },
+        "speedReliabilityLabel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "categoryRatingsHeading",
+        "overallRatingHeading",
+        "speedReliabilityLabel"
+      ],
+      "type": "object"
+    },
+    "WriteYourMessagePageStrings": {
+      "additionalProperties": false,
+      "properties": {
+        "pageDescription": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "writeYourMessageHeading": {
+          "description": "Text for Write your message heading",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pageDescription",
+        "pageTitle",
+        "writeYourMessageHeading"
+      ],
+      "type": "object"
+    }
+  }
+}

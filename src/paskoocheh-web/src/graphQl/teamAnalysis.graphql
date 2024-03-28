@@ -1,0 +1,27 @@
+fragment TeamAnalysis on TeamAnalysisNode {
+  id
+  pk
+  review
+  pros
+  cons
+  categoryAnalysis {
+    ...CategoryAnalysis
+  }
+}
+
+fragment CategoryAnalysis on CategoryAnalysisNode {
+  id
+  pk
+  rating
+  ratingCategory {
+    ...RatingCategory
+  }
+}
+
+fragment RatingCategory on RatingCategoryNode {
+  id
+  name
+  nameFa
+  nameAr
+  slug
+}

@@ -1,0 +1,15 @@
+fragment PskImageRendition on ImageRendition {
+  height
+  id
+  url
+  width
+}
+
+fragment PskCaptionedImage on CaptionedImageNode {
+  caption
+  credit
+  id
+  file
+  width
+  height
+}

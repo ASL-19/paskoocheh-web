@@ -1,0 +1,7 @@
+fragment CaptionedImage on CaptionedImageNode {
+  caption
+  credit
+  height
+  file
+  width
+}
